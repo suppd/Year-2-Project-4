@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(15);
+            Debug.Log("shot other player");
             Destroy(gameObject);
 
         }
