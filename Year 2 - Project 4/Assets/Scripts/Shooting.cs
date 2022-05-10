@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
@@ -16,17 +17,21 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    shoot();
+        //}
+    }
+
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        if (context.performed) 
         {
-            shoot();
+            GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
         }
     }
 
-    void shoot()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
-
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(FirePoint.up *bulletForce, ForceMode2D.Impulse);
-    }
 }
