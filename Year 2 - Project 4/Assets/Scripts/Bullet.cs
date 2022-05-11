@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(15);
             Debug.Log("shot other player");
-            Destroy(gameObject);
+            //Destroy(gameObject);
 
         }
 

@@ -20,6 +20,10 @@ public class Shooting : MonoBehaviour
         {
             shoot();
         }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            shoot();
+        }
     }
 
     void shoot()
