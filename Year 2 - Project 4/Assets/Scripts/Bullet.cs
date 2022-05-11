@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject bullet;
-    float timer = 2;
-    void Update()
-    {
-        timer -= Time.deltaTime;
-        if (timer < 0)
-        {
-            Destroy(bullet);
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
