@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8052997285506229105, guid: 4f1f0b3b040d64fddad7a3ab4c2a225b, type: 3}
+  killPlayer: {fileID: 3733297647814819834, guid: f2619f81090534a06ae6e14fa16191be, type: 3}
   crackEgg: {fileID: 8300000, guid: 7b50d5ed38c43c04da56bc0c27d808ae, type: 3}
   hitPlayer: {fileID: 8300000, guid: 5e02ab0abb66d1c40815ded8c46cf9f2, type: 3}
 --- !u!1 &7239492722491351024
