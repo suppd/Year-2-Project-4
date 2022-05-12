@@ -13301,6 +13301,10 @@ PrefabInstance:
       propertyPath: m_SplitScreen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_AllowJoining
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473921, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_RootOrder
       value: 9
