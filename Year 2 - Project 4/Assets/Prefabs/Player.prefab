@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 161273018238503366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.36, y: -1.024817, z: -3.050902}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 9148478042444093461}
   - {fileID: 6481376969060286750}
@@ -128,7 +128,7 @@ MonoBehaviour:
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
-  bulletForce: 5
+  bulletForce: 12
 --- !u!114 &161273018238503362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a24b9183a2362b409148d3ddc8798d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
   rb: {fileID: 161273018238503360}
 --- !u!58 &3383183338051999284
 CircleCollider2D:
