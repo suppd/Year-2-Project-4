@@ -473,75 +473,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492600349d318804a810ee912aabd56b, type: 3}
---- !u!1001 &233335138032673520
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7923692566367767546, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7923692566367767546, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 7923692566367767546, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978147, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_Name
-      value: Die Chick
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.297539
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.6101623
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937344359762978158, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
 --- !u!1001 &6633424240151335220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,3 +635,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1f0b3b040d64fddad7a3ab4c2a225b, type: 3}
+--- !u!1001 &8254137787624412542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.297539
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.6101623
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008864, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988466246137008877, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
+      propertyPath: m_Name
+      value: Die Chick
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65698ca0171e54912adc9474f3221a53, type: 3}
