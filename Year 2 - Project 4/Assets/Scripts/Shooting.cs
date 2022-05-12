@@ -9,6 +9,8 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float bulletForce = 15f;
+    float fireRate = 0.5f;
+    private float lastShot = 0.0f;
     void Start()
     {
 
@@ -27,11 +29,22 @@ public class Shooting : MonoBehaviour
     {
         if (context.performed) 
         {
-            GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+            if (Time.time > fireRate + lastShot)
+            {
+                SpawnBullet();
+                lastShot = Time.time;
+            }
 
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+            //Debug.Log(FirePoint.position);
         }
+    }
+
+    void SpawnBullet()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+
     }
 
 }

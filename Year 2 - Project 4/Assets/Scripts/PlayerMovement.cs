@@ -8,9 +8,6 @@ public class PlayerMovement : MonoBehaviour
     PlayerControlls playerControlls;
     public float speed = 10f; //Controls velocity multiplier
     public Rigidbody2D rb;
-    Vector2 movement;
-    Vector2 mousePos;
-    public Camera cam;
 
     private float horizontal;
     private float vertical;
@@ -35,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(horizontal * speed, vertical *speed);
 
-        if(!isFacingRight && horizontal > 0f)
-        {
-            Flip(); 
-        }
-        else if (isFacingRight && horizontal < 0f)
-        {
-            Flip();
-        }
+        //if(!isFacingRight && horizontal > 0f)
+        //{
+        //    Flip(); 
+        //}
+        //else if (isFacingRight && horizontal < 0f)
+        //{
+        //    Flip();
+        //}
     }
     void FixedUpdate()
     {

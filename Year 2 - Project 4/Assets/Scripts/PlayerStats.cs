@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     public float HP = 100;
     public float MaxHP = 100;
     Image HpBar;
+    public GameObject player;
 
     private void Awake()
     {
@@ -15,12 +16,22 @@ public class PlayerStats : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {        
-        HP -= damage;
+        HP = HP - damage;
         
     }
 
-    private void Update()
+    void Update()
     {
         HpBar.fillAmount = (HP / MaxHP);
+
+        if (HP <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(player);
     }
 }
