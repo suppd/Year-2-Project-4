@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
             Debug.Log("shot other player");
+           // Debug.Log(gameObject.GetComponent<PlayerStats>().HP);
             //Destroy(gameObject);
 
         }
