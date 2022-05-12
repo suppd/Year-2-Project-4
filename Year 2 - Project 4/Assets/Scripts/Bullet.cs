@@ -9,24 +9,32 @@ public class Bullet : MonoBehaviour
     private GameObject hitEffect;
 
     public AudioClip crackEgg;
+    public AudioClip hitPlayer;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(15);
+            AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
+            Destroy(gameObject);
             Debug.Log("shot other player");
             //Destroy(gameObject);
 
         }
 
-        if(collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Wall")
         {
 
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            AudioSource.PlayClipAtPoint(crackEgg, transform.position);
             Destroy(effect, 1f);
-            Destroy(gameObject);   
+            Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(crackEgg, transform.position);
+        }
+
+        if(collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
         }
     }
 }

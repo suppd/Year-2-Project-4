@@ -8,6 +8,8 @@ public class Shooting : MonoBehaviour
     public Transform FirePoint;
     public GameObject bulletPrefab;
 
+    public AudioClip shootSound;
+
     public float bulletForce = 15f;
     void Start()
     {
@@ -25,6 +27,8 @@ public class Shooting : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
+        AudioSource.PlayClipAtPoint(shootSound, transform.position);
+
         if (context.performed) 
         {
             GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
