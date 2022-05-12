@@ -7,8 +7,12 @@ public class PlayerStats : MonoBehaviour
 {
     public float HP = 100;
     public float MaxHP = 100;
-    public Image HpBar;
+    Image HpBar;
 
+    private void Awake()
+    {
+        HpBar = GetComponentInChildren<Image>();
+    }
     public void TakeDamage(int damage)
     {        
         HP -= damage;

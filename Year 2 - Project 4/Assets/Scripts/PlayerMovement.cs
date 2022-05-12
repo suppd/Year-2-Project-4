@@ -1,37 +1,71 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    PlayerControlls playerControlls;
     public float speed = 10f; //Controls velocity multiplier
     public Rigidbody2D rb;
     Vector2 movement;
     Vector2 mousePos;
     public Camera cam;
-    // Start is called before the first frame update
-    void Start()
+
+    private float horizontal;
+    private float vertical;
+    private bool isFacingRight = true;
+    private bool isFacingLeft = false;
+
+    void Awake()
     {
-        
+        playerControlls = new PlayerControlls();
+
+        //playerControlls.Player.Move.performed += ctx => movement = ctx.ReadValue<Vector2>();
+
+        //playerControlls.Player.Move.canceled += ctx => mousePos = Vector2.zero;
     }
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        //movement.x = Input.GetAxisRaw("Horizontal");
+       // movement.y = Input.GetAxisRaw("Vertical");
         
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+       // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        rb.velocity = new Vector2(horizontal * speed, vertical *speed);
+
+        if(!isFacingRight && horizontal > 0f)
+        {
+            Flip(); 
+        }
+        else if (isFacingRight && horizontal < 0f)
+        {
+            Flip();
+        }
     }
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
-        rb.rotation = angle;
+        //Vector2 lookDir = mousePos - rb.position;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
+        //rb.rotation = angle;
         
     }
 
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localscale = transform.localScale;
+        localscale.x *= -1f;
+        transform.localScale = localscale;
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        horizontal = context.ReadValue<Vector2>().x;
+        vertical = context.ReadValue<Vector2>().y;
+    }
     
 }

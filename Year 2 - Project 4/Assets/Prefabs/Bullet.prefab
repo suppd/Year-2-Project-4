@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8807742184013070760}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.02
 --- !u!50 &4204814991610999727
 Rigidbody2D:
   serializedVersion: 4
@@ -83,6 +83,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f85bd0014cfe7d42a889be1904316a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 8052997285506229105, guid: 4f1f0b3b040d64fddad7a3ab4c2a225b, type: 3}
+  crackEgg: {fileID: 8300000, guid: 7b50d5ed38c43c04da56bc0c27d808ae, type: 3}
+  hitPlayer: {fileID: 8300000, guid: 5e02ab0abb66d1c40815ded8c46cf9f2, type: 3}
 --- !u!1 &7239492722491351024
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,8 +158,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f5e92582e0eec504387bd65fde020121, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
