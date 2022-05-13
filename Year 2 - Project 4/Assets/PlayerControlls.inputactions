@@ -27,7 +27,15 @@
                     "id": "57a4e147-6752-4cca-83eb-e8606f95ecc2",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "New Shoot",
+                    "type": "Button",
+                    "id": "df40f54b-ecab-4c42-9f33-93c80cdd0225",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
                 }
             ],
             "bindings": [
@@ -138,6 +146,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0b5cbf6-c1dc-44c3-95ab-e43566414e55",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

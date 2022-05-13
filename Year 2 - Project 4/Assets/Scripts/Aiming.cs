@@ -13,8 +13,7 @@ public class Aiming : MonoBehaviour
     private float vertical;
     private Vector3 position;
     private float rotateSpeed;
-    private Vector2 lastPosition;
-
+    private float lastAngle;
     void Start()
     {
         pivot = player.transform;
@@ -34,6 +33,7 @@ public class Aiming : MonoBehaviour
         pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         rotateSpeed = horizontal;
         //.RotateAround(player.transform.position, Vector3.up, rotateSpeed);
+        lastAngle = angle;
        
     }
 

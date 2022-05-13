@@ -8,8 +8,10 @@ public class Shooting : MonoBehaviour
     public Transform FirePoint;
     public GameObject bulletPrefab;
 
+    public AudioClip shootSound;
+
     public float bulletForce = 15f;
-    float fireRate = 0.5f;
+    float fireRate = 1f;
     private float lastShot = 0.0f;
     void Start()
     {
@@ -27,10 +29,13 @@ public class Shooting : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
+        
+
         if (context.performed) 
         {
             if (Time.time > fireRate + lastShot)
             {
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 SpawnBullet();
                 lastShot = Time.time;
             }
