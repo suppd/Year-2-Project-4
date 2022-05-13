@@ -11,6 +11,8 @@ public class Shooting : MonoBehaviour
     public AudioClip shootSound;
 
     public float bulletForce = 15f;
+    float fireRate = 1f;
+    private float lastShot = 0.0f;
     void Start()
     {
 
@@ -27,15 +29,27 @@ public class Shooting : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        AudioSource.PlayClipAtPoint(shootSound, transform.position);
+        
 
         if (context.performed) 
         {
-            GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+            if (Time.time > fireRate + lastShot)
+            {
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                SpawnBullet();
+                lastShot = Time.time;
+            }
 
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+            //Debug.Log(FirePoint.position);
         }
+    }
+
+    void SpawnBullet()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+
     }
 
 }

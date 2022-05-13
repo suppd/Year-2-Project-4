@@ -12,7 +12,8 @@ public class Aiming : MonoBehaviour
     private float horizontal;
     private float vertical;
     private Vector3 position;
-
+    private float rotateSpeed;
+    private float lastAngle;
     void Start()
     {
         pivot = player.transform;
@@ -23,13 +24,17 @@ public class Aiming : MonoBehaviour
 
     void Update()
     {
-        //position = new Vector3(horizontal, vertical, 0);
+        position = new Vector2(horizontal, vertical);
         //Vector3 orbVector = Camera.main.WorldToScreenPoint(player.position);
         //orbVector =  position- orbVector;
         float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
 
         pivot.position = player.position;
         pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        rotateSpeed = horizontal;
+        //.RotateAround(player.transform.position, Vector3.up, rotateSpeed);
+        lastAngle = angle;
+       
     }
 
     public void Aim(InputAction.CallbackContext context)

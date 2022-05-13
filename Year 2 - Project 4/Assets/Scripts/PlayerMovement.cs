@@ -8,9 +8,8 @@ public class PlayerMovement : MonoBehaviour
     PlayerControlls playerControlls;
     public float speed = 10f; //Controls velocity multiplier
     public Rigidbody2D rb;
-    Vector2 movement;
-    Vector2 mousePos;
-    public Camera cam;
+    public Animator anim;
+    public Vector2 movements;
 
     private float horizontal;
     private float vertical;
@@ -29,20 +28,24 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //movement.x = Input.GetAxisRaw("Horizontal");
-       // movement.y = Input.GetAxisRaw("Vertical");
-        
-       // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        // movement.y = Input.GetAxisRaw("Vertical");
 
+        // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        movements = new Vector2(horizontal, vertical);
         rb.velocity = new Vector2(horizontal * speed, vertical *speed);
+        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Speed", movements.sqrMagnitude);
+      
 
-        if(!isFacingRight && horizontal > 0f)
-        {
-            Flip(); 
-        }
-        else if (isFacingRight && horizontal < 0f)
-        {
-            Flip();
-        }
+
+        //if(!isFacingRight && horizontal > 0f)
+        //{
+        //    Flip(); 
+        //}
+        //else if (isFacingRight && horizontal < 0f)
+        //{
+        //    Flip();
+        //}
     }
     void FixedUpdate()
     {

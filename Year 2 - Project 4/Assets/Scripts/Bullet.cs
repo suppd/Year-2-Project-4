@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     private GameObject hitEffect;
+    [SerializeField]
+    private GameObject killPlayer;
 
     public AudioClip crackEgg;
     public AudioClip hitPlayer;
@@ -15,10 +17,13 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
+            Destroy(killEffect, 1f);
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(15);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
             Debug.Log("shot other player");
+           // Debug.Log(gameObject.GetComponent<PlayerStats>().HP);
             //Destroy(gameObject);
 
         }
