@@ -18250,6 +18250,18 @@ PrefabInstance:
       value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 3551908255657454723, guid: 492600349d318804a810ee912aabd56b, type: 3}
+      propertyPath: enemyInstance
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551908255657454723, guid: 492600349d318804a810ee912aabd56b, type: 3}
+      propertyPath: textToDisplay
+      value: egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551908255657454723, guid: 492600349d318804a810ee912aabd56b, type: 3}
+      propertyPath: damageTextPrefab
+      value: 
+      objectReference: {fileID: 8182394236360799337, guid: 6fbef4a82d9b54fcab7bb6f54a77704f, type: 3}
+    - target: {fileID: 3551908255657454723, guid: 492600349d318804a810ee912aabd56b, type: 3}
       propertyPath: floatingTextPrefab
       value: 
       objectReference: {fileID: 5191700071530440427, guid: 6cad5ffcaf2de4565aa47a06c9601f91, type: 3}
