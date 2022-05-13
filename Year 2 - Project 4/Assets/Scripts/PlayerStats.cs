@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     public float MaxHP = 100;
     Image HpBar;
     public GameObject player;
+    public int killedCount = 0;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Die()
     {
+        killedCount++;
         Destroy(player);
     }
 }

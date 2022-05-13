@@ -13310,6 +13310,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 161273018238503366, guid: ef5bdb9edabeee64e8673086c8ff7541, type: 3}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_JoinAction.m_Action.m_Id
       value: 49b09bcb-ba4c-472d-b209-6193f4caea7e
       objectReference: {fileID: 0}
@@ -13330,6 +13338,10 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -13342,12 +13354,20 @@ PrefabInstance:
       value: 55dc175e-ebaf-43db-98af-6a0c98f772ff
       objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Gamepad>/buttonSouth
       objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Path
       value: <Gamepad>/buttonSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
@@ -13358,8 +13378,24 @@ PrefabInstance:
       value: Join
       objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchNextSpawnCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Interactions
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharacterSwitcher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321280256781473920, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8321280256781473921, guid: 944898bf72ed5fb4d84a0f923054bebf, type: 3}
       propertyPath: m_RootOrder
