@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3551908255657454723}
   - component: {fileID: 5590548397414619007}
   - component: {fileID: 4650708730441958946}
+  - component: {fileID: 2453835206104791124}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 161273018238503366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.36, y: -1.024817, z: -3.050902}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 9148478042444093461}
   - {fileID: 6481376969060286750}
@@ -128,7 +129,7 @@ MonoBehaviour:
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
-  bulletForce: 5
+  bulletForce: 12
 --- !u!114 &161273018238503362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a24b9183a2362b409148d3ddc8798d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
   rb: {fileID: 161273018238503360}
+  anim: {fileID: 2453835206104791124}
+  movements: {x: 0, y: 0}
 --- !u!58 &3383183338051999284
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -264,6 +267,25 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &2453835206104791124
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161273018238503366}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d17f51d3db01bd46815baa113da5e7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0

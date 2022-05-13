@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731689, g: 0.13414702, b: 0.1210784, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -473,6 +473,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492600349d318804a810ee912aabd56b, type: 3}
+--- !u!1001 &3192694750223746135
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6013871963420345284, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_Name
+      value: Die Chick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.297539
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.6101623
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013871963420345289, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
 --- !u!1001 &6633424240151335220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -528,6 +585,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Chicken Die '
       objectReference: {fileID: 0}
+    - target: {fileID: 3733297648120022589, guid: f2619f81090534a06ae6e14fa16191be, type: 3}
+      propertyPath: UVModule.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3733297648120022589, guid: f2619f81090534a06ae6e14fa16191be, type: 3}
+      propertyPath: UVModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3733297648120022589, guid: f2619f81090534a06ae6e14fa16191be, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95d24131988614f0183b4255d5d9e74b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2619f81090534a06ae6e14fa16191be, type: 3}
 --- !u!1001 &8052997285656515796
