@@ -130,6 +130,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   bulletForce: 12
+  fireRate: 0.4
 --- !u!114 &161273018238503362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +263,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 57a4e147-6752-4cca-83eb-e8606f95ecc2
     m_ActionName: Player/Shoot[/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: df40f54b-ecab-4c42-9f33-93c80cdd0225
+    m_ActionName: Player/New Shoot[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

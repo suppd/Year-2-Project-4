@@ -11,6 +11,7 @@ public class Shooting : MonoBehaviour
     public AudioClip shootSound;
 
     public float bulletForce = 15f;
+    [SerializeField]
     float fireRate = 1f;
     private float lastShot = 0.0f;
     void Start()
