@@ -49,6 +49,14 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold""
+                },
+                {
+                    ""name"": ""Dashing"",
+                    ""type"": ""Button"",
+                    ""id"": ""77aa6bbb-243c-46c1-9da4-aa65ce301783"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -172,6 +180,17 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                     ""action"": ""New Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2105cd0-fbfd-49d5-b66f-eb11e6e1bace"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dashing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,6 +203,7 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         m_Player_Aiming = m_Player.FindAction("Aiming", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_NewShoot = m_Player.FindAction("New Shoot", throwIfNotFound: true);
+        m_Player_Dashing = m_Player.FindAction("Dashing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -237,6 +257,7 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Aiming;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_NewShoot;
+    private readonly InputAction m_Player_Dashing;
     public struct PlayerActions
     {
         private @PlayerControlls m_Wrapper;
@@ -245,6 +266,7 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         public InputAction @Aiming => m_Wrapper.m_Player_Aiming;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @NewShoot => m_Wrapper.m_Player_NewShoot;
+        public InputAction @Dashing => m_Wrapper.m_Player_Dashing;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -266,6 +288,9 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                 @NewShoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewShoot;
                 @NewShoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewShoot;
                 @NewShoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewShoot;
+                @Dashing.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
+                @Dashing.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
+                @Dashing.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -282,6 +307,9 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                 @NewShoot.started += instance.OnNewShoot;
                 @NewShoot.performed += instance.OnNewShoot;
                 @NewShoot.canceled += instance.OnNewShoot;
+                @Dashing.started += instance.OnDashing;
+                @Dashing.performed += instance.OnDashing;
+                @Dashing.canceled += instance.OnDashing;
             }
         }
     }
@@ -292,5 +320,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         void OnAiming(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnNewShoot(InputAction.CallbackContext context);
+        void OnDashing(InputAction.CallbackContext context);
     }
 }

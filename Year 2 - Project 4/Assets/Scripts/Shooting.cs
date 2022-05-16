@@ -33,6 +33,7 @@ public class Shooting : MonoBehaviour
 
         if (context.performed) 
         {
+            
             if (Time.time > fireRate + lastShot)
             {
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);

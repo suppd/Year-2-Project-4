@@ -29,7 +29,7 @@ public class Aiming : MonoBehaviour
         //orbVector =  position- orbVector;
         float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
 
-        pivot.position = player.position;
+        //pivot.position = player.position;
         pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         rotateSpeed = horizontal;
         //.RotateAround(player.transform.position, Vector3.up, rotateSpeed);

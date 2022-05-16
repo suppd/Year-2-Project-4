@@ -9,9 +9,11 @@ public class PlayerStats : MonoBehaviour
     public float MaxHP = 100;
     Image HpBar;
     public GameObject player;
+    public Animator anim;
 
     private void Awake()
     {
+       
         HpBar = GetComponentInChildren<Image>();
     }
     public void TakeDamage(int damage)
@@ -32,6 +34,17 @@ public class PlayerStats : MonoBehaviour
 
     public void Die()
     {
+        anim.SetBool("Death", true);
+
+        Wait();
         Destroy(player);
+
+    }
+
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3f);
+        
+        
     }
 }
