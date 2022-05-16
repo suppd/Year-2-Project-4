@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     public AudioClip crackEgg;
     public AudioClip hitPlayer;
+    public AudioClip eggCol;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -40,6 +41,7 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(eggCol, transform.position);
         }
     }
 }

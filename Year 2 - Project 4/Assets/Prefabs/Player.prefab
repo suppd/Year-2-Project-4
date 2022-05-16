@@ -334,10 +334,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movements: {x: 0, y: 0}
   rb: {fileID: 161273018238503360}
-  DashForce: 3000
-  dashDistance: 0.1
+  DashForce: 1500
+  dashDistance: 0.05
   dashDuration: 0.5
-  cooldownDuration: 1
+  cooldownDuration: 4
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0
