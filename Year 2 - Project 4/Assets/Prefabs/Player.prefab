@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2983638d7a61c479822c174bc0a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
+  HP: 100
   MaxHP: 100
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
@@ -334,9 +334,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movements: {x: 0, y: 0}
   rb: {fileID: 161273018238503360}
-  DashForce: 10000
-  dashDistance: 0.2
-  dashDuration: 1
+  DashForce: 3000
+  dashDistance: 0.1
+  dashDuration: 0.5
   cooldownDuration: 1
 --- !u!1 &161273019067780492
 GameObject:
