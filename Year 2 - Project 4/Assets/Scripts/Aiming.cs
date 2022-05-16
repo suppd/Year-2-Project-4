@@ -12,7 +12,7 @@ public class Aiming : MonoBehaviour
     private float horizontal;
     private float vertical;
     private Vector3 position;
-    
+
     private float rotateSpeed;
     private float lastAngle;
 
