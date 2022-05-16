@@ -12,34 +12,63 @@ public class Aiming : MonoBehaviour
     private float horizontal;
     private float vertical;
     private Vector3 position;
+
     private float rotateSpeed;
     private float lastAngle;
+
+    private bool aimStopped = false;
+
     void Start()
     {
-        pivot = player.transform;
-        transform.parent = pivot;
-        transform.position += Vector3.up * radius;
-        //radius = pivot.localScale.x / 4;
+        SetupAiming();
     }
 
     void Update()
     {
-        position = new Vector2(horizontal, vertical);
-        //Vector3 orbVector = Camera.main.WorldToScreenPoint(player.position);
-        //orbVector =  position- orbVector;
-        float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
-
-        pivot.position = player.position;
-        pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        rotateSpeed = horizontal;
-        //.RotateAround(player.transform.position, Vector3.up, rotateSpeed);
-        lastAngle = angle;
-       
+        HandleAiming();
     }
 
     public void Aim(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
+        if (context.canceled)
+        {
+            aimStopped = true;
+
+        }
+        else if (horizontal > 0 || vertical > 0)
+        {
+            aimStopped = false;
+        }
+    }
+    void SetupAiming()
+    {
+        pivot = player.transform;
+        transform.parent = pivot;
+        transform.position += Vector3.up * radius;
+        //radius = pivot.localScale.x / 4;
+    }
+    void HandleAiming()
+    {
+        if (aimStopped == false)
+        {
+            position = new Vector2(horizontal, vertical);
+            //Vector3 orbVector = Camera.main.WorldToScreenPoint(player.position);
+            //orbVector =  position- orbVector;
+            float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
+
+            pivot.position = player.position;
+            pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            rotateSpeed = horizontal;
+            //.RotateAround(player.transform.position, Vector3.up, rotateSpeed);
+            lastAngle = angle;
+            //Debug.Log(lastAngle);
+        }
+        if (aimStopped)
+        {
+            //Debug.Log("Aiming Stopped");
+            pivot.rotation = Quaternion.AngleAxis(lastAngle - 90, Vector3.forward);
+        }
     }
 }
