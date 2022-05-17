@@ -20,4 +20,5 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Playtest3.unity
     guid: 24c0026770908be48b7247ff4dd0115b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: fcde1e557208f0b49ae84a2fc61effb9, type: 2}
