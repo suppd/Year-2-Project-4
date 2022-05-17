@@ -7,6 +7,7 @@ TagManager:
   - PickUp
   - Wall
   - Bullet
+  - FirePoint
   layers:
   - Default
   - TransparentFX
@@ -41,8 +42,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1494769739
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: front
+    uniqueID: 507865669
     locked: 0
   - name: instances
     uniqueID: 1624179957
