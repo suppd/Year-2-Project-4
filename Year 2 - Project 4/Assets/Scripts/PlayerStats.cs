@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerStats : MonoBehaviour
 {
     public float HP = 100;
@@ -21,6 +22,7 @@ public class PlayerStats : MonoBehaviour
         HP = HP - damage;
         
     }
+
 
     void Update()
     {

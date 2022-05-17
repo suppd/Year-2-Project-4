@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5590548397414619007}
   - component: {fileID: 4650708730441958946}
   - component: {fileID: 2453835206104791124}
-  - component: {fileID: 287248859976157526}
+  - component: {fileID: 359108898158500425}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -130,7 +130,8 @@ MonoBehaviour:
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
-  bulletForce: 14
+  bulletForce: 12
+  fireRate: 0.4
 --- !u!114 &161273018238503362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2983638d7a61c479822c174bc0a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
+  HP: 100
   MaxHP: 100
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
@@ -279,23 +280,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: df40f54b-ecab-4c42-9f33-93c80cdd0225
-    m_ActionName: Player/New Shoot[/XInputControllerWindows/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 287248859976157526}
-        m_TargetAssemblyTypeName: Dash, Assembly-CSharp
-        m_MethodName: Dashing
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 77aa6bbb-243c-46c1-9da4-aa65ce301783
-    m_ActionName: Player/Dash[/XInputControllerWindows/buttonEast]
+    m_ActionName: Player/New Shoot[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -309,7 +294,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161273018238503366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8d17f51d3db01bd46815baa113da5e7d, type: 2}
   m_CullingMode: 0
@@ -320,7 +305,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &287248859976157526
+--- !u!114 &359108898158500425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -329,15 +314,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 161273018238503366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa0f3b409f0b2c42b2527055948dfc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 11537cdf75fe8f74b92b670e1934b831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movements: {x: 0, y: 0}
-  rb: {fileID: 161273018238503360}
-  DashForce: 10000
-  dashDistance: 0.2
-  dashDuration: 1
-  cooldownDuration: 1
+  spriteRenderer: {fileID: 161273018238503361}
+  sprites:
+  - {fileID: 21300000, guid: a15aeabd75cb93e49908ce537cfc8f14, type: 3}
+  - {fileID: 21300000, guid: 8507a34b0f3c3ec46a8a1d6bd5494e99, type: 3}
+  - {fileID: 21300000, guid: a15aeabd75cb93e49908ce537cfc8f14, type: 3}
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
-            Destroy(killEffect, 1f);
+            Destroy(killEffect);
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(15);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
