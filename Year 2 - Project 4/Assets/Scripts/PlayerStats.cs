@@ -11,12 +11,16 @@ public class PlayerStats : MonoBehaviour
     Image HpBar;
     public GameObject player;
     public Animator anim;
+    public GameObject UIObject;
 
     private void Awake()
     {
-       
+        // UIObject.SetActive(false);
         HpBar = GetComponentInChildren<Image>();
     }
+
+
+    // The UI object gets set to false to be shown later
     public void TakeDamage(int damage)
     {        
         HP = HP - damage;
@@ -30,6 +34,7 @@ public class PlayerStats : MonoBehaviour
 
         if (HP <= 0)
         {
+            UIObject.SetActive(true);
             Die();
         }
     }
@@ -37,7 +42,6 @@ public class PlayerStats : MonoBehaviour
     public void Die()
     {
         anim.SetBool("Death", true);
-
         Wait();
         Destroy(player);
 
