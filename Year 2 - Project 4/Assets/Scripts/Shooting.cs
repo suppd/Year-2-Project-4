@@ -14,6 +14,9 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     float fireRate = 1f;
     private float lastShot = 0.0f;
+
+    //public string shooter { get; set; }
+
     void Start()
     {
 
@@ -51,7 +54,10 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
-
+        //this.shooter = this.name;
+        //bullet.GetComponent<Bullet>().shotFrom = shooter;
+        ////Debug.Log(this.shooter);
+        ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
     }
 
 }

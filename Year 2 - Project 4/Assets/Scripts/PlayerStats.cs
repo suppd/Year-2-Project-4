@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.InputSystem;
+using System;
 
 public class PlayerStats : MonoBehaviour
 {
+    //static event Action<string> OnScoreChanged; 
+
     public float HP = 100;
     public float MaxHP = 100;
+
+    public int score;
+
     Image HpBar;
     public GameObject player;
     public Animator anim;
@@ -30,12 +36,18 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        HpBar.fillAmount = (HP / MaxHP);
+        //HpBar.fillAmount = (HP / MaxHP);
 
         if (HP <= 0)
         {
-            UIObject.SetActive(true);
-            Die();
+            Die();           
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+         
         }
     }
 
@@ -47,10 +59,5 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    public IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(3f);
-        
-        
-    }
+    
 }
