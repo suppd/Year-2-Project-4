@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashDistance = 0.2f;
     public float dashDuration = 0.5f;
     public float cooldownDuration = 1.0f;
+    public ParticleSystem dashDust;
 
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingLeft = false;
 
     [SerializeField]
+
     private GameObject dashParticle;
 
     void Awake()
@@ -89,8 +91,7 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetTrigger("Dash");
                 speed = DashForce;
                 dashCounter = dashDistance;
-                GameObject dash = Instantiate(dashParticle, transform.position, Quaternion.identity);
-                Destroy(dash, 1f);
+                CreateDust();
 
             }
         }
@@ -108,6 +109,11 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
+    }
+
+    void CreateDust()
+    {
+        dashDust.Play();
     }
     
 }
