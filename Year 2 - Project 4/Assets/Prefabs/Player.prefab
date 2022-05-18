@@ -183,7 +183,8 @@ MonoBehaviour:
   MaxHP: 100
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
-  UIObject: {fileID: 4307381233811410132}
+  myPrefab: {fileID: 8542568399320588705, guid: 42b6347cd2cc849f59ef42c4d388a8d6, type: 3}
+  EggSploded: {fileID: 8300000, guid: fc321464285eb4131bb3a26e4d28ee76, type: 3}
 --- !u!114 &5590548397414619007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7612313138090841675
 RectTransform:
   m_ObjectHideFlags: 0

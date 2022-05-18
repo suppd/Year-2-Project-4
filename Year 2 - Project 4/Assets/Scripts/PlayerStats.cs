@@ -11,7 +11,9 @@ public class PlayerStats : MonoBehaviour
     Image HpBar;
     public GameObject player;
     public Animator anim;
-    public GameObject UIObject;
+    public GameObject myPrefab;
+
+    public AudioClip EggSploded;
 
     private void Awake()
     {
@@ -34,13 +36,14 @@ public class PlayerStats : MonoBehaviour
 
         if (HP <= 0)
         {
-            UIObject.SetActive(true);
             Die();
         }
     }
 
     public void Die()
     {
+        Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+        AudioSource.PlayClipAtPoint(EggSploded, transform.position);
         anim.SetBool("Death", true);
         Wait();
         Destroy(player);
