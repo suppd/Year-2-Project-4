@@ -142,14 +142,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a24b9183a2362b409148d3ddc8798d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 5
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
   movements: {x: 0, y: 0}
-  DashForce: 10
+  DashForce: 11
   dashDistance: 0.2
   dashDuration: 1
   cooldownDuration: 1
+  dashParticle: {fileID: 7679992696912385219, guid: d054d2ae4531f92469785f6db4cfaa4a, type: 3}
 --- !u!58 &3383183338051999284
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -182,6 +183,7 @@ MonoBehaviour:
   MaxHP: 100
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
+  myPrefab: {fileID: 7207422589636892560, guid: 083d3ba8438c9774d8af8d8d38492efa, type: 3}
 --- !u!114 &5590548397414619007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,10 +281,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 57a4e147-6752-4cca-83eb-e8606f95ecc2
     m_ActionName: Player/Shoot[/DualShock4GamepadHID/leftTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: df40f54b-ecab-4c42-9f33-93c80cdd0225
-    m_ActionName: Player/New Shoot[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 161273018238503362}

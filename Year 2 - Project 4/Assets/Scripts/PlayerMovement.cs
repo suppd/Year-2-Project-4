@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private bool isFacingLeft = false;
 
+    [SerializeField]
+    private GameObject dashParticle;
+
     void Awake()
     {
         playerControlls = new PlayerControlls();
@@ -86,8 +89,9 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetTrigger("Dash");
                 speed = DashForce;
                 dashCounter = dashDistance;
+                GameObject dash = Instantiate(dashParticle, transform.position, Quaternion.identity);
+                Destroy(dash, 1f);
 
-                
             }
         }
     }
