@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class Bullet : MonoBehaviour
 {
+    
     [SerializeField]
     private GameObject hitEffect;
     [SerializeField]
@@ -12,6 +13,8 @@ public class Bullet : MonoBehaviour
 
     public AudioClip crackEgg;
     public AudioClip hitPlayer;
+
+    //public string shotFrom { get; set; }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,9 +25,7 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(15);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
-            Debug.Log("shot other player");
-           // Debug.Log(gameObject.GetComponent<PlayerStats>().HP);
-            //Destroy(gameObject);
+            Debug.Log("shot other player");           
 
         }
 
