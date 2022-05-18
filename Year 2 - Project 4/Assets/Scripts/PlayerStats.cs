@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     Image HpBar;
     public GameObject player;
     public Animator anim;
+    public GameObject myPrefab;
 
     private void Awake()
     {
@@ -30,10 +31,13 @@ public class PlayerStats : MonoBehaviour
         {
             Die();
         }
+
+        Debug.Log(player.transform.position.x);
     }
 
     public void Die()
     {
+        Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, 0), Quaternion.identity);
         anim.SetBool("Death", true);
 
         Wait();
