@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     //-------
     //MOVING
     [Header("Move Settings")]
-    PlayerControlls playerControlls;
+    PlayerControls playerControlls;
     public float speed = 10f; //Controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        playerControlls = new PlayerControlls();
+        playerControlls = new PlayerControls();
         SetupAiming();      
     }
 
