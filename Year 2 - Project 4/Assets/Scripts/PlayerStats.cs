@@ -13,13 +13,17 @@ public class PlayerStats : MonoBehaviour
     public float MaxHP = 100;
 
     public int score;
+    public uint ID;
 
     Image HpBar;
     public GameObject player;
+    public PlayerInput input;
 
     private void Awake()
     {
+        ID = input.user.id;
         HpBar = GetComponentInChildren<Image>();
+        //Debug.Log(ID);
     }
     public void TakeDamage(int damage)
     {        
@@ -43,6 +47,11 @@ public class PlayerStats : MonoBehaviour
         {
          
         }
+    }
+
+    public void IncreaseID()
+    {
+        ID = ID++;
     }
 
     public void Die()
