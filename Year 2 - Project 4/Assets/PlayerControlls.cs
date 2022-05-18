@@ -43,14 +43,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press""
                 },
                 {
-                    ""name"": ""New Shoot"",
-                    ""type"": ""Button"",
-                    ""id"": ""df40f54b-ecab-4c42-9f33-93c80cdd0225"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Hold""
-                },
-                {
                     ""name"": ""Dashing"",
                     ""type"": ""Button"",
                     ""id"": ""77aa6bbb-243c-46c1-9da4-aa65ce301783"",
@@ -151,8 +143,8 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""11096820-a7f8-47e8-ad5b-6359615f2dcc"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",
@@ -163,21 +155,10 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""fb59a8dc-b04d-41f2-a6c2-8cc7a57392b5"",
                     ""path"": ""<Mouse>/press"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b0b5cbf6-c1dc-44c3-95ab-e43566414e55"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -202,7 +183,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Aiming = m_Player.FindAction("Aiming", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
-        m_Player_NewShoot = m_Player.FindAction("New Shoot", throwIfNotFound: true);
         m_Player_Dashing = m_Player.FindAction("Dashing", throwIfNotFound: true);
     }
 
@@ -256,7 +236,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Aiming;
     private readonly InputAction m_Player_Shoot;
-    private readonly InputAction m_Player_NewShoot;
     private readonly InputAction m_Player_Dashing;
     public struct PlayerActions
     {
@@ -265,7 +244,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Aiming => m_Wrapper.m_Player_Aiming;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
-        public InputAction @NewShoot => m_Wrapper.m_Player_NewShoot;
         public InputAction @Dashing => m_Wrapper.m_Player_Dashing;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -285,9 +263,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
-                @NewShoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewShoot;
-                @NewShoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewShoot;
-                @NewShoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewShoot;
                 @Dashing.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
                 @Dashing.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
                 @Dashing.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
@@ -304,9 +279,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
-                @NewShoot.started += instance.OnNewShoot;
-                @NewShoot.performed += instance.OnNewShoot;
-                @NewShoot.canceled += instance.OnNewShoot;
                 @Dashing.started += instance.OnDashing;
                 @Dashing.performed += instance.OnDashing;
                 @Dashing.canceled += instance.OnDashing;
@@ -319,7 +291,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnAiming(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
-        void OnNewShoot(InputAction.CallbackContext context);
         void OnDashing(InputAction.CallbackContext context);
     }
 }

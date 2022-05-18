@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashDistance = 0.2f;
     public float dashDuration = 0.5f;
     public float cooldownDuration = 1.0f;
+    public ParticleSystem dashDust;
 
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
@@ -22,6 +23,10 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     private bool isFacingRight = true;
     private bool isFacingLeft = false;
+
+    [SerializeField]
+
+    private GameObject dashParticle;
 
     void Awake()
     {
@@ -37,6 +42,31 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Speed", movements.sqrMagnitude);
      
     }
+    void FixedUpdate()
+    {
+        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        //Vector2 lookDir = mousePos - rb.position;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
+        //rb.rotation = angle;
+        
+    }
+
+    public void Dashing(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (dashCounter <= 0 && dashCoolCounter <= 0)
+            {
+                anim.SetTrigger("Dash");
+                speed = DashForce;
+                dashCounter = dashDistance;
+                CreateDust();
+
+            }
+        }
+    }
+
     void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -49,6 +79,11 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
+    }
+
+    void CreateDust()
+    {
+        dashDust.Play();
     }
     
 }

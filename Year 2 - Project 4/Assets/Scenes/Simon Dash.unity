@@ -18237,14 +18237,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.141
       objectReference: {fileID: 0}
-    - target: {fileID: 287248859976157526, guid: 492600349d318804a810ee912aabd56b, type: 3}
-      propertyPath: DashForce
-      value: 100000
-      objectReference: {fileID: 0}
-    - target: {fileID: 287248859976157526, guid: 492600349d318804a810ee912aabd56b, type: 3}
-      propertyPath: dashDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3383183338051999284, guid: 492600349d318804a810ee912aabd56b, type: 3}
       propertyPath: m_Radius
       value: 1.4187022

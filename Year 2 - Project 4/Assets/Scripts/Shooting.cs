@@ -37,7 +37,6 @@ public class Shooting : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        
 
         if (context.performed) 
         {
