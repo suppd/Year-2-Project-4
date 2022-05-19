@@ -41,6 +41,14 @@ public class @UI_Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Options"",
+                    ""type"": ""Button"",
+                    ""id"": ""334d870b-9b68-49db-b1f0-e7a11d99b754"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -206,6 +214,17 @@ public class @UI_Controls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": "";Touch"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""840eb9e2-89b3-40f0-9967-04a16486f98e"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Options"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -786,6 +805,7 @@ public class @UI_Controls : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_Options = m_Player.FindAction("Options", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -850,6 +870,7 @@ public class @UI_Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Options;
     public struct PlayerActions
     {
         private @UI_Controls m_Wrapper;
@@ -857,6 +878,7 @@ public class @UI_Controls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Options => m_Wrapper.m_Player_Options;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -875,6 +897,9 @@ public class @UI_Controls : IInputActionCollection, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Options.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOptions;
+                @Options.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOptions;
+                @Options.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOptions;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -888,6 +913,9 @@ public class @UI_Controls : IInputActionCollection, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Options.started += instance.OnOptions;
+                @Options.performed += instance.OnOptions;
+                @Options.canceled += instance.OnOptions;
             }
         }
     }
@@ -1047,6 +1075,7 @@ public class @UI_Controls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnOptions(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

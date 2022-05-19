@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2453835206104791124}
   - component: {fileID: 359108898158500425}
   - component: {fileID: -8130349832912191246}
+  - component: {fileID: -8818676132795891493}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8507a34b0f3c3ec46a8a1d6bd5494e99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a15aeabd75cb93e49908ce537cfc8f14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
+  LaunchOffset: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   bulletForce: 12
   fireRate: 0.4
@@ -189,7 +191,7 @@ MonoBehaviour:
   score: 0
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
-  myPrefab: {fileID: 7207422589636892560, guid: 083d3ba8438c9774d8af8d8d38492efa, type: 3}
+  EggSploded: {fileID: 0}
 --- !u!114 &5590548397414619007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,21 +278,45 @@ MonoBehaviour:
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightTrigger,/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger,/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 161273018238503362}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Dashing
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 77aa6bbb-243c-46c1-9da4-aa65ce301783
-    m_ActionName: Player/Dash[/XInputControllerWindows/buttonEast]
+      m_Calls: []
+    m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7607c7b6-cd76-4816-beef-bd0341cfe950
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32b35790-4ed0-4e9a-aa41-69ac6d629449
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c7022bf-7922-4f7c-a998-c437916075ad
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0489e84a-4833-4c40-bfae-cea84b696689
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44b200b1-1557-4083-816c-b22cbdf77ddf
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24908448-c609-4bc3-a128-ea258674378a
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -348,6 +374,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff7b71527865a14c82d6b16d7dbddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8818676132795891493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161273018238503366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsCanvas: {fileID: 0}
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +590,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1169307995051289660}
-  - {fileID: 9018341949874134832}
+  - {fileID: 7612313138090841675}
   m_Father: {fileID: 161273018238503367}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -629,7 +668,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9018341949874134832}
+  - component: {fileID: 7612313138090841675}
   - component: {fileID: 341559899574491841}
   - component: {fileID: 175661121052243066}
   m_Layer: 5
