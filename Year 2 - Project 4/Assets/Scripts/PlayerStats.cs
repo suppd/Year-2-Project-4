@@ -17,7 +17,6 @@ public class PlayerStats : MonoBehaviour
     Image HpBar;
     public GameObject player;
     public Animator anim;
-    public GameObject myPrefab;
 
     public AudioClip EggSploded;
 
@@ -55,10 +54,8 @@ public class PlayerStats : MonoBehaviour
 
     public void Die()
     {
-        Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
         AudioSource.PlayClipAtPoint(EggSploded, transform.position);
         anim.SetBool("Death", true);
-        Wait();
         Destroy(player);
 
     }
