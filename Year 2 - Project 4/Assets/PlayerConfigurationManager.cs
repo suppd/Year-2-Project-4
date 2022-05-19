@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class PlayerConfigurationManager : MonoBehaviour
 {
     private List<PlayerConfiguration> playerConfigs;
-
     [SerializeField]
     private int maxPlayers = 2;
 
@@ -18,7 +17,7 @@ public class PlayerConfigurationManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.Log("Trying to create another instance of singleton");
+            Debug.Log("[Singleton] Trying to create another instance of singleton");
         }
         else
         {
@@ -28,14 +27,22 @@ public class PlayerConfigurationManager : MonoBehaviour
         }
     }
 
-    public void SetPlayerSprite(int index, Sprite spriteToSet)
+    public List<PlayerConfiguration> GetPlayerConfigs()
     {
-        playerConfigs[index].playerSprite = spriteToSet;
+        return playerConfigs;
     }
 
-    public void ReadyPlayer(int index)
+    public void SetPlayerSprite(int i, Sprite spriteToSet)
     {
-        playerConfigs[index].isReady = true;
+        Debug.Log("Setting Sprite" + spriteToSet + "to player" + i);
+        playerConfigs[i].playerSprite = spriteToSet;
+    }
+
+    public void ReadyPlayer(int i)
+    {
+        //Debug.Log(playerConfigs.Count);
+        //Debug.Log(i + "is ready");
+        playerConfigs[i].isReady = true;
         if (playerConfigs.Count == maxPlayers && playerConfigs.All(p => p.isReady == true))
         {
             SceneManager.LoadScene("Designer Max");
@@ -44,10 +51,10 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     public void HandlePlayerJoin(PlayerInput pInput)
     {
-        Debug.Log("player joined" + pInput.playerIndex);        
-        if(playerConfigs.Any(p => p.playerIndex == pInput.playerIndex))
-        {
-            pInput.transform.SetParent(transform);
+        Debug.Log("player joined" + pInput.playerIndex);
+        pInput.transform.SetParent(transform);
+        if (!playerConfigs.Any(p => p.playerIndex == pInput.playerIndex))
+        {          
             playerConfigs.Add(new PlayerConfiguration(pInput));
         }
     }
@@ -58,7 +65,7 @@ public class PlayerConfiguration
     public PlayerConfiguration(PlayerInput p1)
     {
         playerIndex = p1.playerIndex;
-        //Input = p1;
+        playerInput = p1;
     }
     public PlayerInput playerInput { get; set; }
     public int playerIndex { get; set; }

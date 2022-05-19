@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     public Vector2 movements;
+    public Vector2 inputVector;
 
     private float horizontal;
     private float vertical;
@@ -18,14 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        playerControls = new PlayerControls();
+        //playerControls = new PlayerControls();
     }
 
     void Update()
     {
 
         movements = new Vector2(horizontal, vertical);
-        rb.velocity = new Vector2(horizontal * speed, vertical *speed);
+        rb.velocity = new Vector2(inputVector.x * speed, inputVector.y *speed);
         anim.SetFloat("Horizontal", horizontal);
         anim.SetFloat("Speed", movements.sqrMagnitude);
      
@@ -37,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
         localscale.x *= -1f;
         transform.localScale = localscale;
     }
+
+    public void SetInputVector(Vector2 vector)
+    {
+        inputVector = vector;
+    }
+    
 
     public void Move(InputAction.CallbackContext context)
     {
