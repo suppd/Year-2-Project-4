@@ -5,32 +5,44 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    PlayerControls playerControls;
-    public float speed = 10f; //Controls velocity multiplier
+    PlayerControls playercontrols;
+    public float speed = 10f; //controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
-    public Vector2 movements;
-    public Timer timer;
-
-    public float DashForce = 20f;
-    public float dashDistance = 0.2f;
-    public float dashDuration = 0.5f;
-    public float cooldownDuration = 1.0f;
-    public ParticleSystem dashDust;
-
-    public bool timeOn;
-    private float bonusSpeed;
-    private float dashCounter, dashCoolCounter;
-    private float nSpeed = 5f;
+    public Vector2 movements;
+
+    public Timer timer;
+
+
+
+    public float dashforce = 20f;
+
+    public float dashdistance = 0.2f;
+
+    public float dashduration = 0.5f;
+
+    public float cooldownduration = 1.0f;
+
+    public ParticleSystem dashdust;
+
+    public Vector2 inputvector;
+
+    public bool timeon;
+
+    private float bonusspeed;
+
+    private float dashcounter, dashcoolcounter;
+    private float nspeed = 5f;
     private float horizontal;
     private float vertical;
-    private bool isFacingRight = true;
-    private bool isFacingLeft = false;
+    private bool isfacingright = true;
+    private bool isfacingleft = false;
+
 
 
     void Awake()
     {
-        playerControls = new PlayerControls();
+        playercontrols = new PlayerControls();
 
     }
 
@@ -38,66 +50,94 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Movement();
-        anim.SetFloat("Horizontal", horizontal);
-        anim.SetFloat("Speed", movements.sqrMagnitude);
-
+        anim.SetFloat("Horizontal", inputvector.x);
+        anim.SetFloat("Speed", movements.SqrMagnitude());
+
+
+
         CheckDash();
-        CheckTimer();
+        //CheckTimer();
+    }
+    public void SetInputVector(Vector2 vector)
+    {
+        inputvector = vector;
+    }
+    void Movement()
+
+    {
+
+        movements = new Vector2(inputvector.x, inputvector.y);
+        rb.velocity = new Vector2(inputvector.x * (speed + bonusspeed), inputvector.y * (speed + bonusspeed));
+
     }
 
-    void Movement()
-    {
-        movements = new Vector2(horizontal, vertical);
-        rb.velocity = new Vector2(horizontal * (speed + bonusSpeed), vertical * (speed + bonusSpeed));
-
+
+
+    public void Dashing(InputAction.CallbackContext context)
+
+    {
+
+        if (context.started)
+
+        {
+
+            if (dashcounter <= 0 && dashcoolcounter <= 0)
+
+            {
+
+                anim.SetTrigger("dash");
+
+                speed = dashforce + bonusspeed;
+
+                dashcounter = dashdistance;
+
+                CreateDust();
+
+
+
+            }
+
+        }
+
     }
 
-    void FixedUpdate()
-    {
-        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-
-        //Vector2 lookDir = mousePos - rb.position;
-        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
-        //rb.rotation = angle;
-
-    }
-
-    public void Dashing(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            if (dashCounter <= 0 && dashCoolCounter <= 0)
-            {
-                anim.SetTrigger("Dash");
-                speed = DashForce + bonusSpeed;
-                dashCounter = dashDistance;
-                CreateDust();
-
-            }
-        }
-    }
+    void CheckDash()
 
-    void CheckDash()
-    {
-        if (dashCounter > 0)
-        {
-            dashCounter -= Time.deltaTime;
-            if (dashCounter <= 0)
-            {
-                speed = nSpeed;
-                dashCoolCounter = dashDuration;
-            }
-        }
-
-        if (dashCoolCounter > 0)
-        {
-            dashCoolCounter -= Time.deltaTime;
-        }
+    {
+
+        if (dashcounter > 0)
+
+        {
+
+            dashcounter -= Time.deltaTime;
+
+            if (dashcounter <= 0)
+
+            {
+
+                speed = nspeed;
+
+                dashcoolcounter = dashduration;
+
+            }
+
+        }
+
+
+
+        if (dashcoolcounter > 0)
+
+        {
+
+            dashcoolcounter -= Time.deltaTime;
+
+        }
+
     }
 
     void Flip()
     {
-        isFacingRight = !isFacingRight;
+        isfacingright = !isfacingright;
         Vector3 localscale = transform.localScale;
         localscale.x *= -1f;
         transform.localScale = localscale;
@@ -111,24 +151,39 @@ public class PlayerMovement : MonoBehaviour
 
     void CreateDust()
     {
-        dashDust.Play();
+        dashdust.Play();
     }
 
-    public void SpeedBoost(float bonusMs)
-    {
-        if (timeOn)
-        {
-            Debug.Log("weee");
-            bonusSpeed = bonusMs;
-        }
-        else
-        {
-            bonusSpeed = 0;
-        }
-
-    }
-    public void CheckTimer()
+    public void SpeedBoost(float bonusms)
+
     {
-        timeOn = timer.timerOn;
-    }
+
+        if (timeon)
+
+        {
+
+            Debug.Log("weee");
+
+            bonusspeed = bonusms;
+
+        }
+
+        else
+
+        {
+
+            bonusspeed = 0;
+
+        }
+
+
+
+    }
+    public void CheckTimer()
+
+    {
+        timeon = timer.timerOn;
+
+    }
+
 }

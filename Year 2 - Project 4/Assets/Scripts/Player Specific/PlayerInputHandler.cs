@@ -42,7 +42,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnMove(obj);
         }
-        if (obj.action.name == controls.Player.Fire.name)
+        if (obj.action.name == controls.Player.Fire2.name)
         {
             OnShoot(obj);
         }
@@ -64,7 +64,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnShoot(CallbackContext context)
     {
         if (shooter != null)
-            shooter.Shoot(context);
+            shooter.Fire2(context);
     }
     public void OnAim(CallbackContext context)
     {

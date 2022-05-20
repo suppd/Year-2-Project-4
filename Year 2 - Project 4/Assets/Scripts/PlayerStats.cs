@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     Image HpBar;
     public GameObject player;
     public Animator anim;
+    public GameObject myPrefab;
 
     public AudioClip EggSploded;
 
