@@ -129,28 +129,6 @@
                 },
                 {
                     "name": "",
-                    "id": "11096820-a7f8-47e8-ad5b-6359615f2dcc",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fb59a8dc-b04d-41f2-a6c2-8cc7a57392b5",
-                    "path": "<Mouse>/press",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f2105cd0-fbfd-49d5-b66f-eb11e6e1bace",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",

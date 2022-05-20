@@ -8,9 +8,7 @@ public class Shooting : MonoBehaviour
     public Transform FirePoint;
     public GameObject bulletPrefab;
 
-    public ProjectileBehaver BombPrefab;
-    public ProjectileBehaver LaunchBombPrefab;
-    public Transform LaunchOffset;
+    
 
     public AudioClip shootSound;
 
@@ -44,9 +42,9 @@ public class Shooting : MonoBehaviour
             if (Time.time > fireRate + lastShot)
             {
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                // SpawnBullet();
-                // lastShot = Time.time;
-                Instantiate(LaunchBombPrefab, LaunchOffset.position, transform.rotation);
+                SpawnBullet();
+                lastShot = Time.time;
+               
             }
 
             //Debug.Log(FirePoint.position);

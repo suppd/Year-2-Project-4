@@ -40,6 +40,21 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
         anim.SetFloat("Horizontal", horizontal);
         anim.SetFloat("Speed", movements.sqrMagnitude);
+
+        if(dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if(dashCounter <= 0)
+            {
+                speed = nSpeed;
+                dashCoolCounter = dashDuration;
+            }
+        }
+
+        if(dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
      
     }
     void FixedUpdate()

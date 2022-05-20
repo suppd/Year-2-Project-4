@@ -42,6 +42,8 @@ public class PlayerStats : MonoBehaviour
 
         if (HP <= 0)
         {
+            Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+            // Invoke("KillPopUp", 5);
             Die();
         }
     }
@@ -55,13 +57,20 @@ public class PlayerStats : MonoBehaviour
 
     public void Die()
     {
-        Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+        // Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+        Invoke("KillPopUp", 5);
         AudioSource.PlayClipAtPoint(EggSploded, transform.position);
         anim.SetBool("Death", true);
-        Wait();
         Destroy(player);
 
     }
+
+    public void KillPopUp()
+    {
+        Debug.Log("Perfect");
+        //        Destroy(myPrefab);
+    }
+    
 
     
 }
