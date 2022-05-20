@@ -10,4 +10,10 @@ public class ManagePlayerInfo : MonoBehaviour
 {
     public PlayerInputManager inputManager;
 
+    public List<PlayerElements> players = new List<PlayerElements>();
+
+    public void AddPlayerToList()
+    {
+        Debug.Log("Player Joined In Lobby");
+    }
 }

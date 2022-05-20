@@ -18,7 +18,7 @@ public class SpriteDisplayManager : MonoBehaviour
     public Transform[] texts;
     public void SetupPlayers(int i)
     {
-        Debug.Log(i);
+        //Debug.Log(i);
         spriteRenderer.sprite = sprites[i];
         animator = animators[i];
         //score.transform.localPosition = (transform.localPosition + new Vector3(500 * i, 0, 0));

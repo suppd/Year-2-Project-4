@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     public float MaxHP = 100;
 
     public int score;
+    public uint ID;
 
     Image HpBar;
     public GameObject player;
@@ -24,6 +25,7 @@ public class PlayerStats : MonoBehaviour
     {
         // UIObject.SetActive(false);
         HpBar = GetComponentInChildren<Image>();
+        //Debug.Log(ID);
     }
 
 
@@ -52,6 +54,11 @@ public class PlayerStats : MonoBehaviour
         {
          
         }
+    }
+
+    public void IncreaseID()
+    {
+        ID = ID++;
     }
 
     public void Die()

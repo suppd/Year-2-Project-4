@@ -9,8 +9,13 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Main Menu.unity
     guid: 728c145e48a9bf848bd7854cef7a9322
+=======
+    path: Assets/Scenes/Lobby.unity
+    guid: 9af2df6bb559b694fba064808709ed8d
+>>>>>>> Edwin
   - enabled: 1
     path: Assets/Scenes/Designer Max.unity
     guid: 51dcbf64722244d82a9afdf4bd0d1baf

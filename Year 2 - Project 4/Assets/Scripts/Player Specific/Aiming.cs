@@ -12,6 +12,7 @@ public class Aiming : MonoBehaviour
     private float horizontal;
     private float vertical;
     private Vector3 position;
+    private Vector2 inputVector;
 
     private float rotateSpeed;
     private float lastAngle;
@@ -53,10 +54,10 @@ public class Aiming : MonoBehaviour
     {
         if (aimStopped == false)
         {
-            position = new Vector2(horizontal, vertical);
+            position = inputVector;
             //Vector3 orbVector = Camera.main.WorldToScreenPoint(player.position);
             //orbVector =  position- orbVector;
-            float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(inputVector.y, inputVector.x) * Mathf.Rad2Deg;
 
             pivot.position = player.position;
             pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
@@ -70,5 +71,15 @@ public class Aiming : MonoBehaviour
             //Debug.Log("Aiming Stopped");
             pivot.rotation = Quaternion.AngleAxis(lastAngle - 90, Vector3.forward);
         }
+    }
+
+    public void SetInputVector(Vector2 vector)
+    {
+        inputVector = vector;
+
+    }
+    public void SetAimingBool(bool aiming)
+    {
+        aimStopped = aiming;
     }
 }
