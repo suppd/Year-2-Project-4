@@ -27,7 +27,23 @@
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Dashing",
+                    "type": "Button",
+                    "id": "c26e5fda-df2e-4bdd-8324-6c24a6727611",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Fire2",
+                    "type": "Button",
+                    "id": "fc9f9fbe-db65-449f-84f5-6a5c5f2a2a7d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 }
             ],
             "bindings": [
@@ -193,6 +209,50 @@
                     "processors": "",
                     "groups": ";Touch",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04a66b69-aeed-4bb7-925b-e4942c194853",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Dashing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7bb5df9-eb36-4a29-a6d8-5eb69fd499f1",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Fire2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d95f144-a0ba-4352-a2eb-a25f39a4c308",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Fire2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23b42299-1870-4799-a6b2-4b618ddc0066",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "Fire2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

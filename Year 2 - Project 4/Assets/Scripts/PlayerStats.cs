@@ -58,7 +58,6 @@ public class PlayerStats : MonoBehaviour
         Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
         AudioSource.PlayClipAtPoint(EggSploded, transform.position);
         anim.SetBool("Death", true);
-        Wait();
         Destroy(player);
 
     }

@@ -40,7 +40,23 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Dashing"",
+                    ""type"": ""Button"",
+                    ""id"": ""c26e5fda-df2e-4bdd-8324-6c24a6727611"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Fire2"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc9f9fbe-db65-449f-84f5-6a5c5f2a2a7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
@@ -206,6 +222,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": "";Touch"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04a66b69-aeed-4bb7-925b-e4942c194853"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Dashing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7bb5df9-eb36-4a29-a6d8-5eb69fd499f1"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d95f144-a0ba-4352-a2eb-a25f39a4c308"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23b42299-1870-4799-a6b2-4b618ddc0066"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Touch"",
+                    ""action"": ""Fire2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -786,6 +846,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_Dashing = m_Player.FindAction("Dashing", throwIfNotFound: true);
+        m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -850,6 +912,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Dashing;
+    private readonly InputAction m_Player_Fire2;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -857,6 +921,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Dashing => m_Wrapper.m_Player_Dashing;
+        public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -875,6 +941,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Dashing.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
+                @Dashing.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
+                @Dashing.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashing;
+                @Fire2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Fire2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Fire2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -888,6 +960,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Dashing.started += instance.OnDashing;
+                @Dashing.performed += instance.OnDashing;
+                @Dashing.canceled += instance.OnDashing;
+                @Fire2.started += instance.OnFire2;
+                @Fire2.performed += instance.OnFire2;
+                @Fire2.canceled += instance.OnFire2;
             }
         }
     }
@@ -1047,6 +1125,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnDashing(InputAction.CallbackContext context);
+        void OnFire2(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
