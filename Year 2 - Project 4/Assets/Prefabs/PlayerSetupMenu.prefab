@@ -764,6 +764,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5227844318211102710}
+        m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
+        m_MethodName: SetAnimator
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22100000, guid: f1ddb3cd27e3cca4b831d39b03920b07, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimatorOverrideController,
+            UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5952745873334709993
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +910,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5227844318211102710}
+        m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
+        m_MethodName: SetAnimator
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22100000, guid: d8bc799cc05be4945a6add60772ff900, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimatorOverrideController,
+            UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5952745873356805959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1051,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 8507a34b0f3c3ec46a8a1d6bd5494e99, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5227844318211102710}
+        m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
+        m_MethodName: SetAnimator
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22100000, guid: 50d1ecbfd4a9d5847bc90af48b7e5618, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimatorOverrideController,
+            UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1830,6 +1869,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 8507a34b0f3c3ec46a8a1d6bd5494e99, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5227844318211102710}
+        m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
+        m_MethodName: SetAnimator
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 22100000, guid: e451ac840ffe49a43b120de87b0b07e1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimatorOverrideController,
+            UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

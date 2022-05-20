@@ -38,6 +38,11 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[i].playerSprite = spriteToSet;
     }
 
+    public void SetAnimator(int i, AnimatorOverrideController animOverride)
+    {
+        playerConfigs[i].animatorOverrideController = animOverride;
+    }
+
     public void ReadyPlayer(int i)
     {
         //Debug.Log(playerConfigs.Count);
@@ -73,4 +78,6 @@ public class PlayerConfiguration
     public bool isReady { get; set; }
 
     public Sprite playerSprite { get; set; }
+
+    public AnimatorOverrideController animatorOverrideController { get; set; }
 }

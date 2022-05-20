@@ -24,10 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-        movements = new Vector2(horizontal, vertical);
+        movements = new Vector2(inputVector.x, inputVector.y);
         rb.velocity = new Vector2(inputVector.x * speed, inputVector.y *speed);
-        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Horizontal", inputVector.x);
         anim.SetFloat("Speed", movements.sqrMagnitude);
      
     }

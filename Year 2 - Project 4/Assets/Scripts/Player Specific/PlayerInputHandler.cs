@@ -14,6 +14,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer sprite;
+    [SerializeField]
+    private Animator animator;
 
     private PlayerControls controls;
 
@@ -23,12 +25,14 @@ public class PlayerInputHandler : MonoBehaviour
         aimer = GetComponentInChildren<Aiming>();
         shooter = GetComponent<Shooting>();
         controls = new PlayerControls();
+        animator = GetComponent<Animator>();
     }
 
     public void InitializePlayer(PlayerConfiguration config)
     {
         playerConfig = config;
         sprite.sprite = config.playerSprite;
+        animator.runtimeAnimatorController = config.animatorOverrideController;
         config.playerInput.onActionTriggered += Input_onActionTriggered;
     }
 
@@ -46,6 +50,10 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnAim(obj);
         }
+        //if (obj.action.name == controls.Player.Dash.name)
+        //{
+        //    OnDash(obj);
+        //}
     }
 
     public void OnMove(CallbackContext context)
@@ -70,9 +78,5 @@ public class PlayerInputHandler : MonoBehaviour
         {
             aimer.SetAimingBool(false);
         }
-        
-           
-        
     }
-
 }

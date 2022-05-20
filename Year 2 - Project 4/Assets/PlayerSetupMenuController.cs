@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 public class PlayerSetupMenuController : MonoBehaviour
 {
     private int playerIndex;
-
     [SerializeField]
     private TextMeshProUGUI titleText;
     [SerializeField]
@@ -38,12 +38,15 @@ public class PlayerSetupMenuController : MonoBehaviour
     public void SetSprite(Sprite sprite)
     {
         if (!inputEnabled) { return; }
-
         PlayerConfigurationManager.Instance.SetPlayerSprite(playerIndex, sprite);
         readyPanel.SetActive(true);
         readyButton.interactable = true;
         menuPanel.SetActive(false);
         readyButton.Select();
+    }
+    public void SetAnimator(AnimatorOverrideController animatorOverrideController)
+    {
+        PlayerConfigurationManager.Instance.SetAnimator(playerIndex, animatorOverrideController);
     }
 
     public void ReadyPlayer()
