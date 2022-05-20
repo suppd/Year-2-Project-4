@@ -9,77 +9,90 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f; //Controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
-    public Vector2 movements;
-
-    public float DashForce = 20f;
-    public float dashDistance = 0.2f;
-    public float dashDuration = 0.5f;
-    public float cooldownDuration = 1.0f;
-    public ParticleSystem dashDust;
-
+    public Vector2 movements;
+    public Timer timer;
+
+    public float DashForce = 20f;
+    public float dashDistance = 0.2f;
+    public float dashDuration = 0.5f;
+    public float cooldownDuration = 1.0f;
+    public ParticleSystem dashDust;
+
+    public bool timeOn;
+    private float bonusSpeed;
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
     private float horizontal;
     private float vertical;
     private bool isFacingRight = true;
-    private bool isFacingLeft = false;
+    private bool isFacingLeft = false;
 
-    [SerializeField]
-
-    private GameObject dashParticle;
 
     void Awake()
     {
         playerControls = new PlayerControls();
+
     }
 
     void Update()
     {
 
-        movements = new Vector2(horizontal, vertical);
-        rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+        Movement();
         anim.SetFloat("Horizontal", horizontal);
-        anim.SetFloat("Speed", movements.sqrMagnitude);
-
-        if(dashCounter > 0)
-        {
-            dashCounter -= Time.deltaTime;
-            if(dashCounter <= 0)
-            {
-                speed = nSpeed;
-                dashCoolCounter = dashDuration;
-            }
-        }
-
-        if(dashCoolCounter > 0)
-        {
-            dashCoolCounter -= Time.deltaTime;
-        }
-     
+        anim.SetFloat("Speed", movements.sqrMagnitude);
+
+        CheckDash();
+        CheckTimer();
     }
+
+    void Movement()
+    {
+        movements = new Vector2(horizontal, vertical);
+        rb.velocity = new Vector2(horizontal * (speed + bonusSpeed), vertical * (speed + bonusSpeed));
+
+    }
+
     void FixedUpdate()
-    {
-        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-
-        //Vector2 lookDir = mousePos - rb.position;
-        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
-        //rb.rotation = angle;
-        
+    {
+        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        //Vector2 lookDir = mousePos - rb.position;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
+        //rb.rotation = angle;
+
+    }
+
+    public void Dashing(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (dashCounter <= 0 && dashCoolCounter <= 0)
+            {
+                anim.SetTrigger("Dash");
+                speed = DashForce + bonusSpeed;
+                dashCounter = dashDistance;
+                CreateDust();
+
+            }
+        }
     }
 
-    public void Dashing(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            if (dashCounter <= 0 && dashCoolCounter <= 0)
-            {
-                anim.SetTrigger("Dash");
-                speed = DashForce;
-                dashCounter = dashDistance;
-                CreateDust();
-
-            }
-        }
+    void CheckDash()
+    {
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                speed = nSpeed;
+                dashCoolCounter = dashDuration;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
     }
 
     void Flip()
@@ -100,5 +113,22 @@ public class PlayerMovement : MonoBehaviour
     {
         dashDust.Play();
     }
-    
+
+    public void SpeedBoost(float bonusMs)
+    {
+        if (timeOn)
+        {
+            Debug.Log("weee");
+            bonusSpeed = bonusMs;
+        }
+        else
+        {
+            bonusSpeed = 0;
+        }
+
+    }
+    public void CheckTimer()
+    {
+        timeOn = timer.timerOn;
+    }
 }

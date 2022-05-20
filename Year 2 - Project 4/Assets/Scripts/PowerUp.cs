@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public void PowerUp1()
+
+    public void SpeedPower()
     {
         //do somethign cool
+        
     }
 }

@@ -7,10 +7,8 @@ public class Shooting : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject bulletPrefab;
-
-    
-
     public AudioClip shootSound;
+    public Animator anima;
 
     public float bulletForce = 15f;
     [SerializeField]
@@ -33,18 +31,27 @@ public class Shooting : MonoBehaviour
         //}
     }
 
-    public void Shoot(InputAction.CallbackContext context)
+    public void Fire(InputAction.CallbackContext context)
     {
 
         if (context.performed) 
         {
-            
+            anima.SetTrigger("Shoot1");
+        }
+    }
+
+    public void Fire2(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+
             if (Time.time > fireRate + lastShot)
             {
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                SpawnBullet();
+                anima.SetTrigger("Shoot2");
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                SpawnBullet();
                 lastShot = Time.time;
-               
             }
 
             //Debug.Log(FirePoint.position);
