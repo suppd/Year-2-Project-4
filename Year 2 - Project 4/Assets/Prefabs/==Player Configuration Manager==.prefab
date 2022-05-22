@@ -90,8 +90,16 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 97a5dfab-fddd-4047-a4bd-e745da5751ee
+        m_Id: 8fe4f171-c4c8-4a29-ae2d-28e18eea5e67
         m_Path: <Gamepad>/buttonSouth
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 614940f1-9810-40f5-b20c-d492262b3951
+        m_Path: <Joystick>/stick
         m_Interactions: 
         m_Processors: 
         m_Groups: 

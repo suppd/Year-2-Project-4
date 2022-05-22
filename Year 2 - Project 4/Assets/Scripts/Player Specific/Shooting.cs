@@ -17,47 +17,40 @@ public class Shooting : MonoBehaviour
 
     //public string shooter { get; set; }
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetButtonDown("Fire1"))
-        //{
-        //    shoot();
-        //}
-    }
-
     public void Fire(InputAction.CallbackContext context)
     {
 
-        if (context.performed) 
+        if (context.performed)
         {
-            anima.SetTrigger("Shoot1");
-        }
-    }
-
-    public void Fire2(InputAction.CallbackContext context)
-    {
-
-        if (context.performed)
-        {
-
             if (Time.time > fireRate + lastShot)
             {
-                anima.SetTrigger("Shoot2");
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                SpawnBullet();
+                anima.SetTrigger("Shoot1");
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                SpawnBullet();
                 lastShot = Time.time;
             }
-
-            //Debug.Log(FirePoint.position);
         }
     }
 
+
+
+    public void Fire2(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            //anima.SetTrigger("Shoot1");
+            if (Time.time > fireRate + lastShot)
+            {
+                anima.SetTrigger("Shoot2");
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                SpawnBullet();
+                lastShot = Time.time;
+            }
+        }
+
+       
+    }
     void SpawnBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);

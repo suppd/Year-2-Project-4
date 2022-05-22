@@ -42,18 +42,22 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnMove(obj);
         }
-        if (obj.action.name == controls.Player.Fire2.name)
+        if (obj.action.name == controls.Player.Fire.name)
         {
             OnShoot(obj);
         }
+        //if (obj.action.name == controls.Player.Fire2.name)
+        //{
+        //    OnShoot2(obj);
+        //}
         if(obj.action.name == controls.Player.Look.name)
         {
             OnAim(obj);
         }
-        //if (obj.action.name == controls.Player.Dash.name)
-        //{
-        //    OnDash(obj);
-        //}
+        if (obj.action.name == controls.Player.Dashing.name)
+        {
+            OnDash(obj);
+        }
     }
 
     public void OnMove(CallbackContext context)
@@ -62,6 +66,11 @@ public class PlayerInputHandler : MonoBehaviour
             mover.SetInputVector(context.ReadValue<Vector2>());
     }
     public void OnShoot(CallbackContext context)
+    {
+        if (shooter != null)
+            shooter.Fire(context);
+    }
+    public void OnShoot2(CallbackContext context)
     {
         if (shooter != null)
             shooter.Fire2(context);
@@ -77,6 +86,14 @@ public class PlayerInputHandler : MonoBehaviour
         else if (context.started)
         {
             aimer.SetAimingBool(false);
+        }
+    }
+
+    public void OnDash(CallbackContext context)
+    {
+        if (mover != null)
+        {
+            mover.Dashing(context);
         }
     }
 }

@@ -63,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
         inputvector = vector;
     }
     void Movement()
-
     {
 
         movements = new Vector2(inputvector.x, inputvector.y);
@@ -74,61 +73,38 @@ public class PlayerMovement : MonoBehaviour
 
 
     public void Dashing(InputAction.CallbackContext context)
-
     {
-
         if (context.started)
-
         {
-
             if (dashcounter <= 0 && dashcoolcounter <= 0)
-
             {
-
-                anim.SetTrigger("dash");
+                anim.SetTrigger("Dash");
 
                 speed = dashforce + bonusspeed;
 
                 dashcounter = dashdistance;
 
                 CreateDust();
-
-
-
             }
-
         }
-
     }
 
     void CheckDash()
-
     {
-
         if (dashcounter > 0)
-
         {
-
             dashcounter -= Time.deltaTime;
-
             if (dashcounter <= 0)
-
             {
-
                 speed = nspeed;
 
                 dashcoolcounter = dashduration;
-
             }
-
         }
-
-
 
         if (dashcoolcounter > 0)
 
         {
-
             dashcoolcounter -= Time.deltaTime;
 
         }
@@ -155,21 +131,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SpeedBoost(float bonusms)
-
     {
-
         if (timeon)
-
         {
-
             Debug.Log("weee");
 
             bonusspeed = bonusms;
-
         }
 
         else
-
         {
 
             bonusspeed = 0;
