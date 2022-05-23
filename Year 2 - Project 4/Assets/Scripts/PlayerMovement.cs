@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f; //controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
-    public Vector2 movements;
+    public Vector2 movements;    public Vector2 inputVector;
     public Timer timer;
 
     public float bonusSpeed = 0;
@@ -39,24 +39,20 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movement();
-        anim.SetFloat("Horizontal", inputvector.x);
+        anim.SetFloat("Horizontal", inputVector.x);
+        anim.SetFloat("Vertical", inputVector.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
-
-
-
         CheckDash();
         //CheckTimer();
     }
     public void SetInputVector(Vector2 vector)
     {
-        inputvector = vector;
+        inputVector = vector;
     }
     void Movement()
     {
-
-        movements = new Vector2(inputvector.x, inputvector.y);
-        rb.velocity = new Vector2(inputvector.x * (speed + bonusspeed), inputvector.y * (speed + bonusspeed));
-
+        movements = new Vector2(inputVector.x, inputVector.y);
+        rb.velocity = new Vector2(inputVector.x * (speed + bonusSpeed), inputVector.y * (speed + bonusSpeed));
     }
 
 
@@ -65,13 +61,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started)
         {
-            if (dashcounter <= 0 && dashcoolcounter <= 0)
+            if (dashCounter <= 0 && dashCoolCounter <= 0)
             {
                 anim.SetTrigger("Dash");
 
-                speed = dashforce + bonusspeed;
+                speed = DashForce + bonusSpeed;
 
-                dashcounter = dashdistance;
+                dashCounter = dashDistance;
 
                 CreateDust();
             }
@@ -80,21 +76,21 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckDash()
     {
-        if (dashcounter > 0)
+        if (dashCounter > 0)
         {
-            dashcounter -= Time.deltaTime;
-            if (dashcounter <= 0)
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
             {
-                speed = nspeed;
+                speed = nSpeed;
 
-                dashcoolcounter = dashduration;
+                dashCoolCounter = dashDuration;
             }
         }
 
-        if (dashcoolcounter > 0)
+        if (dashCoolCounter > 0)
 
         {
-            dashcoolcounter -= Time.deltaTime;
+            dashCoolCounter -= Time.deltaTime;
 
         }
 
@@ -116,26 +112,23 @@ public class PlayerMovement : MonoBehaviour
 
     void CreateDust()
     {
-        dashdust.Play();
+        dashDust.Play();
     }
 
-    public void SpeedBoost()
-    {
-        
-        if (timer.timerOn)
-        {
-            bonusSpeed = 10f;
-        }
-        else
-        {
-            bonusSpeed = 0;
-        }
-
+    public void SpeedBoost()
+    {
+        if (timer.timerOn)
+        {
+            bonusSpeed = 10f;
+        }
+        else
+        {            bonusSpeed = 0;
+        }
     }
     public void CheckTimer()
 
     {
-        timeon = timer.timerOn;
+        timeOn = timer.timerOn;
 
     }
 
