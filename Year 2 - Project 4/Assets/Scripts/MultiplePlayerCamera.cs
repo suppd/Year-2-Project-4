@@ -8,6 +8,7 @@ public class MultiplePlayerCamera : MonoBehaviour
     public List<Transform> targets;
 
     public Vector3 offset;
+    private GameObject[] players;
 
 
     void LateUpdate()
@@ -36,5 +37,20 @@ public class MultiplePlayerCamera : MonoBehaviour
         }
 
         return bounds.center;
+    }
+
+    private void Update()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            targets.Add(player.transform);
+        }
+        Debug.Log(targets.Count);
+
+        if (targets.Count > 4)
+        {
+            targets.RemoveAt(5);
+        }
     }
 }
