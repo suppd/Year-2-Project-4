@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         {
             GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
             Destroy(killEffect);
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(10);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(50);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
             Debug.Log("shot other player");           
