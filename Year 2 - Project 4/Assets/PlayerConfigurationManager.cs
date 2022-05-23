@@ -15,6 +15,8 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
+
         if (Instance != null)
         {
             Debug.Log("[Singleton] Trying to create another instance of singleton");

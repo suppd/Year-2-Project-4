@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     PlayerControls playercontrols;
-    public float speed = 10f; //controls velocity multiplier
+    public float speed = 5f; //controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
     public Vector2 movements;    public Vector2 inputVector;
@@ -115,21 +115,21 @@ public class PlayerMovement : MonoBehaviour
         dashDust.Play();
     }
 
-    public void SpeedBoost()
-    {
-        if (timer.timerOn)
-        {
-            bonusSpeed = 10f;
-        }
-        else
-        {            bonusSpeed = 0;
-        }
-    }
-    public void CheckTimer()
+    //public void SpeedBoost()
+    //{
+    //    if (timer.timerOn)
+    //    {
+    //        bonusSpeed = 10f;
+    //    }
+    //    else
+    //    {    //        bonusSpeed = 0;
+    //    }
+    //}
+    //public void CheckTimer()
 
-    {
-        timeOn = timer.timerOn;
+    //{
+    //    timeOn = timer.timerOn;
 
-    }
+    //}
 
 }

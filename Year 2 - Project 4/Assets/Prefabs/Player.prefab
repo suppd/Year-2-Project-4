@@ -147,18 +147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a05d2469bd8f74d90e62d4a361a76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
   movements: {x: 0, y: 0}
+  inputVector: {x: 0, y: 0}
   timer: {fileID: 0}
-  dashforce: 20
-  dashdistance: 0.2
-  dashduration: 0.5
-  cooldownduration: 1
-  dashdust: {fileID: 7748011786272718361}
-  inputvector: {x: 0, y: 0}
-  timeon: 0
+  bonusSpeed: 0
+  DashForce: 10
+  dashDistance: 0.2
+  dashDuration: 0.5
+  cooldownDuration: 2
+  dashDust: {fileID: 0}
+  timeOn: 0
 --- !u!58 &3383183338051999284
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -856,10 +857,5 @@ PrefabInstance:
 --- !u!4 &7748011786272718362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4212909502405747179, guid: d17239f4332d34cdd8aebe2a1f0414e6, type: 3}
-  m_PrefabInstance: {fileID: 5904559359422111729}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7748011786272718361 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4212909502405747176, guid: d17239f4332d34cdd8aebe2a1f0414e6, type: 3}
   m_PrefabInstance: {fileID: 5904559359422111729}
   m_PrefabAsset: {fileID: 0}
