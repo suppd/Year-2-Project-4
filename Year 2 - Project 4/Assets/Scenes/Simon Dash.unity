@@ -1886,14 +1886,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7622284967561494561, guid: 6e1c7fafe136b8c40b7c85dfd582eb0c, type: 3}
-      propertyPath: timer
-      value: 
-      objectReference: {fileID: 6767159864775996600, guid: 492600349d318804a810ee912aabd56b, type: 3}
-    - target: {fileID: 7622284967561494561, guid: 6e1c7fafe136b8c40b7c85dfd582eb0c, type: 3}
-      propertyPath: bonusSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8736698965563160304, guid: 6e1c7fafe136b8c40b7c85dfd582eb0c, type: 3}
       propertyPath: m_RootOrder
       value: 1

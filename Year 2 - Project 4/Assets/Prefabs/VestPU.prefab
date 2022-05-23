@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8736698965563160304}
   - component: {fileID: 8736698965563160305}
   - component: {fileID: 8736698965563160310}
-  - component: {fileID: 3767305084223935797}
+  - component: {fileID: -7287655482905969182}
   m_Layer: 0
-  m_Name: PowerUp
+  m_Name: VestPU
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &3767305084223935797
+--- !u!114 &-7287655482905969182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8736698965563160311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7777d293ab589f48b5317b35b098001, type: 3}
+  m_Script: {fileID: 11500000, guid: af6b29d67473efb4a92d14db22c994ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 2

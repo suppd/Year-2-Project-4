@@ -16,7 +16,6 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(timeLeft);
         if (timerOn)
         {
             if (timeLeft > 0)

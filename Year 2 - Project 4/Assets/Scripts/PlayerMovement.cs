@@ -9,30 +9,20 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f; //controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
-    public Vector2 movements;
-
-    public Timer timer;
-
-
-
-    public float dashforce = 20f;
-
-    public float dashdistance = 0.2f;
-
-    public float dashduration = 0.5f;
-
-    public float cooldownduration = 1.0f;
-
-    public ParticleSystem dashdust;
-
-    public Vector2 inputvector;
-
-    public bool timeon;
-
-    private float bonusspeed;
-
-    private float dashcounter, dashcoolcounter;
-    private float nspeed = 5f;
+    public Vector2 movements;
+    public Timer timer;
+
+    public float bonusSpeed = 0;
+    public float DashForce = 20f;
+    public float dashDistance = 0.2f;
+    public float dashDuration = 0.5f;
+    public float cooldownDuration = 1.0f;
+    public ParticleSystem dashDust;
+
+    public bool timeOn;
+    
+    private float dashCounter, dashCoolCounter;
+    private float nSpeed = 5f;
     private float horizontal;
     private float vertical;
     private bool isfacingright = true;
@@ -48,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         Movement();
         anim.SetFloat("Horizontal", inputvector.x);
         anim.SetFloat("Speed", movements.SqrMagnitude());
@@ -130,24 +119,18 @@ public class PlayerMovement : MonoBehaviour
         dashdust.Play();
     }
 
-    public void SpeedBoost(float bonusms)
-    {
-        if (timeon)
-        {
-            Debug.Log("weee");
-
-            bonusspeed = bonusms;
-        }
-
-        else
-        {
-
-            bonusspeed = 0;
-
-        }
-
-
-
+    public void SpeedBoost()
+    {
+        
+        if (timer.timerOn)
+        {
+            bonusSpeed = 10f;
+        }
+        else
+        {
+            bonusSpeed = 0;
+        }
+
     }
     public void CheckTimer()
 
