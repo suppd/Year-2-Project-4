@@ -6,12 +6,13 @@ public class SpeedBoostPower : MonoBehaviour
 {
 
     public float bonusSpeed = 20f;
-    public Timer timer;
+    Timer timer;
+    [SerializeField] GameObject player;
 
     // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        timer = player.GetComponent<Timer>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -19,10 +20,9 @@ public class SpeedBoostPower : MonoBehaviour
         if(collision.tag == "Player")
         {
             timer.timerOn = true;
-            collision.GetComponent<PlayerMovement>().SpeedBoost(bonusSpeed);
             
-            //Debug.Log("speed boosting");
-            Destroy(gameObject);
+            collision.GetComponent<PlayerMovement>().SpeedBoost();
+            Destroy(gameObject); 
         }
     }
 }

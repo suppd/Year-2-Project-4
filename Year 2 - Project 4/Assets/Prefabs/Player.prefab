@@ -15,12 +15,10 @@ GameObject:
   - component: {fileID: 161273018238503362}
   - component: {fileID: 3383183338051999284}
   - component: {fileID: 3551908255657454723}
-  - component: {fileID: 5590548397414619007}
   - component: {fileID: 4650708730441958946}
   - component: {fileID: 2453835206104791124}
   - component: {fileID: 359108898158500425}
   - component: {fileID: -8130349832912191246}
-  - component: {fileID: 6767159864775996600}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -152,7 +150,8 @@ MonoBehaviour:
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
   movements: {x: 0, y: 0}
-  timer: {fileID: 6767159864775996600}
+  timer: {fileID: 0}
+  bonusSpeed: 0
   DashForce: 10
   dashDistance: 0.2
   dashDuration: 1
@@ -194,18 +193,6 @@ MonoBehaviour:
   anim: {fileID: 2453835206104791124}
   myPrefab: {fileID: 7207422589636892560, guid: 083d3ba8438c9774d8af8d8d38492efa, type: 3}
   EggSploded: {fileID: 8300000, guid: fc321464285eb4131bb3a26e4d28ee76, type: 3}
---- !u!114 &5590548397414619007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161273018238503366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7777d293ab589f48b5317b35b098001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4650708730441958946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,20 +407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff7b71527865a14c82d6b16d7dbddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6767159864775996600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161273018238503366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6394a8bdab31742b840768d3c358a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeLeft: 2
-  timerOn: 0
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0

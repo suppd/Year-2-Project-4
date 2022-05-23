@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 movements;
     public Timer timer;
 
+    public float bonusSpeed = 0;
     public float DashForce = 20f;
     public float dashDistance = 0.2f;
     public float dashDuration = 0.5f;
@@ -19,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem dashDust;
 
     public bool timeOn;
-    private float bonusSpeed;
+    
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
     private float horizontal;
@@ -36,13 +37,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         Movement();
         anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Vertical", vertical);
         anim.SetFloat("Speed", movements.sqrMagnitude);
-
+        Debug.Log(bonusSpeed);
         CheckDash();
-        CheckTimer();
+
+
     }
 
     void Movement()
@@ -114,12 +116,12 @@ public class PlayerMovement : MonoBehaviour
         dashDust.Play();
     }
 
-    public void SpeedBoost(float bonusMs)
+    public void SpeedBoost()
     {
-        if (timeOn)
+        
+        if (timer.timerOn)
         {
-            Debug.Log("weee");
-            bonusSpeed = bonusMs;
+            bonusSpeed = 10f;
         }
         else
         {
