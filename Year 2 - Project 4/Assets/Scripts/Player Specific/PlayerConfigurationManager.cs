@@ -52,7 +52,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[i].isReady = true;
         if (playerConfigs.Count == maxPlayers && playerConfigs.All(p => p.isReady == true))
         {
-            SceneManager.LoadScene("Edwin");
+            SceneManager.LoadScene("Simon Dash");
         }
     }
 
