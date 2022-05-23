@@ -10,6 +10,10 @@ public class PlayerConfigurationManager : MonoBehaviour
     private List<PlayerConfiguration> playerConfigs;
     [SerializeField]
     private int maxPlayers = 2;
+    [SerializeField]
+    private GameObject playerPrefab;
+    [SerializeField]
+    private Transform[] playerSpawns;
 
     public static PlayerConfigurationManager Instance { get; private set; }
 
@@ -64,6 +68,17 @@ public class PlayerConfigurationManager : MonoBehaviour
         {          
             playerConfigs.Add(new PlayerConfiguration(pInput));
         }
+    }
+
+    public void HandleEasyPlayerJoin(PlayerInput pInput)
+    {
+        Debug.Log("player joined" + pInput.playerIndex);
+        pInput.transform.SetParent(transform);
+        //if (!playerConfigs.Any(p => p.playerIndex == pInput.playerIndex))
+        //{
+            //playerConfigs.Add(new PlayerConfiguration(pInput));
+            Instantiate(playerPrefab, playerSpawns[pInput.playerIndex]);
+        //}
     }
 }
 

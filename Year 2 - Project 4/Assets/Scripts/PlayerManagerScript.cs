@@ -17,14 +17,13 @@ public class PlayerManagerScript : MonoBehaviour
 
     private void Awake()
     {
-        //playerInputManager.onPlayerJoined;
+        
         //playerPrefab.name = "Player";
 
     }
 
-    // TODO: unsubscribe!
 
-    public void OnPlayerJoined(PlayerInput player)
+    public void OnPlayerJoined()
     {
         Debug.Log("player joined!");
 
@@ -37,14 +36,4 @@ public class PlayerManagerScript : MonoBehaviour
         
 
     }
-
-    private void Update()
-    {
-    }
-    // test/demo method:
-    //public void ShowScoreChange(string playerName)
-    //{
-    //    Debug.Log(playerName + " scored a point");
-    //}
-
 }
