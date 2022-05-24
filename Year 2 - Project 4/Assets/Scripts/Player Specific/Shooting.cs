@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public AudioClip shootSound;
     public Animator anima;
+    public bool nadeOn;
 
     public float bulletForce = 15f;
     [SerializeField]
@@ -16,36 +17,39 @@ public class Shooting : MonoBehaviour
     private float lastShot = 0.0f;
 
     //public string shooter { get; set; }
-
-    public void Fire(InputAction.CallbackContext context)
+    private void Awake()
+    {
+        nadeOn = false;
+    }
+    public void Fire1(InputAction.CallbackContext context)
     {
 
         if (context.performed)
         {
-            if (Time.time > fireRate + lastShot)
-            {
-                anima.SetTrigger("Shoot1");
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                SpawnBullet();
-                lastShot = Time.time;
-            }
+                anima.SetTrigger("Shoot1");    
         }
     }
 
-
+ 
 
     public void Fire2(InputAction.CallbackContext context)
     {
-
         if (context.performed)
         {
-            //anima.SetTrigger("Shoot1");
             if (Time.time > fireRate + lastShot)
             {
-                anima.SetTrigger("Shoot2");
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                SpawnBullet();
-                lastShot = Time.time;
+                if (nadeOn)
+                {
+                    //play nade
+                }
+                else
+                {
+                    anima.SetTrigger("Shoot2");
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                    //SpawnBullet();
+                    lastShot = Time.time;
+                }
+
             }
         }
 
@@ -60,6 +64,13 @@ public class Shooting : MonoBehaviour
         //bullet.GetComponent<Bullet>().shotFrom = shooter;
         ////Debug.Log(this.shooter);
         ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
+    }
+
+    void SpawnNade()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 
 }
