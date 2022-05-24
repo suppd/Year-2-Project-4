@@ -5,22 +5,36 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private TrailRenderer tr;
     PlayerControls playercontrols;
     public float speed = 5f; //controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
-    public Vector2 movements;    public Vector2 inputVector;
-    public Timer timer;
-
-    public float bonusSpeed = 0;
-    public float DashForce = 20f;
-    public float dashDistance = 0.2f;
-    public float dashDuration = 0.5f;
-    public float cooldownDuration = 1.0f;
-    public ParticleSystem dashDust;
-
-    public bool timeOn;
-    
+    public Vector2 movements;
+    public Vector2 inputVector;
+
+    public Timer timer;
+
+
+
+    public float bonusSpeed = 0;
+
+    public float DashForce = 20f;
+
+    public float dashDistance = 0.2f;
+
+    public float dashDuration = 0.5f;
+
+    public float cooldownDuration = 1.0f;
+
+    public ParticleSystem dashDust;
+
+
+
+    public bool timeOn;
+
+    
+
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
     private float horizontal;
@@ -33,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playercontrols = new PlayerControls();
-
     }
 
     void Update()
@@ -65,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetTrigger("Dash");
 
+                tr.emitting = true;
+                
                 speed = DashForce + bonusSpeed;
 
                 dashCounter = dashDistance;
@@ -81,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
             dashCounter -= Time.deltaTime;
             if (dashCounter <= 0)
             {
+                tr.emitting = false;
+
                 speed = nSpeed;
 
                 dashCoolCounter = dashDuration;
@@ -91,7 +108,6 @@ public class PlayerMovement : MonoBehaviour
 
         {
             dashCoolCounter -= Time.deltaTime;
-
         }
 
     }
@@ -122,7 +138,8 @@ public class PlayerMovement : MonoBehaviour
     //        bonusSpeed = 10f;
     //    }
     //    else
-    //    {    //        bonusSpeed = 0;
+    //    {
+    //        bonusSpeed = 0;
     //    }
     //}
     //public void CheckTimer()
