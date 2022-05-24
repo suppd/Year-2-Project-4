@@ -131,7 +131,8 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
-                    collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    //collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    //GetComponent<CircleCollider2D>().enabled = true;
                 }
             }
 
@@ -141,9 +142,13 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DashWall(Collision2D wall)
     {
-        wall.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //wall.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //yield return new WaitForSeconds(0.4f);
+        //wall.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
+        GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.4f);
-        wall.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<CircleCollider2D>().enabled = true;
     }
 
 
