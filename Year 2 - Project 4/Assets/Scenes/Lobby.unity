@@ -483,15 +483,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
       value: 6bd0b672-b010-4e13-b8ca-0a30103bb130
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 73f335a5-65b9-4bc0-8c4e-b14306367e99
+      objectReference: {fileID: 0}
+    - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Gamepad>/buttonSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/e
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090047, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_RootOrder
