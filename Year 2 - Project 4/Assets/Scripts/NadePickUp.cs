@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class NadePickUp : MonoBehaviour
 {
-    public float duration = 3f;
+    public float duration;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(PickUp(other));
+            PickUp(other);
         }
     }
 
-    IEnumerator PickUp(Collider2D player)
+    void PickUp(Collider2D player)
     {
         Shooting stats = player.GetComponent<Shooting>();
-    //    stats.dashAllow = true;
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<CircleCollider2D>().enabled = false;
-        yield return new WaitForSeconds(duration);
-
-      //  stats.dashAllow = false;
+        stats.nadeOn = true;     
         Destroy(gameObject);
     }
 }

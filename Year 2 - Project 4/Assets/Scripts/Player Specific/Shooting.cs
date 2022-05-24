@@ -31,8 +31,12 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Shoot1");    
         }
     }
+    private void Update()
+    {
+        Debug.Log(nadeOn);
+    }
 
- 
+
 
     public void Fire2(InputAction.CallbackContext context)
     {
@@ -43,6 +47,10 @@ public class Shooting : MonoBehaviour
                 if (nadeOn)
                 {
                     //play nade
+                    anima.SetTrigger("Nade");
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                    // SpawnBomb();
+                    nadeOn = false;
                 }
                 else
                 {
@@ -71,15 +79,9 @@ public class Shooting : MonoBehaviour
         ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
     }
 
-    void SpawnNade()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
-    }
-
     void SpawnBomb()
     {
+       
         GameObject Bomb = Instantiate(Bombprefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = Bomb.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
