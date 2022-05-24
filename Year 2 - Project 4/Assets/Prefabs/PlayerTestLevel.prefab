@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
+  Bombprefab: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
   bulletForce: 12
@@ -148,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a05d2469bd8f74d90e62d4a361a76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tr: {fileID: 0}
   speed: 5
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
@@ -193,6 +195,8 @@ MonoBehaviour:
   MaxHP: 100
   score: 0
   ID: 0
+  matWhite: {fileID: 2100000, guid: e896e323fd20f4eb98fd2a6f63b2708e, type: 2}
+  matDefault: {fileID: 2100000, guid: 0b61991e93d3a469d93f8e87ec574d2c, type: 2}
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
   myPrefab: {fileID: 3871030327245822451, guid: 882abbf5012c6435b965314887c69961, type: 3}

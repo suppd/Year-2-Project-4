@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
 
     public int score;
     public uint ID;
+    
 
     Image HpBar;
     public GameObject player;
