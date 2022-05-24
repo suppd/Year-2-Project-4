@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public bool timeOn;
 
 
-
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
     private float horizontal;
@@ -70,12 +69,12 @@ public class PlayerMovement : MonoBehaviour
                 isWalking = false;
                 anim.SetTrigger("Dash");
 
-                tr.emitting = true;
+                
                 
                 speed = DashForce + bonusSpeed;
 
                 dashCounter = dashDistance;
-
+                //tr.emitting = true;
                 CreateDust();
             }
         }
@@ -88,11 +87,10 @@ public class PlayerMovement : MonoBehaviour
             dashCounter -= Time.deltaTime;
             if (dashCounter <= 0)
             {
-                tr.emitting = false;
-
                 speed = nSpeed;
                 isWalking = true;
                 dashCoolCounter = dashDuration;
+                //tr.emitting = false;
             }
         }
 
