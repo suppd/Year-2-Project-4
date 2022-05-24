@@ -10,30 +10,20 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f; //controls velocity multiplier
     public Rigidbody2D rb;
     public Animator anim;
-    public Vector2 movements;
-    public Vector2 inputVector;
-
-    public Timer timer;
-
-
-
-    public float bonusSpeed = 0;
-
-    public float DashForce = 20f;
-
-    public float dashDistance = 0.2f;
-
-    public float dashDuration = 0.5f;
-
-    public float cooldownDuration = 1.0f;
-
-    public ParticleSystem dashDust;
-
-
-
+    public Vector2 movements;    public Vector2 inputVector;
+    public Timer timer;
+    public bool dashAllow;
+    private bool isWalking;
+    public float bonusSpeed = 0;
+    public float DashForce = 20f;
+    public float dashDistance = 0.2f;
+    public float dashDuration = 0.5f;
+    public float cooldownDuration = 1.0f;
+    public ParticleSystem dashDust;
+
     public bool timeOn;
 
-    
+
 
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
@@ -47,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playercontrols = new PlayerControls();
+        dashAllow = false;
     }
 
     void Update()
@@ -56,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", inputVector.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
-        //CheckTimer();
+
     }
     public void SetInputVector(Vector2 vector)
     {
@@ -76,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dashCounter <= 0 && dashCoolCounter <= 0)
             {
+                isWalking = false;
                 anim.SetTrigger("Dash");
 
                 tr.emitting = true;
@@ -99,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
                 tr.emitting = false;
 
                 speed = nSpeed;
-
+                isWalking = true;
                 dashCoolCounter = dashDuration;
             }
         }
@@ -131,22 +123,37 @@ public class PlayerMovement : MonoBehaviour
         dashDust.Play();
     }
 
-    //public void SpeedBoost()
-    //{
-    //    if (timer.timerOn)
-    //    {
-    //        bonusSpeed = 10f;
-    //    }
-    //    else
-    //    {
-    //        bonusSpeed = 0;
-    //    }
-    //}
-    //public void CheckTimer()
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Test")
+        {
+            if (dashAllow)
+            {
+                if (!isWalking)
+                {
+                    StartCoroutine(DashWall(collision));
+                }
+                else
+                {
+                    //collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    //GetComponent<CircleCollider2D>().enabled = true;
+                }
+            }
 
-    //{
-    //    timeOn = timer.timerOn;
 
-    //}
+        }
+    }
+
+    IEnumerator DashWall(Collision2D wall)
+    {
+        //wall.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //yield return new WaitForSeconds(0.4f);
+        //wall.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
+        GetComponent<CircleCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.4f);
+        GetComponent<CircleCollider2D>().enabled = true;
+    }
+
 
 }
