@@ -190,7 +190,7 @@ MonoBehaviour:
   score: 0
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
-  myPrefab: {fileID: 3871030327245822451, guid: 882abbf5012c6435b965314887c69961, type: 3}
+  myPrefab: {fileID: 2110021020520646338, guid: e007d637cae604694a9b22c8346f2b44, type: 3}
   EggSploded: {fileID: 8300000, guid: fc321464285eb4131bb3a26e4d28ee76, type: 3}
 --- !u!114 &5590548397414619007
 MonoBehaviour:
