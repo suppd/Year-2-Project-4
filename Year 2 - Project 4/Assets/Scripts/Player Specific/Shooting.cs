@@ -28,7 +28,25 @@ public class Shooting : MonoBehaviour
 
         if (context.performed)
         {
-                anima.SetTrigger("Shoot1");    
+            if (Time.time > fireRate + lastShot)
+            {
+              //  if (nadeOn)
+              //  {
+
+               //     anima.SetTrigger("Nade");
+               //     AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                    // SpawnBomb();
+                    // nadeOn = false;
+              //  }
+              //  else
+             //   {
+                    anima.SetTrigger("Shoot1");
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                    //SpawnBullet();
+                    lastShot = Time.time;
+           //     }
+
+            }
         }
     }
     private void Update()
@@ -37,7 +55,7 @@ public class Shooting : MonoBehaviour
     }
 
 
-
+    /*
     public void Fire2(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -66,7 +84,7 @@ public class Shooting : MonoBehaviour
        
     }
 
-
+    */
     
     void SpawnBullet()
     {
