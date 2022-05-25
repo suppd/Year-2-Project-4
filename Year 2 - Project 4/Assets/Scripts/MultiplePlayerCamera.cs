@@ -23,14 +23,6 @@ public class MultiplePlayerCamera : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    void LateUpdate()
-    {
-        if (targets.Count == 0)
-            return;
-
-        Move();
-        Zoom();
-    }
 
     void Zoom()
     {
@@ -83,5 +75,14 @@ public class MultiplePlayerCamera : MonoBehaviour
                 targets.Add(player.transform);
             }
         }
+    }
+
+    void LateUpdate()
+    {
+        if (targets.Count == 0)
+            return;
+
+        Move();
+        Zoom();
     }
 }
