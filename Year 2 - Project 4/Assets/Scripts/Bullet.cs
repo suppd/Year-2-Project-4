@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         {
             GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
             Destroy(killEffect);
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(50);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(25);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
             Debug.Log("shot other player");           
@@ -31,6 +31,14 @@ public class Bullet : MonoBehaviour
 
         if(collision.gameObject.tag == "Wall")
         {
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
+            Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(crackEgg, transform.position);
+        }
+
+        if (collision.gameObject.tag == "Bomba")
+        {
 
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
@@ -38,7 +46,7 @@ public class Bullet : MonoBehaviour
             AudioSource.PlayClipAtPoint(crackEgg, transform.position);
         }
 
-        if(collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
         }

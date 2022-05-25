@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8518283944454728827}
   m_Layer: 0
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: Bomba
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   force: 724.07
   LayerToHit:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1
   explodeEffect: {fileID: 7596199003989275930, guid: 93bd7ab46739d4527af396da256b1aa4, type: 3}
 --- !u!50 &4895645381861069438
 Rigidbody2D:

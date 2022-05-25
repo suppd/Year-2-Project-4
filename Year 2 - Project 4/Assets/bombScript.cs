@@ -18,7 +18,7 @@ public class bombScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void explode()
+    void Explode()
     {
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position,fieldofImpact,LayerToHit);
 
@@ -26,7 +26,7 @@ public class bombScript : MonoBehaviour
         {
             Vector2 direction = obj.transform.position - transform.position;
 
-            obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
+            //obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
         }
 
 
@@ -35,9 +35,16 @@ public class bombScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Wall")
+        if(collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player")
         {
-            explode();
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
+            Explode();
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Explode();
             Destroy(gameObject);
         }
     }

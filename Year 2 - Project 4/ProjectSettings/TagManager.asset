@@ -10,6 +10,7 @@ TagManager:
   - FirePoint
   - Multiplayer
   - Test
+  - Bomba
   layers:
   - Default
   - TransparentFX
