@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
+using UnityEngine.Experimental.Rendering.Universal;
+
 
 [RequireComponent(typeof(Camera))]
 public class MultiplePlayerCamera : MonoBehaviour
@@ -17,33 +20,44 @@ public class MultiplePlayerCamera : MonoBehaviour
     private Vector3 velocity;
     private Camera cam;
     private GameObject[] players;
+    public bool lerp = false;
+    PixelPerfectCamera perfectCamera;
+    
 
     void Start()
     {
         cam = GetComponent<Camera>();
+        perfectCamera = GetComponent<PixelPerfectCamera>();
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (targets.Count == 0)
             return;
-
+        
         Move();
         Zoom();
     }
 
     void Zoom()
     {
-        float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
+        int newZoom = (int)Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
+        Debug.Log(newZoom);
+        //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
+        if (lerp)
+        {
+            perfectCamera.assetsPPU = (int)Mathf.Lerp(perfectCamera.assetsPPU, newZoom, Time.deltaTime);
+        }
+        else if (!lerp)
+        {
+            perfectCamera.assetsPPU = newZoom;
+        }
     }
 
     void Move()
     {
         Vector3 centerPoint = GetCenterPoint();
-
         Vector3 newPosition = centerPoint + offset;
-
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 
@@ -83,5 +97,14 @@ public class MultiplePlayerCamera : MonoBehaviour
                 targets.Add(player.transform);
             }
         }
+    }
+
+    void LateUpdate()
+    {
+        if (targets.Count == 0)
+            return;
+
+        Move();
+        Zoom();
     }
 }

@@ -17,7 +17,7 @@ public class NadePickUp : MonoBehaviour
     void PickUp(Collider2D player)
     {
         Shooting stats = player.GetComponent<Shooting>();
-        stats.nadeOn = true;     
+        stats.shotType = "grenade";    
         Destroy(gameObject);
     }
 }

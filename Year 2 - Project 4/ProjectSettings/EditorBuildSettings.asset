@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 9af2df6bb559b694fba064808709ed8d
   - enabled: 1
+    path: Assets/Scenes/Simon Dash.unity
+    guid: 08583f50492cca341974b1ae8490dc31
+  - enabled: 1
     path: Assets/Scenes/LevelDesign1.unity
     guid: 86c844a76497b3d4cb99aab3e6d37bba
+  - enabled: 1
+    path: Assets/Scenes/Edwin.unity
+    guid: bd273f80f1fd6b04ab345d767db17139
   m_configObjects: {}
