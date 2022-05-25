@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(nadeOn);
+        
     }
 
 
@@ -46,11 +46,11 @@ public class Shooting : MonoBehaviour
             {
                 if (nadeOn)
                 {
-                    //play nade
+                   
                     anima.SetTrigger("Nade");
                     AudioSource.PlayClipAtPoint(shootSound, transform.position);
                     // SpawnBomb();
-                    nadeOn = false;
+                   // nadeOn = false;
                 }
                 else
                 {
