@@ -12,6 +12,7 @@ public class Shooting : MonoBehaviour
     public AudioClip shootSound;
     public Animator anima;
     public bool nadeOn;
+    public string shotType;
 
     public float bulletForce = 15f;
     [SerializeField]
@@ -21,51 +22,41 @@ public class Shooting : MonoBehaviour
     //public string shooter { get; set; }
     private void Awake()
     {
-        nadeOn = false;
+        shotType = "normal";
     }
     public void Fire1(InputAction.CallbackContext context)
     {
 
         if (context.performed)
         {
-                anima.SetTrigger("Shoot1");    
-        }
-    }
-    private void Update()
-    {
-        
-    }
-
-
-
-    public void Fire2(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
             if (Time.time > fireRate + lastShot)
             {
-                if (nadeOn)
-                {
-                   
-                    anima.SetTrigger("Nade");
-                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                    // SpawnBomb();
-                   // nadeOn = false;
-                }
-                else
-                {
-                    anima.SetTrigger("Shoot2");
-                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                    //SpawnBullet();
-                    lastShot = Time.time;
-                }
-
+                StartCoroutine(DiffShooting());
             }
         }
-
-       
     }
+        
+    IEnumerator DiffShooting()
+    {
+        switch (shotType)
+        {
+            case "normal":
+                anima.SetTrigger("Shoot1");
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                lastShot = Time.time;
+                break;
+            case "grenade":
+                anima.SetTrigger("Nade");
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                shotType = "normal";
+                lastShot = Time.time;
 
+                break;
+            case "vest":
+                yield return new WaitForSeconds(0.15f);
+                break;
+        }
+    }
 
     
     void SpawnBullet()

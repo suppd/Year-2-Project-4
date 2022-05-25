@@ -48,7 +48,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
         if (obj.action.name == controls.Player.Fire2.name)
         {
-            OnShoot2(obj);
+         //   OnShoot2(obj);
         }
         if(obj.action.name == controls.Player.Look.name)
         {
@@ -70,11 +70,11 @@ public class PlayerInputHandler : MonoBehaviour
         if (shooter != null)
             shooter.Fire1(context);
     }
-    public void OnShoot2(CallbackContext context)
-    {
-        if (shooter != null)
-            shooter.Fire2(context);
-    }
+   // public void OnShoot2(CallbackContext context)
+   // {
+   //     if (shooter != null)
+  //          shooter.Fire2(context);
+ //   }
     public void OnAim(CallbackContext context)
     {
         if (aimer != null)
