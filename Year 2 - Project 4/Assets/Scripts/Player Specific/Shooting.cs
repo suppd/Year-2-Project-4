@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(nadeOn);
+        //Debug.Log(nadeOn);
     }
 
 
