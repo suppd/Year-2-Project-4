@@ -136,6 +136,8 @@ MonoBehaviour:
   Bombprefab: {fileID: 8240047824914025357, guid: a75ecb97ad4bfa648a6e608d813a5b39, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
+  nadeOn: 0
+  shotType: 
   bulletForce: 12
   fireRate: 1
 --- !u!114 &161273018238503362
@@ -157,6 +159,7 @@ MonoBehaviour:
   movements: {x: 0, y: 0}
   inputVector: {x: 0, y: 0}
   timer: {fileID: 0}
+  dashAllow: 0
   bonusSpeed: 0
   DashForce: 10
   dashDistance: 0.2
@@ -207,7 +210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161273018238503366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
