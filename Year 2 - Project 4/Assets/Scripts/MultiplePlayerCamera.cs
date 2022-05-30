@@ -42,7 +42,7 @@ public class MultiplePlayerCamera : MonoBehaviour
     void Zoom()
     {
         int newZoom = (int)Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
-        Debug.Log(newZoom);
+        //Debug.Log(newZoom);
         //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
         if (lerp)
         {

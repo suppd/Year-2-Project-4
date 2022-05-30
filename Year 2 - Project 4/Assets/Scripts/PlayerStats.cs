@@ -7,47 +7,53 @@ using System;
 
 public class PlayerStats : MonoBehaviour
 {
-    //static event Action<string> OnScoreChanged; 
-
     public float HP = 100;
     public float MaxHP = 100;
 
-    public int score;
-    public uint ID;
-    
-
-    Image HpBar;
+    public int score { get; set; }
+    public int ID;
+   
     public GameObject player;
     public Animator anim;
     public GameObject myPrefab;
 
     public AudioClip EggSploded;
 
+    LevelManagerScript level;
+    PlayerConfiguration playerConfig;
+
+    private bool scored = false;
+
     private void Awake()
     {
-        // UIObject.SetActive(false);
-        HpBar = GetComponentInChildren<Image>();
-        //Debug.Log(ID);
+        level = FindObjectOfType<LevelManagerScript>();
     }
 
-
-    // The UI object gets set to false to be shown later
     public void TakeDamage(int damage)
     {        
-        HP = HP - damage;
-        
+        HP = HP - damage;       
     }
 
 
     void Update()
     {
-        //HpBar.fillAmount = (HP / MaxHP);
-
         if (HP <= 0)
         {
             Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
             // Invoke("KillPopUp", 5);
+            playerConfig.isAlive = false;
             Die();
+            level.UpdateAmountOfPlayers();
+        }
+        else if (level.UpdateAmountOfPlayers() == 1 && scored == false)
+        {
+            score+=1;
+            playerConfig.playerScore = score;
+            scored = true;
+        }
+        else if (HP >= 0)
+        {
+            playerConfig.isAlive=true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -56,11 +62,6 @@ public class PlayerStats : MonoBehaviour
         {
          
         }
-    }
-
-    public void IncreaseID()
-    {
-        ID = ID++;
     }
 
     public void Die()
@@ -79,6 +80,10 @@ public class PlayerStats : MonoBehaviour
         //        Destroy(myPrefab);
     }
     
-
+    public void AssignPlayerConfig(PlayerConfiguration config)
+    {
+        playerConfig = config;
+        ID = playerConfig.playerIndex;
+    }
     
 }

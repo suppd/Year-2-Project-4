@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Edwin.unity
     guid: bd273f80f1fd6b04ab345d767db17139
+  - enabled: 1
+    path: Assets/Scenes/RoundOver.unity
+    guid: 14b5fe8cdf6e66f4f9e63a9e7fe6bdfe
   m_configObjects: {}

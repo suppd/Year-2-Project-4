@@ -11,16 +11,16 @@ public class InitializeLevel : MonoBehaviour
     private GameObject playerPrefab;
 
     public GameObject player;
-    public Camera camera;
+    private PlayerConfiguration[] playerConfiguration;
     void Start()
     {
-        var camScript = camera.GetComponent<MultiplePlayerCamera>();
-        var playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
-        for (int i = 0; i < playerConfigs.Length; i++)
+        playerConfiguration = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
+        for (int i = 0; i < playerConfiguration.Length; i++)
         {
-            Debug.Log(playerConfigs.Length);
+            Debug.Log(playerConfiguration.Length);
             player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, gameObject.transform);
-            player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfigs[i]);
+            player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfiguration[i]);
+            player.GetComponent<PlayerStats>().AssignPlayerConfig(playerConfiguration[i]);
             //camScript.targets[i] = player.transform;
         }
     }
