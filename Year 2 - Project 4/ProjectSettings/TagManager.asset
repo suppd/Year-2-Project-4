@@ -11,6 +11,8 @@ TagManager:
   - Multiplayer
   - Test
   - Bomba
+  - Tower
+  - Enemy
   layers:
   - Default
   - TransparentFX
