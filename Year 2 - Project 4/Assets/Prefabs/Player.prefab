@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -8130349832912191246}
   - component: {fileID: 2884702812988646656}
   - component: {fileID: 8679598731988760152}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   Bombprefab: {fileID: 8240047824914025357, guid: a75ecb97ad4bfa648a6e608d813a5b39, type: 3}
+  vestPrefab: {fileID: 8240047824914025357, guid: 849c18a0400907c4ab2a381ed18cfb22, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
   nadeOn: 0
@@ -156,7 +157,6 @@ MonoBehaviour:
   anim: {fileID: 2453835206104791124}
   movements: {x: 0, y: 0}
   inputVector: {x: 0, y: 0}
-  timer: {fileID: 0}
   dashAllow: 0
   bonusSpeed: 0
   DashForce: 10
@@ -199,8 +199,9 @@ MonoBehaviour:
   ID: 0
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
-  myPrefab: {fileID: 3871030327245822451, guid: 882abbf5012c6435b965314887c69961, type: 3}
+  myPrefab: {fileID: 0}
   EggSploded: {fileID: 8300000, guid: fc321464285eb4131bb3a26e4d28ee76, type: 3}
+  num: 100
 --- !u!95 &2453835206104791124
 Animator:
   serializedVersion: 3
@@ -269,7 +270,7 @@ GameObject:
   - component: {fileID: 161273019067780493}
   - component: {fileID: 8023113503905917671}
   - component: {fileID: 399547745294339568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: FirePoint
   m_Icon: {fileID: 0}
@@ -366,7 +367,7 @@ GameObject:
   - component: {fileID: 1169307995051289660}
   - component: {fileID: 2052287653892746474}
   - component: {fileID: 3058717923048704320}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HP bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7748011786272718362}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Missing Prefab (Dummy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +473,7 @@ GameObject:
   - component: {fileID: 5889139632146044840}
   - component: {fileID: 5763296511761131966}
   - component: {fileID: 7248473334862826293}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4010167341830151739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DashCorrect (Missing Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +603,7 @@ GameObject:
   - component: {fileID: 7612313138090841675}
   - component: {fileID: 341559899574491841}
   - component: {fileID: 175661121052243066}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6481376969060286750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

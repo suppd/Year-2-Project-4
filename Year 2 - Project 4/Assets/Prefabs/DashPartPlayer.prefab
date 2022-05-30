@@ -134,6 +134,7 @@ MonoBehaviour:
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   Bombprefab: {fileID: 8240047824914025357, guid: a75ecb97ad4bfa648a6e608d813a5b39, type: 3}
+  vestPrefab: {fileID: 8240047824914025357, guid: 849c18a0400907c4ab2a381ed18cfb22, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
   nadeOn: 0
@@ -158,7 +159,6 @@ MonoBehaviour:
   anim: {fileID: 2453835206104791124}
   movements: {x: 0, y: 0}
   inputVector: {x: 0, y: 0}
-  timer: {fileID: 0}
   dashAllow: 0
   bonusSpeed: 0
   DashForce: 10
@@ -203,6 +203,7 @@ MonoBehaviour:
   anim: {fileID: 2453835206104791124}
   myPrefab: {fileID: 3107902083938792372, guid: df7d7032f0f734944aaac56e73c1a147, type: 3}
   EggSploded: {fileID: 8300000, guid: 7b50d5ed38c43c04da56bc0c27d808ae, type: 3}
+  num: 100
 --- !u!114 &4650708730441958946
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -140,9 +140,7 @@ public class PlayerMovement : MonoBehaviour
                     //collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                     //GetComponent<CircleCollider2D>().enabled = true;
                 }
-            }
-
-
+            }   
         }
     }
 
@@ -155,6 +153,11 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.4f);
         GetComponent<CircleCollider2D>().enabled = true;
+    }
+
+    public void startBombAnim()
+    {
+        anim.SetBool("Vest", true);
     }
 
 

@@ -7,8 +7,8 @@ public class Shooting : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject bulletPrefab;
-
     public GameObject Bombprefab;
+    public GameObject vestPrefab;
     public AudioClip shootSound;
     public Animator anima;
     public bool nadeOn;
@@ -53,6 +53,12 @@ public class Shooting : MonoBehaviour
 
                 break;
             case "vest":
+                SpawnVest();
+                anima.SetBool("Vest", false);
+                shotType = "normal";
+                lastShot = Time.time;
+                break;
+            case "next":
                 yield return new WaitForSeconds(0.15f);
                 break;
         }
@@ -80,6 +86,10 @@ public class Shooting : MonoBehaviour
         //bullet.GetComponent<Bullet>().shotFrom = shooter;
         ////Debug.Log(this.shooter);
         ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
+    }
+    void SpawnVest()
+    {
+        GameObject Vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
     }
 
 }
