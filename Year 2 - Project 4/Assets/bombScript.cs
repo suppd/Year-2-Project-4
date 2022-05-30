@@ -38,15 +38,16 @@ public class bombScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
-            Explode();
-            Destroy(gameObject);
-        }
         if(collision.gameObject.tag == "Player")
         {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
             explode();
+            Destroy(gameObject);
+        }
+        else if(collision.gameObject.tag == "Wall")
+        {
+            explode();
+            Destroy(gameObject);
         }
     }
 

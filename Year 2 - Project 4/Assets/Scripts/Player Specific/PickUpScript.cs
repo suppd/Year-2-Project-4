@@ -17,7 +17,7 @@ public class PickUpScript : MonoBehaviour
     IEnumerator PickUp(Collider2D player)
     {
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
-        speed.bonusSpeed = 10f;
+        speed.bonusSpeed = 5f;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
