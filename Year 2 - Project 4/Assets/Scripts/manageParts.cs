@@ -17,7 +17,7 @@ public class manageParts : MonoBehaviour
 
         if(timer < Time.deltaTime)
         {
-            Debug.Log("hooii");
+           // Debug.Log("hooii");
             Destroy(gameObject);
         }
     }

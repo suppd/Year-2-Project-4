@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     public Vector2 movements;    public Vector2 inputVector;
-    public Timer timer;
-    public bool dashAllow;
+    private Vector3 lastPos;    public bool dashAllow;
     private bool isWalking;
     public float bonusSpeed = 0;
     public float DashForce = 20f;
@@ -22,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem dashDust;
 
     public bool timeOn;
-
+    private bool anh;
 
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
@@ -46,8 +45,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", inputVector.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
-
+        
     }
+
     public void SetInputVector(Vector2 vector)
     {
         inputVector = vector;
@@ -68,9 +68,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 isWalking = false;
                 anim.SetTrigger("Dash");
+                if (dashAllow)
+                {
+                    StartCoroutine(DashWall());
+                }
+                
 
-                
-                
+
                 speed = DashForce + bonusSpeed;
 
                 dashCounter = dashDistance;
@@ -123,13 +127,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Test")
+        if (collision.gameObject.tag == "Wall")
         {
             if (dashAllow)
             {
-                if (!isWalking)
+                if (isWalking == false || anh == true)
                 {
-                    StartCoroutine(DashWall(collision));
+                   // StartCoroutine(DashWall(collision));
                 }
                 else
                 {
@@ -142,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    IEnumerator DashWall(Collision2D wall)
+    IEnumerator DashWall()
     {
         //wall.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         //yield return new WaitForSeconds(0.4f);

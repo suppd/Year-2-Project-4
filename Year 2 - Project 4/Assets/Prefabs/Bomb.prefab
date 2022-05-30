@@ -119,6 +119,9 @@ MonoBehaviour:
   LayerToHit:
     serializedVersion: 2
     m_Bits: 64
+  PlayerToHit:
+    serializedVersion: 2
+    m_Bits: 128
   explodeEffect: {fileID: 7596199003989275930, guid: 93bd7ab46739d4527af396da256b1aa4, type: 3}
 --- !u!50 &4895645381861069438
 Rigidbody2D:

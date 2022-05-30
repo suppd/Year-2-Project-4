@@ -22,6 +22,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject myPrefab;
 
     public AudioClip EggSploded;
+    public int num= 100;
 
     private void Awake()
     {

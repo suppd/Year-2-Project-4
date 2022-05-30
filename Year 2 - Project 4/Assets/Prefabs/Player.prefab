@@ -135,6 +135,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
   nadeOn: 0
+  shotType: 
   bulletForce: 12
   fireRate: 1
 --- !u!114 &161273018238503362
