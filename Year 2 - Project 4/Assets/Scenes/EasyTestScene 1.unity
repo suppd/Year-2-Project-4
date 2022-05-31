@@ -936,7 +936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491209760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1999998, y: -2.15, z: 0}
+  m_LocalPosition: {x: 3.1999998, y: -2.24, z: 0}
   m_LocalScale: {x: 1, y: 2.24, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1002,8 +1002,8 @@ MonoBehaviour:
   EggStrikeEffect: {fileID: 776174736}
   tower: {fileID: 1474065854}
   target: {fileID: 44653632}
-  target1: {fileID: 0}
-  target2: {fileID: 0}
+  target1: {fileID: 1992574305}
+  target2: {fileID: 491209760}
   speed: 8
 --- !u!212 &531950775
 SpriteRenderer:
@@ -16625,7 +16625,7 @@ MonoBehaviour:
   tower: {fileID: 1474065854}
   target: {fileID: 44653632}
   target1: {fileID: 1992574305}
-  target2: {fileID: 0}
+  target2: {fileID: 491209760}
   speed: 8
 --- !u!212 &1428595559
 SpriteRenderer:
