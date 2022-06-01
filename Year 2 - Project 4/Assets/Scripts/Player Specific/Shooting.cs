@@ -7,12 +7,13 @@ public class Shooting : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject bulletPrefab;
-
     public GameObject Bombprefab;
+    public GameObject vestPrefab;
     public AudioClip shootSound;
     public Animator anima;
     public bool nadeOn;
     public string shotType;
+    public bool vestActive = false;
 
     public float bulletForce = 15f;
     [SerializeField]
@@ -31,12 +32,12 @@ public class Shooting : MonoBehaviour
         {
             if (Time.time > fireRate + lastShot)
             {
-                StartCoroutine(DiffShooting());
+                DiffShooting();
             }
         }
     }
         
-    IEnumerator DiffShooting()
+    public void DiffShooting()
     {
         switch (shotType)
         {
@@ -50,10 +51,19 @@ public class Shooting : MonoBehaviour
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 shotType = "normal";
                 lastShot = Time.time;
-
                 break;
             case "vest":
-                yield return new WaitForSeconds(0.15f);
+                vestActive = true;
+                SpawnVest();
+                shotType = "normal";
+                lastShot = Time.time;
+                anima.SetBool("Vest", false);
+                break;
+            case "freeze":
+               
+                break;
+            case "bounce":
+                
                 break;
         }
     }
@@ -80,6 +90,18 @@ public class Shooting : MonoBehaviour
         //bullet.GetComponent<Bullet>().shotFrom = shooter;
         ////Debug.Log(this.shooter);
         ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
+    }
+     public void SpawnVest()
+    {
+        vestPrefab.SetActive(true);
+        //GameObject Vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
+
+    }
+
+
+    void DestroyVest()
+    {
+        vestPrefab.SetActive(false);
     }
 
 }

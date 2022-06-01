@@ -134,6 +134,7 @@ MonoBehaviour:
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   Bombprefab: {fileID: 8240047824914025357, guid: a75ecb97ad4bfa648a6e608d813a5b39, type: 3}
+  vestPrefab: {fileID: 8240047824914025357, guid: 849c18a0400907c4ab2a381ed18cfb22, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
   nadeOn: 0
