@@ -33,11 +33,22 @@ public class HomingMissle : MonoBehaviour
         Launch();
     }
 
-    void OnTriggerEnter2D ()
+    // void OnTriggerEnter2D ()
+    // {
+    //     Destroy(gameObject);
+    //     Instantiate(HomingEggsplosion, transform.position, transform.rotation);       
+    // }
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
-        Instantiate(HomingEggsplosion, transform.position, transform.rotation);       
+        if (other.CompareTag("Bomba"))
+        {
+            Destroy(gameObject);
+            Instantiate(HomingEggsplosion, transform.position, transform.rotation);       
+        }
     }
+
+ 
 
     void Launch()
     {
