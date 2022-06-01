@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RoundOverManager : MonoBehaviour
 {
@@ -21,8 +22,14 @@ public class RoundOverManager : MonoBehaviour
             if (playerConfigs[i].isAlive)
             {
                 Debug.Log("Round Over");
-                text.text = "Player " + playerConfigs[i].playerIndex.ToString() + " Won the Round !" + "the players score is now" + playerConfigs[i].playerScore.ToString();
+                text.text = "Player " + playerConfigs[i].playerIndex.ToString() + " Won the Round ! " + "the player's score is now " + playerConfigs[i].playerScore.ToString();
             }
         }
+    }
+
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("Edwin");
     }
 }

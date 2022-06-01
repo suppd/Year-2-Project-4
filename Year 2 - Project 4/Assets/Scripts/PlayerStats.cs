@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
 
     public AudioClip EggSploded;
 
+    Camera cam;
+
     LevelManagerScript level;
     PlayerConfiguration playerConfig;
 
@@ -27,6 +29,7 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         level = FindObjectOfType<LevelManagerScript>();
+        cam = FindObjectOfType<Camera>();
     }
 
     public void TakeDamage(int damage)
@@ -40,8 +43,7 @@ public class PlayerStats : MonoBehaviour
         if (HP <= 0)
         {
             Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
-            // Invoke("KillPopUp", 5);
-            playerConfig.isAlive = false;
+            // Invoke("KillPopUp", 5);           
             Die();
             level.UpdateAmountOfPlayers();
         }
@@ -70,6 +72,8 @@ public class PlayerStats : MonoBehaviour
         Invoke("KillPopUp", 5);
         AudioSource.PlayClipAtPoint(EggSploded, transform.position);
         anim.SetBool("Death", true);
+        playerConfig.isAlive = false;
+        cam.GetComponent<MultiplePlayerCamera>().targets.Remove(this.transform);
         Destroy(player);
 
     }
@@ -84,6 +88,7 @@ public class PlayerStats : MonoBehaviour
     {
         playerConfig = config;
         ID = playerConfig.playerIndex;
+        score = playerConfig.playerScore;
     }
     
 }
