@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -852,7 +852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: maxZoom
-      value: 174.1
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: minZoom
@@ -888,11 +888,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
---- !u!20 &59558225 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 5313433588231681460, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
-  m_PrefabInstance: {fileID: 59558224}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &59991592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6842,7 +6837,6 @@ MonoBehaviour:
   - {fileID: 1741926982}
   playerPrefab: {fileID: 161273018238503366, guid: 96b1475c953b1724cb04ccdae6561b3b, type: 3}
   player: {fileID: 0}
-  camera: {fileID: 59558225}
 --- !u!4 &438847581
 Transform:
   m_ObjectHideFlags: 0
@@ -24168,7 +24162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: timeBetweenPowerups
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: powerUps.Array.data[2]

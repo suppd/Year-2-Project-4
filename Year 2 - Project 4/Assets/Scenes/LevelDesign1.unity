@@ -1016,11 +1016,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: maxZoom
-      value: 174
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: minZoom
-      value: 7.3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: offset.z
@@ -1032,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: zoomLimiter
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
@@ -8289,6 +8289,8 @@ MonoBehaviour:
   playerSpawns:
   - {fileID: 451978706}
   - {fileID: 1741926982}
+  - {fileID: 1741926982}
+  - {fileID: 1741926982}
   playerPrefab: {fileID: 161273018238503366, guid: 96b1475c953b1724cb04ccdae6561b3b, type: 3}
   player: {fileID: 0}
 --- !u!4 &438847581
@@ -8497,7 +8499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451978705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.6, y: 0, z: 0}
+  m_LocalPosition: {x: -12.312717, y: 8.451773, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438847581}
@@ -29025,7 +29027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741926981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.832717, y: -4.828227, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438847581}
