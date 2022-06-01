@@ -30,6 +30,6 @@ public class RoundOverManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("Edwin");
+        SceneManager.LoadScene("LevelDesign1");
     }
 }

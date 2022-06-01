@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8736698965563160310}
   - component: {fileID: -7287655482905969182}
   m_Layer: 0
-  m_Name: VestPU
+  m_Name: DashPowerUp
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

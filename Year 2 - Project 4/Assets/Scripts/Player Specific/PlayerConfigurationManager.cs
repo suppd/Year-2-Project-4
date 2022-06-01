@@ -10,6 +10,8 @@ public class PlayerConfigurationManager : MonoBehaviour
     private List<PlayerConfiguration> playerConfigs;
     [SerializeField]
     private int maxPlayers = 2;
+
+    public string sceneName = "LevelDesign1";
     //[SerializeField]
     //private GameObject playerPrefab;
     //[SerializeField]
@@ -56,7 +58,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[i].isReady = true;
         if (playerConfigs.Count == maxPlayers && playerConfigs.All(p => p.isReady == true))
         {
-            SceneManager.LoadScene("Edwin");
+            SceneManager.LoadScene(sceneName);
         }
     }
 

@@ -112,8 +112,10 @@ MonoBehaviour:
   - {fileID: 5142569541884959472}
   - {fileID: 5142569541819282163}
   powerUps:
+  - {fileID: 8736698965563160311, guid: 0a644f17ed7cc3f4fa4263b77926d615, type: 3}
   - {fileID: 8736698965563160311, guid: 61a036493c9c0454c8ca4aa21b550317, type: 3}
   - {fileID: 8736698965563160311, guid: 6e1c7fafe136b8c40b7c85dfd582eb0c, type: 3}
+  - {fileID: 8736698965563160311, guid: 0dcce4cf7bc71074d807e0d6b4246259, type: 3}
   timeBetweenPowerups: 5
 --- !u!1 &5142569541378196566
 GameObject:

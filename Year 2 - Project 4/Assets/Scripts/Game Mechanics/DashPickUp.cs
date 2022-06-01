@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VestPickUpScript : MonoBehaviour
+public class DashPickUp : MonoBehaviour
 {
 
     public float duration = 3f;
