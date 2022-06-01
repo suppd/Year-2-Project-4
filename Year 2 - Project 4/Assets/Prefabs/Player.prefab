@@ -195,12 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
-  score: 0
   ID: 0
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
-  myPrefab: {fileID: 3871030327245822451, guid: 882abbf5012c6435b965314887c69961, type: 3}
-  EggSploded: {fileID: 8300000, guid: fc321464285eb4131bb3a26e4d28ee76, type: 3}
+  myPrefab: {fileID: 3107902083938792372, guid: df7d7032f0f734944aaac56e73c1a147, type: 3}
+  EggSploded: {fileID: 8300000, guid: 7b50d5ed38c43c04da56bc0c27d808ae, type: 3}
 --- !u!95 &2453835206104791124
 Animator:
   serializedVersion: 3

@@ -91,10 +91,16 @@ public class PlayerConfiguration
     }
     public PlayerInput playerInput { get; set; }
     public int playerIndex { get; set; }
-
+    public int playerScore { get; set; }
     public bool isReady { get; set; }
 
+    public bool isAlive{ get; set; }
     public Sprite playerSprite { get; set; }
 
     public AnimatorOverrideController animatorOverrideController { get; set; }
+
+    void Start()
+    {
+        //isAlive = true;
+    }
 }
