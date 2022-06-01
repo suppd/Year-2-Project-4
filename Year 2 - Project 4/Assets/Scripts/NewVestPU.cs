@@ -17,12 +17,20 @@ public class NewVestPU : MonoBehaviour
     {
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
         Shooting stats = player.GetComponent<Shooting>();
+        
         speed.startBombAnim();
         stats.shotType = "vest";
-        speed.bonusSpeed = 10f;
+        speed.bonusSpeed = 3f; 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
+        // if (stats.vestActive == false) 
+        // {
+        //      vestBomb.explosionBig = false;
+        //      stats.SpawnVest();
+        // }
+        speed.StopBombAnim();
+        stats.shotType = "normal";
         speed.bonusSpeed = 0;
         Destroy(gameObject);
     }

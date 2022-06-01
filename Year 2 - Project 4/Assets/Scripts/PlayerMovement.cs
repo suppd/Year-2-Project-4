@@ -160,5 +160,10 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Vest", true);
     }
 
+    public void StopBombAnim()
+    {
+        anim.SetBool("Vest", false);
+    }
+
 
 }

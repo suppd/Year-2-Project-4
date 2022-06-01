@@ -46,10 +46,11 @@ public class PlayerStats : MonoBehaviour
 
         if (HP <= 0)
         {
-            Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+            //Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
             // Invoke("KillPopUp", 5);
             Die();
         }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -68,7 +69,7 @@ public class PlayerStats : MonoBehaviour
     {
         // Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
         Invoke("KillPopUp", 5);
-        AudioSource.PlayClipAtPoint(EggSploded, transform.position);
+        //AudioSource.PlayClipAtPoint(EggSploded, transform.position);
         anim.SetBool("Death", true);
         Destroy(player);
 

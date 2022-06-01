@@ -45,6 +45,7 @@ public class bombScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             explode();
+            Destroy(gameObject);
         }
     }
 

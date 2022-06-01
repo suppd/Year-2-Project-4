@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     public Animator anima;
     public bool nadeOn;
     public string shotType;
+    public bool vestActive = false;
 
     public float bulletForce = 15f;
     [SerializeField]
@@ -31,12 +32,12 @@ public class Shooting : MonoBehaviour
         {
             if (Time.time > fireRate + lastShot)
             {
-                StartCoroutine(DiffShooting());
+                DiffShooting();
             }
         }
     }
         
-    IEnumerator DiffShooting()
+    public void DiffShooting()
     {
         switch (shotType)
         {
@@ -50,16 +51,19 @@ public class Shooting : MonoBehaviour
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 shotType = "normal";
                 lastShot = Time.time;
-
                 break;
             case "vest":
+                vestActive = true;
                 SpawnVest();
-                anima.SetBool("Vest", false);
                 shotType = "normal";
                 lastShot = Time.time;
+                anima.SetBool("Vest", false);
                 break;
-            case "next":
-                yield return new WaitForSeconds(0.15f);
+            case "freeze":
+               
+                break;
+            case "bounce":
+                
                 break;
         }
     }
@@ -87,9 +91,17 @@ public class Shooting : MonoBehaviour
         ////Debug.Log(this.shooter);
         ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
     }
-    void SpawnVest()
+     public void SpawnVest()
     {
-        GameObject Vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
+        vestPrefab.SetActive(true);
+        //GameObject Vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
+
+    }
+
+
+    void DestroyVest()
+    {
+        vestPrefab.SetActive(false);
     }
 
 }
