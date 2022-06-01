@@ -478,6 +478,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 832986002316090044, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinBehavior
       value: 1
