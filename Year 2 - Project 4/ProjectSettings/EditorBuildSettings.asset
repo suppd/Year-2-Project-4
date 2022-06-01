@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 9af2df6bb559b694fba064808709ed8d
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/LevelDesign1.unity
     guid: 86c844a76497b3d4cb99aab3e6d37bba
   - enabled: 0
@@ -23,4 +24,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoundOver.unity
     guid: 14b5fe8cdf6e66f4f9e63a9e7fe6bdfe
+=======
+    path: Assets/Scenes/EasyTestScene 1.unity
+    guid: 656610edf53a74da7a5e38a9cd33858f
+>>>>>>> EggStikeV2
   m_configObjects: {}

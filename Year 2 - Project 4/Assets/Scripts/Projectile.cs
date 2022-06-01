@@ -98,6 +98,7 @@ public class Projectile : MonoBehaviour
         {
             GameObject EggStrike = Instantiate(EggStrikeEffect, transform.position, Quaternion.identity);
             //Destroy(EggStrike);
+            Destroy(gameObject);
         }
     }
 }
