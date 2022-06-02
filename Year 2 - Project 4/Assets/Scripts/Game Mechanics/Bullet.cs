@@ -5,7 +5,8 @@ using UnityEngine.Audio;
 
 public class Bullet : MonoBehaviour
 {
-    
+    public Rigidbody2D rb;
+    Vector3 lastVel;
     [SerializeField]
     private GameObject hitEffect;
     [SerializeField]
@@ -15,6 +16,16 @@ public class Bullet : MonoBehaviour
     public AudioClip hitPlayer;
 
     //public string shotFrom { get; set; }
+
+    private void Awake()
+    {
+        rb.GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        lastVel = rb.velocity;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -31,6 +42,14 @@ public class Bullet : MonoBehaviour
 
         if(collision.gameObject.tag == "Wall")
         {
+            /*
+            Vector2 inDirection = GetComponent<Rigidbody2D>().velocity;
+            Vector2 inNormal = collision.contacts[0].normal;
+            Vector2 newVelocity = Vector2.Reflect(inDirection, inNormal);
+            rb.velocity = newVelocity;
+            Debug.Log(inNormal);
+            */
+
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
             Destroy(gameObject);
