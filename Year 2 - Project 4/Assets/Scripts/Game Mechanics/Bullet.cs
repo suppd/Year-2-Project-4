@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
                     Destroy(gameObject);
                     Debug.Log("shot teammate");
                 }
-                else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && !isBlue)
+                else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && isBlue)
                 {
                     GameObject killEffect2 = Instantiate(killPlayer, transform.position, Quaternion.identity);
                     Destroy(killEffect2, 1f);

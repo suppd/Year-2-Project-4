@@ -10,6 +10,7 @@ public class RoundOverManager : MonoBehaviour
     public Canvas canvas;
     public Text text;
     public GameObject prefab;
+    public string Levelname = "LevelDesign2v2";
 
     private int numberOfPlayers = 0;
     private List<GameObject> scores = new List<GameObject>();
@@ -49,6 +50,6 @@ public class RoundOverManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene("LevelDesign1");
+        SceneManager.LoadScene(Levelname);
     }
 }
