@@ -112,4 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b36a068955f58446b5dafb89bba9dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VestEffect: {fileID: 7803518230169809496, guid: 4d3919e883ec89b4cb0d5039295b9bce, type: 3}
   duration: 5

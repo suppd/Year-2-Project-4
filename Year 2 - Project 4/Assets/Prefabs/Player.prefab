@@ -134,11 +134,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
   Bombprefab: {fileID: 8240047824914025357, guid: a75ecb97ad4bfa648a6e608d813a5b39, type: 3}
   vestPrefab: {fileID: 4085724823793452931}
+  smallVestPrefab: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
-  nadeOn: 0
   shotType: 
-  vestActive: 0
+  vestDeployed: 0
   bulletForce: 12
   fireRate: 1
 --- !u!114 &161273018238503362
@@ -157,16 +157,12 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
-  movements: {x: 0, y: 0}
-  inputVector: {x: 0, y: 0}
+  DashForce: 10
   dashAllow: 0
   bonusSpeed: 0
-  DashForce: 10
-  dashDistance: 0.2
-  dashDuration: 0.5
-  cooldownDuration: 2
+  movements: {x: 0, y: 0}
+  inputVector: {x: 0, y: 0}
   dashDust: {fileID: 6013871963420345286, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
-  timeOn: 0
 --- !u!58 &3383183338051999284
 CircleCollider2D:
   m_ObjectHideFlags: 0
