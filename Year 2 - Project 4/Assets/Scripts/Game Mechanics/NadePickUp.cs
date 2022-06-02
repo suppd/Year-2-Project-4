@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NadePickUp : MonoBehaviour
 {
-    public float duration;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

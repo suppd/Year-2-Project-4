@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickUpScript : MonoBehaviour
 {
     public float duration = 3f;
+    public float bSpeed = 5f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -17,7 +18,7 @@ public class PickUpScript : MonoBehaviour
     IEnumerator PickUp(Collider2D player)
     {
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
-        speed.bonusSpeed = 5f;
+        speed.bonusSpeed = bSpeed;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
