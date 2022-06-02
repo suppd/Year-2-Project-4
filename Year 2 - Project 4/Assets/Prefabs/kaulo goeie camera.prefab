@@ -220,11 +220,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  offset: {x: 0, y: 0, z: -10}
-  smoothTime: 0.5
-  maxZoom: 80
-  minZoom: 0
-  zoomLimiter: 50
+  offset: {x: 0, y: 0, z: -4.5}
+  smoothTime: 0.3
+  maxZoom: 66.6
+  minZoom: 36.2
+  zoomLimiter: 21.2
   lerp: 0
 --- !u!114 &5313433588231681464
 MonoBehaviour:

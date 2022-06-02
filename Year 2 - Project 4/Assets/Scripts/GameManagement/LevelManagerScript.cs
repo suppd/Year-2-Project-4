@@ -7,7 +7,7 @@ public class LevelManagerScript : MonoBehaviour
 {
     public GameObject[] players;
 
-    private float timer = 5f;
+    private float timer = 3f;
     public int UpdateAmountOfPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
@@ -18,6 +18,14 @@ public class LevelManagerScript : MonoBehaviour
     private void Update()
     {
         if (players.Length == 1)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                SceneManager.LoadScene("RoundOver");
+            }
+        }
+        else if (players.Length == 0)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
