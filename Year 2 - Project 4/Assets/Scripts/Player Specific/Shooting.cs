@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject Bombprefab;
     public GameObject vestPrefab;
+    public GameObject smallVestPrefab;
     public AudioClip shootSound;
     public Animator anima;
     public string shotType;
@@ -56,11 +57,10 @@ public class Shooting : MonoBehaviour
                 break;
             case "vest":
                 SpawnVest();
-                vestDeployed = true;
                 shotType = "normal";
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);
-                DestroyVest();
+                
                 break;
             case "freeze":
                
@@ -96,15 +96,15 @@ public class Shooting : MonoBehaviour
     }
      public void SpawnVest()
     {
-        //vestPrefab.SetActive(true);
-        GameObject Vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
-
+        vestDeployed = true;
+        GameObject vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
     }
 
-
-    void DestroyVest()
+    public void SpawnSmallVest()
     {
-        
+        vestDeployed = true;
+        GameObject smallVest = Instantiate(smallVestPrefab, FirePoint.position, FirePoint.rotation);
     }
+
 
 }

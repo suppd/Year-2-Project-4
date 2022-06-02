@@ -24,11 +24,7 @@ public class NewVestPU : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        // if (stats.vestActive == false) 
-        // {
-        //      vestBomb.explosionBig = false;
-        //      stats.SpawnVest();
-        // }
+        stats.SpawnSmallVest();
         speed.StopBombAnim();
         stats.shotType = "normal";
         speed.bonusSpeed = 0;
