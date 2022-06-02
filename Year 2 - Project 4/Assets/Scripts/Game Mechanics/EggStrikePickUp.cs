@@ -17,7 +17,7 @@ public class EggStrikePickUp : MonoBehaviour
     void PickUp(Collider2D player)
     {
         HomingMissle Fire = player.GetComponent<HomingMissle>();
-        Fire.FireMissile = true;  
+        //Fire.FireMissile = true;  
         Destroy(gameObject);
     }
 }

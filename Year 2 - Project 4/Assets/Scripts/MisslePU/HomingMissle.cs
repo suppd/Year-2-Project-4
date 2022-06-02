@@ -11,8 +11,8 @@ public class HomingMissle : MonoBehaviour
 
     public float speed = 5f;
     public float rotateSpeed = 100f;
-
-    public bool FireMissile;
+    [HideInInspector]
+    public bool missleOn = false;
 
     public GameObject HomingEggsplosion;
 
@@ -22,16 +22,14 @@ public class HomingMissle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        FireMissile = false;
     }
 
-    
-
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Launch();
     }
+
 
     // void OnTriggerEnter2D ()
     // {
