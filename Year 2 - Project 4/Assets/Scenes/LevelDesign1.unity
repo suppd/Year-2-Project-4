@@ -5832,7 +5832,7 @@ GameObject:
   - component: {fileID: 315438898}
   - component: {fileID: 315438900}
   - component: {fileID: 315438901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VegetableItems_2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7447,7 +7447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388131399}
   - component: {fileID: 388131398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VegetableItems_2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8499,7 +8499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451978705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.81, y: 1.82, z: 0}
+  m_LocalPosition: {x: 5.77, y: -6.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438847581}
@@ -13573,7 +13573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768967120}
   - component: {fileID: 768967119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VegetableItems_2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15922,7 +15922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 909487959}
   - component: {fileID: 909487958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VegetableItems_2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16767,7 +16767,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981482341}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -18346,7 +18346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069456649}
   - component: {fileID: 1069456648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VegetableItems_2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29027,7 +29027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741926981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.04, y: 0.14, z: 0}
+  m_LocalPosition: {x: 2.53, y: -6.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438847581}
