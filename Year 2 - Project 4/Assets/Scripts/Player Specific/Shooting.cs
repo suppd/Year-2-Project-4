@@ -21,7 +21,10 @@ public class Shooting : MonoBehaviour
     float fireRate = 1f;
     private float lastShot = 0.0f;
 
-
+    private void Update()
+    {
+       // Debug.Log(vestDeployed);
+    }
 
     //public string shooter { get; set; }
     private void Awake()
@@ -57,6 +60,7 @@ public class Shooting : MonoBehaviour
                 break;
             case "vest":
                 SpawnVest();
+                Debug.Log("big");
                 shotType = "normal";
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);

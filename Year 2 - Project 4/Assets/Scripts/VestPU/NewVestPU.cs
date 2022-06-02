@@ -24,10 +24,15 @@ public class NewVestPU : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        stats.SpawnSmallVest();
+        if (stats.vestDeployed == false)
+        {
+            Debug.Log("small");
+            stats.SpawnSmallVest();
+        }
         speed.StopBombAnim();
         stats.shotType = "normal";
         speed.bonusSpeed = 0;
+        stats.vestDeployed = false;
         Destroy(gameObject);
     }
 

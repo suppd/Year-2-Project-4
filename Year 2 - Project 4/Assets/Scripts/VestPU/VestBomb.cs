@@ -27,7 +27,7 @@ public class VestBomb : MonoBehaviour
             if(shooting.vestDeployed)
             {
                 obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
-                shooting.vestDeployed = false;
+                //shooting.vestDeployed = false;
             }
             else
             {

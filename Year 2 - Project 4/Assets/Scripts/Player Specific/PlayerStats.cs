@@ -58,6 +58,7 @@ public class PlayerStats : MonoBehaviour
         {
             playerConfig.isAlive=true;
         }
+        Debug.Log(HP);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
