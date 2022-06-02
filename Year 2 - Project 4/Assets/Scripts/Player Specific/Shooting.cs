@@ -20,7 +20,7 @@ public class Shooting : MonoBehaviour
     float fireRate = 1f;
     private float lastShot = 0.0f;
 
-
+    public bool isTeams = true;
 
     //public string shooter { get; set; }
     private void Awake()
@@ -74,13 +74,17 @@ public class Shooting : MonoBehaviour
     
     void SpawnBullet()
     {
+
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+        Debug.Log("shot");
+        bullet.GetComponent<Bullet>().isBlue = gameObject.GetComponent<PlayerStats>().isBlue;
+        bullet.GetComponent<Bullet>().isTeams = true; //change this to a stored value on like playerstats which has isTeams stored and gets set to true / false depending on init
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
         //this.shooter = this.name;
         //bullet.GetComponent<Bullet>().shotFrom = shooter;
         ////Debug.Log(this.shooter);
-        ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
+        ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);       
     }
 
     void SpawnBomb()
