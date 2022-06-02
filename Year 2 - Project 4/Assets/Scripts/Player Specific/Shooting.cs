@@ -11,14 +11,16 @@ public class Shooting : MonoBehaviour
     public GameObject vestPrefab;
     public AudioClip shootSound;
     public Animator anima;
-    public bool nadeOn;
     public string shotType;
-    public bool vestActive = false;
+    [HideInInspector]
+    public bool vestDeployed = false;
 
     public float bulletForce = 15f;
     [SerializeField]
     float fireRate = 1f;
     private float lastShot = 0.0f;
+
+
 
     //public string shooter { get; set; }
     private void Awake()
@@ -53,11 +55,12 @@ public class Shooting : MonoBehaviour
                 lastShot = Time.time;
                 break;
             case "vest":
-                vestActive = true;
                 SpawnVest();
+                vestDeployed = true;
                 shotType = "normal";
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);
+                DestroyVest();
                 break;
             case "freeze":
                
@@ -93,15 +96,15 @@ public class Shooting : MonoBehaviour
     }
      public void SpawnVest()
     {
-        vestPrefab.SetActive(true);
-        //GameObject Vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
+        //vestPrefab.SetActive(true);
+        GameObject Vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
 
     }
 
 
     void DestroyVest()
     {
-        vestPrefab.SetActive(false);
+        
     }
 
 }

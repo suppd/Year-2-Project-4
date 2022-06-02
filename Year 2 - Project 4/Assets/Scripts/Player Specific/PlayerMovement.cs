@@ -9,26 +9,25 @@ public class PlayerMovement : MonoBehaviour
     PlayerControls playercontrols;
     public float speed = 5f; //controls velocity multiplier
     public Rigidbody2D rb;
-    public Animator anim;
-    public Vector2 movements;    public Vector2 inputVector;
-    private Vector3 lastPos;    public bool dashAllow;
+    public Animator anim;    public float DashForce = 20f;
     private bool isWalking;
-    public float bonusSpeed = 0;
-    public float DashForce = 20f;
-    public float dashDistance = 0.2f;
-    public float dashDuration = 0.5f;
-    public float cooldownDuration = 1.0f;
-    public ParticleSystem dashDust;
-
-    public bool timeOn;
-    private bool anh;
 
+    [HideInInspector]
+    public bool dashAllow;
+    [HideInInspector]
+    public float bonusSpeed = 0;
+    [HideInInspector]
+    public Vector2 movements;    [HideInInspector]    public Vector2 inputVector;
+    public ParticleSystem dashDust;
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
     private float horizontal;
     private float vertical;
     private bool isfacingright = true;
     private bool isfacingleft = false;
+    private float dashDistance = 0.2f;
+    private float dashDuration = 0.5f;
+    private float cooldownDuration = 1.0f;
 
 
 
@@ -73,8 +72,6 @@ public class PlayerMovement : MonoBehaviour
                     StartCoroutine(DashWall());
                 }
                 
-
-
                 speed = DashForce + bonusSpeed;
 
                 dashCounter = dashDistance;
@@ -125,33 +122,10 @@ public class PlayerMovement : MonoBehaviour
         dashDust.Play();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            if (dashAllow)
-            {
-                if (isWalking == false || anh == true)
-                {
-                   // StartCoroutine(DashWall(collision));
-                }
-                else
-                {
-                    //collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
-                    //GetComponent<CircleCollider2D>().enabled = true;
-                }
-            }   
-        }
-    }
-
     IEnumerator DashWall()
     {
-        //wall.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        //yield return new WaitForSeconds(0.4f);
-        //wall.gameObject.GetComponent<BoxCollider2D>().enabled = true;
-
         GetComponent<CircleCollider2D>().enabled = false;
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         GetComponent<CircleCollider2D>().enabled = true;
     }
 

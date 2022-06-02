@@ -32,13 +32,18 @@ public class VestBomb : MonoBehaviour
 
         foreach (CircleCollider2D obj2 in player)
         {
+            Shooting shooting = obj2.GetComponent<Shooting>();
+
             CircleCollider2D dad = gameObject.GetComponentInParent<CircleCollider2D>();
-            if(obj2 == dad)
+            if(shooting.vestDeployed)
             {
+             
                 dad.gameObject.GetComponent<PlayerStats>().TakeDamage(10);
+                shooting.vestDeployed = false;
             }
             else
             {
+               
                 obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
             }
             

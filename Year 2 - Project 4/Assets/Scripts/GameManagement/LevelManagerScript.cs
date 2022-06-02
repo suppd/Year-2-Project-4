@@ -11,7 +11,7 @@ public class LevelManagerScript : MonoBehaviour
     public int UpdateAmountOfPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log(players.Length);
+       // Debug.Log(players.Length);
         return players.Length;
     }
 

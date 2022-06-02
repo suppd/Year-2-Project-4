@@ -17,11 +17,10 @@ GameObject:
   - component: {fileID: 3551908255657454723}
   - component: {fileID: 4650708730441958946}
   - component: {fileID: 2453835206104791124}
-  - component: {fileID: -8130349832912191246}
   - component: {fileID: 2884702812988646656}
   - component: {fileID: 8679598731988760152}
   - component: {fileID: 7338101077393097795}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DashPartPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -139,6 +138,7 @@ MonoBehaviour:
   anima: {fileID: 2453835206104791124}
   nadeOn: 0
   shotType: 
+  vestActive: 0
   bulletForce: 12
   fireRate: 1
 --- !u!114 &161273018238503362
@@ -157,16 +157,12 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
-  movements: {x: 0, y: 0}
-  inputVector: {x: 0, y: 0}
+  DashForce: 10
   dashAllow: 0
   bonusSpeed: 0
-  DashForce: 10
-  dashDistance: 0.2
-  dashDuration: 0.5
-  cooldownDuration: 2
+  movements: {x: 0, y: 0}
+  inputVector: {x: 0, y: 0}
   dashDust: {fileID: 6607651274191463914, guid: 296eff4f6f505ce419ef1e7aaeb79658, type: 3}
-  timeOn: 0
 --- !u!58 &3383183338051999284
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
-  score: 0
   ID: 0
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}
@@ -385,18 +380,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-8130349832912191246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161273018238503366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ff7b71527865a14c82d6b16d7dbddf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2884702812988646656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +524,7 @@ GameObject:
   - component: {fileID: 161273019067780493}
   - component: {fileID: 8023113503905917671}
   - component: {fileID: 399547745294339568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: FirePoint
   m_Icon: {fileID: 0}
@@ -638,7 +621,7 @@ GameObject:
   - component: {fileID: 1169307995051289660}
   - component: {fileID: 2052287653892746474}
   - component: {fileID: 3058717923048704320}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HP bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7748011786272718362}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Missing Prefab (Dummy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +727,7 @@ GameObject:
   - component: {fileID: 5889139632146044840}
   - component: {fileID: 5763296511761131966}
   - component: {fileID: 7248473334862826293}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4010167341830151739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DashCorrect (Missing Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +857,7 @@ GameObject:
   - component: {fileID: 7612313138090841675}
   - component: {fileID: 341559899574491841}
   - component: {fileID: 175661121052243066}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6481376969060286750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
