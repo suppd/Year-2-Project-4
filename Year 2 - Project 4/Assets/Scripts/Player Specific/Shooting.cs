@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     public GameObject Bombprefab;
     public GameObject vestPrefab;
     public GameObject smallVestPrefab;
+    public GameObject freezePrefab;
     public AudioClip shootSound;
     public Animator anima;
     public string shotType;
@@ -60,14 +61,16 @@ public class Shooting : MonoBehaviour
                 break;
             case "vest":
                 SpawnVest();
-                Debug.Log("big");
                 shotType = "normal";
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);
-                
                 break;
             case "freeze":
-               
+                anima.SetTrigger("Freeze");
+                SpawnFreeze();
+                shotType = "normal";
+                lastShot = Time.time;
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 break;
             case "bounce":
                 
@@ -110,5 +113,10 @@ public class Shooting : MonoBehaviour
         GameObject smallVest = Instantiate(smallVestPrefab, FirePoint.position, FirePoint.rotation);
     }
 
-
+    public void SpawnFreeze()
+    {
+        GameObject freeze = Instantiate(freezePrefab, FirePoint.position, FirePoint.rotation);
+        Rigidbody2D rb = freeze.GetComponent<Rigidbody2D>();
+        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+    }
 }

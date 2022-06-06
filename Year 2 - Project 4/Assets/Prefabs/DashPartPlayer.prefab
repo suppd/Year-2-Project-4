@@ -135,6 +135,7 @@ MonoBehaviour:
   Bombprefab: {fileID: 8240047824914025357, guid: a75ecb97ad4bfa648a6e608d813a5b39, type: 3}
   vestPrefab: {fileID: 8240047824914025357, guid: 849c18a0400907c4ab2a381ed18cfb22, type: 3}
   smallVestPrefab: {fileID: 8240047824914025357, guid: 2b1986169872c8f44bf852e4767229c5, type: 3}
+  freezePrefab: {fileID: 8240047824914025357, guid: d6d2f894444ef154f84b026230f85aab, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
   shotType: 
