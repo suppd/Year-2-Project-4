@@ -42,13 +42,10 @@ public class Bullet : MonoBehaviour
 
         if(collision.gameObject.tag == "Wall")
         {
-            /*
-            Vector2 inDirection = GetComponent<Rigidbody2D>().velocity;
-            Vector2 inNormal = collision.contacts[0].normal;
-            Vector2 newVelocity = Vector2.Reflect(inDirection, inNormal);
-            rb.velocity = newVelocity;
-            Debug.Log(inNormal);
-            */
+                
+            var speed = lastVel.magnitude;
+            var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
+            rb.velocity = direction * Mathf.Max(speed, 0f);
 
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);

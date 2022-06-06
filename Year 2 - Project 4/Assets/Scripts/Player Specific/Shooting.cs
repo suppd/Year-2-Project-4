@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject bulletPrefab;
+    public GameObject bouncePrefab;
     public GameObject Bombprefab;
     public GameObject vestPrefab;
     public GameObject smallVestPrefab;
@@ -73,7 +74,10 @@ public class Shooting : MonoBehaviour
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 break;
             case "bounce":
-                
+                anima.SetTrigger("Bounce");
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                lastShot = Time.time;
+                shotType = "normal";
                 break;
         }
     }
@@ -92,14 +96,9 @@ public class Shooting : MonoBehaviour
 
     void SpawnBomb()
     {
-       
         GameObject Bomb = Instantiate(Bombprefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = Bomb.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
-        //this.shooter = this.name;
-        //bullet.GetComponent<Bullet>().shotFrom = shooter;
-        ////Debug.Log(this.shooter);
-        ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);
     }
      public void SpawnVest()
     {
@@ -117,6 +116,13 @@ public class Shooting : MonoBehaviour
     {
         GameObject freeze = Instantiate(freezePrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = freeze.GetComponent<Rigidbody2D>();
+        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+    }
+
+    void SpawnBounce()
+    {
+        GameObject bounce = Instantiate(bouncePrefab, FirePoint.position, FirePoint.rotation);
+        Rigidbody2D rb = bounce.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }

@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 161273019067780493}
   bulletPrefab: {fileID: 4204814991610999697, guid: b1ec1a63f9033b74b96bc668b4ee728b, type: 3}
+  bouncePrefab: {fileID: 4204814991610999697, guid: 8911f0d3a30f2254c9a58755331494a8, type: 3}
   Bombprefab: {fileID: 8240047824914025357, guid: a75ecb97ad4bfa648a6e608d813a5b39, type: 3}
   vestPrefab: {fileID: 8240047824914025357, guid: 849c18a0400907c4ab2a381ed18cfb22, type: 3}
   smallVestPrefab: {fileID: 8240047824914025357, guid: 2b1986169872c8f44bf852e4767229c5, type: 3}
