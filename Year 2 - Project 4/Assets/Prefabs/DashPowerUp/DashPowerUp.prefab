@@ -112,4 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6b29d67473efb4a92d14db22c994ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 8
+  duration: 5
+  PUEffect: {fileID: 186425126900198616, guid: 471eea3195b484341908a94f8589e315, type: 3}

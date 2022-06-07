@@ -9,12 +9,15 @@ public class NewVestPU : MonoBehaviour
     private GameObject VestEffect;
     
 
+    public GameObject PUEffect;
+
     public float duration = 3f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             StartCoroutine(PickUp(other));
+            GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
         }
     }
 

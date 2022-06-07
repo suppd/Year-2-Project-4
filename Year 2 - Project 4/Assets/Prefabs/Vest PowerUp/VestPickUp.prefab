@@ -113,4 +113,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VestEffect: {fileID: 7803518230169809496, guid: 4d3919e883ec89b4cb0d5039295b9bce, type: 3}
+  PUEffect: {fileID: 186425126900198616, guid: 471eea3195b484341908a94f8589e315, type: 3}
   duration: 5

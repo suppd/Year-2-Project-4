@@ -5,6 +5,8 @@ using UnityEngine;
 public class NadePickUp : MonoBehaviour
 {
 
+    public GameObject PUEffect;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -16,7 +18,8 @@ public class NadePickUp : MonoBehaviour
     void PickUp(Collider2D player)
     {
         Shooting stats = player.GetComponent<Shooting>();
-        stats.shotType = "grenade";    
+        stats.shotType = "grenade";
+        GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);    
         Destroy(gameObject);
     }
 }
