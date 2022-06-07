@@ -139,10 +139,10 @@ MonoBehaviour:
   freezePrefab: {fileID: 8240047824914025357, guid: d6d2f894444ef154f84b026230f85aab, type: 3}
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
-  shotType: 
+  shotType: normal
   vestDeployed: 0
   bulletForce: 12
-  fireRate: 1
+  fireRate: 0.5
   isTeams: 0
 --- !u!114 &161273018238503362
 MonoBehaviour:
