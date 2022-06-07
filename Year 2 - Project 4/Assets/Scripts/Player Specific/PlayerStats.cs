@@ -40,7 +40,7 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (HP <= 0)
         {
