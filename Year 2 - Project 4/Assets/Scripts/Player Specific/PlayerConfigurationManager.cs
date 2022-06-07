@@ -51,6 +51,10 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[i].animatorOverrideController = animOverride;
     }
 
+    public void SetTeam(int i, bool isBlue)
+    {
+        playerConfigs[i].isBlue = isBlue;
+    }
     public void ReadyPlayer(int i)
     {
         //Debug.Log(playerConfigs.Count);
@@ -96,6 +100,7 @@ public class PlayerConfiguration
     public int playerScore { get; set; }
     public bool isReady { get; set; }
 
+    public bool isBlue { get; set; }
     public bool isAlive{ get; set; }
     public Sprite playerSprite { get; set; }
 

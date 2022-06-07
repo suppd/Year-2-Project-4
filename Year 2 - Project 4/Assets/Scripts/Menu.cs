@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class Menu : MonoBehaviour
 {
     public Canvas optionsCanvas;
+    public string level;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class Menu : MonoBehaviour
 
     public void LoadLevelOne()
     {
-        SceneManager.LoadScene("Designer Max", LoadSceneMode.Single);
+        SceneManager.LoadScene(level);
     }
 
     public void Options(InputAction.CallbackContext context)
