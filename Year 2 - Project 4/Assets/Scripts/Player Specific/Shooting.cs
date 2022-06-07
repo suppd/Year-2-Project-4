@@ -99,6 +99,8 @@ public class Shooting : MonoBehaviour
         GameObject Bomb = Instantiate(Bombprefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = Bomb.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+        PlayerStats playerStats = GetComponent<PlayerStats>();
+        playerStats.activate = false;
     }
      public void SpawnVest()
     {
