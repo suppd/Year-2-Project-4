@@ -1043,12 +1043,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
+      propertyPath: maxZoom
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: minZoom
       value: 39.2
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
+      propertyPath: zoomLimiter
+      value: 65.2
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: virtualCamera
@@ -30844,6 +30852,10 @@ PrefabInstance:
     - target: {fileID: 8736698965563160311, guid: 0dcce4cf7bc71074d807e0d6b4246259, type: 3}
       propertyPath: m_Name
       value: Eggsplotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736698965563160311, guid: 0dcce4cf7bc71074d807e0d6b4246259, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dcce4cf7bc71074d807e0d6b4246259, type: 3}

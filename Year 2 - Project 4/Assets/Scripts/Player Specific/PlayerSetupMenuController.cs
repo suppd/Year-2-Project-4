@@ -44,6 +44,11 @@ public class PlayerSetupMenuController : MonoBehaviour
         menuPanel.SetActive(false);
         readyButton.Select();
     }
+
+    public void SetTeam(bool isBlue)
+    {
+
+    }
     public void SetAnimator(AnimatorOverrideController animatorOverrideController)
     {
         PlayerConfigurationManager.Instance.SetAnimator(playerIndex, animatorOverrideController);
