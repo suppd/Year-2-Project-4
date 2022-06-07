@@ -15,6 +15,8 @@ public class Shooting : MonoBehaviour
     public AudioClip shootSound;
     public Animator anima;
     public string shotType;
+    public PlayerMovement playerMovement;
+
     [HideInInspector]
     public bool vestDeployed = false;
 
@@ -59,6 +61,7 @@ public class Shooting : MonoBehaviour
                 break;
             case "vest":
                 SpawnVest();
+                playerMovement.bonusSpeed = 0;
                 shotType = "normal";
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);

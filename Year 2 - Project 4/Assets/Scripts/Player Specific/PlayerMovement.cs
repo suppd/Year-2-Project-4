@@ -129,15 +129,6 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = true;
     }
 
-    public void startBombAnim()
-    {
-        anim.SetBool("Vest", true);
-    }
-
-    public void StopBombAnim()
-    {
-        anim.SetBool("Vest", false);
-    }
 
 
 }

@@ -41,7 +41,6 @@ public class BouncingBullet : MonoBehaviour
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
-            Debug.Log("shot other player");
 
         }
 
@@ -50,8 +49,11 @@ public class BouncingBullet : MonoBehaviour
             numBounce++;
             bounceDamage += addedDamage;
             var speed = lastVel.magnitude;
+            //float angle = Vector2.Angle(lastVel.normalized, collision.contacts[0].normal);
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
             rb.velocity = direction * Mathf.Max(speed, 0f);
+            transform.eulerAngles = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
+            //transform.rotation = Quaternion.Euler(0,0, angle);
             if (numBounce == maxBounce)
             {
                 GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);

@@ -140,6 +140,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 1d28d141596240c4f916d370e68bdf13, type: 3}
   anima: {fileID: 2453835206104791124}
   shotType: normal
+  playerMovement: {fileID: 161273018238503362}
   vestDeployed: 0
   bulletForce: 12
   fireRate: 0.5
