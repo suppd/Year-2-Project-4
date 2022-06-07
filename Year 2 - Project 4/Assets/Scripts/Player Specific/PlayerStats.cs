@@ -76,11 +76,6 @@ public class PlayerStats : MonoBehaviour
             playerConfig.isAlive=true;
         }
         //Debug.Log(HP);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
     }
 
     public void Die()

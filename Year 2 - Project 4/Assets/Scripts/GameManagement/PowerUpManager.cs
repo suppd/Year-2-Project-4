@@ -17,6 +17,8 @@ public class PowerUpManager : MonoBehaviour
     private float amount;
     private void Start()
     {
+        emptyPoints = new Transform[spawnPoints.Length]; // ?
+
         amount = 1;
     }
 

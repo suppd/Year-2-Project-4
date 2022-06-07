@@ -10,8 +10,8 @@ public class LevelManagerScript : MonoBehaviour
     private float timer = 3f;
     public int UpdateAmountOfPlayers()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
-       // Debug.Log(players.Length);
+        players = GameObject.FindGameObjectsWithTag("Player"); // done every update??!?!
+        Debug.Log("Number of players: "+players.Length);
         return players.Length;
     }
 
