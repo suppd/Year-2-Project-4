@@ -7,7 +7,7 @@ public class NewVestPU : MonoBehaviour
 
     [SerializeField]
     private GameObject VestEffect;
-
+    
 
     public float duration = 3f;
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,17 +22,18 @@ public class NewVestPU : MonoBehaviour
     {
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
         Shooting stats = player.GetComponent<Shooting>();
-        
+        Animator anim = player.GetComponent<Animator>();
         speed.startBombAnim();
         stats.shotType = "vest";
-        speed.bonusSpeed = 3f; 
+        speed.bonusSpeed = 3f;
+        anim.SetBool("Vest", true);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
         if (stats.vestDeployed == false)
         {
-            Debug.Log("small");
             stats.SpawnSmallVest();
+            anim.SetBool("Vest", false);
         }
         speed.StopBombAnim();
         stats.shotType = "normal";
