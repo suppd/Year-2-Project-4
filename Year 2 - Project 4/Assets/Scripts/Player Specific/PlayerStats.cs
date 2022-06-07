@@ -20,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     public AudioClip EggSploded;
     public int num= 100;
 
+    public bool isBlue = true;
     Camera cam;
 
     LevelManagerScript level;
@@ -59,13 +60,6 @@ public class PlayerStats : MonoBehaviour
             playerConfig.isAlive=true;
         }
         //Debug.Log(HP);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-         
-        }
     }
 
     public void Die()

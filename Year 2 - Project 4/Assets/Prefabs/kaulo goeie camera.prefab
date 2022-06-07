@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 5313433588231681467}
   - component: {fileID: 5313433588231681464}
   - component: {fileID: 5313433588231681465}
+  - component: {fileID: 5272640664428120437}
   m_Layer: 0
   m_Name: kaulo goeie camera
   m_TagString: Wall
@@ -220,11 +221,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  offset: {x: 0, y: 0, z: -10}
-  smoothTime: 0.5
-  maxZoom: 80
-  minZoom: 0
-  zoomLimiter: 50
+  offset: {x: 0, y: 0, z: -4.5}
+  smoothTime: 0.3
+  maxZoom: 66.6
+  minZoom: 36.2
+  zoomLimiter: 21.2
+  virtualCamera: {fileID: 0}
   lerp: 0
 --- !u!114 &5313433588231681464
 MonoBehaviour:
@@ -280,6 +282,18 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5272640664428120437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313433588231681462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cbb98b80b2d2b458d2ae4b5db28845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5313433588244699677
 GameObject:
   m_ObjectHideFlags: 0
