@@ -221,12 +221,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
+  pixelsPerUnit: 32
+  pixelsPerUnitScale: 1
   offset: {x: 0, y: 0, z: -4.5}
   smoothTime: 0.3
   maxZoom: 66.6
   minZoom: 36.2
-  zoomLimiter: 21.2
-  virtualCamera: {fileID: 0}
+  zoomLimiter: 96.88
+  virtualCamera: {fileID: 5313433588244699651}
   lerp: 0
 --- !u!114 &5313433588231681464
 MonoBehaviour:
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5313433588231681462}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -294,6 +296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cbb98b80b2d2b458d2ae4b5db28845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pixelsPerUnit: 32
+  pixelsPerUnitScale: 1
+  zoomScaleMax: 10
+  zoomScaleStart: 1
+  smoovZoom: 1
+  smoovZoomDuration: 0.5
 --- !u!1 &5313433588244699677
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +313,7 @@ GameObject:
   - component: {fileID: 5313433588244699648}
   - component: {fileID: 5313433588244699651}
   - component: {fileID: 5313433588244699650}
+  - component: {fileID: 1458991222189243134}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -375,3 +384,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelsPerUnit: 100
+--- !u!114 &1458991222189243134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313433588244699677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
