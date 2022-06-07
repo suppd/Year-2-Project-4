@@ -71,6 +71,7 @@ public class MultiplePlayerCamera : MonoBehaviour
         else if (!lerp)
         {
             perfectCamera.assetsPPU = newZoom;
+            
         }
     }
     private void UpdateCameraScale()

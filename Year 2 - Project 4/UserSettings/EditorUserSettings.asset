@@ -6,25 +6,30 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
-      value: 22424703114646680e0b0227036c7a11050e2c2f3f3c15332827187df7ee3d2cfb
-      flags: 0
-    RecentlyUsedScenePath-1:
-      value: 22424703114646680e0b0227036c72111f1958072926337e38271427fb
-      flags: 0
-    RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c6c191b18166a08293538633c133af6f9
       flags: 0
-    RecentlyUsedScenePath-3:
+    RecentlyUsedScenePath-1:
       value: 22424703114646680e0b0227036c73150012140e293b2f37237b5326ece92021
+      flags: 0
+    RecentlyUsedScenePath-2:
+      value: 22424703114646680e0b0227036c73150012140e293b2f37237b0b61acf53a31f6fe
+      flags: 0
+    RecentlyUsedScenePath-3:
+      value: 22424703114646680e0b0227036c7a14011e166439262f2434
       flags: 0
     RecentlyUsedScenePath-4:
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c73150012140e293b2f37237b0b61acf53a31f6fe
+=======
+      value: 22424703114646680e0b0227036c6d1f03191c053a2d347e38271427fb
+>>>>>>> Cam
       flags: 0
     RecentlyUsedScenePath-5:
-      value: 22424703114646680e0b0227036c7a14011e166439262f2434
+      value: 22424703114646680e0b0227036c73150012140e293b2f3723785d62acf53a31f6fe
       flags: 0
     RecentlyUsedScenePath-6:
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c6d1f03191c053a2d347e38271427fb
 =======
       value: 22424703114646680e0b0227036c7a11050e2c2f3f3c15332827187df7ee3d2cfb
@@ -35,19 +40,26 @@ EditorUserSettings:
     RecentlyUsedScenePath-6:
       value: 22424703114646680e0b0227036c73150012140e293b2f3723785326ece92021
 >>>>>>> FixingTheParticles
+=======
+      value: 22424703114646680e0b0227036c73150012140e293b2f3723785326ece92021
+>>>>>>> Cam
       flags: 0
     RecentlyUsedScenePath-7:
-      value: 22424703114646680e0b0227036c73150012140e293b2f3723785d62acf53a31f6fe
+      value: 22424703114646680e0b0227036c731f1415016439262f2434
       flags: 0
     RecentlyUsedScenePath-8:
+<<<<<<< HEAD
 <<<<<<< HEAD
       value: 22424703114646680e0b0227036c73150012140e293b2f3723785326ece92021
 =======
       value: 22424703114646680e0b0227036c731f1415016439262f2434
 >>>>>>> FixingTheParticles
+=======
+      value: 22424703114646680e0b0227036c731f1415011e29292b23633c133af6f9
+>>>>>>> Cam
       flags: 0
     RecentlyUsedScenePath-9:
-      value: 22424703114646680e0b0227036c731f1415016439262f2434
+      value: 22424703114646680e0b0227036c72111f1958072926337e38271427fb
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650

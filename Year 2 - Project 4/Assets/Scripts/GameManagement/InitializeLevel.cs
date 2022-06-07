@@ -26,22 +26,25 @@ public class InitializeLevel : MonoBehaviour
                 player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, gameObject.transform);
                 player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfiguration[i]);
                 player.GetComponent<PlayerStats>().AssignPlayerConfig(playerConfiguration[i]);
+                player.GetComponent<Shooting>().isTeams = false;
                 //camScript.targets[i] = player.transform;
             }
             if (isTeams)
             {
                 
-                if (i == 1 || i == 3)
+                if (playerConfiguration[i].isBlue)
                 {
                     player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, gameObject.transform);
-                    player.GetComponent<PlayerStats>().isBlue = false;
+                    player.GetComponent<PlayerStats>().isBlue = true;
+                    player.GetComponent<Shooting>().isTeams = true;
                     player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfiguration[i]);
                     player.GetComponent<PlayerStats>().AssignPlayerConfig(playerConfiguration[i]);
                 }
                 else
                 {
                     player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, gameObject.transform);
-                    player.GetComponent<PlayerStats>().isBlue = true;
+                    player.GetComponent<PlayerStats>().isBlue = false;
+                    player.GetComponent<Shooting>().isTeams = true;
                     player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfiguration[i]);
                     player.GetComponent<PlayerStats>().AssignPlayerConfig(playerConfiguration[i]);
                 }
