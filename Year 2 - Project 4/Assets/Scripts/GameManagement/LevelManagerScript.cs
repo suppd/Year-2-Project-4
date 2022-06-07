@@ -11,13 +11,14 @@ public class LevelManagerScript : MonoBehaviour
     public int UpdateAmountOfPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-       // Debug.Log(players.Length);
+        Debug.Log(players.Length);
         return players.Length;
     }
 
     private void Update()
     {
-        if (players.Length == 1)
+        //InvokeRepeating("UpdateAmountOfPlayers", 2, 0);
+        if (players.Length == 0 || players == null)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
@@ -25,7 +26,7 @@ public class LevelManagerScript : MonoBehaviour
                 SceneManager.LoadScene("RoundOver");
             }
         }
-        else if (players.Length == 0)
+        else if (players.Length == 1)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)

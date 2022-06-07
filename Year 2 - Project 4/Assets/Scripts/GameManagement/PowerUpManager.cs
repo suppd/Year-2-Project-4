@@ -58,7 +58,7 @@ public class PowerUpManager : MonoBehaviour
     {
         //if (waitingForSpawn)
         //{
-        CheckEmptyPoints();
+        //CheckEmptyPoints();
         InvokeRepeating("WaitForSpawn", timeBetweenPowerups, 0f);
         //}
 

@@ -1056,7 +1056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: zoomLimiter
-      value: 65.2
+      value: 133.06
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681467, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: virtualCamera

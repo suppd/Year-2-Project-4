@@ -52,4 +52,11 @@ public class RoundOverManager : MonoBehaviour
     {
         SceneManager.LoadScene(Levelname);
     }
+
+    public void MainMenu()
+    {
+        GameObject configManager = GameObject.FindGameObjectWithTag("GameController");
+        Destroy(configManager);
+        SceneManager.LoadScene("Main Menu");
+    }
 }
