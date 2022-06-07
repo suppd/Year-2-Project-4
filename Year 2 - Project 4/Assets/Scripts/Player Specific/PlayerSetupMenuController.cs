@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Animations;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PlayerSetupMenuController : MonoBehaviour
 {
@@ -16,10 +18,18 @@ public class PlayerSetupMenuController : MonoBehaviour
     private GameObject menuPanel;
     [SerializeField]
     private Button readyButton;
+    [SerializeField]
+    private GameObject teamMenuPanel;
+    [SerializeField]
+    private EventSystem eventSystem;
 
     private float ignoreImputTime = 1.5f;
     private bool inputEnabled;
 
+    private void Start()
+    {
+        
+    }
     public void SetPlayerIndex(int p1)
     {
         playerIndex = p1;
@@ -47,6 +57,11 @@ public class PlayerSetupMenuController : MonoBehaviour
 
     public void SetTeam(bool isBlue)
     {
+        PlayerConfigurationManager.Instance.SetTeam(playerIndex, isBlue);
+        readyPanel.SetActive(true);
+        readyButton.interactable = true;
+        teamMenuPanel.SetActive(false);
+        readyButton.Select();
 
     }
     public void SetAnimator(AnimatorOverrideController animatorOverrideController)
