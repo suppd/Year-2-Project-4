@@ -7,8 +7,15 @@ using System;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float HP = 100;
-    public float MaxHP = 100;
+    public int HP = 100;
+    public int MaxHP = 100;
+    public int currentHealth;
+
+
+
+
+    public healthBaR healthBar;
+
 
     public int score { get; set; }
     public int ID;
@@ -34,9 +41,18 @@ public class PlayerStats : MonoBehaviour
         cam = FindObjectOfType<Camera>();
     }
 
+    void Start()
+    {
+        currentHealth = MaxHP;
+        healthBar.SetMaxHealth(MaxHP);
+    }
+
     public void TakeDamage(int damage)
     {        
-        HP = HP - damage;       
+        HP = HP - damage; 
+        currentHealth -= damage;      
+
+        healthBar.SetHealth(HP);
     }
 
 
@@ -60,6 +76,11 @@ public class PlayerStats : MonoBehaviour
             playerConfig.isAlive=true;
         }
         //Debug.Log(HP);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
     }
 
     public void Die()
