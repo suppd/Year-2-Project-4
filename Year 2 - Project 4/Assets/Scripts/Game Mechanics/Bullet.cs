@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 Debug.Log("shot other player");
             }
-            if (isTeams)
+            else if (isTeams)
             {
                 if (collision.gameObject.GetComponent<PlayerStats>().isBlue && isBlue)
                 {

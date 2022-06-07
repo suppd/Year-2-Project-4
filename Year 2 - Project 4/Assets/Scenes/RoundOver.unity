@@ -337,6 +337,7 @@ MonoBehaviour:
   canvas: {fileID: 347886042}
   text: {fileID: 734067216290339503}
   prefab: {fileID: 9052728251203586129, guid: 6e3042ee77b5d9b40870496fa0b228d5, type: 3}
+  Levelname: LevelDesign1
 --- !u!4 &526134818
 Transform:
   m_ObjectHideFlags: 0

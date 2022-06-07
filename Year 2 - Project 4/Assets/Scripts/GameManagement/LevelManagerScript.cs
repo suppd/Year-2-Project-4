@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManagerScript : MonoBehaviour
 {
-    public GameObject[] players;
+    private GameObject[] players;
 
     private float timer = 3f;
     public int UpdateAmountOfPlayers()
