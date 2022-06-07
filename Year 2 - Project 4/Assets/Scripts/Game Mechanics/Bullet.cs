@@ -22,6 +22,8 @@ public class Bullet : MonoBehaviour
     public AudioClip crackEgg;
     public AudioClip hitPlayer;
 
+    public int damage = 25;
+
     public bool isTeams = false;
     public bool isBlue;
 
@@ -45,7 +47,7 @@ public class Bullet : MonoBehaviour
             {
                 GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
                 Destroy(killEffect, 1f);
-                collision.gameObject.GetComponent<PlayerStats>().TakeDamage(25);
+                collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
                 AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
                 Destroy(gameObject);
                 Debug.Log("shot other player");

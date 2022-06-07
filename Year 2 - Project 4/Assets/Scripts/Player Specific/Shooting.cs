@@ -104,13 +104,13 @@ public class Shooting : MonoBehaviour
      public void SpawnVest()
     {
         vestDeployed = true;
-        GameObject vest = Instantiate(vestPrefab, FirePoint.position, FirePoint.rotation);
+        GameObject vest = Instantiate(vestPrefab, this.transform.position, this.transform.rotation);
     }
 
     public void SpawnSmallVest()
     {
         vestDeployed = true;
-        GameObject smallVest = Instantiate(smallVestPrefab, FirePoint.position, FirePoint.rotation);
+        GameObject smallVest = Instantiate(smallVestPrefab, this.transform.position, this.transform.rotation);
     }
 
     public void SpawnFreeze()

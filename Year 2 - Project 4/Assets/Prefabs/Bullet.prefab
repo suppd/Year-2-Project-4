@@ -88,6 +88,9 @@ MonoBehaviour:
   killPlayer: {fileID: 6013871963420345284, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
   crackEgg: {fileID: 8300000, guid: 7b50d5ed38c43c04da56bc0c27d808ae, type: 3}
   hitPlayer: {fileID: 8300000, guid: 5e02ab0abb66d1c40815ded8c46cf9f2, type: 3}
+  damage: 20
+  isTeams: 0
+  isBlue: 0
 --- !u!1 &7683325576891872115
 GameObject:
   m_ObjectHideFlags: 0

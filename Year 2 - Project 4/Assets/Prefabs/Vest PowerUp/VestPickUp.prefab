@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8736698965563160310}
   - component: {fileID: 1342921596397081570}
   m_Layer: 0
-  m_Name: VestSecond
+  m_Name: VestPickUp
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

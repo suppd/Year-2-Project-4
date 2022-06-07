@@ -17,6 +17,9 @@ public class BouncingBullet : MonoBehaviour
     public AudioClip crackEgg;
     public AudioClip hitPlayer;
 
+    private int bounceDamage = 25;
+    public int addedDamage = 10;
+
     //public string shotFrom { get; set; }
 
     private void Awake()
@@ -35,7 +38,7 @@ public class BouncingBullet : MonoBehaviour
         {
             GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
             Destroy(killEffect, 1f);
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(25);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
             Debug.Log("shot other player");
@@ -45,6 +48,7 @@ public class BouncingBullet : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             numBounce++;
+            bounceDamage += addedDamage;
             var speed = lastVel.magnitude;
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
             rb.velocity = direction * Mathf.Max(speed, 0f);
