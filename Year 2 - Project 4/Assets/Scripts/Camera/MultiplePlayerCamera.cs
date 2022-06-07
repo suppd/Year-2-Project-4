@@ -60,7 +60,7 @@ public class MultiplePlayerCamera : MonoBehaviour
         int newZoom = (int)Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
         //Debug.Log(newZoom);
         //virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, newZoom, Time.deltaTime);
-        UpdateCameraScale();
+        //UpdateCameraScale();
         //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
         if (lerp)
         {
@@ -76,8 +76,8 @@ public class MultiplePlayerCamera : MonoBehaviour
     private void UpdateCameraScale()
     {
         // The magic formular from teh Unity Docs
-        cameraSize = (screenHeight / (pixelsPerUnitScale * pixelsPerUnit)) * 0.5f;
-        cam.orthographicSize = cameraSize;
+       // cameraSize = (screenHeight / (pixelsPerUnitScale * pixelsPerUnit)) * 0.5f;
+       // cam.orthographicSize = cameraSize;
     }
     void Move()
     {
@@ -124,12 +124,4 @@ public class MultiplePlayerCamera : MonoBehaviour
         }
     }
 
-    void LateUpdate()
-    {
-        if (targets.Count == 0)
-            return;
-
-        Move();
-        Zoom();
-    }
 }
