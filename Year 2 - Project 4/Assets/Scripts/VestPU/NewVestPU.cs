@@ -30,6 +30,10 @@ public class NewVestPU : MonoBehaviour
         stats.shotType = "vest";
         speed.bonusSpeed = 3f;
         anim.SetBool("Vest", true);
+
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        playerStats.activateTimer = true;
+
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);

@@ -11,11 +11,9 @@ public class PlayerStats : MonoBehaviour
     public int MaxHP = 100;
     public int currentHealth;
 
+    public healthBar healthBar;
 
-
-
-    public healthBaR healthBar;
-
+    public SpriteRenderer sprite;
 
     public int score { get; set; }
     public int ID;
@@ -35,6 +33,15 @@ public class PlayerStats : MonoBehaviour
 
     private bool scored = false;
 
+    //UI Icons PowerUps
+    public GameObject eggsplosivePU;
+    public GameObject TimerVest;
+
+
+    //Bools for turning on powerups
+    public bool activate = false;
+    public bool activateTimer = false;
+
     private void Awake()
     {
         level = FindObjectOfType<LevelManagerScript>();
@@ -50,9 +57,9 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damage)
     {        
         HP = HP - damage; 
-        currentHealth -= damage;      
-
+        currentHealth -= damage; 
         healthBar.SetHealth(HP);
+        StartCoroutine(FlashRed());
     }
 
 
@@ -76,6 +83,25 @@ public class PlayerStats : MonoBehaviour
             playerConfig.isAlive=true;
         }
         //Debug.Log(HP);
+
+
+        if(activate == true)
+        {
+            eggsplosivePU.SetActive(true);
+        }
+        else
+        {
+            eggsplosivePU.SetActive(false);
+        }
+
+        if(activateTimer == true)
+        {
+            TimerVest.SetActive(true);
+        }
+        else
+        {
+            TimerVest.SetActive(false);
+        }
     }
 
     public void Die()
@@ -101,6 +127,15 @@ public class PlayerStats : MonoBehaviour
         playerConfig = config;
         ID = playerConfig.playerIndex;
         score = playerConfig.playerScore;
+    }
+
+
+
+    public IEnumerator FlashRed()
+    {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        sprite.color = Color.white;
     }
     
 }
