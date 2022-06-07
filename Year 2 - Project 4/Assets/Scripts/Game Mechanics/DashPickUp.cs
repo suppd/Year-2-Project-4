@@ -7,12 +7,14 @@ public class DashPickUp : MonoBehaviour
 
     public float duration = 3f;
 
+    public GameObject PUEffect;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             StartCoroutine(PickUp(other));
+            GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
         }
     }
 
@@ -23,7 +25,6 @@ public class DashPickUp : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-
         stats.dashAllow = false;
         Destroy(gameObject);
     }

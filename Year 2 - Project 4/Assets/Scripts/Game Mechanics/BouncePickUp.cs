@@ -5,6 +5,9 @@ using UnityEngine;
 public class BouncePickUp : MonoBehaviour
 {
     public int numBounceBullets;
+
+    public GameObject PUEffect;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -18,6 +21,7 @@ public class BouncePickUp : MonoBehaviour
     {
         Shooting stats = player.GetComponent<Shooting>();
         stats.shotType = "bounce";
+        GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
         Destroy(gameObject);
     }
 }

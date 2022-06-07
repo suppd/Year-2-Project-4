@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eb14e101350ee429e1ee8417a30db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 3
+  PUEffect: {fileID: 186425126900198616, guid: 471eea3195b484341908a94f8589e315, type: 3}
 --- !u!1001 &3672863757021355074
 PrefabInstance:
   m_ObjectHideFlags: 0
