@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class NewVestPU : MonoBehaviour
 {
+
+    [SerializeField]
+    private GameObject VestEffect;
+
+
     public float duration = 3f;
     private void OnTriggerEnter2D(Collider2D other)
     {
