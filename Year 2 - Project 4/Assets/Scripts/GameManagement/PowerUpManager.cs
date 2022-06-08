@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUpManager : MonoBehaviour
 {
     public Transform[] spawnPoints;
-
+    public float[] percentages;
     public GameObject[] powerUps;
 
     public float timeBetweenPowerups;
@@ -29,18 +29,40 @@ public class PowerUpManager : MonoBehaviour
             int random = Random.Range(0, spawnPoints.Length);
             if (spawnPoints[random].transform.childCount == 0)
             {
-                SpawnRandomPowerUp(random);
+                SpawnRandomPowerUp(random, GetRandomSpawn());
                 waitingForSpawn = false;
             }
         }
     }
 
-    public void SpawnRandomPowerUp(int index)
+    public void SpawnRandomPowerUp(int index, int powerUpToSpawn)
     {
-        Instantiate(powerUps[Random.Range(0, powerUps.Length)], spawnPoints[index]);
+        Instantiate(powerUps[powerUpToSpawn], spawnPoints[index]);
         waitingForSpawn = true;
     }
+    private int GetRandomSpawn()
+    {
+        float random = Random.Range(0, 1f);
+        float numforAdding = 0;
+        float total = 0;
+        for (int i = 0; i < percentages.Length; i++)
+        {
+            total += percentages[i];
+        }
 
+        for (int i = 0; i < powerUps.Length; i++)
+        {
+            if (percentages[i] / total + numforAdding >= random)
+            {
+                return i;
+            }
+            else
+            {
+                numforAdding += percentages[i] / total;
+            }
+        }
+        return 0;
+    }
     void CheckEmptyPoints()
     {
         for (int i = 0; i < spawnPoints.Length; i++)

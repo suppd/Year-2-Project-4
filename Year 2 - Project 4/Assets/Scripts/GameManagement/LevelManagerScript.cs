@@ -8,7 +8,7 @@ public class LevelManagerScript : MonoBehaviour
     private GameObject[] players;
 
     public int amountOfPlayers;
-    private float timer = 2f;
+    private float timer = 3f;
 
     bool foundPlayers = false;
     private void Start()
