@@ -7,18 +7,30 @@ public class LevelManagerScript : MonoBehaviour
 {
     private GameObject[] players;
 
-    private float timer = 3f;
+    public int amountOfPlayers;
+    private float timer = 2f;
+
+    bool foundPlayers = false;
+    private void Start()
+    {
+        
+    }
     public int UpdateAmountOfPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         Debug.Log(players.Length);
+        amountOfPlayers = players.Length;
         return players.Length;
     }
 
     private void Update()
     {
-        //InvokeRepeating("UpdateAmountOfPlayers", 2, 0);
-        if (players.Length == 0 || players == null)
+        if (!foundPlayers)
+        {
+            Invoke("UpdateAmountOfPlayers", 0.5f);
+            foundPlayers = true;
+        }
+        if (amountOfPlayers == 0 || players == null)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
@@ -26,7 +38,7 @@ public class LevelManagerScript : MonoBehaviour
                 SceneManager.LoadScene("RoundOver");
             }
         }
-        else if (players.Length == 1)
+        else if (amountOfPlayers == 1)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
