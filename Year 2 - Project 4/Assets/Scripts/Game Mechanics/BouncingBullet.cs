@@ -51,6 +51,7 @@ public class BouncingBullet : MonoBehaviour
             var speed = lastVel.magnitude;
             //float angle = Vector2.Angle(lastVel.normalized, collision.contacts[0].normal);
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
+            Debug.Log(direction);
             rb.velocity = direction * Mathf.Max(speed, 0f);
             transform.eulerAngles = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
             //transform.rotation = Quaternion.Euler(0,0, angle);

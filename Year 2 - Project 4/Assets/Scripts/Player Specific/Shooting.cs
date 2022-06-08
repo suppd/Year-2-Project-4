@@ -30,7 +30,7 @@ public class Shooting : MonoBehaviour
     //public string shooter { get; set; }
     private void Awake()
     {
-        shotType = "normal";
+        shotType = "bounce";
     }
     public void Fire1(InputAction.CallbackContext context)
     {
@@ -78,7 +78,7 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Bounce");
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 lastShot = Time.time;
-                shotType = "normal";
+                //shotType = "normal";
                 break;
         }
     }
