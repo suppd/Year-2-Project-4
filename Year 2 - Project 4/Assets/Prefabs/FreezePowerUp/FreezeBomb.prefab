@@ -138,5 +138,5 @@ MonoBehaviour:
   PlayerToHit:
     serializedVersion: 2
     m_Bits: 128
-  explodeEffect: {fileID: 7803518230169809496, guid: 4d3919e883ec89b4cb0d5039295b9bce, type: 3}
+  explodeEffect: {fileID: 8570816954370032022, guid: 134e95d0e68724d64b9a725a800f24a9, type: 3}
   percentage: 0.1
