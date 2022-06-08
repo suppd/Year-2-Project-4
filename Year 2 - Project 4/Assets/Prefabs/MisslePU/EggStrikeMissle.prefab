@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1927456157631492388, guid: cbd73bed116614f8fb7421713de7a793, type: 3}
-  speed: 12
-  rotateSpeed: 200
+  speed: 8
+  rotateSpeed: 400
   missleOn: 0
   HomingEggsplosion: {fileID: 4968505162748443373, guid: 0b49155350a72894890e540ce69d5411, type: 3}
 --- !u!61 &5890618387018719612
