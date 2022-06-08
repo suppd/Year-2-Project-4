@@ -8,7 +8,7 @@ public class ManageParts : MonoBehaviour
 
     void Awake()
     {
-        timer = 1;
+        timer = 5;
     }
 // Update is called once per frame
     void Update()
