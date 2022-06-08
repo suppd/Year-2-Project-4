@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;    public float DashForce = 20f;
     private bool isWalking;
-
+    [HideInInspector]
+    public bool vestOn;
     [HideInInspector]
     public bool dashAllow;
     [HideInInspector]
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playercontrols = new PlayerControls();
         dashAllow = false;
+        vestOn = false;
     }
 
     void Update()
@@ -65,15 +67,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dashCounter <= 0 && dashCoolCounter <= 0)
             {
-                isWalking = false;
-                anim.SetTrigger("Dash");
-                if (dashAllow)
+                if (!vestOn)
                 {
-                    StartCoroutine(DashWall());
+                    isWalking = false;
+                    anim.SetTrigger("Dash");
+                    if (dashAllow)
+                    {
+                        StartCoroutine(DashWall());
+                    }
+                    speed = DashForce + bonusSpeed;
+                    dashCounter = dashDistance;
+                    CreateDust();
                 }
-                speed = DashForce + bonusSpeed;
-                dashCounter = dashDistance;
-                CreateDust();
             }
         }
     }
