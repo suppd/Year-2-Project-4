@@ -57,6 +57,6 @@ public class RoundOverManager : MonoBehaviour
     {
         GameObject configManager = GameObject.FindGameObjectWithTag("GameController");
         Destroy(configManager);
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 }
