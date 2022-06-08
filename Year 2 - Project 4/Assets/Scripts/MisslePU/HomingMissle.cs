@@ -9,6 +9,7 @@ public class HomingMissle : MonoBehaviour
 
     public Transform target;
 
+
     public float speed = 5f;
     public float rotateSpeed = 100f;
     [HideInInspector]
@@ -48,7 +49,7 @@ public class HomingMissle : MonoBehaviour
 
  
 
-    void Launch()
+    public void Launch()
     {
         // if (FireMissile)
         // {    
