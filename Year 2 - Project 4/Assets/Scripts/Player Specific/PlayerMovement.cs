@@ -137,11 +137,8 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Frozen(float slowPercent)
     {
-        Debug.Log("Frozen1");
         slowAmount = slowPercent;
         anim.SetBool("Frozen", true);
-        Debug.Log("Frozen2");
-
         yield return new WaitForSeconds(freezeDuration);
         anim.SetBool("Frozen", false);
         slowAmount = 1f;

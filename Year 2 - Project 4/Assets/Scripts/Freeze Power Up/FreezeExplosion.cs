@@ -16,7 +16,6 @@ public class FreezeExplosion : MonoBehaviour
 
         foreach (CircleCollider2D obj2 in player)
         {
-            Debug.Log("hit Frozen");
             obj2.gameObject.GetComponent<PlayerMovement>().StartFreeze(percentage);
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
