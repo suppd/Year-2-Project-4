@@ -65,6 +65,7 @@ public class Shooting : MonoBehaviour
                 shotType = "normal";
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);
+                playerMovement.vestOn = false;
                 break;
             case "freeze":
                 anima.SetTrigger("Freeze");

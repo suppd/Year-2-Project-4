@@ -29,7 +29,7 @@ public class NewVestPU : MonoBehaviour
         anim.SetBool("Vest", true);
         stats.shotType = "vest";
         speed.bonusSpeed = 3f;
-
+        speed.vestOn = true;
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.activateTimer = true;
 
@@ -41,11 +41,13 @@ public class NewVestPU : MonoBehaviour
             stats.SpawnSmallVest();
             anim.SetBool("Vest", false);
             speed.bonusSpeed = 0;
+            speed.vestOn = false;
         }
         anim.SetBool("Vest", false);
         stats.shotType = "normal";
         speed.bonusSpeed = 0;
         stats.vestDeployed = false;
+        speed.vestOn = false;
         Destroy(gameObject);
     }
 
