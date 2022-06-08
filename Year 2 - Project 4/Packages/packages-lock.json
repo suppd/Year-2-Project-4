@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.nullkal.unisense": {
+      "version": "file:C:/Users/ORade/Documents/Project Show Off/Github/DualsensePackage/UniSense",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.inputsystem": "1.0.1"
+      }
+    },
     "com.unity.2d.animation": {
       "version": "5.0.10",
       "depth": 0,
