@@ -63,16 +63,18 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (HP <= 0)
         {
             Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
-            // Invoke("KillPopUp", 5);           
+            // Invoke("KillPopUp", 5);
+            level.amountOfPlayers--;
             Die();
-            level.UpdateAmountOfPlayers();
+            //level.UpdateAmountOfPlayers();
+            
         }
-        else if (level.UpdateAmountOfPlayers() == 1 && scored == false)
+        else if (level.amountOfPlayers == 1 && scored == false)
         {
             score+=1;
             playerConfig.playerScore = score;
