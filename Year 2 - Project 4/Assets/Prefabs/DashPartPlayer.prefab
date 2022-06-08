@@ -162,6 +162,7 @@ MonoBehaviour:
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
   DashForce: 10
+  vestOn: 0
   dashAllow: 0
   bonusSpeed: 0
   movements: {x: 0, y: 0}
@@ -294,8 +295,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1494769739
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Time: 0.4
   m_Parameters:

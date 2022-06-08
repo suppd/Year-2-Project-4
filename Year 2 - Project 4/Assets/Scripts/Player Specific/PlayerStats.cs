@@ -133,7 +133,7 @@ public class PlayerStats : MonoBehaviour
 
     public IEnumerator FlashRed()
     {
-        Color hitColor = new Vector4(f, 0.4f, 0.6f);
+        Color hitColor = new Vector4(0.1f, 0.4f, 0.6f);
         sprite.color = hitColor;
         yield return new WaitForSeconds(0.2f);
         sprite.color = Color.white;
