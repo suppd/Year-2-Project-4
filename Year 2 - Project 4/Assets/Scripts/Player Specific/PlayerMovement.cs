@@ -18,10 +18,13 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float bonusSpeed = 0;
     [HideInInspector]
-    public Vector2 movements;    [HideInInspector]    public Vector2 inputVector;
+    public Vector2 movements;    [HideInInspector]    public Vector2 inputVector;    public float freezeDuration;
     public ParticleSystem dashDust;
+
+    private float slowAmount = 1f;
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
+    private float tSpeed;
     private float horizontal;
     private float vertical;
     private bool isfacingright = true;
@@ -29,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     private float dashDistance = 0.2f;
     private float dashDuration = 0.5f;
     private float cooldownDuration = 1.0f;
-
 
 
     void Awake()
@@ -55,8 +57,9 @@ public class PlayerMovement : MonoBehaviour
     }
     void Movement()
     {
+        tSpeed = (speed + bonusSpeed) * slowAmount;
         movements = new Vector2(inputVector.x, inputVector.y);
-        rb.velocity = new Vector2(inputVector.x * (speed + bonusSpeed), inputVector.y * (speed + bonusSpeed));
+        rb.velocity = new Vector2(inputVector.x * (tSpeed), inputVector.y * (tSpeed));
     }
 
 
@@ -69,15 +72,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (!vestOn)
                 {
-                    isWalking = false;
-                    anim.SetTrigger("Dash");
-                    if (dashAllow)
-                    {
-                        StartCoroutine(DashWall());
-                    }
-                    speed = DashForce + bonusSpeed;
-                    dashCounter = dashDistance;
-                    CreateDust();
+                        isWalking = false;
+                        anim.SetTrigger("Dash");
+                        if (dashAllow)
+                        {
+                            StartCoroutine(DashWall());
+                        }
+                        speed = DashForce;
+                        dashCounter = dashDistance;
+                        CreateDust();
+
                 }
             }
         }
@@ -131,6 +135,22 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = true;
     }
 
+    IEnumerator Frozen(float slowPercent)
+    {
+        Debug.Log("Frozen1");
+        slowAmount = slowPercent;
+        anim.SetBool("Frozen", true);
+        Debug.Log("Frozen2");
 
+        yield return new WaitForSeconds(freezeDuration);
+        anim.SetBool("Frozen", false);
+        slowAmount = 1f;
+        
+    }
+
+    public void StartFreeze(float slow)
+    {
+        StartCoroutine(Frozen(slow));
+    }
 
 }

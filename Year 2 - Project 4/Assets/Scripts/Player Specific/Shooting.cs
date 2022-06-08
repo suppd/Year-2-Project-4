@@ -30,7 +30,7 @@ public class Shooting : MonoBehaviour
     //public string shooter { get; set; }
     private void Awake()
     {
-        shotType = "bounce";
+        shotType = "freeze";
     }
     public void Fire1(InputAction.CallbackContext context)
     {
@@ -69,8 +69,7 @@ public class Shooting : MonoBehaviour
                 break;
             case "freeze":
                 anima.SetTrigger("Freeze");
-                SpawnFreeze();
-                shotType = "normal";
+                //shotType = "normal";
                 lastShot = Time.time;
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 break;
@@ -78,7 +77,7 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Bounce");
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 lastShot = Time.time;
-                //shotType = "normal";
+                shotType = "normal";
                 break;
         }
     }
