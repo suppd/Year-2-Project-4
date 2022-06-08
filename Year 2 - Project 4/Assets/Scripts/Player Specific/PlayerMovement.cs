@@ -71,11 +71,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     StartCoroutine(DashWall());
                 }
-                
                 speed = DashForce + bonusSpeed;
-
                 dashCounter = dashDistance;
-                //tr.emitting = true;
                 CreateDust();
             }
         }

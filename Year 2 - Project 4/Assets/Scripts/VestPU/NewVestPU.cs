@@ -7,7 +7,6 @@ public class NewVestPU : MonoBehaviour
 
     [SerializeField]
     private GameObject VestEffect;
-    
 
     public GameObject PUEffect;
 
@@ -30,7 +29,6 @@ public class NewVestPU : MonoBehaviour
         anim.SetBool("Vest", true);
         stats.shotType = "vest";
         speed.bonusSpeed = 3f;
-       
 
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.activateTimer = true;

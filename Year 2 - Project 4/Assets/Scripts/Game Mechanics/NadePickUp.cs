@@ -12,7 +12,6 @@ public class NadePickUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PickUp(other);
-            // activate = true;
         }
     }
 
