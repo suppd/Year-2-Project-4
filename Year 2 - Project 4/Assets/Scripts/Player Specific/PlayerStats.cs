@@ -121,7 +121,7 @@ public class PlayerStats : MonoBehaviour
     public void KillPopUp()
     {
         Debug.Log("Perfect");
-        //        Destroy(myPrefab);
+        //Destroy(myPrefab);
     }
     
     public void AssignPlayerConfig(PlayerConfiguration config)

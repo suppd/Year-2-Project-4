@@ -161,12 +161,13 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
-  DashForce: 10
+  DashForce: 15
   vestOn: 0
   dashAllow: 0
   bonusSpeed: 0
   movements: {x: 0, y: 0}
   inputVector: {x: 0, y: 0}
+  freezeDuration: 2
   dashDust: {fileID: 6607651274191463914, guid: 296eff4f6f505ce419ef1e7aaeb79658, type: 3}
 --- !u!58 &3383183338051999284
 CircleCollider2D:

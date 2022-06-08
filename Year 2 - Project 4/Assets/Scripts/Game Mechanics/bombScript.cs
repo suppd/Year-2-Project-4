@@ -13,10 +13,6 @@ public class bombScript : MonoBehaviour
     public GameObject explodeEffect;
     PlayerStats stats;
 
-    void Start()
-    {
-        
-    }
 
     void explode()
     {
