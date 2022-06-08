@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public class Menu : MonoBehaviour
 {
-    public Canvas optionsCanvas;
     public string level;
+    public string gameModeSelection;
 
     private void Awake()
     {
@@ -19,12 +19,19 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
-    public void Options(InputAction.CallbackContext context)
+    public void Options()
     {
+        Debug.Log("Options");
+    }
 
-        if (context.performed)
-        {
-            optionsCanvas.gameObject.SetActive(true);
-        }
+    public void Quit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
+
+    public void GameMode()
+    {
+        SceneManager.LoadScene(gameModeSelection);
     }
 }
