@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class manageParts : MonoBehaviour
+public class ManageParts : MonoBehaviour
 {
     float timer;
 
