@@ -20,8 +20,8 @@ public class FreezePickUp : MonoBehaviour
         Shooting stats = player.GetComponent<Shooting>();
         stats.shotType = "freeze";
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
-        PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.activate = true;
+        // PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        // playerStats.activate = true;
         Destroy(gameObject);
     }
 }

@@ -58,6 +58,8 @@ public class Shooting : MonoBehaviour
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 shotType = "normal";
                 lastShot = Time.time;
+                PlayerStats playerStats = GetComponent<PlayerStats>();
+                playerStats.activate = false;
                 break;
             case "vest":
                 SpawnVest();
