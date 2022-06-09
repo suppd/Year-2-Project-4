@@ -9,7 +9,7 @@ public class LevelManagerScript : MonoBehaviour
 
     public int amountOfPlayers;
     private float timer = 3f;
-
+    public string levelName;
     bool foundPlayers = false;
     private void Start()
     {
@@ -35,7 +35,7 @@ public class LevelManagerScript : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                SceneManager.LoadScene("RoundOver");
+                SceneManager.LoadScene(levelName);
             }
         }
         else if (amountOfPlayers == 1)
@@ -43,7 +43,7 @@ public class LevelManagerScript : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                SceneManager.LoadScene("RoundOver");
+                SceneManager.LoadScene(levelName);
             }
         }
     }
