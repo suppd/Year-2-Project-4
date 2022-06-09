@@ -23,12 +23,15 @@ public class PlayerSetupMenuController : MonoBehaviour
     [SerializeField]
     private EventSystem eventSystem;
 
+    private Button[] spriteButtons;
+
     private float ignoreImputTime = 1.5f;
     private bool inputEnabled;
 
     private void Start()
     {
-        
+        spriteButtons = GetComponentsInChildren<Button>();
+        Debug.Log(spriteButtons.Length);
     }
     public void SetPlayerIndex(int p1)
     {
@@ -66,9 +69,27 @@ public class PlayerSetupMenuController : MonoBehaviour
     }
     public void SetAnimator(AnimatorOverrideController animatorOverrideController)
     {
-        PlayerConfigurationManager.Instance.SetAnimator(playerIndex, animatorOverrideController);
+        var configs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
+        for (int i = 0; i < configs.Length; i++)
+        {
+            if (configs[i].animatorOverrideController == animatorOverrideController)
+            {
+               // eventSystem.currentSelectedGameObject.SetActive(false);
+                //for (int j = 0; j < spriteButtons.Length; j++)
+                //{
+                //    if (spriteButtons[j].GetComponent<PlayerSetupMenuController>().SetAnimator() == animatorOverrideController)
+                //    {
+                //        Debug.Log("same anim");
+                //        spriteButtons[j].enabled = false;
+                //    }
+                //}
+            }
+            else
+            {
+                PlayerConfigurationManager.Instance.SetAnimator(playerIndex, animatorOverrideController);
+            }
+        }
     }
-
     public void ReadyPlayer()
     {
         if(!inputEnabled) { return; }

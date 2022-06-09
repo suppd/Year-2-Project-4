@@ -42,6 +42,14 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     public void SetPlayerSprite(int i, Sprite spriteToSet)
     {
+        //for (int j = 0; j < playerConfigs.Count; j++)
+        //{
+        //    if (playerConfigs[j].playerSprite == spriteToSet)
+        //    {
+        //        Debug.Log("sprite already in use!");
+        //        return;
+        //    }
+        //}
         Debug.Log("Setting Sprite" + spriteToSet + "to player" + i);
         playerConfigs[i].playerSprite = spriteToSet;
     }
@@ -60,7 +68,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         //Debug.Log(playerConfigs.Count);
         //Debug.Log(i + "is ready");
         playerConfigs[i].isReady = true;
-        if (playerConfigs.Count == maxPlayers && playerConfigs.All(p => p.isReady == true))
+        if (playerConfigs.All(p => p.isReady == true))
         {
             SceneManager.LoadScene(sceneName);
         }
