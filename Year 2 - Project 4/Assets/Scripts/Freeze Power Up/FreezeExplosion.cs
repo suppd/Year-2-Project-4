@@ -19,6 +19,7 @@ public class FreezeExplosion : MonoBehaviour
             obj2.gameObject.GetComponent<PlayerMovement>().StartFreeze(percentage);
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 1f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

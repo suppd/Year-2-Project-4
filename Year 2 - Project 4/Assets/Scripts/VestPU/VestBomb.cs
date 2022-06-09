@@ -36,7 +36,7 @@ public class VestBomb : MonoBehaviour
             
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
-        
+        Destroy(effect, 1f);
         Destroy(gameObject);
     }
 
