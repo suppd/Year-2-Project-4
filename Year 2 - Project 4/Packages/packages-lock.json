@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.nullkal.unisense": {
-      "version": "file:C:/Users/Simon/Desktop/University File/Final project/oebe master/UniSense",
+      "version": "file:/Users/maxwierda/Documents/UniSense",
       "depth": 0,
       "source": "local",
       "dependencies": {

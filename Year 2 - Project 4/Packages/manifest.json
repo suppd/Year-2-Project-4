@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.nullkal.unisense": "file:C:/Users/Simon/Desktop/University File/Final project/oebe master/UniSense",
+    "com.nullkal.unisense": "file:/Users/maxwierda/Documents/UniSense",
     "com.unity.2d.animation": "5.0.10",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.6.11",
