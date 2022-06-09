@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5890618387018719615}
   - component: {fileID: 5890618387018719614}
   - component: {fileID: 5890618387018719609}
-  - component: {fileID: 5890618387018719608}
   - component: {fileID: 5890618387018719612}
   - component: {fileID: 5890618387018719613}
+  - component: {fileID: 7950647874009793297}
   m_Layer: 0
   m_Name: EggStrikeMissle
   m_TagString: Untagged
@@ -107,23 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5890618387018719608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5890618387018719611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2d0fc7a9398f1419cef7ac3d6295e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1927456157631492388, guid: cbd73bed116614f8fb7421713de7a793, type: 3}
-  speed: 8
-  rotateSpeed: 400
-  missleOn: 0
-  HomingEggsplosion: {fileID: 4968505162748443373, guid: 0b49155350a72894890e540ce69d5411, type: 3}
 --- !u!61 &5890618387018719612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,3 +240,20 @@ TrailRenderer:
   m_MinVertexDistance: 0.06
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &7950647874009793297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5890618387018719611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2d0fc7a9398f1419cef7ac3d6295e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  rotateSpeed: 100
+  missleOn: 0
+  HomingEggsplosion: {fileID: 4968505162748443373, guid: f3910b85fb00b4caf85454d4a40f504a, type: 3}
+  targetGameObject: {fileID: 0}

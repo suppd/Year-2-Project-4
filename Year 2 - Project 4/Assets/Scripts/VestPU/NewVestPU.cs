@@ -36,7 +36,7 @@ public class NewVestPU : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        if (stats.vestDeployed == false)
+        if (stats.vestDeployed == false) // destroy in the if and make else as well
         {
             stats.SpawnSmallVest();
             anim.SetBool("Vest", false);

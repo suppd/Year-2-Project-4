@@ -6,56 +6,44 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class HomingMissle : MonoBehaviour
 {
-
-    public Transform target;
-
-
+    
     public float speed = 5f;
     public float rotateSpeed = 100f;
     [HideInInspector]
     public bool missleOn = false;
 
     public GameObject HomingEggsplosion;
-
+    public GameObject targetGameObject;
     private Rigidbody2D rb;
+    private int yourMom;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+       
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
-
-            Launch();
-
+        
+       // Debug.Log(yourMom);
+        targetGameObject = GameObject.Find("/MissleSpawner/Alarm"+ yourMom);
+        Launch();
     }
 
-
-    // void OnTriggerEnter2D ()
-    // {
-    //     Destroy(gameObject);
-    //     Instantiate(HomingEggsplosion, transform.position, transform.rotation);       
-    // }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bomba"))
         {
             Destroy(gameObject);
-            Instantiate(HomingEggsplosion, transform.position, transform.rotation);       
+            Instantiate(HomingEggsplosion, transform.position, transform.rotation);      
         }
     }
 
- 
-
     public void Launch()
-    {
-        // if (FireMissile)
-        // {    
-        Vector2 direction = (Vector2)target.position - rb.position;
+    {    
+        Vector2 direction = (Vector2)targetGameObject.transform.position - rb.position;  
 
         direction.Normalize();
 
@@ -64,6 +52,10 @@ public class HomingMissle : MonoBehaviour
         rb.angularVelocity = -rotateAmount * rotateSpeed;
 
         rb.velocity = transform.up * speed; 
-        //}
+    }
+
+    public void SpawnMissle(int targetNum)
+    {
+        yourMom = targetNum;
     }
 }
