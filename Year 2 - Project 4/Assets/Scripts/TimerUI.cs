@@ -9,10 +9,13 @@ public class TimerUI : MonoBehaviour
     float currentTime;
     public float startingTime = 50f;
 
+    public bool TimerPlaying;
+
     [SerializeField] TMP_Text countdownText;
     void Start()
     {
         currentTime = startingTime;
+        TimerPlaying = true;
     }
 
     void Update()
@@ -20,10 +23,18 @@ public class TimerUI : MonoBehaviour
         currentTime -= 1 * Time.deltaTime;
         countdownText.text = currentTime.ToString("0");
 
-        if (currentTime <= 0)
+        if (currentTime <= 0 && TimerPlaying)
         {
-            currentTime = 0;
-            // Destroy(gameObject);
+            currentTime = 5;
+            //Destroy(gameObject, 1f);
+            DisableTimer();
+            TimerPlaying = false;
         }
+    }
+
+    public void DisableTimer()
+    {
+            PlayerStats playerStats = GetComponentInParent<PlayerStats>();
+            playerStats.activateTimer = false;
     }
 }

@@ -30,7 +30,7 @@ public class NewVestPU : MonoBehaviour
         stats.shotType = "vest";
         speed.bonusSpeed = 3f;
         speed.vestOn = true;
-        PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        PlayerStats playerStats = player.GetComponentInParent<PlayerStats>();
         playerStats.activateTimer = true;
 
         GetComponent<SpriteRenderer>().enabled = false;

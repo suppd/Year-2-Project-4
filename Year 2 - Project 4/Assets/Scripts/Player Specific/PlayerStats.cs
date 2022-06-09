@@ -35,11 +35,16 @@ public class PlayerStats : MonoBehaviour
 
     //UI Icons PowerUps
     public GameObject eggsplosivePU;
+    public GameObject bouncePU;
     public GameObject TimerVest;
+    public GameObject freezePU;
 
 
     //Bools for turning on powerups
     public bool activate = false;
+    public bool activate1 = false;
+    public bool activate2 = false;
+
     public bool activateTimer = false;
 
     private void Awake()
@@ -94,6 +99,24 @@ public class PlayerStats : MonoBehaviour
         else
         {
             eggsplosivePU.SetActive(false);
+        }
+
+         if(activate1 == true)
+        {
+            bouncePU.SetActive(true);
+        }
+        else
+        {
+            bouncePU.SetActive(false);
+        }
+
+         if(activate2 == true)
+        {
+            freezePU.SetActive(true);
+        }
+        else
+        {
+            freezePU.SetActive(false);
         }
 
         if(activateTimer == true)

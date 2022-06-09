@@ -24,6 +24,8 @@ public class NadePickUp : MonoBehaviour
 
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.activate = true;
+        playerStats.activate1 = false;
+        playerStats.activate2 = false;
 
         Destroy(gameObject);
     }
