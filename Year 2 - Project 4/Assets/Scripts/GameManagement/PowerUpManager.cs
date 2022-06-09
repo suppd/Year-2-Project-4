@@ -63,6 +63,18 @@ public class PowerUpManager : MonoBehaviour
         }
         return 0;
     }
+
+    bool CheckSpawnPoints()
+    {
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            if (spawnPoints[i].transform.childCount != 0)
+            {
+                return true;
+            }        
+        }
+        return false;
+    }
     void CheckEmptyPoints()
     {
         for (int i = 0; i < spawnPoints.Length; i++)
@@ -83,7 +95,7 @@ public class PowerUpManager : MonoBehaviour
         //if (waitingForSpawn)
         //{
         //CheckEmptyPoints();
-        InvokeRepeating("WaitForSpawn", timeBetweenPowerups, 0f);
+        InvokeRepeating("WaitForSpawn", 0.1f, timeBetweenPowerups);
         //}
 
         timer += Time.deltaTime;
