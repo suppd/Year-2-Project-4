@@ -86,10 +86,10 @@ MonoBehaviour:
   rb: {fileID: 4204814991610999727}
   hitEffect: {fileID: 8757241567579482626, guid: 9849742964662094795a3b6af637e5f1, type: 3}
   killPlayer: {fileID: 6013871963420345284, guid: 50c7b51cf14f5914c9fd28184f88c74b, type: 3}
-  maxBounce: 10
+  maxBounce: 7
   crackEgg: {fileID: 8300000, guid: 7b50d5ed38c43c04da56bc0c27d808ae, type: 3}
   hitPlayer: {fileID: 8300000, guid: 5e02ab0abb66d1c40815ded8c46cf9f2, type: 3}
-  addedDamage: 10
+  addedDamage: 7
 --- !u!1 &7239492722491351024
 GameObject:
   m_ObjectHideFlags: 0

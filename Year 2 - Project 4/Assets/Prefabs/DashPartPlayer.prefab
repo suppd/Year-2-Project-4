@@ -142,7 +142,7 @@ MonoBehaviour:
   shotType: normal
   playerMovement: {fileID: 161273018238503362}
   vestDeployed: 0
-  bulletForce: 12
+  bulletForce: 15
   fireRate: 0.5
   isTeams: 0
 --- !u!114 &161273018238503362
@@ -161,7 +161,7 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 161273018238503360}
   anim: {fileID: 2453835206104791124}
-  DashForce: 15
+  DashForce: 10
   vestOn: 0
   dashAllow: 0
   bonusSpeed: 0
