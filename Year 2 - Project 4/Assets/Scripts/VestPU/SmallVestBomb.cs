@@ -37,6 +37,7 @@ public class SmallVestBomb : MonoBehaviour
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Destroy(effect, 1f);
     }
 
 

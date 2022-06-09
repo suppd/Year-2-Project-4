@@ -29,7 +29,7 @@ public class bombScript : MonoBehaviour
             obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
-
+        Destroy(effect, 1f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
