@@ -11,13 +11,14 @@ public class PowerUpManager : MonoBehaviour
     public float timeBetweenPowerups;
 
     private Transform[] emptyPoints;
+
     private bool waitingForSpawn = true;
+    private bool setTimer;
 
     private float timer;
     private float amount;
     private void Start()
     {
-        emptyPoints = new Transform[spawnPoints.Length]; // ?
 
         amount = 1;
     }
@@ -31,6 +32,7 @@ public class PowerUpManager : MonoBehaviour
             {
                 SpawnRandomPowerUp(random, GetRandomSpawn());
                 waitingForSpawn = false;
+                setTimer = true;
             }
         }
     }
@@ -38,7 +40,6 @@ public class PowerUpManager : MonoBehaviour
     public void SpawnRandomPowerUp(int index, int powerUpToSpawn)
     {
         Instantiate(powerUps[powerUpToSpawn], spawnPoints[index]);
-        waitingForSpawn = true;
     }
     private int GetRandomSpawn()
     {
@@ -64,47 +65,18 @@ public class PowerUpManager : MonoBehaviour
         return 0;
     }
 
-    bool CheckSpawnPoints()
-    {
-        for (int i = 0; i < spawnPoints.Length; i++)
-        {
-            if (spawnPoints[i].transform.childCount != 0)
-            {
-                return true;
-            }        
-        }
-        return false;
-    }
-    void CheckEmptyPoints()
-    {
-        for (int i = 0; i < spawnPoints.Length; i++)
-        {
-            if (spawnPoints[i].transform.childCount == 0)
-            {
-                emptyPoints[i] = spawnPoints[i];
-            }
-            else
-            {
-                emptyPoints[i] = null;
-            }
-        }
-    }
-
     private void Update()
     {
-        //if (waitingForSpawn)
-        //{
-        //CheckEmptyPoints();
-        InvokeRepeating("WaitForSpawn", 0.1f, timeBetweenPowerups);
-        //}
-
-        timer += Time.deltaTime;
-        if (timer > timeBetweenPowerups)
+        WaitForSpawn();
+        if (setTimer)
         {
-            waitingForSpawn = true;
-            timer = 0;
+            timer += Time.deltaTime;
+            if (timer > timeBetweenPowerups)
+            {
+                waitingForSpawn = true;
+                timer = 0;
+                setTimer = false;
+            }
         }
     }
-
-
 }
