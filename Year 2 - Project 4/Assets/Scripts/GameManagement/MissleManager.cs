@@ -17,15 +17,15 @@ public class MissleManager : MonoBehaviour
 
     private void Update()
     {
-       
     }
     public void SpawnMissle()
     {
-        for(int i = 0; i < spawnPoints.Length; i++)
+        //for(int i = 0; i < spawnPoints.Length; i++)
+        foreach(Transform t in spawnPoints) 
         {
             
             Instantiate(missle, this.transform);
-            gameObject.GetComponentInChildren<HomingMissle>().SpawnMissle(i);
+            gameObject.GetComponentInChildren<HomingMissle>().SetTarget(t.gameObject);
 
         }
         

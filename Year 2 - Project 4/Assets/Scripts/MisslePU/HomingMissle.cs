@@ -24,14 +24,14 @@ public class HomingMissle : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        
-       // Debug.Log(yourMom);
-        targetGameObject = GameObject.Find("/MissleSpawner/Alarm"+ yourMom);
+    {   
         Launch();
     }
 
-
+    public void SetTarget(GameObject target)
+    {
+        targetGameObject = target;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bomba"))
@@ -52,10 +52,5 @@ public class HomingMissle : MonoBehaviour
         rb.angularVelocity = -rotateAmount * rotateSpeed;
 
         rb.velocity = transform.up * speed; 
-    }
-
-    public void SpawnMissle(int targetNum)
-    {
-        yourMom = targetNum;
     }
 }
