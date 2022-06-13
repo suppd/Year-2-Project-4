@@ -44,6 +44,7 @@ public class PlayerStats : MonoBehaviour
 
 
     //Bools for turning on powerups
+    public string uiInfo = "nothing";
     public bool activate = false;
     public bool activate1 = false;
     public bool activate2 = false;
@@ -102,44 +103,36 @@ public class PlayerStats : MonoBehaviour
         {
             playerConfig.isAlive=true;
         }
-        Debug.Log(HP);
 
 
-        if(activate == true)
+        switch (uiInfo)
         {
-            //eggsplosivePU.SetActive(true);
-        }
-        else
-        {
-            //eggsplosivePU.SetActive(false);
-        }
+            case "nothing":
+                break;
+            case "nade":
+                eggsplosivePU.SetActive(true);
+                break;
+            case "bounce":
+                bouncePU.SetActive(true);
+                break;
+            case "freeze":
+                Debug.Log("Freeze");
+                freezePU.SetActive(true);
+                uiInfo = "nothing";
+                break;
+            case "vest":
+                TimerVest.SetActive(true);
+                break;
 
-         if(activate1 == true)
-        {
-            bouncePU.SetActive(true);
         }
-        else
-        {
-            bouncePU.SetActive(false);
-        }
+    }
 
-         if(activate2 == true)
-        {
-            freezePU.SetActive(true);
-        }
-        else
-        {
-            freezePU.SetActive(false);
-        }
-
-        if(activateTimer == true)
-        {
-            //TimerVest.SetActive(true);
-        }
-        else
-        {
-            //TimerVest.SetActive(false);
-        }
+    public void TurnOff()
+    {
+        TimerVest.SetActive(false);
+        freezePU.SetActive(false);
+        bouncePU.SetActive(false);
+        eggsplosivePU.SetActive(false);
     }
 
     public void Die()

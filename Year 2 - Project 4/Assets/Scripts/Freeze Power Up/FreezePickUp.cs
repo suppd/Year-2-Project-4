@@ -21,9 +21,8 @@ public class FreezePickUp : MonoBehaviour
         stats.shotType = "freeze";
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.activate2 = true;
-        playerStats.activate = false;
-        playerStats.activate1 = false;
+        playerStats.TurnOff();
+        playerStats.uiInfo = "freeze";
         Destroy(gameObject);
     }
 }

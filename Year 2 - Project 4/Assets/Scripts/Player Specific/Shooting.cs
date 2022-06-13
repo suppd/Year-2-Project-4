@@ -45,8 +45,11 @@ public class Shooting : MonoBehaviour
         
     public void DiffShooting()
     {
+
+        PlayerStats playerStats = GetComponent<PlayerStats>();
         switch (shotType)
         {
+
             case "normal":
                 anima.SetTrigger("Shoot1");
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
@@ -57,8 +60,7 @@ public class Shooting : MonoBehaviour
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 shotType = "normal";
                 lastShot = Time.time;
-                PlayerStats playerStats = GetComponent<PlayerStats>();
-                playerStats.activate = false;
+                playerStats.TurnOff();
                 break;
             case "vest":
                 SpawnVest();
@@ -73,7 +75,8 @@ public class Shooting : MonoBehaviour
                 shotType = "normal";
                 lastShot = Time.time;
                 //AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                FindObjectOfType<AudioManager>().Play("Freeze");
+                //FindObjectOfType<AudioManager>().Play("Freeze");
+                playerStats.TurnOff();
                 break;
             case "bounce":
                 anima.SetTrigger("Bounce");
