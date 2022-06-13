@@ -15,6 +15,8 @@ public class PowerUpManager : MonoBehaviour
     private bool waitingForSpawn = true;
     private bool setTimer;
 
+    private int lastSpawnPoint;
+
     private float timer;
     private float amount;
     private void Start()
@@ -26,11 +28,15 @@ public class PowerUpManager : MonoBehaviour
         if (waitingForSpawn)
         {
             int random = Random.Range(0, spawnPoints.Length);
-            if (spawnPoints[random].transform.childCount == 0)
+            if (random != lastSpawnPoint)
             {
-                SpawnRandomPowerUp(random, GetRandomSpawn());
-                waitingForSpawn = false;
-                setTimer = true;
+                if (spawnPoints[random].transform.childCount == 0)
+                {
+                    SpawnRandomPowerUp(random, GetRandomSpawn());
+                    lastSpawnPoint = random;
+                    waitingForSpawn = false;
+                    setTimer = true;
+                }
             }
         }
     }
