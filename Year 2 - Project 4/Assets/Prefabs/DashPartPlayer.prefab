@@ -198,7 +198,7 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 8417158516077603676}
   sprite: {fileID: 161273018238503361}
   ID: 0
   player: {fileID: 161273018238503366}
@@ -621,36 +621,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1156512291759118119
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7748011786272718362}
-  m_Layer: 7
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7748011786272718362
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4212909502405747179, guid: d17239f4332d34cdd8aebe2a1f0414e6, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156512291759118119}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 161273018238503367}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1543319240609437868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1059,6 @@ GameObject:
   - component: {fileID: 7804827854957263489}
   - component: {fileID: 4161946363099874813}
   - component: {fileID: 6424512416990493986}
-  - component: {fileID: 4265248145170758249}
   m_Layer: 7
   m_Name: Timer
   m_TagString: Untagged
@@ -1262,20 +1231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingTime: 5
+  TimerPlaying: 0
   countdownText: {fileID: 4161946363099874813}
---- !u!114 &4265248145170758249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3289663120720938122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3f0264dd6814db985647f6f96b481d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerVest: {fileID: 3289663120720938122}
 --- !u!1 &3416611735055664402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,36 +1684,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!1 &6679677966082688151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4010167341830151739}
-  m_Layer: 7
-  m_Name: DashCorrect (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4010167341830151739
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679677966082688151}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 161273018238503367}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8115260653979265377
 GameObject:
   m_ObjectHideFlags: 0

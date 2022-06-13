@@ -27,9 +27,12 @@ public class Shooting : MonoBehaviour
 
     public bool isTeams;
 
+    private PlayerStats playerStats;
+
     //public string shooter { get; set; }
     private void Awake()
     {
+        playerStats = GetComponent<PlayerStats>();
         shotType = "normal";
     }
     public void Fire1(InputAction.CallbackContext context)
@@ -57,7 +60,6 @@ public class Shooting : MonoBehaviour
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 shotType = "normal";
                 lastShot = Time.time;
-                PlayerStats playerStats = GetComponent<PlayerStats>();
                 playerStats.activate = false;
                 break;
             case "vest":
@@ -67,6 +69,9 @@ public class Shooting : MonoBehaviour
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);
                 playerMovement.vestOn = false;
+                TimerUI vestTimer = GetComponentInChildren<TimerUI>();
+                vestTimer.DisableTimer();
+
                 break;
             case "freeze":
                 anima.SetTrigger("Freeze");

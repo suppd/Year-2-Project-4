@@ -70,15 +70,15 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(FlashRed());
     }
 
-    public void GetHealth(int health)
-    {
+    public void GetHealth(int health)
+    {
             HP = HP + health;
             currentHealth += health;
             if (HP > 100)
             {
                 currentHealth = 100;
                 HP = 100;
-            }
+            }
             healthBar.SetHealth(HP);
     }
 
@@ -102,16 +102,14 @@ public class PlayerStats : MonoBehaviour
         {
             playerConfig.isAlive=true;
         }
-        Debug.Log(HP);
-
 
         if(activate == true)
         {
-            //eggsplosivePU.SetActive(true);
+            eggsplosivePU.SetActive(true);
         }
         else
         {
-            //eggsplosivePU.SetActive(false);
+            eggsplosivePU.SetActive(false);
         }
 
          if(activate1 == true)
@@ -134,11 +132,11 @@ public class PlayerStats : MonoBehaviour
 
         if(activateTimer == true)
         {
-            //TimerVest.SetActive(true);
+            TimerVest.SetActive(true);
         }
         else
         {
-            //TimerVest.SetActive(false);
+            TimerVest.SetActive(false);
         }
     }
 
