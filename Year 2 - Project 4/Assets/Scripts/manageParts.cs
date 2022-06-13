@@ -17,8 +17,10 @@ public class ManageParts : MonoBehaviour
 
         if(timer < Time.deltaTime)
         {
-           // Debug.Log("hooii");
-            Destroy(gameObject);
+           Debug.Log("vest Timer");
+           // Destroy(gameObject);
+            PlayerStats playerStats = GetComponent<PlayerStats>();
+            playerStats.activateTimer = false;
         }
     }
 }

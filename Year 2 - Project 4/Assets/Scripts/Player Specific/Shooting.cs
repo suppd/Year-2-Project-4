@@ -124,6 +124,8 @@ public class Shooting : MonoBehaviour
         GameObject freeze = Instantiate(freezePrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = freeze.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+        PlayerStats playerStats = GetComponent<PlayerStats>();
+        playerStats.activate2 = false;
     }
 
     void SpawnBounce()
@@ -131,5 +133,7 @@ public class Shooting : MonoBehaviour
         GameObject bounce = Instantiate(bouncePrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = bounce.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
+        PlayerStats playerStats = GetComponent<PlayerStats>();
+        playerStats.activate1 = false;
     }
 }

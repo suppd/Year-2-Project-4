@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3be1a112a8115c48920e7ef1f1e2026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfImpact: 2.54
+  fieldOfImpact: 2.07
   PlayerToHit:
     serializedVersion: 2
     m_Bits: 128

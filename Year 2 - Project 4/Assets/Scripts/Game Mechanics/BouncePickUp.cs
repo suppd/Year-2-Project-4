@@ -22,6 +22,13 @@ public class BouncePickUp : MonoBehaviour
         Shooting stats = player.GetComponent<Shooting>();
         stats.shotType = "bounce";
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
+
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        playerStats.activate1 = true;
+        playerStats.activate = false;
+        playerStats.activate2 = false;
+
+
         Destroy(gameObject);
     }
 }
