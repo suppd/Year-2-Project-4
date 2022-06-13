@@ -111,17 +111,19 @@ public class PlayerStats : MonoBehaviour
                 break;
             case "nade":
                 eggsplosivePU.SetActive(true);
+                uiInfo = "nothing";
                 break;
             case "bounce":
                 bouncePU.SetActive(true);
+                uiInfo = "nothing";
                 break;
             case "freeze":
-                Debug.Log("Freeze");
                 freezePU.SetActive(true);
                 uiInfo = "nothing";
                 break;
             case "vest":
                 TimerVest.SetActive(true);
+                uiInfo = "nothing";
                 break;
 
         }

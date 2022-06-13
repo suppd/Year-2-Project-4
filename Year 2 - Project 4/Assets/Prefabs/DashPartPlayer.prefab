@@ -210,6 +210,7 @@ MonoBehaviour:
   bouncePU: {fileID: 755544535119633578}
   TimerVest: {fileID: 3289663120720938122}
   freezePU: {fileID: 5747189417460718810}
+  uiInfo: nothing
   activate: 0
   activate1: 0
   activate2: 0
@@ -1060,6 +1061,7 @@ GameObject:
   - component: {fileID: 7804827854957263489}
   - component: {fileID: 4161946363099874813}
   - component: {fileID: 6424512416990493986}
+  - component: {fileID: 4265248145170758249}
   m_Layer: 7
   m_Name: Timer
   m_TagString: Untagged

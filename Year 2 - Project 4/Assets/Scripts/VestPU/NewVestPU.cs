@@ -33,7 +33,7 @@ public class NewVestPU : MonoBehaviour
         speed.bonusSpeed = 3f;
         speed.vestOn = true;
         PlayerStats playerStats = player.GetComponentInParent<PlayerStats>();
-        playerStats.activateTimer = true;
+        playerStats.uiInfo = "vest";
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
@@ -51,6 +51,7 @@ public class NewVestPU : MonoBehaviour
         speed.bonusSpeed = 0;
         stats.vestDeployed = false;
         speed.vestOn = false;
+        
         Destroy(gameObject);
     }
 
