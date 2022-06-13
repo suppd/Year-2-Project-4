@@ -5,17 +5,35 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class Menu : MonoBehaviour, ISelectHandler
+public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     public string level;
     public GameObject ButtonGameObject;
+    public GameObject selectedObject;
 
-    public void OnSelect()
+    [SerializeField]
+    private GameObject CasualButtons;
+    [SerializeField]
+    private GameObject CompButtons;
+
+    public void OnSelect(BaseEventData eventData)
     {
-        if (eventData.selectedObject == ButtonGameObject)
+        Debug.Log(this.ButtonGameObject.name + " was selected");
+
+        if (eventData.selectedObject.gameObject.name == "Casual")
         {
-            Debug.Log(this.ButtonGameObject.name + " was selected");
+            CompButtons.SetActive(false);
         }
+
+        if (eventData.selectedObject.gameObject.name == "Competitive")
+        {
+            CasualButtons.SetActive(false);
+        }
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        Debug.Log(this.ButtonGameObject.name + " was deselected");
     }
 
     public void LoadLevelOne()
