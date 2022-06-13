@@ -10,7 +10,8 @@ public class Menu : MonoBehaviour, ISelectHandler
     public string level;
     public GameObject ButtonGameObject;
 
-    public void OnSelect()
+
+    public void OnSelect(BaseEventData eventData)
     {
         if (eventData.selectedObject == ButtonGameObject)
         {
@@ -22,6 +23,8 @@ public class Menu : MonoBehaviour, ISelectHandler
     {
         SceneManager.LoadScene(level);
     }
+
+
 
     public void Options()
     {
