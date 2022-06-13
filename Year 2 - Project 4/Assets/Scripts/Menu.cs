@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class Menu : MonoBehaviour
 {
     public string level;
-    public string gameModeSelection;
+    //public string gameModeSelection;
 
     private void Awake()
     {
@@ -30,8 +30,8 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-    public void GameMode()
-    {
-        SceneManager.LoadScene(gameModeSelection);
-    }
+    //public void GameMode()
+    //{
+    //    SceneManager.LoadScene(gameModeSelection);
+    //}
 }
