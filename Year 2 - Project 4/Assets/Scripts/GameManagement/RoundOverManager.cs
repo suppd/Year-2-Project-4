@@ -17,8 +17,6 @@ public class RoundOverManager : MonoBehaviour
     void Awake()
     {
         playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
-        //Debug.Log(playerConfigs.Length);
-
         for (int i = 0; i < playerConfigs.Length; i++)
         {
             if (playerConfigs[i].isAlive)

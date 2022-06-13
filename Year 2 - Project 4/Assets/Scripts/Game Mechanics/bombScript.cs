@@ -48,7 +48,6 @@ public class bombScript : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Eggsplotion");
         }
     }
-
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

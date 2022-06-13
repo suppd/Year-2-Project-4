@@ -7,15 +7,12 @@ public class LevelManagerScript : MonoBehaviour
 {
     private GameObject[] players;
 
-    public int amountOfPlayers; // This is changed from PlayerStats....
+    private int amountOfPlayers;
     private float timer = 3f;
+
     public string levelName;
     bool foundPlayers = false;
-    private void Start()
-    {
-        
-    }
-    public int UpdateAmountOfPlayers()
+    public int GetAmountOfPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         Debug.Log(players.Length);
@@ -23,11 +20,18 @@ public class LevelManagerScript : MonoBehaviour
         return players.Length;
     }
 
+    //Created this method for changing the local private variable amountOfPlayers instead of having a public variable
+    public void UpdateAmountOfPlayers(int minus)
+    {
+        amountOfPlayers -= minus;
+    }
+
     private void Update()
     {
         if (!foundPlayers)
         {
-            Invoke("UpdateAmountOfPlayers", 0.5f);
+            //optimizied preformance a bit by invoking this function only once at the start of the scene (only time nessicary and then it gets updated by the players later
+            Invoke("GetAmountOfPlayers", 0.5f);
             foundPlayers = true;
         }
         if (amountOfPlayers == 0 || players == null)
