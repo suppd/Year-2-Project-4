@@ -67,6 +67,18 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(FlashRed());
     }
 
+    public void GetHealth(int health)
+    {
+            HP = HP + health;
+            currentHealth += health;
+            if (HP > 100)
+            {
+                currentHealth = 100;
+                HP = 100;
+            }
+            healthBar.SetHealth(HP);
+    }
+
 
     void FixedUpdate()
     {
@@ -89,7 +101,7 @@ public class PlayerStats : MonoBehaviour
         {
             playerConfig.isAlive=true;
         }
-        //Debug.Log(HP);
+        Debug.Log(HP);
 
 
         if(activate == true)
