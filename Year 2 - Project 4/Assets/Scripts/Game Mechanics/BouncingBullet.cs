@@ -15,7 +15,6 @@ public class BouncingBullet : MonoBehaviour
     [SerializeField]
     private int maxBounce = 2;
     public AudioClip crackEgg;
-    public AudioClip hitPlayer;
 
     private int bounceDamage = 25;
     public int addedDamage = 10;
@@ -39,13 +38,14 @@ public class BouncingBullet : MonoBehaviour
             GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
             Destroy(killEffect, 1f);
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage);
-            AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
+            FindObjectOfType<AudioManager>().Play("Bounce");
             Destroy(gameObject);
 
         }
 
         if (collision.gameObject.tag == "Wall")
         {
+            FindObjectOfType<AudioManager>().Play("Bounce");
             numBounce++;
             bounceDamage += addedDamage;
             var speed = lastVel.magnitude;
@@ -61,7 +61,7 @@ public class BouncingBullet : MonoBehaviour
                 Destroy(effect, 1f);
                 Destroy(gameObject);
                 AudioSource.PlayClipAtPoint(crackEgg, transform.position);
-                
+                FindObjectOfType<AudioManager>().Play("Bounce");
             }
 
         }
@@ -72,7 +72,7 @@ public class BouncingBullet : MonoBehaviour
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
             Destroy(gameObject);
-            AudioSource.PlayClipAtPoint(crackEgg, transform.position);
+            FindObjectOfType<AudioManager>().Play("Bounce");
         }
 
         if (collision.gameObject.tag == "Bullet")

@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     PlayerControls playercontrols;
     public float speed = 5f; //controls velocity multiplier
     public Rigidbody2D rb;
-    public Animator anim;    public float DashForce = 20f;
+    public Animator anim;
+    public float DashForce = 20f;
     private bool isWalking;
     [HideInInspector]
     public bool vestOn;
@@ -18,7 +19,11 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float bonusSpeed = 0;
     [HideInInspector]
-    public Vector2 movements;    [HideInInspector]    public Vector2 inputVector;    public float freezeDuration;
+    public Vector2 movements;
+    [HideInInspector]
+    public Vector2 inputVector;
+    public float freezeDuration;
+
     public ParticleSystem dashDust;
 
     private float slowAmount = 1f;
@@ -80,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
                         }
                         speed = DashForce;
                         dashCounter = dashDistance;
+                        FindObjectOfType<AudioManager>().Play("Dash");
                         CreateDust();
 
                 }

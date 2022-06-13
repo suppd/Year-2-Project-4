@@ -12,7 +12,6 @@ public class Shooting : MonoBehaviour
     public GameObject vestPrefab;
     public GameObject smallVestPrefab;
     public GameObject freezePrefab;
-    public AudioClip shootSound;
     public Animator anima;
     public string shotType;
     public PlayerMovement playerMovement;
@@ -50,12 +49,11 @@ public class Shooting : MonoBehaviour
         {
             case "normal":
                 anima.SetTrigger("Shoot1");
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 lastShot = Time.time;
+                FindObjectOfType<AudioManager>().Play("Throw");
                 break;
             case "grenade":
                 anima.SetTrigger("Nade");
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 shotType = "normal";
                 lastShot = Time.time;
                 PlayerStats playerStats = GetComponent<PlayerStats>();
@@ -74,11 +72,9 @@ public class Shooting : MonoBehaviour
                 shotType = "normal";
                 lastShot = Time.time;
                 //AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                FindObjectOfType<AudioManager>().Play("Freeze");
                 break;
             case "bounce":
                 anima.SetTrigger("Bounce");
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
                 lastShot = Time.time;
                 shotType = "normal";
                 break;

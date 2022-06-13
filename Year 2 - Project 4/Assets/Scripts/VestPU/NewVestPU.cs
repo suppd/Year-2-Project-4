@@ -17,6 +17,8 @@ public class NewVestPU : MonoBehaviour
         {
             StartCoroutine(PickUp(other));
             GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
+            FindObjectOfType<AudioManager>().Play("Vest");
+            FindObjectOfType<AudioManager>().Play("PickUp");
         }
     }
 
@@ -42,6 +44,7 @@ public class NewVestPU : MonoBehaviour
             anim.SetBool("Vest", false);
             speed.bonusSpeed = 0;
             speed.vestOn = false;
+            FindObjectOfType<AudioManager>().Play("VestBoom");
         }
         anim.SetBool("Vest", false);
         stats.shotType = "normal";
