@@ -38,7 +38,6 @@ public class BouncingBullet : MonoBehaviour
         {
             GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
             Destroy(killEffect, 1f);
-            Debug.Log(bounceDamage);
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage/2);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
