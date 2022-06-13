@@ -10,8 +10,6 @@ public class VestBomb : MonoBehaviour
     public GameObject explodeEffect;
     public int damagePlayer = 10;
     public int damageEnemy = 100;
-    private int num = 0;
-    private int numE = 0;
 
     private void Awake()
     {

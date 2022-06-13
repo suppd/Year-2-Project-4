@@ -7,7 +7,7 @@ using UnityEngine;
 public class HomingMissle : MonoBehaviour
 {
     
-    public float speed = 5f;
+    public float speed = 10f;
     public float rotateSpeed = 100f;
     [HideInInspector]
     public bool missleOn = false;
@@ -15,12 +15,14 @@ public class HomingMissle : MonoBehaviour
     public GameObject HomingEggsplosion;
     public GameObject targetGameObject;
     private Rigidbody2D rb;
-    private int yourMom;
+
+    public float fieldOfImpact;
+    public LayerMask PlayerToHit;
+    public int damage = 100;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-       
     }
 
     private void FixedUpdate()
@@ -36,9 +38,21 @@ public class HomingMissle : MonoBehaviour
     {
         if (other.CompareTag("Bomba"))
         {
+            Explode();
             Destroy(gameObject);
-            Instantiate(HomingEggsplosion, transform.position, transform.rotation);      
         }
+    }
+
+    void Explode()
+    {
+        Collider2D[] player = Physics2D.OverlapCircleAll(transform.position, fieldOfImpact, PlayerToHit);
+
+        foreach (CircleCollider2D obj2 in player)
+        {
+            obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        }
+        GameObject effect = Instantiate(HomingEggsplosion, transform.position, transform.rotation);
+        Destroy(effect, 1f);
     }
 
     public void Launch()
