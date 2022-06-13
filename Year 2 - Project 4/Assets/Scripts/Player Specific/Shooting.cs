@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 15f;
     [SerializeField]
-    float fireRate = 1f;
+    public float fireRate = 1f;
     private float lastShot = 0.0f;
 
     public bool isTeams;
