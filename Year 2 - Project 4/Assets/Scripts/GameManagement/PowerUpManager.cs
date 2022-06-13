@@ -19,10 +19,8 @@ public class PowerUpManager : MonoBehaviour
     private float amount;
     private void Start()
     {
-
         amount = 1;
     }
-
     public void WaitForSpawn()
     {
         if (waitingForSpawn)
@@ -36,7 +34,6 @@ public class PowerUpManager : MonoBehaviour
             }
         }
     }
-
     public void SpawnRandomPowerUp(int index, int powerUpToSpawn)
     {
         Instantiate(powerUps[powerUpToSpawn], spawnPoints[index]);

@@ -7,7 +7,7 @@ using TMPro;
 public class TimerUI : MonoBehaviour
 {
     float currentTime;
-    public float startingTime = 50f;
+    public float startingTime = 5f;
 
     public bool TimerPlaying;
 
@@ -34,7 +34,8 @@ public class TimerUI : MonoBehaviour
 
     public void DisableTimer()
     {
-            PlayerStats playerStats = GetComponentInParent<PlayerStats>();
-            playerStats.activateTimer = false;
+        currentTime = 5;
+        PlayerStats playerStats = GetComponentInParent<PlayerStats>();
+        playerStats.activateTimer = false;
     }
 }

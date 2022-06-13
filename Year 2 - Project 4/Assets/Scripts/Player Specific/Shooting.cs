@@ -26,14 +26,16 @@ public class Shooting : MonoBehaviour
 
     public bool isTeams;
 
+    private PlayerStats playerStats;
+
     //public string shooter { get; set; }
     private void Awake()
     {
+        playerStats = GetComponent<PlayerStats>();
         shotType = "normal";
     }
     public void Fire1(InputAction.CallbackContext context)
     {
-
         if (context.performed)
         {
             if (Time.time > fireRate + lastShot)
@@ -56,7 +58,6 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Nade");
                 shotType = "normal";
                 lastShot = Time.time;
-                PlayerStats playerStats = GetComponent<PlayerStats>();
                 playerStats.activate = false;
                 break;
             case "vest":
@@ -66,6 +67,9 @@ public class Shooting : MonoBehaviour
                 lastShot = Time.time;
                 anima.SetBool("Vest", false);
                 playerMovement.vestOn = false;
+                TimerUI vestTimer = GetComponentInChildren<TimerUI>();
+                vestTimer.DisableTimer();
+
                 break;
             case "freeze":
                 anima.SetTrigger("Freeze");
@@ -89,11 +93,7 @@ public class Shooting : MonoBehaviour
         bullet.GetComponent<Bullet>().isBlue = gameObject.GetComponent<PlayerStats>().isBlue;
         bullet.GetComponent<Bullet>().isTeams = isTeams; //change this to a stored value on like playerstats which has isTeams stored and gets set to true / false depending on init
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
-        //this.shooter = this.name;
-        //bullet.GetComponent<Bullet>().shotFrom = shooter;
-        ////Debug.Log(this.shooter);
-        ////Debug.Log(bullet.GetComponent<Bullet>().shotFrom);       
+        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);   
     }
 
     void SpawnBomb()

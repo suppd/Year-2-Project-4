@@ -176,7 +176,7 @@ MonoBehaviour:
         m_MethodName: SetAnimator
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 22100000, guid: f1ddb3cd27e3cca4b831d39b03920b07, type: 2}
+          m_ObjectArgument: {fileID: 22100000, guid: d8bc799cc05be4945a6add60772ff900, type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimatorOverrideController,
             UnityEngine
           m_IntArgument: 0
