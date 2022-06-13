@@ -6,25 +6,30 @@ public class MissleManager : MonoBehaviour
 {
     public Transform[] targetPoints;
     public GameObject missle;
-    [HideInInspector]
-    public int missleNum;
-
-
-     void Start()
-    {
-        SpawnMissle();
-    }
+    private bool missleOn = true;
+    public float timeStart;
 
     private void Update()
     {
+        timeStart -= Time.deltaTime;
+
+        if (timeStart < Time.deltaTime)
+        {
+            SpawnMissle();
+            missleOn = false;
+        }
     }
+
+
     public void SpawnMissle()
     {
-        foreach(Transform t in targetPoints) 
-        {         
-            GameObject newMissile = Instantiate(missle, this.transform);
-            newMissile.GetComponent<HomingMissle>().SetTarget(t.gameObject);
-        }
-        
+        if (missleOn)
+        {
+            foreach (Transform t in targetPoints)
+            {
+                GameObject newMissile = Instantiate(missle, this.transform);
+                newMissile.GetComponent<HomingMissle>().SetTarget(t.gameObject);
+            }
+        }  
     }
 }

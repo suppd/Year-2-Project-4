@@ -38,7 +38,8 @@ public class BouncingBullet : MonoBehaviour
         {
             GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
             Destroy(killEffect, 1f);
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage);
+            Debug.Log(bounceDamage);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage/2);
             AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
             Destroy(gameObject);
 
@@ -49,26 +50,20 @@ public class BouncingBullet : MonoBehaviour
             numBounce++;
             bounceDamage += addedDamage;
             var speed = lastVel.magnitude;
-            //float angle = Vector2.Angle(lastVel.normalized, collision.contacts[0].normal);
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
-            Debug.Log(direction);
             rb.velocity = direction * Mathf.Max(speed, 0f);
             transform.eulerAngles = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
-            //transform.rotation = Quaternion.Euler(0,0, angle);
             if (numBounce == maxBounce)
             {
                 GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
                 Destroy(effect, 1f);
                 Destroy(gameObject);
                 AudioSource.PlayClipAtPoint(crackEgg, transform.position);
-                
             }
-
         }
 
         if (collision.gameObject.tag == "Bomba")
         {
-
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
             Destroy(gameObject);
@@ -80,4 +75,5 @@ public class BouncingBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
