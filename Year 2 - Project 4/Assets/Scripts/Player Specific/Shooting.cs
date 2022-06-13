@@ -73,7 +73,8 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Freeze");
                 shotType = "normal";
                 lastShot = Time.time;
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                //AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                FindObjectOfType<AudioManager>().Play("Freeze");
                 break;
             case "bounce":
                 anima.SetTrigger("Bounce");
