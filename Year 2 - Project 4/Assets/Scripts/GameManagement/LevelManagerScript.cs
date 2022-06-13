@@ -7,7 +7,7 @@ public class LevelManagerScript : MonoBehaviour
 {
     private GameObject[] players;
 
-    public int amountOfPlayers;
+    public int amountOfPlayers; // This is changed from PlayerStats....
     private float timer = 3f;
     public string levelName;
     bool foundPlayers = false;

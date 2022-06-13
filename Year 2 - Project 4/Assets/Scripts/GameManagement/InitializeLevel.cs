@@ -31,7 +31,12 @@ public class InitializeLevel : MonoBehaviour
             }
             if (isTeams)
             {
-                
+                player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, gameObject.transform);
+                player.GetComponent<PlayerStats>().isBlue = playerConfiguration[i].isBlue;
+                player.GetComponent<Shooting>().isTeams = true;
+                player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfiguration[i]);
+                player.GetComponent<PlayerStats>().AssignPlayerConfig(playerConfiguration[i]);
+                /*
                 if (playerConfiguration[i].isBlue)
                 {
                     player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, gameObject.transform);
@@ -47,7 +52,7 @@ public class InitializeLevel : MonoBehaviour
                     player.GetComponent<Shooting>().isTeams = true;
                     player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfiguration[i]);
                     player.GetComponent<PlayerStats>().AssignPlayerConfig(playerConfiguration[i]);
-                }
+                }*/
             }
         }
     }
