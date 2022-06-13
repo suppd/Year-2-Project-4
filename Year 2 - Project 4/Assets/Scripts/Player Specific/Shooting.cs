@@ -47,8 +47,11 @@ public class Shooting : MonoBehaviour
         
     public void DiffShooting()
     {
+
+        PlayerStats playerStats = GetComponent<PlayerStats>();
         switch (shotType)
         {
+
             case "normal":
                 anima.SetTrigger("Shoot1");
                 lastShot = Time.time;

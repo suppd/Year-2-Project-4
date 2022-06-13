@@ -1234,6 +1234,18 @@ MonoBehaviour:
   startingTime: 5
   TimerPlaying: 0
   countdownText: {fileID: 4161946363099874813}
+--- !u!114 &4265248145170758249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289663120720938122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3f0264dd6814db985647f6f96b481d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3416611735055664402
 GameObject:
   m_ObjectHideFlags: 0
