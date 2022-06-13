@@ -24,9 +24,8 @@ public class BouncePickUp : MonoBehaviour
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
 
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.activate1 = true;
-        playerStats.activate = false;
-        playerStats.activate2 = false;
+        playerStats.TurnOff();
+        playerStats.uiInfo = "bounce";
 
 
         Destroy(gameObject);

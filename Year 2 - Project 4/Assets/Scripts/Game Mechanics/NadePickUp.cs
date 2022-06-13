@@ -22,9 +22,8 @@ public class NadePickUp : MonoBehaviour
         stats.shotType = "grenade";
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);    
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.activate = true;
-        playerStats.activate1 = false;
-        playerStats.activate2 = false;
+        playerStats.TurnOff();
+        playerStats.uiInfo = "nade";
 
         Destroy(gameObject);
     }

@@ -61,7 +61,7 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Nade");
                 shotType = "normal";
                 lastShot = Time.time;
-                playerStats.activate = false;
+                playerStats.TurnOff();
                 break;
             case "vest":
                 SpawnVest();
@@ -72,6 +72,7 @@ public class Shooting : MonoBehaviour
                 playerMovement.vestOn = false;
                 TimerUI vestTimer = GetComponentInChildren<TimerUI>();
                 vestTimer.DisableTimer();
+                playerStats.TurnOff();
 
                 break;
             case "freeze":
@@ -79,11 +80,13 @@ public class Shooting : MonoBehaviour
                 shotType = "normal";
                 lastShot = Time.time;
                 //AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                playerStats.TurnOff();
                 break;
             case "bounce":
                 anima.SetTrigger("Bounce");
                 lastShot = Time.time;
                 shotType = "normal";
+                playerStats.TurnOff();
                 break;
         }
     }

@@ -26,7 +26,6 @@ public class TimerUI : MonoBehaviour
         if (currentTime <= 0 && TimerPlaying)
         {
             currentTime = 5;
-            //Destroy(gameObject, 1f);
             DisableTimer();
             TimerPlaying = false;
         }
@@ -36,6 +35,6 @@ public class TimerUI : MonoBehaviour
     {
         currentTime = 5;
         PlayerStats playerStats = GetComponentInParent<PlayerStats>();
-        playerStats.activateTimer = false;
+        playerStats.TurnOff();
     }
 }

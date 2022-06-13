@@ -15,7 +15,7 @@ public class LevelManagerScript : MonoBehaviour
     public int GetAmountOfPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log(players.Length);
+        //Debug.Log(players.Length);
         amountOfPlayers = players.Length;
         return players.Length;
     }
