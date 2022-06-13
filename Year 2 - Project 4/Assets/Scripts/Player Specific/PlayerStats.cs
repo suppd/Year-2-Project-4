@@ -7,9 +7,12 @@ using System;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int HP = 100;
-    public int MaxHP = 100;
-    public int currentHealth;
+    [SerializeField]
+    private int HP = 100;
+    [SerializeField]
+    private int MaxHP = 100;
+    [SerializeField]
+    private int currentHealth;
 
     public HealthBar healthBar;
 
@@ -61,20 +64,16 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetHealth(HP);
         StartCoroutine(FlashRed());
     }
-
-
     void FixedUpdate()
     {
         if (HP <= 0)
         {
             Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
-            // Invoke("KillPopUp", 5);
-            level.amountOfPlayers--;
+            level.UpdateAmountOfPlayers(1);
             Die();
-            //level.UpdateAmountOfPlayers();
             
         }
-        else if (level.amountOfPlayers == 1 && scored == false)
+        else if (level.GetAmountOfPlayers() == 1 && scored == false)
         {
             score+=1;
             playerConfig.playerScore = score;
@@ -84,25 +83,21 @@ public class PlayerStats : MonoBehaviour
         {
             playerConfig.isAlive=true;
         }
-        //Debug.Log(HP);
-
-
         if(activate == true)
         {
-            eggsplosivePU.SetActive(true);
+            //eggsplosivePU.SetActive(true);
         }
         else
         {
-            eggsplosivePU.SetActive(false);
+            //eggsplosivePU.SetActive(false);
         }
-
         if(activateTimer == true)
         {
-            TimerVest.SetActive(true);
+            //TimerVest.SetActive(true);
         }
         else
         {
-            TimerVest.SetActive(false);
+            //TimerVest.SetActive(false);
         }
     }
 
@@ -115,7 +110,6 @@ public class PlayerStats : MonoBehaviour
         playerConfig.isAlive = false;
         cam.GetComponent<MultiplePlayerCamera>().targets.Remove(this.transform);
         Destroy(player);
-
     }
 
     public void KillPopUp()
@@ -130,9 +124,6 @@ public class PlayerStats : MonoBehaviour
         ID = playerConfig.playerIndex;
         score = playerConfig.playerScore;
     }
-
-
-
     public IEnumerator FlashRed()
     {
         Color hitColor = new Vector4(1f, 0f, 0f, 0.6f);

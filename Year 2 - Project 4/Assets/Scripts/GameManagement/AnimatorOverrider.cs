@@ -15,6 +15,4 @@ public class AnimatorOverrider : MonoBehaviour
     {
         animator.runtimeAnimatorController = overrideController;
     }
-
-
 }

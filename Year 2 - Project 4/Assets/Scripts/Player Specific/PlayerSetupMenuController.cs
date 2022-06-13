@@ -26,10 +26,6 @@ public class PlayerSetupMenuController : MonoBehaviour
     private float ignoreImputTime = 1.5f;
     private bool inputEnabled;
 
-    private void Start()
-    {
-        
-    }
     public void SetPlayerIndex(int p1)
     {
         playerIndex = p1;
@@ -75,6 +71,5 @@ public class PlayerSetupMenuController : MonoBehaviour
 
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
         readyButton.gameObject.SetActive(false);
-
     }
 }

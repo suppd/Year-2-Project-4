@@ -20,8 +20,6 @@ public class BouncingBullet : MonoBehaviour
     private int bounceDamage = 25;
     public int addedDamage = 10;
 
-    //public string shotFrom { get; set; }
-
     private void Awake()
     {
         rb.GetComponent<Rigidbody2D>();
@@ -43,7 +41,6 @@ public class BouncingBullet : MonoBehaviour
             Destroy(gameObject);
 
         }
-
         if (collision.gameObject.tag == "Wall")
         {
             numBounce++;
@@ -65,7 +62,6 @@ public class BouncingBullet : MonoBehaviour
             }
 
         }
-
         if (collision.gameObject.tag == "Bomba")
         {
 
@@ -74,7 +70,6 @@ public class BouncingBullet : MonoBehaviour
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(crackEgg, transform.position);
         }
-
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);

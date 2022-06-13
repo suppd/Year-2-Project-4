@@ -9,10 +9,8 @@ public class ProjectileBehave : MonoBehaviour
     public Vector3 LaunchOffset;
     public bool Thrown;
 
-    // Start is called before the first frame update
     void Start()
     {
-
         if (Thrown)
         {
         var direction = -transform.right + Vector3.up;
@@ -24,7 +22,6 @@ public class ProjectileBehave : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!Thrown)
@@ -32,9 +29,4 @@ public class ProjectileBehave : MonoBehaviour
         transform.position += -transform.right * speed * Time.deltaTime; 
         }       
     }
-
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-         
-    // }
 }

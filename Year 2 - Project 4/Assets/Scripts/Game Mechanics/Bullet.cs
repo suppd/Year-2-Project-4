@@ -29,14 +29,14 @@ public class Bullet : MonoBehaviour
 
     //public string shotFrom { get; set; }
 
-    private void Awake()
-    {
-        rb.GetComponent<Rigidbody2D>();
+    private void Awake()
+    {
+        rb.GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-        lastVel = rb.velocity;
+    void Update()
+    {
+        lastVel = rb.velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -61,19 +61,17 @@ public class Bullet : MonoBehaviour
                 }
                 else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && isBlue)
                 {
-                    GameObject killEffect2 = Instantiate(killPlayer, transform.position, Quaternion.identity);
-                    Destroy(killEffect2, 1f);
-                    collision.gameObject.GetComponent<PlayerStats>().TakeDamage(25);
+                    GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
+                    Destroy(killEffect, 1f);
+                    collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
                     AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
-                    Destroy(gameObject);
+                    Debug.Log("shot other player");
+                    Destroy(gameObject);        
                 }
             }
-
         }
-
-        if(collision.gameObject.tag == "Wall")
-        {
-                
+        else if(collision.gameObject.tag == "Wall")
+        {       
             var speed = lastVel.magnitude;
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
             rb.velocity = direction * Mathf.Max(speed, 0f);
@@ -84,16 +82,14 @@ public class Bullet : MonoBehaviour
             AudioSource.PlayClipAtPoint(crackEgg, transform.position);
         }
 
-        if (collision.gameObject.tag == "Bomba")
+        else if (collision.gameObject.tag == "Bomba")
         {
-
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(crackEgg, transform.position);
         }
-
-        if (collision.gameObject.tag == "Bullet")
+        else if (collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
         }

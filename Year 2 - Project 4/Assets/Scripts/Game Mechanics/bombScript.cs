@@ -46,7 +46,6 @@ public class bombScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
