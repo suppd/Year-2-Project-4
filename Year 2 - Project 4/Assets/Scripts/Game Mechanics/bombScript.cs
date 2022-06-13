@@ -39,11 +39,13 @@ public class bombScript : MonoBehaviour
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
             explode();
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("Eggsplotion");
         }
         else if(collision.gameObject.tag == "Wall")
         {
             explode();
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("Eggsplotion");
         }
     }
 

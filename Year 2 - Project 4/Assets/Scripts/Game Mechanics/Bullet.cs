@@ -19,9 +19,6 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private GameObject killPlayer;
 
-    public AudioClip crackEgg;
-    public AudioClip hitPlayer;
-
     public int damage = 25;
 
     public bool isTeams = false;
@@ -29,14 +26,20 @@ public class Bullet : MonoBehaviour
 
     //public string shotFrom { get; set; }
 
-    private void Awake()
-    {
-        rb.GetComponent<Rigidbody2D>();
+    private void Awake()
+
+    {
+
+        rb.GetComponent<Rigidbody2D>();
+
     }
 
-    void Update()
-    {
-        lastVel = rb.velocity;
+    void Update()
+
+    {
+
+        lastVel = rb.velocity;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -48,9 +51,9 @@ public class Bullet : MonoBehaviour
                 GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
                 Destroy(killEffect, 1f);
                 collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-                AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
                 Destroy(gameObject);
                 Debug.Log("shot other player");
+                FindObjectOfType<AudioManager>().Play("Hurt");
             }
             else if (isTeams)
             {
@@ -64,7 +67,7 @@ public class Bullet : MonoBehaviour
                     GameObject killEffect2 = Instantiate(killPlayer, transform.position, Quaternion.identity);
                     Destroy(killEffect2, 1f);
                     collision.gameObject.GetComponent<PlayerStats>().TakeDamage(25);
-                    AudioSource.PlayClipAtPoint(hitPlayer, transform.position);
+                    FindObjectOfType<AudioManager>().Play("Hurt");
                     Destroy(gameObject);
                 }
             }
@@ -72,7 +75,8 @@ public class Bullet : MonoBehaviour
         }
 
         if(collision.gameObject.tag == "Wall")
-        {
+        {
+
                 
             var speed = lastVel.magnitude;
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
@@ -81,7 +85,7 @@ public class Bullet : MonoBehaviour
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
             Destroy(gameObject);
-            AudioSource.PlayClipAtPoint(crackEgg, transform.position);
+            FindObjectOfType<AudioManager>().Play("CrackEgg");
         }
 
         if (collision.gameObject.tag == "Bomba")
@@ -90,12 +94,13 @@ public class Bullet : MonoBehaviour
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
             Destroy(gameObject);
-            AudioSource.PlayClipAtPoint(crackEgg, transform.position);
+            FindObjectOfType<AudioManager>().Play("CrackEgg");
         }
 
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("EggHit");
         }
     }
 }

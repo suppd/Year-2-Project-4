@@ -33,6 +33,7 @@ public class VestBomb : MonoBehaviour
             }
             
         }
+        FindObjectOfType<AudioManager>().Play("VestBoom");
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);
         Destroy(gameObject);

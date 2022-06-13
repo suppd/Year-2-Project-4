@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8223221926878530420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8223221926878530422}
+  - component: {fileID: 8223221926878530423}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8223221926878530422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8223221926878530420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.249712, y: 3.9123504, z: -855.254}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8223221926878530423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8223221926878530420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cf500cb79254cd1ad5c6b66e9e2f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Freeze
+    clip: {fileID: 8300000, guid: fecaa9091318e694eaa9745db5c5d8ce, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Eggsplotion
+    clip: {fileID: 8300000, guid: 682a20e1156f37844a595bb6e16325d5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Speed
+    clip: {fileID: 8300000, guid: 8239bd0de5797cd42bc703b29b6de1ef, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Bounce
+    clip: {fileID: 8300000, guid: 3c8f11fe647d78f4cac92dc9c3592149, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Vest
+    clip: {fileID: 8300000, guid: ab5225d47335b5241a07c3d217a8b7b8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: ec4f8a240ca17f446934da1041df47a6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Throw
+    clip: {fileID: 8300000, guid: b6e053c928329d64db31fdea3aa6672e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 048e40da49669cb4fada7e58f77609e1, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: CrackEgg
+    clip: {fileID: 8300000, guid: b79f0f7a6712407488e3c6c7f1ddf9b5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}

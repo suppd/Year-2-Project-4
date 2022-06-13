@@ -12,6 +12,7 @@ public class NadePickUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PickUp(other);
+            FindObjectOfType<AudioManager>().Play("PickUp");
         }
     }
 
