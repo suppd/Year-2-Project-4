@@ -10,12 +10,16 @@ public class PickUpScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(PickUp(other));
+            if (other.GetComponent<PickUpAbility>().ablePickUp)
+            {
+                StartCoroutine(PickUp(other));
+            }   
         }
     }
 
     IEnumerator PickUp(Collider2D player)
     {
+        player.GetComponent<PickUpAbility>().CannotPickUp();
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
         speed.bonusSpeed = bSpeed;
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
@@ -25,10 +29,10 @@ public class PickUpScript : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
         speed.bonusSpeed = 0;
-        TimerUI vestTimer = player.GetComponentInChildren<TimerUI>();
+        player.GetComponent<PickUpAbility>().CanPickUp();
+        TimerUI vestTimer = player.gameObject.GetComponentInChildren<TimerUI>();
         vestTimer.DisableTimer();
         
-
         Destroy(gameObject);
     }
 }

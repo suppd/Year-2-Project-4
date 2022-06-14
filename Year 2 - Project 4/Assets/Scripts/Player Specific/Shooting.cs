@@ -16,7 +16,6 @@ public class Shooting : MonoBehaviour
     public string shotType;
     public PlayerMovement playerMovement;
 
-
     [HideInInspector]
     public bool vestDeployed = false;
 
@@ -63,6 +62,7 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Nade");
                 shotType = "normal";
                 lastShot = Time.time;
+                GetComponent<PickUpAbility>().CanPickUp();
                 playerStats.TurnOff();
                 break;
             case "vest":
@@ -77,6 +77,7 @@ public class Shooting : MonoBehaviour
                     TimerUI vestTimer = GetComponentInChildren<TimerUI>();
                     vestTimer.DisableTimer();
                     playerStats.TurnOff();
+                    GetComponent<PickUpAbility>().CanPickUp();
                     GetComponent<PlayerStats>().TurnOffCircle();
                 }
                 break;
@@ -85,12 +86,14 @@ public class Shooting : MonoBehaviour
                 shotType = "normal";
                 lastShot = Time.time;
                 //AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                GetComponent<PickUpAbility>().CanPickUp();
                 playerStats.TurnOff();
                 break;
             case "bounce":
                 anima.SetTrigger("Bounce");
                 lastShot = Time.time;
                 shotType = "normal";
+                GetComponent<PickUpAbility>().CanPickUp();
                 playerStats.TurnOff();
                 break;
         }

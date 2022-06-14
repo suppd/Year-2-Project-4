@@ -11,13 +11,17 @@ public class FreezePickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PickUp(other);
-            FindObjectOfType<AudioManager>().Play("PickUp");
+            if (other.GetComponent<PickUpAbility>().ablePickUp)
+            {
+                PickUp(other);
+                FindObjectOfType<AudioManager>().Play("PickUp");
+            }
         }
     }
 
     void PickUp(Collider2D player)
     {
+        player.GetComponent<PickUpAbility>().CannotPickUp();
         Shooting stats = player.GetComponent<Shooting>();
         stats.shotType = "freeze";
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
