@@ -10,6 +10,10 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
     public string level;
     public GameObject ButtonGameObject;
     public GameObject selectedObject;
+    [SerializeField]
+    private GameObject extendCasual;
+    [SerializeField]
+    private GameObject extendComp;
 
     [SerializeField]
     private GameObject CasualButtons;
@@ -28,6 +32,24 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
         if (eventData.selectedObject.gameObject.name == "Competitive")
         {
             CasualButtons.SetActive(false);
+        }
+
+        if(eventData.selectedObject.name == "FreeForAllCasual" || eventData.selectedObject.name == "2vs2Casual")
+        {
+            extendCasual.SetActive(true);
+        }
+        else
+        {
+            extendCasual.SetActive(false);
+        }
+
+        if (eventData.selectedObject.name == "FreeForAllComp" || eventData.selectedObject.name == "2vs2Comp")
+        {
+            extendComp.SetActive(true);
+        }
+        else
+        {
+            extendComp.SetActive(false);
         }
     }
 
