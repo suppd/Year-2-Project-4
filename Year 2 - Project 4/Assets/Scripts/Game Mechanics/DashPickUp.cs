@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DashPickUp : MonoBehaviour
 {
-
     public float duration = 3f;
 
     public GameObject PUEffect;
@@ -28,11 +27,10 @@ public class DashPickUp : MonoBehaviour
         playerStats.TurnOff();
         playerStats.uiInfo = "walldash";
         yield return new WaitForSeconds(duration);
-        TimerUI vestTimer = player.GetComponentInChildrens<TimerUI>();
-        vestTimer.DisableTimer();
         stats.dashAllow = false;
-
-
+        TimerUI vestTimer = player.GetComponentInChildren<TimerUI>();
+        vestTimer.DisableTimer();
+        
         Destroy(gameObject);
     }
 }

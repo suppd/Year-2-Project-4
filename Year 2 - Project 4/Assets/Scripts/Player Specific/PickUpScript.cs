@@ -24,13 +24,10 @@ public class PickUpScript : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        // TimerUI vestTimer = player.gameObject.GetComponent<TimerUI>();
-        // vestTimer.DisableTimer();
-
         speed.bonusSpeed = 0;
-
-
-
+        TimerUI vestTimer = player.GetComponentInChildren<TimerUI>();
+        vestTimer.DisableTimer();
+        
 
         Destroy(gameObject);
     }
