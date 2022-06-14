@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 5952745872695967489}
   - component: {fileID: 5952745872695967488}
   - component: {fileID: 5952745872695967491}
+  - component: {fileID: 1527052116265816630}
   m_Layer: 5
   m_Name: ReadyButton
   m_TagString: Untagged
@@ -635,6 +636,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1527052116265816630}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: Ready
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1527052116265816630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952745872695967517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  ButtonGameObject: {fileID: 0}
+  selectedObject: {fileID: 0}
+  extendCasual: {fileID: 0}
+  extendComp: {fileID: 0}
+  CasualButtons: {fileID: 0}
+  CompButtons: {fileID: 0}
 --- !u!1 &5952745872998894386
 GameObject:
   m_ObjectHideFlags: 0

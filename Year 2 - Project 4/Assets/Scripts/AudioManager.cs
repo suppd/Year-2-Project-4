@@ -5,10 +5,22 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    public static AudioManager Instance { get; private set; }
 
     void Awake()
     {
-    foreach (Sound s in sounds)
+
+        if (Instance != null)
+        {
+            Debug.Log("[Singleton] Trying to create another instance of singleton");
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+
+        foreach (Sound s in sounds)
         {
         s.source = gameObject.AddComponent<AudioSource>();
         s.source.clip = s.clip;
