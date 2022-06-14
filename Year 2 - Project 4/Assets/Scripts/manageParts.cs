@@ -10,16 +10,17 @@ public class ManageParts : MonoBehaviour
     {
         timer = 5;
     }
-// Update is called once per frame
-    void Update()
+
+
+
+    public void Update()
     {
         timer-=Time.deltaTime;
-
+        
         if(timer < Time.deltaTime)
         {
-           Debug.Log("vest Timer");
-            PlayerStats playerStats = GetComponent<PlayerStats>();
-            //playerStats.TurnOff();
+            PlayerStats playerStats = GetComponentInParent<PlayerStats>();
+            playerStats.TurnOff();
         }
     }
 }

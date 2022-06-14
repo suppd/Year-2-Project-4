@@ -132,7 +132,7 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = freeze.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
         PlayerStats playerStats = GetComponent<PlayerStats>();
-        
+     
     }
 
     void SpawnBounce()
@@ -141,6 +141,6 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = bounce.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
         PlayerStats playerStats = GetComponent<PlayerStats>();
-        
+       
     }
 }

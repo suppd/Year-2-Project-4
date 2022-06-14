@@ -41,8 +41,12 @@ public class PlayerStats : MonoBehaviour
     public GameObject eggsplosivePU;
     public GameObject bouncePU;
     public GameObject TimerVest;
+    public GameObject TimerVestSpeed;
+    public GameObject TimerVestWallDash;
     public GameObject freezePU;
     public GameObject cirlclePrefab;
+    public GameObject speedPU;
+    public GameObject walldashPU;
 
     //Bools for turning on powerups
     public string uiInfo = "nothing";
@@ -123,6 +127,16 @@ public class PlayerStats : MonoBehaviour
                 TimerVest.SetActive(true);
                 uiInfo = "nothing";
                 break;
+            case "speed":
+                speedPU.SetActive(true);
+                TimerVestSpeed.SetActive(true);
+                uiInfo = "nothing";
+                break;
+            case "walldash":
+                walldashPU.SetActive(true);
+                TimerVestWallDash.SetActive(true);
+                uiInfo = "nothing";
+                break;
 
         }
     }
@@ -133,6 +147,10 @@ public class PlayerStats : MonoBehaviour
         freezePU.SetActive(false);
         bouncePU.SetActive(false);
         eggsplosivePU.SetActive(false);
+        speedPU.SetActive(false);
+        walldashPU.SetActive(false);
+        TimerVestSpeed.SetActive(false);
+        TimerVestWallDash.SetActive(false);
     }
 
     public void Die()

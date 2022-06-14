@@ -11,7 +11,6 @@ public class PickUpScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(PickUp(other));
-            
         }
     }
 
@@ -19,11 +18,16 @@ public class PickUpScript : MonoBehaviour
     {
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
         speed.bonusSpeed = bSpeed;
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        playerStats.TurnOff();
+        playerStats.uiInfo = "speed";
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-
         speed.bonusSpeed = 0;
+        TimerUI vestTimer = player.GetComponentInChildren<TimerUI>();
+        vestTimer.DisableTimer();
+        
 
         Destroy(gameObject);
     }
