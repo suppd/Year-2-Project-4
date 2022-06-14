@@ -19,23 +19,40 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
     private GameObject CasualButtons;
     [SerializeField]
     private GameObject CompButtons;
+    [SerializeField]
+    private GameObject infoTextCasual;
+    [SerializeField]
+    private GameObject infoTextComp;
 
     public void OnSelect(BaseEventData eventData)
     {
         FindObjectOfType<AudioManager>().Play("MenuHover");
+
         Debug.Log(this.ButtonGameObject.name + " was selected");
 
         if (eventData.selectedObject.gameObject.name == "Casual")
         {
             CompButtons.SetActive(false);
+            infoTextCasual.SetActive(true);
+            infoTextComp.SetActive(false);
         }
 
         if (eventData.selectedObject.gameObject.name == "Competitive")
         {
             CasualButtons.SetActive(false);
+            infoTextCasual.SetActive(false);
+            infoTextComp.SetActive(true);
         }
 
-        if(eventData.selectedObject.name == "FreeForAllCasual" || eventData.selectedObject.name == "2vs2Casual")
+        if (eventData.selectedObject.gameObject.name == "BackButton")
+        {
+            CasualButtons.SetActive(false);
+            CompButtons.SetActive(false);
+            infoTextCasual.SetActive(false);
+            infoTextComp.SetActive(false);
+        }
+
+        if (eventData.selectedObject.name == "FreeForAllCasual" || eventData.selectedObject.name == "2vs2Casual")
         {
             extendCasual.SetActive(true);
         }
