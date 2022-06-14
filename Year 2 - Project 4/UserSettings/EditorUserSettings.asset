@@ -7,6 +7,7 @@ EditorUserSettings:
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c6b15050358192f2d28353e663832f1f9003df1f305eae2343a7c684cfa320d2a18
       flags: 0
     RecentlyUsedScenePath-1:
@@ -65,6 +66,14 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-9:
 >>>>>>> TimersSpeedWall
+=======
+      value: 22424703114646680e0b0227036c72111f19352f223d68252320092a
+      flags: 0
+    RecentlyUsedScenePath-1:
+      value: 22424703114646680e0b0227036c78111b123525282d1535212c1e27ebef3a76f7e93ffdfe
+      flags: 0
+    RecentlyUsedScenePath-2:
+>>>>>>> GamemodeSelection
       value: 22424703114646680e0b0227036c731f1415016439262f2434
       flags: 0
     vcSharedLogLevel:

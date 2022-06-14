@@ -529,6 +529,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: GameModeSelection
+  buttonGameObject: {fileID: 0}
+  selectedObject: {fileID: 0}
+  extendCasual: {fileID: 0}
+  extendComp: {fileID: 0}
+  CasualButtons: {fileID: 0}
+  CompButtons: {fileID: 0}
 --- !u!1 &648576333
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +587,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: LevelDesign1
+  buttonGameObject: {fileID: 0}
+  selectedObject: {fileID: 0}
+  extendCasual: {fileID: 0}
+  extendComp: {fileID: 0}
+  CasualButtons: {fileID: 0}
+  CompButtons: {fileID: 0}
 --- !u!114 &648576336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,7 +878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f572a00c57bc840428d14b5540913624, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4a79393d0abaff42af51c570652e895, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1029,6 +1041,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: LevelDesign1
+  buttonGameObject: {fileID: 0}
+  selectedObject: {fileID: 0}
+  extendCasual: {fileID: 0}
+  extendComp: {fileID: 0}
+  CasualButtons: {fileID: 0}
+  CompButtons: {fileID: 0}
 --- !u!114 &1893197185
 MonoBehaviour:
   m_ObjectHideFlags: 0
