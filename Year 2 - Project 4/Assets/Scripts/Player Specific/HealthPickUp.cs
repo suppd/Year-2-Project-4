@@ -12,7 +12,10 @@ public class HealthPickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PickUp(other);
+            if (other.GetComponent<PickUpAbility>().ablePickUp)
+            {
+                PickUp(other);
+            }
         }
     }
 
@@ -21,6 +24,7 @@ public class HealthPickUp : MonoBehaviour
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.GetHealth(healthGain);
+        player.GetComponent<PickUpAbility>().CanPickUp();
         Destroy(gameObject);
     }
 }
