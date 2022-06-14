@@ -40,6 +40,12 @@ public class PlayerConfigurationManager : MonoBehaviour
         return playerConfigs;
     }
 
+    public void SetPlayerName(int i, string nameToSet)
+    {
+        playerConfigs[i].playerName = nameToSet;
+        Debug.Log("Name: " + nameToSet + " Set To " + i);
+    }
+
     public void SetPlayerSprite(int i, Sprite spriteToSet)
     {
         Debug.Log("Setting Sprite" + spriteToSet + "to player" + i);
@@ -96,6 +102,7 @@ public class PlayerConfiguration
         playerInput = p1;
     }
     public PlayerInput playerInput { get; set; }
+    public string playerName { get; set; }
     public int playerIndex { get; set; }
     public int playerScore { get; set; }
     public bool isReady { get; set; }
@@ -106,8 +113,4 @@ public class PlayerConfiguration
 
     public AnimatorOverrideController animatorOverrideController { get; set; }
 
-    void Start()
-    {
-        //isAlive = true;
-    }
 }

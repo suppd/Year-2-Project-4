@@ -22,6 +22,8 @@ public class PlayerSetupMenuController : MonoBehaviour
     private GameObject teamMenuPanel;
     [SerializeField]
     private EventSystem eventSystem;
+    [SerializeField]
+    private GameObject mainInputField;
 
     private float ignoreImputTime = 1.5f;
     private bool inputEnabled;
@@ -41,6 +43,12 @@ public class PlayerSetupMenuController : MonoBehaviour
         }
     }
 
+    public void SetName()
+    {
+        if (!inputEnabled) { return; }
+        string name = mainInputField.GetComponentInChildren<Text>().text;
+        PlayerConfigurationManager.Instance.SetPlayerName(playerIndex, name);
+    }
     public void SetSprite(Sprite sprite)
     {
         if (!inputEnabled) { return; }
@@ -70,6 +78,7 @@ public class PlayerSetupMenuController : MonoBehaviour
         if(!inputEnabled) { return; }
 
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
+        SetName();
         readyButton.gameObject.SetActive(false);
     }
 }
