@@ -15,12 +15,14 @@ public class NewVestPU : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerStats>().TurnOnCircle();
-            StartCoroutine(PickUp(other));
-            GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
-            FindObjectOfType<AudioManager>().Play("Vest");
-            FindObjectOfType<AudioManager>().Play("PickUp");
-
+            if (other.GetComponent<PickUpAbility>().ablePickUp)
+            {
+                other.GetComponent<PlayerStats>().TurnOnCircle();
+                StartCoroutine(PickUp(other));
+                GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
+                FindObjectOfType<AudioManager>().Play("Vest");
+                FindObjectOfType<AudioManager>().Play("PickUp");
+            }
         }
     }
 
@@ -36,7 +38,7 @@ public class NewVestPU : MonoBehaviour
         speed.vestOn = true;
         PlayerStats playerStats = player.GetComponentInParent<PlayerStats>();
         playerStats.uiInfo = "vest";
-
+        player.GetComponent<PickUpAbility>().CannotPickUp();
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
@@ -46,6 +48,7 @@ public class NewVestPU : MonoBehaviour
             anim.SetBool("Vest", false);
             speed.bonusSpeed = 0;
             speed.vestOn = false;
+            player.GetComponent<PickUpAbility>().CanPickUp();
             FindObjectOfType<AudioManager>().Play("VestBoom");
             player.GetComponent<PlayerStats>().TurnOffCircle();
         }

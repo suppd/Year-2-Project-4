@@ -12,13 +12,17 @@ public class DashPickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(PickUp(other));
-            GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
+            if (other.GetComponent<PickUpAbility>().ablePickUp)
+            {
+                StartCoroutine(PickUp(other));
+                GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
+            }
         }
     }
 
     IEnumerator PickUp(Collider2D player)
     {
+        player.GetComponent<PickUpAbility>().CannotPickUp();
         PlayerMovement stats = player.GetComponent<PlayerMovement>();
         stats.dashAllow = true;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -28,9 +32,11 @@ public class DashPickUp : MonoBehaviour
         playerStats.uiInfo = "walldash";
         yield return new WaitForSeconds(duration);
         stats.dashAllow = false;
-        TimerUI vestTimer = player.GetComponentInChildren<TimerUI>();
+        player.GetComponent<PickUpAbility>().CanPickUp();
+        TimerUI vestTimer = player.gameObject.GetComponentInChildren<TimerUI>();
         vestTimer.DisableTimer();
         
+
         Destroy(gameObject);
     }
 }

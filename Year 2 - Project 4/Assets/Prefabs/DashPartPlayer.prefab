@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2884702812988646656}
   - component: {fileID: 8679598731988760152}
   - component: {fileID: 7338101077393097795}
+  - component: {fileID: 3104446220764264861}
   m_Layer: 7
   m_Name: DashPartPlayer
   m_TagString: Player
@@ -214,6 +215,7 @@ MonoBehaviour:
   TimerVestSpeed: {fileID: 5173730959032568574}
   TimerVestWallDash: {fileID: 5961719484835879458}
   freezePU: {fileID: 5747189417460718810}
+  cirlclePrefab: {fileID: 880398074371512127}
   speedPU: {fileID: 4512315847729508492}
   walldashPU: {fileID: 5438017633891179446}
   uiInfo: nothing
@@ -370,6 +372,19 @@ TrailRenderer:
   m_MinVertexDistance: 0.06
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &3104446220764264861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161273018238503366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f889cbc15c54434493b2f4b40c7ff11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ablePickUp: 0
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3993798288157545444
 Transform:
   m_ObjectHideFlags: 0
@@ -1183,7 +1198,6 @@ GameObject:
   - component: {fileID: 7804827854957263489}
   - component: {fileID: 4161946363099874813}
   - component: {fileID: 6424512416990493986}
-  - component: {fileID: 4265248145170758249}
   m_Layer: 7
   m_Name: Timer
   m_TagString: Untagged
@@ -1358,18 +1372,6 @@ MonoBehaviour:
   startingTime: 5
   TimerPlaying: 0
   countdownText: {fileID: 4161946363099874813}
---- !u!114 &4265248145170758249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3289663120720938122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3f0264dd6814db985647f6f96b481d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3416611735055664402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1664,6 @@ GameObject:
   - component: {fileID: 4757797090888518326}
   - component: {fileID: 3055235822152620866}
   - component: {fileID: 482119480345028294}
-  - component: {fileID: 3230673482377011168}
   - component: {fileID: 5280967262961164700}
   m_Layer: 7
   m_Name: TimerSpeed
@@ -1823,18 +1824,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &3230673482377011168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5173730959032568574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3f0264dd6814db985647f6f96b481d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5280967262961164700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2025,7 +2014,6 @@ GameObject:
   - component: {fileID: 1039001640426801065}
   - component: {fileID: 179835843272492568}
   - component: {fileID: 8083746128615501989}
-  - component: {fileID: 4010073212016637885}
   - component: {fileID: 945745254376687445}
   m_Layer: 7
   m_Name: TimerWallDash
@@ -2186,18 +2174,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &4010073212016637885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5961719484835879458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3f0264dd6814db985647f6f96b481d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &945745254376687445
 MonoBehaviour:
   m_ObjectHideFlags: 0
