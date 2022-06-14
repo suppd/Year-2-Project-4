@@ -211,9 +211,10 @@ MonoBehaviour:
   TimerVest: {fileID: 3289663120720938122}
   freezePU: {fileID: 5747189417460718810}
   uiInfo: nothing
-  activate: 0
-  activate1: 0
-  activate2: 0
+  KillEffects:
+  - {fileID: 3107902083938792372, guid: df7d7032f0f734944aaac56e73c1a147, type: 3}
+  - {fileID: 2845821645032945118, guid: fdee194bfafc84ac9a172e5093b0d188, type: 3}
+  - {fileID: 3151473312583070754, guid: 81b551f964b0e4a83bf3087cd935eca7, type: 3}
   activateTimer: 0
 --- !u!95 &2453835206104791124
 Animator:
@@ -1061,7 +1062,6 @@ GameObject:
   - component: {fileID: 7804827854957263489}
   - component: {fileID: 4161946363099874813}
   - component: {fileID: 6424512416990493986}
-  - component: {fileID: 4265248145170758249}
   m_Layer: 7
   m_Name: Timer
   m_TagString: Untagged
@@ -1236,18 +1236,6 @@ MonoBehaviour:
   startingTime: 5
   TimerPlaying: 0
   countdownText: {fileID: 4161946363099874813}
---- !u!114 &4265248145170758249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3289663120720938122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3f0264dd6814db985647f6f96b481d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3416611735055664402
 GameObject:
   m_ObjectHideFlags: 0
