@@ -139,4 +139,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   explodeEffect: {fileID: 8570816954370032022, guid: 134e95d0e68724d64b9a725a800f24a9, type: 3}
-  percentage: 0.1
+  percentage: 0
