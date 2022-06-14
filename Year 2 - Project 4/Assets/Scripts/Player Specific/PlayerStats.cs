@@ -40,14 +40,15 @@ public class PlayerStats : MonoBehaviour
     public GameObject eggsplosivePU;
     public GameObject bouncePU;
     public GameObject TimerVest;
+    public GameObject TimerVestSpeed;
+    public GameObject TimerVestWallDash;
     public GameObject freezePU;
+    public GameObject speedPU;
+    public GameObject walldashPU;
 
 
     //Bools for turning on powerups
     public string uiInfo = "nothing";
-    public bool activate = false;
-    public bool activate1 = false;
-    public bool activate2 = false;
 
     public bool activateTimer = false;
 
@@ -73,14 +74,21 @@ public class PlayerStats : MonoBehaviour
 
     public void GetHealth(int health)
     {
-            HP = HP + health;
-            currentHealth += health;
-            if (HP > 100)
-            {
-                currentHealth = 100;
-                HP = 100;
+            HP = HP + health;
+
+            currentHealth += health;
+
+            if (HP > 100)
+
+            {
+
+                currentHealth = 100;
+
+                HP = 100;
+
             }
-            healthBar.SetHealth(HP);
+            healthBar.SetHealth(HP);
+
     }
 
 
@@ -125,6 +133,16 @@ public class PlayerStats : MonoBehaviour
                 TimerVest.SetActive(true);
                 uiInfo = "nothing";
                 break;
+            case "speed":
+                speedPU.SetActive(true);
+                TimerVestSpeed.SetActive(true);
+                uiInfo = "nothing";
+                break;
+            case "walldash":
+                walldashPU.SetActive(true);
+                TimerVestWallDash.SetActive(true);
+                uiInfo = "nothing";
+                break;
 
         }
     }
@@ -135,6 +153,10 @@ public class PlayerStats : MonoBehaviour
         freezePU.SetActive(false);
         bouncePU.SetActive(false);
         eggsplosivePU.SetActive(false);
+        speedPU.SetActive(false);
+        walldashPU.SetActive(false);
+        TimerVestSpeed.SetActive(false);
+        TimerVestWallDash.SetActive(false);
     }
 
     public void Die()

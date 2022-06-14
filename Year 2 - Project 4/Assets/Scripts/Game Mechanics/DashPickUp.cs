@@ -24,8 +24,15 @@ public class DashPickUp : MonoBehaviour
         stats.dashAllow = true;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        playerStats.TurnOff();
+        playerStats.uiInfo = "walldash";
         yield return new WaitForSeconds(duration);
+        TimerUI vestTimer = player.GetComponentInChildrens<TimerUI>();
+        vestTimer.DisableTimer();
         stats.dashAllow = false;
+
+
         Destroy(gameObject);
     }
 }
