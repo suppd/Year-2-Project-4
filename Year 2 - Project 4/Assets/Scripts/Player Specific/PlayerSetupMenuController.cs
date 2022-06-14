@@ -26,6 +26,21 @@ public class PlayerSetupMenuController : MonoBehaviour
     private float ignoreImputTime = 1.5f;
     private bool inputEnabled;
 
+    VirtualKeyboard vk = new VirtualKeyboard();
+
+    public void OpenKeyboard()
+    {
+        {
+            vk.ShowTouchKeyboard();
+        }
+    }
+
+    public void CloseKeyboard()
+    {
+        {
+            vk.HideTouchKeyboard();
+        }
+    }
     public void SetPlayerIndex(int p1)
     {
         playerIndex = p1;
