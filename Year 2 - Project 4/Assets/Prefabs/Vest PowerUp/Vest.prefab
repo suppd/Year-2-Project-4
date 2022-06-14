@@ -96,10 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldofImpact: 1.87
-  force: 724.07
   PlayerToHit:
     serializedVersion: 2
     m_Bits: 128
   explodeEffect: {fileID: 7803518230169809496, guid: 4d3919e883ec89b4cb0d5039295b9bce, type: 3}
-  damagePlayer: 25
-  damageEnemy: 45
+  damagePlayer: 20
+  damageEnemy: 70

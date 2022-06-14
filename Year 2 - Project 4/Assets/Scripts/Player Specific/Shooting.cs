@@ -16,6 +16,7 @@ public class Shooting : MonoBehaviour
     public string shotType;
     public PlayerMovement playerMovement;
 
+
     [HideInInspector]
     public bool vestDeployed = false;
 
@@ -49,8 +50,9 @@ public class Shooting : MonoBehaviour
     {
 
         PlayerStats playerStats = GetComponent<PlayerStats>();
-        switch (shotType)
-        {
+        
+            switch (shotType)
+            {
 
             case "normal":
                 anima.SetTrigger("Shoot1");
@@ -64,16 +66,19 @@ public class Shooting : MonoBehaviour
                 playerStats.TurnOff();
                 break;
             case "vest":
-                SpawnVest();
-                playerMovement.bonusSpeed = 0;
-                shotType = "normal";
-                lastShot = Time.time;
-                anima.SetBool("Vest", false);
-                playerMovement.vestOn = false;
-                TimerUI vestTimer = GetComponentInChildren<TimerUI>();
-                vestTimer.DisableTimer();
-                playerStats.TurnOff();
-
+                if (GetComponentInChildren<PlayerCircle>().numPlayers > 0)
+                {
+                    SpawnVest();
+                    playerMovement.bonusSpeed = 0;
+                    shotType = "normal";
+                    lastShot = Time.time;
+                    anima.SetBool("Vest", false);
+                    playerMovement.vestOn = false;
+                    TimerUI vestTimer = GetComponentInChildren<TimerUI>();
+                    vestTimer.DisableTimer();
+                    playerStats.TurnOff();
+                    GetComponent<PlayerStats>().TurnOffCircle();
+                }
                 break;
             case "freeze":
                 anima.SetTrigger("Freeze");
@@ -94,7 +99,6 @@ public class Shooting : MonoBehaviour
     
     void SpawnBullet()
     {
-        Debug.Log("s");
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
         bullet.GetComponent<Bullet>().isBlue = gameObject.GetComponent<PlayerStats>().isBlue;
         bullet.GetComponent<Bullet>().isTeams = isTeams; //change this to a stored value on like playerstats which has isTeams stored and gets set to true / false depending on init

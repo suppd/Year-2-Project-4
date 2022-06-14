@@ -34,6 +34,7 @@ public class PlayerStats : MonoBehaviour
     LevelManagerScript level;
     PlayerConfiguration playerConfig;
 
+    public Vector3 scale;
     private bool scored = false;
 
     //UI Icons PowerUps
@@ -41,13 +42,10 @@ public class PlayerStats : MonoBehaviour
     public GameObject bouncePU;
     public GameObject TimerVest;
     public GameObject freezePU;
-
+    public GameObject cirlclePrefab;
 
     //Bools for turning on powerups
     public string uiInfo = "nothing";
-    public bool activate = false;
-    public bool activate1 = false;
-    public bool activate2 = false;
 
     public bool activateTimer = false;
 
@@ -73,14 +71,14 @@ public class PlayerStats : MonoBehaviour
 
     public void GetHealth(int health)
     {
-            HP = HP + health;
-            currentHealth += health;
-            if (HP > 100)
-            {
-                currentHealth = 100;
-                HP = 100;
+            HP = HP + health;
+            currentHealth += health;
+            if (HP > 100)
+            {
+                currentHealth = 100;
+                HP = 100;
             }
-            healthBar.SetHealth(HP);
+            healthBar.SetHealth(HP);
     }
 
 
@@ -166,6 +164,17 @@ public class PlayerStats : MonoBehaviour
         sprite.color = hitColor;
         yield return new WaitForSeconds(0.2f);
         sprite.color = Color.white;
+    }
+
+    public void TurnOnCircle()
+    {
+        cirlclePrefab.transform.localScale = scale;
+        cirlclePrefab.SetActive(true);
+    }
+
+    public void TurnOffCircle()
+    {
+        cirlclePrefab.SetActive(false);
     }
     
 }
