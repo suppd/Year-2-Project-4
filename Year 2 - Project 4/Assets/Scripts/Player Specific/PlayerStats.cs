@@ -50,6 +50,8 @@ public class PlayerStats : MonoBehaviour
 
     //Bools for turning on powerups
     public string uiInfo = "nothing";
+    
+    public GameObject[] KillEffects;
 
     public bool activateTimer = false;
 
@@ -85,12 +87,14 @@ public class PlayerStats : MonoBehaviour
             healthBar.SetHealth(HP);
     }
 
+  
+
 
     void FixedUpdate()
     {
         if (HP <= 0)
         {
-            Instantiate(myPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+            Instantiate(KillEffects[UnityEngine.Random.Range(0,6)], new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
             level.UpdateAmountOfPlayers(1);
             Die();
             

@@ -19,6 +19,7 @@ public class FreezeExplosion : MonoBehaviour
             obj2.gameObject.GetComponent<PlayerMovement>().StartFreeze(percentage);
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("Freeze");
         Destroy(effect, 1f);
     }
 
