@@ -15,10 +15,12 @@ public class NewVestPU : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<PlayerStats>().TurnOnCircle();
             StartCoroutine(PickUp(other));
             GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);  
             FindObjectOfType<AudioManager>().Play("Vest");
             FindObjectOfType<AudioManager>().Play("PickUp");
+
         }
     }
 
@@ -45,13 +47,13 @@ public class NewVestPU : MonoBehaviour
             speed.bonusSpeed = 0;
             speed.vestOn = false;
             FindObjectOfType<AudioManager>().Play("VestBoom");
+            player.GetComponent<PlayerStats>().TurnOffCircle();
         }
         anim.SetBool("Vest", false);
         stats.shotType = "normal";
         speed.bonusSpeed = 0;
         stats.vestDeployed = false;
         speed.vestOn = false;
-        
         Destroy(gameObject);
     }
 

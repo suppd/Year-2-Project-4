@@ -5,7 +5,6 @@ using UnityEngine;
 public class VestBomb : MonoBehaviour
 {
     public float fieldofImpact;
-    public float force;
     public LayerMask PlayerToHit;
     public GameObject explodeEffect;
     public int damagePlayer = 10;
@@ -31,7 +30,7 @@ public class VestBomb : MonoBehaviour
             {
                 obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);
             }
-            
+           
         }
         FindObjectOfType<AudioManager>().Play("VestBoom");
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
