@@ -4,7 +4,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-public class VirtualKeyboard
+public class VirtualKeyboard : MonoBehaviour
 {
     [DllImport("user32")]
     static extern IntPtr FindWindow(String sClassName, String sAppName);
@@ -14,6 +14,10 @@ public class VirtualKeyboard
 
     private static Process _onScreenKeyboardProcess = null;
 
+    private void Start()
+    {
+        _onScreenKeyboardProcess = null;
+    }
     /// <summary>
     /// Show the touch keyboard (tabtip.exe).
     /// </summary>
