@@ -143,7 +143,9 @@ MonoBehaviour:
   vestDeployed: 0
   bulletForce: 14
   fireRate: 0.5
+  freezeDuration: 3
   isTeams: 0
+  allowShoot: 0
 --- !u!114 &161273018238503362
 MonoBehaviour:
   m_ObjectHideFlags: 0

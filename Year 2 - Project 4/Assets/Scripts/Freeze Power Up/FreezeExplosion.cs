@@ -17,6 +17,7 @@ public class FreezeExplosion : MonoBehaviour
         foreach (CircleCollider2D obj2 in player)
         {
             obj2.gameObject.GetComponent<PlayerMovement>().StartFreeze(percentage);
+            obj2.gameObject.GetComponent<Shooting>().StartFreeze();
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
         FindObjectOfType<AudioManager>().Play("Freeze");
