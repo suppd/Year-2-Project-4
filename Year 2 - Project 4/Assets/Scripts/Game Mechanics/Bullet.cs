@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
                 }
             }
         }
-        else if(collision.gameObject.tag == "Wall")
+        else if(collision.gameObject.tag == "BulletWall" || collision.gameObject.tag == "Wall")
         {       
             var speed = lastVel.magnitude;
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
@@ -77,6 +77,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().Play("CrackEgg");
         }
+
 
         else if (collision.gameObject.tag == "Bomba")
         {
