@@ -14,17 +14,20 @@ public class RoundOverManager : MonoBehaviour
 
     private int numberOfPlayers = 0;
     private List<GameObject> scores = new List<GameObject>();
+    List<HighScoreEntry> highScores;
     void Awake()
     {
         playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
         for (int i = 0; i < playerConfigs.Length; i++)
         {
+            //highScores[i] = playerConfigs[i].HighScoreEntry;
             if (playerConfigs[i].isAlive)
             {
                 AddScoreBoard();
-                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true);
+                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true, playerConfigs[i].playerName);
                 Debug.Log("Round Over");
-                text.text = "Player " + playerConfigs[i].playerIndex.ToString() + " Won the Round ! " + "the player's score is now " + playerConfigs[i].playerScore.ToString();
+                text.text = " " + playerConfigs[i].playerName.ToString() + " Won the Round ! " + "the player's score is now " + playerConfigs[i].playerScore.ToString();
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
                 if (playerConfigs[i].playerScore >= 5)
                 {
                     ToResultScreen();
@@ -32,20 +35,29 @@ public class RoundOverManager : MonoBehaviour
             }
             else if (!playerConfigs[i].isAlive)
             {
-                Debug.Log("Added Score for player " + playerConfigs[i].playerIndex);
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
+                Debug.Log("Added Score for player " + playerConfigs[i].playerName);
                 AddScoreBoard();
-                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false);
+                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false, playerConfigs[i].playerName);
             }
             numberOfPlayers++;
         }
+        Save();
+    }
+    void Save()
+    {
+        highScores =  PlayerConfigurationManager.Instance.GetPlayerHighScores();
+        XMLManager.instance.SaveScores(highScores);
     }
     public void AddScoreBoard()
     {      
         var board = Instantiate(prefab,new Vector3(canvas.transform.position.x, canvas.transform.position.y - (75 * numberOfPlayers), canvas.transform.position.z), canvas.transform.rotation, canvas.transform);
         scores.Add(board);
     }
-    public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive)
+    public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName)
     {
+
+        scores[boardInstance].GetComponent<ScoreBoard>().playerName = playerName;
         scores[boardInstance].GetComponent<ScoreBoard>().playerScore = score;
         scores[boardInstance].GetComponent<ScoreBoard>().playerIndex = playerIndex;
         scores[boardInstance].GetComponent<ScoreBoard>().wasAlive = wasAlive;

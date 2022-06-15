@@ -8,9 +8,10 @@ using UnityEngine.SceneManagement;
 public class PlayerConfigurationManager : MonoBehaviour
 {
     private List<PlayerConfiguration> playerConfigs;
+    private List<HighScoreEntry> highScores;
     [SerializeField]
     private int maxPlayers = 2;
-
+    public PlayerInputManager InputManager;
     public string sceneName = "LevelDesign1";
     //[SerializeField]
     //private GameObject playerPrefab;
@@ -21,8 +22,6 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Awake()
     {
-        QualitySettings.vSyncCount = 0;
-
         if (Instance != null)
         {
             Debug.Log("[Singleton] Trying to create another instance of singleton");
@@ -32,6 +31,7 @@ public class PlayerConfigurationManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(Instance);
             playerConfigs = new List<PlayerConfiguration>();
+            highScores = new List<HighScoreEntry>();
         }
     }
 
@@ -39,6 +39,12 @@ public class PlayerConfigurationManager : MonoBehaviour
     {
         return playerConfigs;
     }
+
+    public List<HighScoreEntry> GetPlayerHighScores()
+    {
+        return highScores;
+    }
+
 
     public void SetPlayerName(int i, string nameToSet)
     {
@@ -61,13 +67,20 @@ public class PlayerConfigurationManager : MonoBehaviour
     {
         playerConfigs[i].isBlue = isBlue;
     }
+
+    public void SetHighScoreEntry(int i, int score, string name)
+    {
+        highScores[i].score = score;
+        highScores[i].playerName = name;
+    }
     public void ReadyPlayer(int i)
     {
         //Debug.Log(playerConfigs.Count);
         //Debug.Log(i + "is ready");
         playerConfigs[i].isReady = true;
-        if (playerConfigs.Count == maxPlayers && playerConfigs.All(p => p.isReady == true))
+        if (playerConfigs.Count >= 2  && playerConfigs.All(p => p.isReady == true))
         {
+            InputManager.DisableJoining();
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -79,6 +92,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         if (!playerConfigs.Any(p => p.playerIndex == pInput.playerIndex))
         {          
             playerConfigs.Add(new PlayerConfiguration(pInput));
+            highScores.Add(new HighScoreEntry());
         }
     }
 
@@ -102,6 +116,7 @@ public class PlayerConfiguration
         playerInput = p1;
     }
     public PlayerInput playerInput { get; set; }
+    //public HighScoreEntry HighScoreEntry { get; set; }
     public string playerName { get; set; }
     public int playerIndex { get; set; }
     public int playerScore { get; set; }

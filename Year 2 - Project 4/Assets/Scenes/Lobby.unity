@@ -537,6 +537,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 832986002316090044, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
   m_PrefabInstance: {fileID: 832986002153418064}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1492992186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
+  m_PrefabInstance: {fileID: 832986002153418064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492992185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1492992187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492992185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7367286b44fdb4ebfc54fe205ac0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboard:
+    list: []
 --- !u!1001 &832986002153418064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_MaxPlayerCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.size
@@ -590,8 +615,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: maxPlayers
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
+      propertyPath: InputManager
+      value: 
+      objectReference: {fileID: 1492992186}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: playerPrefab
       value: 

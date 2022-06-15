@@ -7,18 +7,20 @@ public class ScoreBoard : MonoBehaviour
 {
     public Text scoreText;
 
-    public ScoreBoard(int _playerIndex, int _playerScore, bool _wasAlive)
+    public ScoreBoard(int _playerIndex, int _playerScore, bool _wasAlive, string _playerName)
     {
         playerIndex = _playerIndex;
         playerScore = _playerScore;
         wasAlive = _wasAlive;
+        playerName = _playerName;
     }
 
     public int playerIndex { get; set; }
+    public string playerName { get; set; }
     public int playerScore { get; set; }
     public bool wasAlive { get; set; }
     void Start()
     {
-        scoreText.text = " Player " + playerIndex + " score is " + playerScore;
+        scoreText.text = "  " + playerName + " score is " + playerScore;
     }
 }
