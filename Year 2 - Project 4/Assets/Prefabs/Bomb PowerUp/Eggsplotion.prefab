@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8736698965563160305}
   - component: {fileID: 8736698965563160310}
   - component: {fileID: 8485501831316812526}
+  - component: {fileID: 349642716806286168}
   m_Layer: 0
   m_Name: Eggsplotion
   m_TagString: PickUp
@@ -114,6 +115,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PUEffect: {fileID: 186425126900198616, guid: 471eea3195b484341908a94f8589e315, type: 3}
+--- !u!95 &349642716806286168
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736698965563160311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 469ebc2bfa06f46a09849c83e8450ead, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3672863757021355074
 PrefabInstance:
   m_ObjectHideFlags: 0

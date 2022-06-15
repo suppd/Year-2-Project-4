@@ -15,6 +15,7 @@ public class HealthPickUp : MonoBehaviour
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
                 PickUp(other);
+                FindObjectOfType<AudioManager>().Play("PickUp");
             }
         }
     }
