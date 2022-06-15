@@ -12,6 +12,8 @@ TagManager:
   - Test
   - Bomba
   - BulletWall
+  - CasualExtend
+  - CompExtend
   layers:
   - Default
   - TransparentFX

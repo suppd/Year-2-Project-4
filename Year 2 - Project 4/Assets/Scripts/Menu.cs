@@ -28,7 +28,7 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
     {
         FindObjectOfType<AudioManager>().Play("MenuHover");
 
-        Debug.Log(this.ButtonGameObject.name + " was selected");
+        //Debug.Log(this.ButtonGameObject.name + " was selected");
 
         if (eventData.selectedObject.gameObject.name == "Casual")
         {
@@ -73,7 +73,7 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnDeselect(BaseEventData eventData)
     {
-        Debug.Log(this.ButtonGameObject.name + " was deselected");
+        //Debug.Log(this.ButtonGameObject.name + " was deselected");
     }
 
     public void Ready()

@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 142888720}
   m_Layer: 5
   m_Name: CompExtend
-  m_TagString: Untagged
+  m_TagString: CompExtend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,8 +177,8 @@ MonoBehaviour:
   level: 
   ButtonGameObject: {fileID: 142888718}
   selectedObject: {fileID: 0}
-  extendCasual: {fileID: 1981507966}
-  extendComp: {fileID: 142888718}
+  extendCasual: {fileID: 0}
+  extendComp: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 0}
@@ -764,8 +764,8 @@ MonoBehaviour:
   extendComp: {fileID: 142888718}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
-  infoTextCasual: {fileID: 0}
-  infoTextComp: {fileID: 0}
+  infoTextCasual: {fileID: 1890113332}
+  infoTextComp: {fileID: 2111854845}
 --- !u!1 &1049557411
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,8 +918,8 @@ MonoBehaviour:
   extendComp: {fileID: 142888718}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
-  infoTextCasual: {fileID: 0}
-  infoTextComp: {fileID: 0}
+  infoTextCasual: {fileID: 1890113332}
+  infoTextComp: {fileID: 2111854845}
 --- !u!1 &1165619804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,8 +1263,8 @@ MonoBehaviour:
   extendComp: {fileID: 142888718}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
-  infoTextCasual: {fileID: 0}
-  infoTextComp: {fileID: 0}
+  infoTextCasual: {fileID: 1890113332}
+  infoTextComp: {fileID: 2111854845}
 --- !u!1 &1795039865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,8 +1850,8 @@ MonoBehaviour:
   extendComp: {fileID: 142888718}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
-  infoTextCasual: {fileID: 0}
-  infoTextComp: {fileID: 0}
+  infoTextCasual: {fileID: 1890113332}
+  infoTextComp: {fileID: 2111854845}
 --- !u!1 &1981507966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,7 +1867,7 @@ GameObject:
   - component: {fileID: 1981507968}
   m_Layer: 5
   m_Name: CasualExtend
-  m_TagString: Untagged
+  m_TagString: CasualExtend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1906,8 +1906,8 @@ MonoBehaviour:
   level: 
   ButtonGameObject: {fileID: 1981507966}
   selectedObject: {fileID: 0}
-  extendCasual: {fileID: 1981507966}
-  extendComp: {fileID: 142888718}
+  extendCasual: {fileID: 0}
+  extendComp: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 0}
