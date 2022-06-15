@@ -10,9 +10,9 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
     public string level;
     public GameObject ButtonGameObject;
     public GameObject selectedObject;
-    [SerializeField]
+    //[SerializeField]
     private GameObject extendCasual;
-    [SerializeField]
+    //[SerializeField]
     private GameObject extendComp;
 
     [SerializeField]
@@ -23,6 +23,12 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
     private GameObject infoTextCasual;
     [SerializeField]
     private GameObject infoTextComp;
+
+    private void Awake()
+    {
+        extendCasual = GameObject.FindGameObjectWithTag("CasualExtend");
+        extendComp = GameObject.FindGameObjectWithTag("CompExtend");
+    }
 
     public void OnSelect(BaseEventData eventData)
     {
@@ -78,7 +84,7 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void Ready()
     {
-        FindObjectOfType<AudioManager>().Play("Ready");
+        FindObjectOfType<AudioManager>().Play("ReadyClick");
     }
 
     public void LoadLevelOne()

@@ -622,50 +622,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[12].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f7ae69809be492642bc64e6ac4e3b432, type: 3}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[12].name
-      value: MenuHover
-      objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[13].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 197742d6ace65104380844d5768e0ce2, type: 3}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[13].name
-      value: MenuClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[14].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3464d0e148bd3a34284ace8d7d7703b2, type: 3}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[14].name
-      value: Ready
-      objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[13].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[14].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[13].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 519723244002497317, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
-      propertyPath: sounds.Array.data[14].volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 519723244002497318, guid: 14982d246f839f94ebe4e9a17040faa3, type: 3}
       propertyPath: m_Name
       value: 'AudioManager '
