@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
     private void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
-        shotType = "bounce";
+        shotType = "normal";
     }
     public void Fire1(InputAction.CallbackContext context)
     {
@@ -92,7 +92,7 @@ public class Shooting : MonoBehaviour
             case "bounce":
                 anima.SetTrigger("Bounce");
                 lastShot = Time.time;
-                //shotType = "normal";
+                shotType = "normal";
                 GetComponent<PickUpAbility>().CanPickUp();
                 playerStats.TurnOff();
                 break;

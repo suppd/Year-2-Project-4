@@ -171,18 +171,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 142888718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 
   ButtonGameObject: {fileID: 142888718}
   selectedObject: {fileID: 0}
-  extendCasual: {fileID: 0}
-  extendComp: {fileID: 0}
+  extendCasual: {fileID: 1981507966}
+  extendComp: {fileID: 142888718}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
-  infoTextCasual: {fileID: 0}
-  infoTextComp: {fileID: 0}
+  infoTextCasual: {fileID: 1890113332}
+  infoTextComp: {fileID: 2111854845}
 --- !u!114 &142888721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,8 +425,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1893197185}
-    m_SelectOnDown: {fileID: 1049557413}
+    m_SelectOnUp: {fileID: 1049557413}
+    m_SelectOnDown: {fileID: 1893197185}
     m_SelectOnLeft: {fileID: 1165619806}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 502577486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 979242351}
   - component: {fileID: 979242350}
   - component: {fileID: 979242349}
-  - component: {fileID: 979242352}
+  - component: {fileID: 979242353}
   m_Layer: 5
   m_Name: 2vs2Comp
   m_TagString: Untagged
@@ -695,8 +695,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 979242352}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 979242353}
+        m_TargetAssemblyTypeName: GameModeSelection, Assembly-CSharp
         m_MethodName: LoadLevelOne
         m_Mode: 1
         m_Arguments:
@@ -745,7 +745,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979242347}
   m_CullTransparentMesh: 1
---- !u!114 &979242352
+--- !u!114 &979242353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -754,7 +754,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 979242347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: LobbyTeams
@@ -850,7 +850,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1049557416}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameModeSelection, Assembly-CSharp
         m_MethodName: LoadLevelOne
         m_Mode: 1
         m_Arguments:
@@ -908,7 +908,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049557411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: Lobby
@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 1165619808}
   - component: {fileID: 1165619807}
   - component: {fileID: 1165619806}
-  - component: {fileID: 1165619809}
+  - component: {fileID: 1165619810}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1003,8 +1003,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1165619809}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 1165619810}
+        m_TargetAssemblyTypeName: GameModeSelection, Assembly-CSharp
         m_MethodName: LoadLevelOne
         m_Mode: 1
         m_Arguments:
@@ -1053,7 +1053,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165619804}
   m_CullTransparentMesh: 1
---- !u!114 &1165619809
+--- !u!114 &1165619810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1165619804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: MainMenu
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 1716299464}
   - component: {fileID: 1716299463}
   - component: {fileID: 1716299462}
-  - component: {fileID: 1716299465}
+  - component: {fileID: 1716299466}
   m_Layer: 5
   m_Name: FreeForAllComp
   m_TagString: Untagged
@@ -1194,8 +1194,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1716299465}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 1716299466}
+        m_TargetAssemblyTypeName: GameModeSelection, Assembly-CSharp
         m_MethodName: LoadLevelOne
         m_Mode: 1
         m_Arguments:
@@ -1244,7 +1244,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716299460}
   m_CullTransparentMesh: 1
---- !u!114 &1716299465
+--- !u!114 &1716299466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716299460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: Lobby
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1893197182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 
@@ -1782,7 +1782,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1915398705}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameModeSelection, Assembly-CSharp
         m_MethodName: LoadLevelOne
         m_Mode: 1
         m_Arguments:
@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1915398700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: LobbyTeams
@@ -1900,18 +1900,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981507966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 
   ButtonGameObject: {fileID: 1981507966}
   selectedObject: {fileID: 0}
-  extendCasual: {fileID: 0}
-  extendComp: {fileID: 0}
+  extendCasual: {fileID: 1981507966}
+  extendComp: {fileID: 142888718}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
-  infoTextCasual: {fileID: 0}
-  infoTextComp: {fileID: 0}
+  infoTextCasual: {fileID: 1890113332}
+  infoTextComp: {fileID: 2111854845}
 --- !u!114 &1981507969
 MonoBehaviour:
   m_ObjectHideFlags: 0
