@@ -225,6 +225,8 @@ MonoBehaviour:
   - {fileID: 3107902083938792372, guid: df7d7032f0f734944aaac56e73c1a147, type: 3}
   - {fileID: 2845821645032945118, guid: fdee194bfafc84ac9a172e5093b0d188, type: 3}
   - {fileID: 3151473312583070754, guid: 81b551f964b0e4a83bf3087cd935eca7, type: 3}
+  - {fileID: 3546632701515509985, guid: 490deef9502d5497da4d092b73289c37, type: 3}
+  - {fileID: 3680830332481492951, guid: 580c2c6121ca04361871e4519fca3cfa, type: 3}
   activateTimer: 0
 --- !u!95 &2453835206104791124
 Animator:
