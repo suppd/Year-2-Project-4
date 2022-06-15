@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8736698965563160305}
   - component: {fileID: 8736698965563160310}
   - component: {fileID: -7287655482905969182}
+  - component: {fileID: 1578482458445515974}
   m_Layer: 0
   m_Name: DashPowerUp
   m_TagString: PickUp
@@ -114,3 +115,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 5
   PUEffect: {fileID: 186425126900198616, guid: 471eea3195b484341908a94f8589e315, type: 3}
+--- !u!95 &1578482458445515974
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736698965563160311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35e0804b8b857438eba959a613550de7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

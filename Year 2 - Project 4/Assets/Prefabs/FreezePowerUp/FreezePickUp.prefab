@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8736698965563160305}
   - component: {fileID: 8736698965563160310}
   - component: {fileID: -8453157121516721629}
+  - component: {fileID: 3551272797943286422}
   m_Layer: 0
   m_Name: FreezePickUp
   m_TagString: PickUp
@@ -113,3 +114,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PUEffect: {fileID: 186425126900198616, guid: 471eea3195b484341908a94f8589e315, type: 3}
+--- !u!95 &3551272797943286422
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736698965563160311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bf91ef14e4944a089bbe900e9d601de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

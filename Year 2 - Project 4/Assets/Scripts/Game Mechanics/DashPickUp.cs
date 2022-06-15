@@ -16,6 +16,7 @@ public class DashPickUp : MonoBehaviour
             {
                 StartCoroutine(PickUp(other));
                 GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
+                FindObjectOfType<AudioManager>().Play("PickUp");
             }
         }
     }
