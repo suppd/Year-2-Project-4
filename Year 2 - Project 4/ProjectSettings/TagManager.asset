@@ -11,6 +11,8 @@ TagManager:
   - Multiplayer
   - Test
   - Bomba
+  - CasualExtend
+  - CompExtend
   layers:
   - Default
   - TransparentFX
