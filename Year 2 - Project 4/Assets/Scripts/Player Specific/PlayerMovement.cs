@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", rb.velocity.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
-        
     }
 
     public void SetInputVector(Vector2 vector)

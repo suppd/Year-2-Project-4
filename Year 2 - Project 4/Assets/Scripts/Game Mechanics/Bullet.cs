@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
 
     public bool isTeams = false;
     public bool isBlue;
+    public int shotID;
 
     //public string shotFrom { get; set; }
 

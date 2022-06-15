@@ -107,6 +107,7 @@ public class Shooting : MonoBehaviour
     void SpawnBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+        bullet.GetComponent<Bullet>().shotID = gameObject.GetComponent<PlayerStats>().ID;
         bullet.GetComponent<Bullet>().isBlue = gameObject.GetComponent<PlayerStats>().isBlue;
         bullet.GetComponent<Bullet>().isTeams = isTeams; //change this to a stored value on like playerstats which has isTeams stored and gets set to true / false depending on init
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
