@@ -27,6 +27,7 @@ public class MissleManager : MonoBehaviour
         {
             foreach (Transform t in targetPoints)
             {
+                t.gameObject.SetActive(true);
                 GameObject newMissile = Instantiate(missle, this.transform);
                 newMissile.GetComponent<HomingMissle>().SetTarget(t.gameObject);
             }

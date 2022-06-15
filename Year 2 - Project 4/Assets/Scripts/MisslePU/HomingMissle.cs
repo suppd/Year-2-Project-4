@@ -67,4 +67,10 @@ public class HomingMissle : MonoBehaviour
 
         rb.velocity = transform.up * speed; 
     }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, fieldOfImpact);
+    }
 }

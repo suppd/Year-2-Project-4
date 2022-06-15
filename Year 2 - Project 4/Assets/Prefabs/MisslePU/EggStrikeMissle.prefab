@@ -257,7 +257,7 @@ MonoBehaviour:
   missleOn: 0
   HomingEggsplosion: {fileID: 4968505162748443373, guid: f3910b85fb00b4caf85454d4a40f504a, type: 3}
   targetGameObject: {fileID: 0}
-  fieldOfImpact: 2
+  fieldOfImpact: 5
   PlayerToHit:
     serializedVersion: 2
     m_Bits: 128
