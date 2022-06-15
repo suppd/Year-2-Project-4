@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighScoreEntry : MonoBehaviour
+[System.Serializable]
+public class HighScoreEntry
 {
     public int score;
     public string playerName;

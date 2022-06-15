@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Xml;
+using System.Linq;
+using System.Xml.Linq;
 
 public class RoundOverManager : MonoBehaviour
 {
@@ -15,12 +18,12 @@ public class RoundOverManager : MonoBehaviour
     private int numberOfPlayers = 0;
     private List<GameObject> scores = new List<GameObject>();
     List<HighScoreEntry> highScores;
+    List<HighScoreEntry> previousHighScores;
     void Awake()
     {
         playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
         for (int i = 0; i < playerConfigs.Length; i++)
         {
-            //highScores[i] = playerConfigs[i].HighScoreEntry;
             if (playerConfigs[i].isAlive)
             {
                 AddScoreBoard();
@@ -46,7 +49,9 @@ public class RoundOverManager : MonoBehaviour
     }
     void Save()
     {
-        highScores =  PlayerConfigurationManager.Instance.GetPlayerHighScores();
+        highScores = PlayerConfigurationManager.Instance.GetPlayerHighScores();
+        //previousHighScores = XMLManager.instance.LoadScores();
+
         XMLManager.instance.SaveScores(highScores);
     }
     public void AddScoreBoard()
