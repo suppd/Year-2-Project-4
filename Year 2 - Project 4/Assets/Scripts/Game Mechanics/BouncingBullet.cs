@@ -40,7 +40,7 @@ public class BouncingBullet : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "BulletWall" || collision.gameObject.tag == "Wall")
         {
             FindObjectOfType<AudioManager>().Play("Bounce");
             numBounce++;
