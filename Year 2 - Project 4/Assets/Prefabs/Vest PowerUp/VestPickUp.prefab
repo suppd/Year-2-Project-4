@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8736698965563160305}
   - component: {fileID: 8736698965563160310}
   - component: {fileID: 1342921596397081570}
+  - component: {fileID: 5182998851098403060}
   m_Layer: 0
   m_Name: VestPickUp
   m_TagString: PickUp
@@ -115,3 +116,22 @@ MonoBehaviour:
   VestEffect: {fileID: 7803518230169809496, guid: 4d3919e883ec89b4cb0d5039295b9bce, type: 3}
   PUEffect: {fileID: 186425126900198616, guid: 471eea3195b484341908a94f8589e315, type: 3}
   duration: 5
+--- !u!95 &5182998851098403060
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736698965563160311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68a046cf7bf864af38ad2d6080a5d3fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

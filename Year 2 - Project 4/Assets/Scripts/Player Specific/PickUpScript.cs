@@ -13,6 +13,7 @@ public class PickUpScript : MonoBehaviour
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
                 StartCoroutine(PickUp(other));
+                FindObjectOfType<AudioManager>().Play("PickUp");
             }   
         }
     }
