@@ -30,7 +30,7 @@ public class FreezeExplosion : MonoBehaviour
             explode();
             Destroy(gameObject);
         }
-        else if (collision.gameObject.tag == "Wall")
+        else if (collision.gameObject.tag == "BulletWall" || collision.gameObject.tag == "Wall")
         {
             explode();
             Destroy(gameObject);

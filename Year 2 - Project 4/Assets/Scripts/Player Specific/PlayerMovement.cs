@@ -67,9 +67,15 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(inputVector.x * (tSpeed), inputVector.y * (tSpeed));
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "BulletWall")
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<CircleCollider2D>());
+        }
+    }
 
-
-    public void Dashing(InputAction.CallbackContext context)
+        public void Dashing(InputAction.CallbackContext context)
     {
         if (context.started)
         {

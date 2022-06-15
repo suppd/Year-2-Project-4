@@ -11,6 +11,7 @@ TagManager:
   - Multiplayer
   - Test
   - Bomba
+  - BulletWall
   - CasualExtend
   - CompExtend
   layers:
