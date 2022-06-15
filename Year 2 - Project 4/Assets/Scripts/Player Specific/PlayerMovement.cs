@@ -37,20 +37,21 @@ public class PlayerMovement : MonoBehaviour
     private float dashDistance = 0.2f;
     private float dashDuration = 0.5f;
     private float cooldownDuration = 1.0f;
-
+    private bool isFrozen;
 
     void Awake()
     {
         playercontrols = new PlayerControls();
         dashAllow = false;
         vestOn = false;
+        isFrozen = false;
     }
 
     void Update()
     {
         Movement();
-        anim.SetFloat("Horizontal", inputVector.x);
-        anim.SetFloat("Vertical", inputVector.y);
+        anim.SetFloat("Horizontal", rb.velocity.x);
+        anim.SetFloat("Vertical", rb.velocity.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
         
@@ -79,10 +80,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started)
         {
-            if (dashCounter <= 0 && dashCoolCounter <= 0)
+            if (!isFrozen)
             {
-                if (!vestOn)
+                if (dashCounter <= 0 && dashCoolCounter <= 0)
                 {
+                    if (!vestOn)
+                    {
                         isWalking = false;
                         anim.SetTrigger("Dash");
                         if (dashAllow)
@@ -93,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
                         dashCounter = dashDistance;
                         FindObjectOfType<AudioManager>().Play("Dash");
                         CreateDust();
-
+                    }
                 }
             }
         }
@@ -149,9 +152,11 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Frozen(float slowPercent)
     {
+        isFrozen = true;
         slowAmount = slowPercent;
         anim.SetBool("Frozen", true);
         yield return new WaitForSeconds(freezeDuration);
+        isFrozen = false;
         anim.SetBool("Frozen", false);
         slowAmount = 1f;
         

@@ -23,9 +23,9 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     public float fireRate = 1f;
     private float lastShot = 0.0f;
-
+    public float freezeDuration;
     public bool isTeams;
-
+    public bool allowShoot;
     private PlayerStats playerStats;
 
     //public string shooter { get; set; }
@@ -33,6 +33,7 @@ public class Shooting : MonoBehaviour
     {
         playerStats = GetComponent<PlayerStats>();
         shotType = "normal";
+        allowShoot = true;
     }
     public void Fire1(InputAction.CallbackContext context)
     {
@@ -40,7 +41,10 @@ public class Shooting : MonoBehaviour
         {
             if (Time.time > fireRate + lastShot)
             {
-                DiffShooting();
+                if (allowShoot)
+                {
+                    DiffShooting();
+                }
             }
         }
     }
@@ -143,7 +147,18 @@ public class Shooting : MonoBehaviour
         GameObject bounce = Instantiate(bouncePrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = bounce.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
-        PlayerStats playerStats = GetComponent<PlayerStats>();
-       
+        PlayerStats playerStats = GetComponent<PlayerStats>();  
+    }
+
+    IEnumerator Frozen()
+    {
+        allowShoot = false;
+        yield return new WaitForSeconds(freezeDuration);
+        allowShoot = true;
+    }
+
+    public void StartFreeze()
+    {
+        StartCoroutine(Frozen());
     }
 }
