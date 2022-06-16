@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -376,6 +377,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BakeryMain_1: 612059739666096910
+      BakeryMain_9: -4837424041874474360
+      BakeryMain_5: 5532630588262943110
+      BakeryMain_8: -7400043261011701591
+      BakeryMain_6: 6793555339376180570
+      BakeryMain_7: -1385222065612008590
+      BakeryMain_2: 7048514517743649916
+      BakeryMain_0: -8992296302240268087
+      BakeryMain_3: -1000830814057306447
+      BakeryMain_4: 6008185412117285982
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

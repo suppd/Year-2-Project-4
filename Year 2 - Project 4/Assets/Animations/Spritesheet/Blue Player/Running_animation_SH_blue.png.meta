@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -796,6 +797,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Running_animation_SH_blue_0: 1274251420403936485
+      Running_animation_SH_blue_16: 5089965410340739955
+      Running_animation_SH_blue_6: -1550233576930192075
+      Running_animation_SH_blue_9: -3104965914447726622
+      Running_animation_SH_blue_23: -1402398149961652455
+      Running_animation_SH_blue_21: -4920256087190604326
+      Running_animation_SH_blue_4: 995026544589582176
+      Running_animation_SH_blue_13: 2464771808714111409
+      Running_animation_SH_blue_26: 6909714710479271365
+      Running_animation_SH_blue_24: -151473016785008618
+      Running_animation_SH_blue_11: 1328257663988413225
+      Running_animation_SH_blue_15: -2580798820671480691
+      Running_animation_SH_blue_5: 2280842481257556984
+      Running_animation_SH_blue_12: -8857448020110564506
+      Running_animation_SH_blue_22: 645272489004836263
+      Running_animation_SH_blue_10: -7754649040375019340
+      Running_animation_SH_blue_2: -5485871586582361771
+      Running_animation_SH_blue_17: -772423158969991965
+      Running_animation_SH_blue_19: 5304106354449804427
+      Running_animation_SH_blue_25: 6548262440623951135
+      Running_animation_SH_blue_3: -2427480625005087269
+      Running_animation_SH_blue_1: -7688748114642504779
+      Running_animation_SH_blue_14: 6461176052299001102
+      Running_animation_SH_blue_8: -2874540355356240855
+      Running_animation_SH_blue_20: 8450738457726902097
+      Running_animation_SH_blue_7: -3835413238310402186
+      Running_animation_SH_blue_18: -4230556586495160962
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

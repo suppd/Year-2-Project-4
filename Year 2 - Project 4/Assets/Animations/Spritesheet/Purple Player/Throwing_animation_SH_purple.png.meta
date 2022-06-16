@@ -69,6 +69,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -496,6 +497,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Throwing_animation_SH_purple_3: 1367519867704057013
+      Throwing_animation_SH_purple_8: 6132968119764355382
+      Throwing_animation_SH_purple_12: 6109592112634812752
+      Throwing_animation_SH_purple_1: 5477772979065002675
+      Throwing_animation_SH_purple_5: 5433777538302866699
+      Throwing_animation_SH_purple_0: 2715170076398487742
+      Throwing_animation_SH_purple_7: 5793733942166500452
+      Throwing_animation_SH_purple_13: -238703247491117545
+      Throwing_animation_SH_purple_6: -7965503081084497521
+      Throwing_animation_SH_purple_9: 2209698443490614601
+      Throwing_animation_SH_purple_4: -8262392011186128651
+      Throwing_animation_SH_purple_11: -2523234189569823023
+      Throwing_animation_SH_purple_2: 3352390527745420326
+      Throwing_animation_SH_purple_10: -8306551148863337176
+      Throwing_animation_SH_purple_14: -8206291608435709581
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

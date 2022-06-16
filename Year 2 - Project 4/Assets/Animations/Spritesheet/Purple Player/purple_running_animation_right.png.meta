@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -784,6 +785,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      purple_running_animation_right_2: 9223357858185959265
+      purple_running_animation_right_22: -8874513930039238886
+      purple_running_animation_right_14: 9105666702120381142
+      purple_running_animation_right_26: 6164782582336557095
+      purple_running_animation_right_19: -7258349153690270956
+      purple_running_animation_right_0: 8507182161990540594
+      purple_running_animation_right_5: -169462903111001954
+      purple_running_animation_right_6: -6678343237615459250
+      purple_running_animation_right_20: -628426919719540110
+      purple_running_animation_right_13: -2356515803872182411
+      purple_running_animation_right_10: 4414509218466672986
+      purple_running_animation_right_9: 8934160198430607068
+      purple_running_animation_right_16: 250747674782184729
+      purple_running_animation_right_8: 3489749082612793953
+      purple_running_animation_right_21: -1176457890049203981
+      purple_running_animation_right_15: -5390024052126617462
+      purple_running_animation_right_23: -2478451460121615730
+      purple_running_animation_right_12: 1308966650412698126
+      purple_running_animation_right_11: -1231027904924120326
+      purple_running_animation_right_25: 6313100603664094252
+      purple_running_animation_right_3: -8165625343251094404
+      purple_running_animation_right_4: 3413443539112480431
+      purple_running_animation_right_1: -7132442647361485747
+      purple_running_animation_right_17: 1318351947670939542
+      purple_running_animation_right_7: -1847483006396329287
+      purple_running_animation_right_24: 962010336781048846
+      purple_running_animation_right_18: 2173564289136130227
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

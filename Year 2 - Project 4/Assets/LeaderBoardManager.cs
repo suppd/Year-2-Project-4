@@ -15,7 +15,7 @@ public class LeaderBoardManager : MonoBehaviour
     private List<GameObject> textObjects = new List<GameObject>();
 
     private int numberOfBoards;
-    private void Awake()
+    private void Start()
     {
         highScores = XMLManager.instance.LoadScores();
         bestScores = highScores.Where(s => s.score > 2).Take(2).ToList();

@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -796,6 +797,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Finished_running_animation_SH_0: 1553589440639555439
+      Finished_running_animation_SH_2: -8032329702995321077
+      Finished_running_animation_SH_3: -8112518023253823458
+      Finished_running_animation_SH_4: -2695095369147921284
+      Finished_running_animation_SH_15: -1492292344865936736
+      Finished_running_animation_SH_10: -5375885535004375978
+      Finished_running_animation_SH_18: -2040642604341304414
+      Finished_running_animation_SH_25: 1244885990761111627
+      Finished_running_animation_SH_19: -7429292572175424037
+      Finished_running_animation_SH_7: 1291964653404279960
+      Finished_running_animation_SH_16: -1902103888438941684
+      Finished_running_animation_SH_23: 8239625020141241271
+      Finished_running_animation_SH_21: 6345485306883394580
+      Finished_running_animation_SH_8: 7976319962701957769
+      Finished_running_animation_SH_1: -3662987603155569784
+      Finished_running_animation_SH_9: -9220503969169244456
+      Finished_running_animation_SH_20: 2919846043498174035
+      Finished_running_animation_SH_5: 4633811741613480795
+      Finished_running_animation_SH_11: -4759862577821119775
+      Finished_running_animation_SH_13: -6889708778505425808
+      Finished_running_animation_SH_14: -4135915044452971603
+      Finished_running_animation_SH_24: -3485592937626360276
+      Finished_running_animation_SH_26: -2885055543884577080
+      Finished_running_animation_SH_6: 944735525838972065
+      Finished_running_animation_SH_12: 8182467047441385876
+      Finished_running_animation_SH_22: -8071138232935281486
+      Finished_running_animation_SH_17: 7656931292283558843
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

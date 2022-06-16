@@ -96,15 +96,12 @@ public class PlayerConfigurationManager : MonoBehaviour
         }
     }
 
-    public void HandleEasyPlayerJoin(PlayerInput pInput)
+    private void Update()
     {
-        //Debug.Log("player joined" + pInput.playerIndex);
-        //pInput.transform.SetParent(transform);
-        //if (!playerConfigs.Any(p => p.playerIndex == pInput.playerIndex))
-        //{
-            //playerConfigs.Add(new PlayerConfiguration(pInput));
-            //Instantiate(playerPrefab, playerSpawns[pInput.playerIndex]);
-        //}
+        if (InputManager.playerCount >= maxPlayers)
+        {
+            InputManager.DisableJoining();
+        }
     }
 }
 

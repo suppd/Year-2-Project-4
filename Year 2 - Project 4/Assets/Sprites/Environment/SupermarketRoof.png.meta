@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -400,6 +401,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SupermarketRoof_8: 6989290108388072500
+      SupermarketRoof_3: 5811572484639135410
+      SupermarketRoof_5: -4811544876964349372
+      SupermarketRoof_2: -5168438724890344882
+      SupermarketRoof_7: 4248185367422030604
+      SupermarketRoof_1: -8913415374042489199
+      SupermarketRoof_6: 1329074041595601373
+      SupermarketRoof_9: -3020951884116368484
+      SupermarketRoof_0: -5481720808955413017
+      SupermarketRoof_10: 4511237626724946083
+      SupermarketRoof_4: 7411695243641939827
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

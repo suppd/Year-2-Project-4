@@ -36,18 +36,29 @@ public class Bullet : MonoBehaviour
         lastVel = rb.velocity;
     }
 
+    // 2 Methods for preventing code repition
+    public void PlayerTakeDmg(Collision2D playerCollider)
+    {
+        playerCollider.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        Debug.Log("shot other player");
+        FindObjectOfType<AudioManager>().Play("Hurt");
+    }
+
+    public void PlayParticleFX(GameObject prefabToPlay)
+    {
+        GameObject effect = Instantiate(prefabToPlay, transform.position, Quaternion.identity);
+        Destroy(effect, 1f);
+        Destroy(gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             if (!isTeams)
             {
-                GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
-                Destroy(killEffect, 1f);
-                collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-                Destroy(gameObject);
-                Debug.Log("shot other player");
-                FindObjectOfType<AudioManager>().Play("Hurt");
+                PlayerTakeDmg(collision);
+                PlayParticleFX(killPlayer);
             }
             else if (isTeams)
             {
@@ -58,11 +69,8 @@ public class Bullet : MonoBehaviour
                 }
                 else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && isBlue)
                 {
-                    GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
-                    Destroy(killEffect, 1f);
-                    collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-                    Debug.Log("shot other player");
-                    Destroy(gameObject);        
+                    PlayerTakeDmg(collision);
+                    PlayParticleFX(killPlayer);
                 }
             }
         }
@@ -73,18 +81,14 @@ public class Bullet : MonoBehaviour
             var direction = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
             rb.velocity = direction * Mathf.Max(speed, 0f);
 
-            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 1f);
-            Destroy(gameObject);
+            PlayParticleFX(hitEffect);
             FindObjectOfType<AudioManager>().Play("CrackEgg");
         }
 
 
         else if (collision.gameObject.tag == "Bomba")
         {
-            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 1f);
-            Destroy(gameObject);
+            PlayParticleFX(hitEffect);
             FindObjectOfType<AudioManager>().Play("CrackEgg");
         }
         else if (collision.gameObject.tag == "Bullet")
