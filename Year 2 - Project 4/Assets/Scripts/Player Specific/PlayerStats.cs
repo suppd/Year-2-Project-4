@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.InputSystem;
 using System;
 
@@ -17,7 +18,7 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
 
     public SpriteRenderer sprite;
-
+    public TextMeshPro playerNameText;
     public int score { get; set; }
     public int ID;
    
@@ -177,6 +178,7 @@ public class PlayerStats : MonoBehaviour
     public void AssignPlayerConfig(PlayerConfiguration config)
     {
         playerConfig = config;
+        playerNameText.text = config.playerName;
         ID = playerConfig.playerIndex;
         score = playerConfig.playerScore;
     }

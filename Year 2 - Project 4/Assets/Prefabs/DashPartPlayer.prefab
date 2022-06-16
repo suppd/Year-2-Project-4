@@ -203,6 +203,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 8417158516077603676}
   sprite: {fileID: 161273018238503361}
+  playerNameText: {fileID: 3466384369924658320}
   ID: 0
   player: {fileID: 161273018238503366}
   anim: {fileID: 2453835206104791124}

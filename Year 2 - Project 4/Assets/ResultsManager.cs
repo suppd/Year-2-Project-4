@@ -25,9 +25,11 @@ public class ResultsManager : MonoBehaviour
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true);
                 Debug.Log("Round Over");
                 text.text = "Player " + playerConfigs[i].playerIndex.ToString() + " Won Game Round ! " + "the player's score is now " + playerConfigs[i].playerScore.ToString();
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
             }
             else if (!playerConfigs[i].isAlive)
             {
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
                 Debug.Log("Added Score for player " + playerConfigs[i].playerIndex);
                 AddScoreBoard();
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false);
@@ -45,6 +47,11 @@ public class ResultsManager : MonoBehaviour
         scores[boardInstance].GetComponent<ScoreBoard>().playerScore = score;
         scores[boardInstance].GetComponent<ScoreBoard>().playerIndex = playerIndex;
         scores[boardInstance].GetComponent<ScoreBoard>().wasAlive = wasAlive;
+    }
+
+    public void SaveScores()
+    {
+        //XMLManager.instance.SaveScores();
     }
 
     public void ToResultScreen()

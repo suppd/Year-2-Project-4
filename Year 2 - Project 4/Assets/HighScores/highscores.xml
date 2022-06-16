@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Leaderboard xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <list>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName>yo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>elo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>2</score>
+      <playerName>yo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>elo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>3</score>
+      <playerName>yo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>elo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>4</score>
+      <playerName>yo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>elo</playerName>
+    </HighScoreEntry>
+  </list>
+</Leaderboard>
