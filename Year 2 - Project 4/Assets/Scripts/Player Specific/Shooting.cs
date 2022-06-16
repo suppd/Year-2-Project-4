@@ -85,6 +85,7 @@ public class Shooting : MonoBehaviour
                     playerStats.TurnOff();
                     GetComponent<PickUpAbility>().CanPickUp();
                     GetComponent<PlayerStats>().TurnOffCircle();
+                    FindObjectOfType<AudioManager>().Stop("Vest");
                 }
                 break;
             case "freeze":

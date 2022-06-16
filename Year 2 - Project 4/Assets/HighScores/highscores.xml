@@ -57,5 +57,37 @@
       <score>4</score>
       <playerName />
     </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName>Placehol</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>Anh</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
   </list>
 </Leaderboard>
