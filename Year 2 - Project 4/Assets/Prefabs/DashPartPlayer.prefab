@@ -440,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6481376969060286750}
   radius: 1
+  anim: {fileID: 2453835206104791124}
 --- !u!212 &399547745294339568
 SpriteRenderer:
   m_ObjectHideFlags: 0

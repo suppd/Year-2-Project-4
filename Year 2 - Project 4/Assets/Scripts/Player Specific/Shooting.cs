@@ -58,12 +58,14 @@ public class Shooting : MonoBehaviour
             {
 
             case "normal":
+                SpawnBullet();
                 anima.SetTrigger("Shoot1");
                 lastShot = Time.time;
                 FindObjectOfType<AudioManager>().Play("Throw");
                 break;
             case "grenade":
-                anima.SetTrigger("Nade");
+                SpawnBomb();
+                anima.SetTrigger("Shoot1");
                 shotType = "normal";
                 lastShot = Time.time;
                 GetComponent<PickUpAbility>().CanPickUp();
@@ -86,7 +88,8 @@ public class Shooting : MonoBehaviour
                 }
                 break;
             case "freeze":
-                anima.SetTrigger("Freeze");
+                SpawnFreeze();
+                anima.SetTrigger("Shoot1");
                 shotType = "normal";
                 lastShot = Time.time;
                 //AudioSource.PlayClipAtPoint(shootSound, transform.position);
@@ -94,7 +97,8 @@ public class Shooting : MonoBehaviour
                 playerStats.TurnOff();
                 break;
             case "bounce":
-                anima.SetTrigger("Bounce");
+                SpawnBounce();
+                anima.SetTrigger("Shoot1");
                 lastShot = Time.time;
                 shotType = "normal";
                 GetComponent<PickUpAbility>().CanPickUp();
