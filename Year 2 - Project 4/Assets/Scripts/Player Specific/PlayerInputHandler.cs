@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerMovement mover;
     private Shooting shooter;
     private Aiming aimer;
+    private GameModeSelection canceler;
 
     [SerializeField]
     private SpriteRenderer sprite;
@@ -45,10 +46,6 @@ public class PlayerInputHandler : MonoBehaviour
         if (obj.action.name == controls.Player.Fire1.name)
         {
             OnShoot(obj);
-        }
-        if (obj.action.name == controls.Player.Fire2.name)
-        {
-         //   OnShoot2(obj);
         }
         if(obj.action.name == controls.Player.Look.name)
         {
