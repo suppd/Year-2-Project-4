@@ -12,6 +12,7 @@ TagManager:
   - Test
   - Bomba
   - BulletWall
+  - SpriteBox
   layers:
   - Default
   - TransparentFX

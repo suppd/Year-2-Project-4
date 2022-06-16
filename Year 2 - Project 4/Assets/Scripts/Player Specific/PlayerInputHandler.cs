@@ -42,19 +42,19 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnMove(obj);
         }
-        if (obj.action.name == controls.Player.Fire1.name)
+        else if (obj.action.name == controls.Player.Fire1.name)
         {
             OnShoot(obj);
         }
-        if (obj.action.name == controls.Player.Fire2.name)
+        else if (obj.action.name == controls.Player.Fire2.name)
         {
          //   OnShoot2(obj);
         }
-        if(obj.action.name == controls.Player.Look.name)
+        else if(obj.action.name == controls.Player.Look.name)
         {
             OnAim(obj);
         }
-        if (obj.action.name == controls.Player.Dashing.name)
+        else if (obj.action.name == controls.Player.Dashing.name)
         {
             OnDash(obj);
         }
