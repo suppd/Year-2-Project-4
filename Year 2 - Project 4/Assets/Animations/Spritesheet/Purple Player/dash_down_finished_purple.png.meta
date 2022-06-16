@@ -84,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -616,6 +617,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      dash_down_finished_purple_0: -489491389291439883
+      dash_down_finished_purple_11: 2969589261434380185
+      dash_down_finished_purple_3: 4994543648793826413
+      dash_down_finished_purple_1: -5807255104954064308
+      dash_down_finished_purple_13: 6855512177680561338
+      dash_down_finished_purple_12: 1844237423684106434
+      dash_down_finished_purple_7: -4674652743719560030
+      dash_down_finished_purple_9: -7401824407338353013
+      dash_down_finished_purple_2: 3750845749564592432
+      dash_down_finished_purple_14: 1339637423338977814
+      dash_down_finished_purple_4: 30189043175858203
+      dash_down_finished_purple_15: 8349140982985581767
+      dash_down_finished_purple_16: -4280507308487538538
+      dash_down_finished_purple_17: 1270263967850828284
+      dash_down_finished_purple_18: 4069194542969665350
+      dash_down_finished_purple_6: -1675197344545442160
+      dash_down_finished_purple_10: -2283567002512291376
+      dash_down_finished_purple_5: 583914670569437613
+      dash_down_finished_purple_8: 7254707895078999094
+      dash_down_finished_purple_19: -6568807703356221984
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

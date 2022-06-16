@@ -33,5 +33,29 @@
       <score>0</score>
       <playerName>elo</playerName>
     </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>2</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>3</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>4</score>
+      <playerName />
+    </HighScoreEntry>
   </list>
 </Leaderboard>

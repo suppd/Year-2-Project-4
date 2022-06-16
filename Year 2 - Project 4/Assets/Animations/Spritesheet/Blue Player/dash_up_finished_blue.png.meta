@@ -84,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -616,6 +617,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      dash_up_finished_blue_3: -6403494360226955846
+      dash_up_finished_blue_2: 4781222002510548001
+      dash_up_finished_blue_8: -932934799880407646
+      dash_up_finished_blue_17: 2784835160360365988
+      dash_up_finished_blue_5: 5394829708446923977
+      dash_up_finished_blue_6: -7619598307362149651
+      dash_up_finished_blue_18: -2214188524607897840
+      dash_up_finished_blue_19: -1008496040251712620
+      dash_up_finished_blue_9: -4918508913357154415
+      dash_up_finished_blue_13: -7581615207114093473
+      dash_up_finished_blue_4: 600929328772335744
+      dash_up_finished_blue_15: 1058631208223152927
+      dash_up_finished_blue_1: 191668455170179013
+      dash_up_finished_blue_12: 5165948449229908368
+      dash_up_finished_blue_0: -6638714374047753570
+      dash_up_finished_blue_10: -7318964534611681016
+      dash_up_finished_blue_11: 8515320625265744393
+      dash_up_finished_blue_7: -1790402212883942215
+      dash_up_finished_blue_14: -6394310898767217432
+      dash_up_finished_blue_16: 8277821353933923923
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
