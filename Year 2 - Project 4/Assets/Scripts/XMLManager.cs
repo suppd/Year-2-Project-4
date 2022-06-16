@@ -5,26 +5,26 @@ using System.Xml.Serialization;
 using System.IO;
 public class XMLManager : MonoBehaviour
 {
-    public static XMLManager instance;
-    public Leaderboard leaderboard;
+    public static XMLManager instance { get; private set; }
+    private Leaderboard leaderboard;
     void Awake()
     {
-        instance = this;
         if (!Directory.Exists(Application.dataPath + "/HighScores/"))
         {
             Debug.Log("created new directory");
             Directory.CreateDirectory(Application.dataPath + "/HighScores/");
-        }      
+        }
         if (instance != null)
         {
             Debug.Log("[Singleton] Trying to create another instance of singleton");
+            Destroy(gameObject);
         }
         else
         {
+            instance = this;
             DontDestroyOnLoad(instance);
-
         }
-        
+
     }
     public void SaveScores(List<HighScoreEntry> scoresToSave)
     {
