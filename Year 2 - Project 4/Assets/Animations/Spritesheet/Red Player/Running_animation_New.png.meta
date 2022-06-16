@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -796,6 +797,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Running_animation_New_8: 2533431272941460067
+      Running_animation_New_26: 8498139081878726017
+      Running_animation_New_23: 5901181373090391379
+      Running_animation_New_19: 4470471738613217187
+      Running_animation_New_21: 3270405787169075005
+      Running_animation_New_14: 1339390856760564362
+      Running_animation_New_2: -5725792895227775009
+      Running_animation_New_10: 5157745900369931936
+      Running_animation_New_7: -9124313315374510516
+      Running_animation_New_16: 690545860188767801
+      Running_animation_New_9: 4505760880194005707
+      Running_animation_New_25: 7294901385786223864
+      Running_animation_New_3: 4940795052437275866
+      Running_animation_New_22: 6148968894546572063
+      Running_animation_New_6: -6632353356481162162
+      Running_animation_New_13: -2999077426639443039
+      Running_animation_New_1: 6224288925118059742
+      Running_animation_New_4: -6089481546078032444
+      Running_animation_New_15: -8493726238537950237
+      Running_animation_New_5: 6718805376116223323
+      Running_animation_New_18: 4037387798717514520
+      Running_animation_New_20: -5861056571042339536
+      Running_animation_New_24: 5179674718996029834
+      Running_animation_New_0: 4341255031108073314
+      Running_animation_New_11: -288333221725328226
+      Running_animation_New_12: 2892878792868268383
+      Running_animation_New_17: -1085392329352050464
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

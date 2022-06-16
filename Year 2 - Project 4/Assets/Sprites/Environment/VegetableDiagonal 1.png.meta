@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -400,6 +401,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      VegetableDiagonal 1_3: 7739432327530076455
+      VegetableDiagonal 1_2: 6444941390599572032
+      VegetableDiagonal 1_9: -7125877474679722014
+      VegetableDiagonal 1_1: -6060552408102190235
+      VegetableDiagonal 1_4: -3052925835882385519
+      VegetableDiagonal 1_10: 5193223869848259258
+      VegetableDiagonal 1_5: -4217444586592970312
+      VegetableDiagonal 1_7: 8584759715451874937
+      VegetableDiagonal 1_8: -2859150350193994796
+      VegetableDiagonal 1_0: 738781723207944037
+      VegetableDiagonal 1_6: 6388907523308527503
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

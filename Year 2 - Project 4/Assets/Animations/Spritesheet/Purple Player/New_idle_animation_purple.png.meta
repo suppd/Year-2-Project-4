@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -352,6 +353,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      New_idle_animation_purple_4: -4187937135203326749
+      New_idle_animation_purple_0: 8833630432561465656
+      New_idle_animation_purple_2: 3633149176482996185
+      New_idle_animation_purple_5: 5068172439936561410
+      New_idle_animation_purple_7: -2974112555710440920
+      New_idle_animation_purple_8: 2027060658468591591
+      New_idle_animation_purple_3: -5827944418321925587
+      New_idle_animation_purple_6: 4502877024901886261
+      New_idle_animation_purple_1: 7062483994014126675
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

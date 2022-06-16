@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -784,6 +785,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      bomb_vest_running_red_right_24: 4048341570778635433
+      bomb_vest_running_red_right_2: -7462209053456121243
+      bomb_vest_running_red_right_10: 2761457872069967238
+      bomb_vest_running_red_right_6: -3949869298215150402
+      bomb_vest_running_red_right_22: 2371408227569830957
+      bomb_vest_running_red_right_20: -2704887167620141410
+      bomb_vest_running_red_right_4: -6324493590834698177
+      bomb_vest_running_red_right_5: 8043569934699489556
+      bomb_vest_running_red_right_1: -1280818543940845708
+      bomb_vest_running_red_right_11: -6008278892337289066
+      bomb_vest_running_red_right_8: 3610389863740713512
+      bomb_vest_running_red_right_25: 2950450219010126666
+      bomb_vest_running_red_right_3: 7394387304256370476
+      bomb_vest_running_red_right_16: 6034511851567350839
+      bomb_vest_running_red_right_26: 6710392103893507136
+      bomb_vest_running_red_right_0: 6308920323653209121
+      bomb_vest_running_red_right_23: 4033154767545540384
+      bomb_vest_running_red_right_12: -2536613587283304080
+      bomb_vest_running_red_right_13: 3704721646680783831
+      bomb_vest_running_red_right_21: 9060603344629181802
+      bomb_vest_running_red_right_19: 6154160801671200432
+      bomb_vest_running_red_right_14: 7764966484093774335
+      bomb_vest_running_red_right_7: 7137432115275458680
+      bomb_vest_running_red_right_15: -2208437129281024269
+      bomb_vest_running_red_right_9: -7169795102484240765
+      bomb_vest_running_red_right_17: 7631354862380510107
+      bomb_vest_running_red_right_18: -6921826252005684991
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

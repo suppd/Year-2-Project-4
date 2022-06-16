@@ -81,6 +81,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -604,6 +605,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      vertical_dash_up_v2_white_4: 383752403071945978
+      vertical_dash_up_v2_white_15: 3904453200860395437
+      vertical_dash_up_v2_white_3: -1057399508125927614
+      vertical_dash_up_v2_white_10: 6099521334383637261
+      vertical_dash_up_v2_white_0: 6925337239521923487
+      vertical_dash_up_v2_white_17: 1925209542941808316
+      vertical_dash_up_v2_white_13: -7302861913082734882
+      vertical_dash_up_v2_white_16: -1771584776008526496
+      vertical_dash_up_v2_white_2: -2703955406370630099
+      vertical_dash_up_v2_white_8: 8531443176385554384
+      vertical_dash_up_v2_white_1: -3412039783910648897
+      vertical_dash_up_v2_white_12: 9015774783237447016
+      vertical_dash_up_v2_white_11: -6607603942289095773
+      vertical_dash_up_v2_white_6: 3450338715273081495
+      vertical_dash_up_v2_white_5: 1188857379618478713
+      vertical_dash_up_v2_white_7: 3569192964922249755
+      vertical_dash_up_v2_white_18: -3464836673161075140
+      vertical_dash_up_v2_white_14: -225767388734446827
+      vertical_dash_up_v2_white_9: 4294160278118536040
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
