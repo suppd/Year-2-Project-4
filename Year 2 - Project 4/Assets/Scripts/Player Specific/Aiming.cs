@@ -7,6 +7,7 @@ public class Aiming : MonoBehaviour
 {
     public Transform player;
     public float radius;
+    public Animator anim;
 
     private Transform pivot;
     private float horizontal;
@@ -22,11 +23,13 @@ public class Aiming : MonoBehaviour
     void Start()
     {
         SetupAiming();
+        
     }
 
     void Update()
     {
         HandleAiming();
+        anim.SetFloat("HorizontalAim", position.x);
     }
 
     public void Aim(InputAction.CallbackContext context)
@@ -42,6 +45,8 @@ public class Aiming : MonoBehaviour
         {
             aimStopped = false;
         }
+        
+        
     }
     void SetupAiming()
     {
