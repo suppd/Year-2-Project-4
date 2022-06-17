@@ -18,7 +18,7 @@ public class LeaderBoardManager : MonoBehaviour
     private void Start()
     {
         highScores = XMLManager.instance.LoadScores();
-        bestScores = highScores.Where(s => s.score > 2).Take(2).ToList();
+        bestScores = highScores.OrderByDescending(s => s.score).Take(5).ToList();
 
         for (int i = 0; i < bestScores.Count; i++)
         {
@@ -31,7 +31,7 @@ public class LeaderBoardManager : MonoBehaviour
     public void AddScoreBoard()
     {
         Debug.Log("Added");
-        var board = Instantiate(scoreText, new Vector3(Panel.transform.position.x, Panel.transform.position.y - (75 * numberOfBoards), Panel.transform.position.z), Panel.transform.rotation, Panel.transform);
+        var board = Instantiate(scoreText, new Vector3(Panel.transform.position.x, Panel.transform.position.y - (7 * (Screen.height/100) * numberOfBoards), Panel.transform.position.z), Panel.transform.rotation, Panel.transform);
         textObjects.Add(board);
         numberOfBoards++;
     }

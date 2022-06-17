@@ -26,8 +26,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711937962720987168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 269.9177, y: 204.14961, z: -21.601295}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,4 +76,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSetupMenuPrefab: {fileID: 5952745872998894386, guid: c70d5450fdcbfa94eafe52c79e19053a, type: 3}
+  playerSpriteSetupMenuPrefab: {fileID: 1269648573720914533, guid: 103fc2a9957f196459652c4e65932b27, type: 3}
   playerInput: {fileID: 7982252576803852573}
