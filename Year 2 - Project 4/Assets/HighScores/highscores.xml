@@ -105,5 +105,21 @@
       <score>0</score>
       <playerName />
     </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName>Simona</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>Oebe</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>2</score>
+      <playerName>Simona</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>Oebe</playerName>
+    </HighScoreEntry>
   </list>
 </Leaderboard>

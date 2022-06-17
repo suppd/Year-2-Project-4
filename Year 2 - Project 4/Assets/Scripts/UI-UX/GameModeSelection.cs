@@ -27,6 +27,10 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     private GameObject infoTextCasual;
     [SerializeField]
     private GameObject infoTextComp;
+    [SerializeField]
+    private GameObject casual;
+    [SerializeField]
+    private GameObject competitive;
 
     public void OnSelect(BaseEventData eventData)
     {
