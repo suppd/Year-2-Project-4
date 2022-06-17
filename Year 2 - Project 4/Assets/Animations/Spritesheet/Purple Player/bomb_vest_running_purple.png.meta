@@ -1,88 +1,7 @@
 fileFormatVersion: 2
-guid: 390218d1b4d56c04182c2f93221d695a
+guid: 00eee1f715b2d644c85722e07f851ab0
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6308920323653209121
-    second: bomb_vest_running_red_right_0
-  - first:
-      213: -1280818543940845708
-    second: bomb_vest_running_red_right_1
-  - first:
-      213: -7462209053456121243
-    second: bomb_vest_running_red_right_2
-  - first:
-      213: 7394387304256370476
-    second: bomb_vest_running_red_right_3
-  - first:
-      213: -6324493590834698177
-    second: bomb_vest_running_red_right_4
-  - first:
-      213: 8043569934699489556
-    second: bomb_vest_running_red_right_5
-  - first:
-      213: -3949869298215150402
-    second: bomb_vest_running_red_right_6
-  - first:
-      213: 7137432115275458680
-    second: bomb_vest_running_red_right_7
-  - first:
-      213: 3610389863740713512
-    second: bomb_vest_running_red_right_8
-  - first:
-      213: -7169795102484240765
-    second: bomb_vest_running_red_right_9
-  - first:
-      213: 2761457872069967238
-    second: bomb_vest_running_red_right_10
-  - first:
-      213: -6008278892337289066
-    second: bomb_vest_running_red_right_11
-  - first:
-      213: -2536613587283304080
-    second: bomb_vest_running_red_right_12
-  - first:
-      213: 3704721646680783831
-    second: bomb_vest_running_red_right_13
-  - first:
-      213: 7764966484093774335
-    second: bomb_vest_running_red_right_14
-  - first:
-      213: -2208437129281024269
-    second: bomb_vest_running_red_right_15
-  - first:
-      213: 6034511851567350839
-    second: bomb_vest_running_red_right_16
-  - first:
-      213: 7631354862380510107
-    second: bomb_vest_running_red_right_17
-  - first:
-      213: -6921826252005684991
-    second: bomb_vest_running_red_right_18
-  - first:
-      213: 6154160801671200432
-    second: bomb_vest_running_red_right_19
-  - first:
-      213: -2704887167620141410
-    second: bomb_vest_running_red_right_20
-  - first:
-      213: 9060603344629181802
-    second: bomb_vest_running_red_right_21
-  - first:
-      213: 2371408227569830957
-    second: bomb_vest_running_red_right_22
-  - first:
-      213: 4033154767545540384
-    second: bomb_vest_running_red_right_23
-  - first:
-      213: 4048341570778635433
-    second: bomb_vest_running_red_right_24
-  - first:
-      213: 2950450219010126666
-    second: bomb_vest_running_red_right_25
-  - first:
-      213: 6710392103893507136
-    second: bomb_vest_running_red_right_26
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -221,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_0
+      name: bomb_vest_running_purple_0
       rect:
         serializedVersion: 2
         x: 0
@@ -235,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12c8797bb99cd8750800000000000000
-      internalID: 6308920323653209121
+      spriteID: f962ce8e32c089c44acdf6a8d72e9ce4
+      internalID: 1754485817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_1
+      name: bomb_vest_running_purple_1
       rect:
         serializedVersion: 2
         x: 700
@@ -256,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47f3ca2025e993ee0800000000000000
-      internalID: -1280818543940845708
+      spriteID: a73fc94339d4b944982440369283df11
+      internalID: -309756931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_2
+      name: bomb_vest_running_purple_2
       rect:
         serializedVersion: 2
         x: 1400
@@ -277,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5624b010768e07890800000000000000
-      internalID: -7462209053456121243
+      spriteID: a803b30b333adf94eaf2667e13d3351c
+      internalID: -1597810042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_3
+      name: bomb_vest_running_purple_3
       rect:
         serializedVersion: 2
         x: 2100
@@ -298,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c27fbd973142e9660800000000000000
-      internalID: 7394387304256370476
+      spriteID: 2cbd1ba101632ae4487a16ce5c781ac3
+      internalID: -1027480629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_4
+      name: bomb_vest_running_purple_4
       rect:
         serializedVersion: 2
         x: 2800
@@ -319,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3820167692ea38a0800000000000000
-      internalID: -6324493590834698177
+      spriteID: 91f17b66dc6ed674d887fe1feb3f6c3e
+      internalID: 1610263967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_5
+      name: bomb_vest_running_purple_5
       rect:
         serializedVersion: 2
         x: 3500
@@ -340,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41966cb2d3080af60800000000000000
-      internalID: 8043569934699489556
+      spriteID: 9e40a2d8473b112459422568e4889043
+      internalID: 1233120790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_6
+      name: bomb_vest_running_purple_6
       rect:
         serializedVersion: 2
         x: 0
@@ -361,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebc1aa2fcce3f29c0800000000000000
-      internalID: -3949869298215150402
+      spriteID: 36450ca798123e44daf5ad532845ec8e
+      internalID: 1354079069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_7
+      name: bomb_vest_running_purple_7
       rect:
         serializedVersion: 2
         x: 700
@@ -382,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 878657f61b04d0360800000000000000
-      internalID: 7137432115275458680
+      spriteID: 0bca9ab17e53ddc4d899a6fc9d02dc3f
+      internalID: 1410103095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_8
+      name: bomb_vest_running_purple_8
       rect:
         serializedVersion: 2
         x: 1400
@@ -403,14 +322,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82aafe0d37eaa1230800000000000000
-      internalID: 3610389863740713512
+      spriteID: 7f41531d41975564cb626d2823fdb5aa
+      internalID: -1211769775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_9
+      name: bomb_vest_running_purple_9
       rect:
         serializedVersion: 2
         x: 2100
@@ -424,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 386671c6755cf7c90800000000000000
-      internalID: -7169795102484240765
+      spriteID: 3b7a2e608900f6946b8884f7e2f33c88
+      internalID: -192568865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_10
+      name: bomb_vest_running_purple_10
       rect:
         serializedVersion: 2
         x: 2800
@@ -445,14 +364,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68dbfe6cd4ba25620800000000000000
-      internalID: 2761457872069967238
+      spriteID: ee4871a33f2560e40a1f8c2295eba113
+      internalID: -1621203628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_11
+      name: bomb_vest_running_purple_11
       rect:
         serializedVersion: 2
         x: 3500
@@ -466,14 +385,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69822ce3e2e4e9ca0800000000000000
-      internalID: -6008278892337289066
+      spriteID: 09e4df7f5efa6bf41a2dec52b919f6e3
+      internalID: -1741143733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_12
+      name: bomb_vest_running_purple_12
       rect:
         serializedVersion: 2
         x: 0
@@ -487,14 +406,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 071ac85c1632cccd0800000000000000
-      internalID: -2536613587283304080
+      spriteID: 487f18df5c34f534aa03a65de4698452
+      internalID: -1109915803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_13
+      name: bomb_vest_running_purple_13
       rect:
         serializedVersion: 2
         x: 700
@@ -508,14 +427,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dbbb1e85b0d96330800000000000000
-      internalID: 3704721646680783831
+      spriteID: 11e7063388230a345b5dacea2a07f7c4
+      internalID: 1236803126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_14
+      name: bomb_vest_running_purple_14
       rect:
         serializedVersion: 2
         x: 1400
@@ -529,14 +448,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff9293170e3b2cb60800000000000000
-      internalID: 7764966484093774335
+      spriteID: 6bd91c214d497744fbc648d858e8b330
+      internalID: -1441944644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_15
+      name: bomb_vest_running_purple_15
       rect:
         serializedVersion: 2
         x: 2100
@@ -550,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fecb68b12e0a51e0800000000000000
-      internalID: -2208437129281024269
+      spriteID: 47114dd3c4b817b4ca1aa6433189d1b7
+      internalID: -1167357497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_16
+      name: bomb_vest_running_purple_16
       rect:
         serializedVersion: 2
         x: 2800
@@ -571,14 +490,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7348e898e84eeb350800000000000000
-      internalID: 6034511851567350839
+      spriteID: 2d0fdcc186118504fadfa35ba2a970dd
+      internalID: -239971237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_17
+      name: bomb_vest_running_purple_17
       rect:
         serializedVersion: 2
         x: 3500
@@ -592,14 +511,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9be32f80d408e960800000000000000
-      internalID: 7631354862380510107
+      spriteID: 7ff7e4aa3ad70ce40b3a8edd85b5f33d
+      internalID: 1698869632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_18
+      name: bomb_vest_running_purple_18
       rect:
         serializedVersion: 2
         x: 0
@@ -613,14 +532,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1094a3c72bbb0ff90800000000000000
-      internalID: -6921826252005684991
+      spriteID: fbd74e71882720946ad1de1304e51671
+      internalID: 1326675269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_19
+      name: bomb_vest_running_purple_19
       rect:
         serializedVersion: 2
         x: 700
@@ -634,14 +553,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bebe3a94a8f76550800000000000000
-      internalID: 6154160801671200432
+      spriteID: 71542fe02d6646546b5fdabf2c56a2d7
+      internalID: -1227220811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_20
+      name: bomb_vest_running_purple_20
       rect:
         serializedVersion: 2
         x: 1400
@@ -655,14 +574,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9e2d70c37f467ad0800000000000000
-      internalID: -2704887167620141410
+      spriteID: 3f3c354eafd61fb4f853806ba227b910
+      internalID: -921441116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_21
+      name: bomb_vest_running_purple_21
       rect:
         serializedVersion: 2
         x: 2100
@@ -676,14 +595,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6da65f9cbabdbd70800000000000000
-      internalID: 9060603344629181802
+      spriteID: 3d3807044f613654aad181dbf6fe59e5
+      internalID: -1728466042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_22
+      name: bomb_vest_running_purple_22
       rect:
         serializedVersion: 2
         x: 2800
@@ -697,14 +616,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2c0dbdf73fe8e020800000000000000
-      internalID: 2371408227569830957
+      spriteID: 9c4c8b92125b5604da08bc32c1bb45ea
+      internalID: 650941833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_23
+      name: bomb_vest_running_purple_23
       rect:
         serializedVersion: 2
         x: 3500
@@ -718,17 +637,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02f99bb74e4a8f730800000000000000
-      internalID: 4033154767545540384
+      spriteID: 86f61cba197919f47bcb4a244ec6ddf7
+      internalID: 610607214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_24
+      name: bomb_vest_running_purple_24
       rect:
         serializedVersion: 2
-        x: 2100
+        x: 0
         y: 0
         width: 700
         height: 700
@@ -739,17 +658,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ac15b7a5399e2830800000000000000
-      internalID: 4048341570778635433
+      spriteID: 29c5e13fc84759f448e22ef24453ae65
+      internalID: 1182280806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_25
+      name: bomb_vest_running_purple_25
       rect:
         serializedVersion: 2
-        x: 2800
+        x: 700
         y: 0
         width: 700
         height: 700
@@ -760,17 +679,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a43729f87da12f820800000000000000
-      internalID: 2950450219010126666
+      spriteID: 5d5822bdc95561243b199491cdc47c1f
+      internalID: -365282994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_vest_running_red_right_26
+      name: bomb_vest_running_purple_26
       rect:
         serializedVersion: 2
-        x: 3500
+        x: 1400
         y: 0
         width: 700
         height: 700
@@ -781,8 +700,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04c9828b01a102d50800000000000000
-      internalID: 6710392103893507136
+      spriteID: 4cd3eb131ff421f4ca9ebc39b7798c55
+      internalID: -915689614
       vertices: []
       indices: 
       edges: []
@@ -790,7 +709,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9b28c20d8ccdef54492d757361dca6d1
+    spriteID: f89c4ddbf4f03d44f91c36b11f18cfa7
     internalID: 0
     vertices: []
     indices: 
@@ -798,33 +717,33 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bomb_vest_running_red_right_24: 4048341570778635433
-      bomb_vest_running_red_right_2: -7462209053456121243
-      bomb_vest_running_red_right_10: 2761457872069967238
-      bomb_vest_running_red_right_6: -3949869298215150402
-      bomb_vest_running_red_right_22: 2371408227569830957
-      bomb_vest_running_red_right_20: -2704887167620141410
-      bomb_vest_running_red_right_4: -6324493590834698177
-      bomb_vest_running_red_right_5: 8043569934699489556
-      bomb_vest_running_red_right_1: -1280818543940845708
-      bomb_vest_running_red_right_11: -6008278892337289066
-      bomb_vest_running_red_right_8: 3610389863740713512
-      bomb_vest_running_red_right_25: 2950450219010126666
-      bomb_vest_running_red_right_3: 7394387304256370476
-      bomb_vest_running_red_right_16: 6034511851567350839
-      bomb_vest_running_red_right_26: 6710392103893507136
-      bomb_vest_running_red_right_0: 6308920323653209121
-      bomb_vest_running_red_right_23: 4033154767545540384
-      bomb_vest_running_red_right_12: -2536613587283304080
-      bomb_vest_running_red_right_13: 3704721646680783831
-      bomb_vest_running_red_right_21: 9060603344629181802
-      bomb_vest_running_red_right_19: 6154160801671200432
-      bomb_vest_running_red_right_14: 7764966484093774335
-      bomb_vest_running_red_right_7: 7137432115275458680
-      bomb_vest_running_red_right_15: -2208437129281024269
-      bomb_vest_running_red_right_9: -7169795102484240765
-      bomb_vest_running_red_right_17: 7631354862380510107
-      bomb_vest_running_red_right_18: -6921826252005684991
+      bomb_vest_running_purple_1: -309756931
+      bomb_vest_running_purple_2: -1597810042
+      bomb_vest_running_purple_23: 610607214
+      bomb_vest_running_purple_3: -1027480629
+      bomb_vest_running_purple_10: -1621203628
+      bomb_vest_running_purple_22: 650941833
+      bomb_vest_running_purple_11: -1741143733
+      bomb_vest_running_purple_26: -915689614
+      bomb_vest_running_purple_18: 1326675269
+      bomb_vest_running_purple_5: 1233120790
+      bomb_vest_running_purple_7: 1410103095
+      bomb_vest_running_purple_20: -921441116
+      bomb_vest_running_purple_15: -1167357497
+      bomb_vest_running_purple_17: 1698869632
+      bomb_vest_running_purple_19: -1227220811
+      bomb_vest_running_purple_12: -1109915803
+      bomb_vest_running_purple_4: 1610263967
+      bomb_vest_running_purple_6: 1354079069
+      bomb_vest_running_purple_21: -1728466042
+      bomb_vest_running_purple_9: -192568865
+      bomb_vest_running_purple_14: -1441944644
+      bomb_vest_running_purple_13: 1236803126
+      bomb_vest_running_purple_16: -239971237
+      bomb_vest_running_purple_8: -1211769775
+      bomb_vest_running_purple_24: 1182280806
+      bomb_vest_running_purple_0: 1754485817
+      bomb_vest_running_purple_25: -365282994
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -50,8 +50,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movement();
-        anim.SetFloat("Horizontal", rb.velocity.x);
-        anim.SetFloat("Vertical", rb.velocity.y);
+        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Vertical", vertical);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
         
