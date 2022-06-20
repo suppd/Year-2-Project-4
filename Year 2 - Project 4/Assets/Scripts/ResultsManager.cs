@@ -10,6 +10,7 @@ public class ResultsManager : MonoBehaviour
     public Canvas canvas;
     public Text text;
     public GameObject prefab;
+    List<HighScoreEntry> highScores;
 
     private int numberOfPlayers = 0;
     private List<GameObject> scores = new List<GameObject>();
@@ -36,6 +37,14 @@ public class ResultsManager : MonoBehaviour
             }
             numberOfPlayers++;
         }
+        Save();
+    }
+    void Save()
+    {
+        highScores = PlayerConfigurationManager.Instance.GetPlayerHighScores();
+        //previousHighScores = XMLManager.instance.LoadScores();
+
+        XMLManager.instance.SaveScores(highScores);
     }
     public void AddScoreBoard()
     {
