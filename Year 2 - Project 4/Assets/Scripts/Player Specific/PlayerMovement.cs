@@ -30,10 +30,9 @@ public class PlayerMovement : MonoBehaviour
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
     private float tSpeed;
-    private float horizontal;
+    public float horizontal;
     private float vertical;
-    private bool isfacingright = true;
-    private bool isfacingleft = false;
+    private bool isfacingLeft = true;
     private float dashDistance = 0.2f;
     private float dashDuration = 0.5f;
     private float cooldownDuration = 1.0f;
@@ -54,8 +53,8 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", rb.velocity.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
-        
     }
+ 
 
     public void SetInputVector(Vector2 vector)
     {
@@ -117,20 +116,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (dashCoolCounter > 0)
-
         {
             dashCoolCounter -= Time.deltaTime;
         }
 
     }
 
-    void Flip()
-    {
-        isfacingright = !isfacingright;
-        Vector3 localscale = transform.localScale;
-        localscale.x *= -1f;
-        transform.localScale = localscale;
-    }
 
     public void Move(InputAction.CallbackContext context)
     {

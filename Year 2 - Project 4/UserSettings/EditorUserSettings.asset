@@ -6,6 +6,7 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
+<<<<<<< HEAD
       value: 0008560250075a0d0c5f557b407b5b44144e4d7f2a2e27662c7c4f32e7b4316c
       flags: 0
     RecentlyUsedSceneGuid-1:
@@ -23,6 +24,13 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-5:
       value: 5b07575e5101080c5b5a557512705b44151541732d292463287f1960b5e23639
       flags: 0
+=======
+      value: 5b07575e5101080c5b5a557512705b44151541732d292463287f1960b5e23639
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 5a50525401535f590f5b597b127506441015197a7a7c7e60757e4d6ae7e46c3c
+      flags: 0
+>>>>>>> PiggyAnimation
     RecentlyUsedScenePath-0:
       value: 22424703114646680e0b0227036c731f1415016439262f2434
       flags: 0

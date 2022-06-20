@@ -25,7 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
         aimer = GetComponentInChildren<Aiming>();
         shooter = GetComponent<Shooting>();
         controls = new PlayerControls();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void InitializePlayer(PlayerConfiguration config)
