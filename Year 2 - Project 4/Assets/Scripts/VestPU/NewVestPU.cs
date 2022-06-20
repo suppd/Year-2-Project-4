@@ -30,8 +30,8 @@ public class NewVestPU : MonoBehaviour
     {
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
         Shooting stats = player.GetComponent<Shooting>();
-        Animator anim = player.GetComponent<Animator>();
-        
+        Animator anim = player.GetComponentInChildren<Animator>();
+
         anim.SetBool("Vest", true);
         stats.shotType = "vest";
         speed.bonusSpeed = 3f;

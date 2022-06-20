@@ -7,15 +7,16 @@ public class Flip : MonoBehaviour
 
     private bool isfacingLeft = true;
     public GameObject player;
+    public Rigidbody2D playerRB;
 
     private void FixedUpdate()
     {
 
-        if (player.GetComponent<PlayerMovement>().horizontal < 0 && !isfacingLeft)
+        if (playerRB.velocity.x < 0 && !isfacingLeft)
         {
             FlipSprite();
         }
-        if (player.GetComponent<PlayerMovement>().horizontal > 0 && isfacingLeft)
+        if (playerRB.velocity.x > 0 && isfacingLeft)
         {
             FlipSprite();
         }
