@@ -24,9 +24,31 @@ public class PlayerSetupMenuController : MonoBehaviour
     private EventSystem eventSystem;
     [SerializeField]
     private GameObject mainInputField;
+    public Button[] colorButtons;
+
+    private int selectedButton = 0;
 
     private float ignoreImputTime = 1.5f;
     private bool inputEnabled;
+
+    private Navigation inputFieldNavigation; // make global variable to avoid code repition 
+    private void Awake()
+    {
+        inputFieldNavigation = mainInputField.GetComponent<InputField>().navigation;      
+    }
+    private void HandleInputFieldNavSetup()
+    {
+        mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[selectedButton]);
+    }
+
+    private Navigation ChangeNavigation(Navigation nav, Button button) // make method to avoid code repition 
+    {
+        nav.selectOnUp = button;
+        nav.selectOnLeft = button;
+        nav.selectOnRight = button;
+        nav.selectOnDown = button;
+        return nav;
+    }
 
     public void SetPlayerIndex(int p1)
     {
@@ -37,6 +59,7 @@ public class PlayerSetupMenuController : MonoBehaviour
 
     void Update()
     {
+        HandleInputFieldNavSetup();
         if (Time.time > ignoreImputTime)
         {
             inputEnabled = true;
@@ -72,11 +95,26 @@ public class PlayerSetupMenuController : MonoBehaviour
     {
         PlayerConfigurationManager.Instance.SetAnimator(playerIndex, animatorOverrideController);
     }
+    public void NextCharacter()
+    {
+        colorButtons[selectedButton].gameObject.SetActive(false);
+        selectedButton = (selectedButton + 1) % colorButtons.Length;
+        colorButtons[selectedButton].gameObject.SetActive(true);
+    }
 
+    public void PreviousCharacter()
+    {
+        colorButtons[selectedButton].gameObject.SetActive(false);
+        selectedButton--;
+        if (selectedButton < 0)
+        {
+            selectedButton += colorButtons.Length;
+        }
+        colorButtons[selectedButton].gameObject.SetActive(true);
+    }
     public void ReadyPlayer()
     {
-        if(!inputEnabled) { return; }
-
+        if (!inputEnabled) { return; }
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
         SetName();
         readyButton.gameObject.SetActive(false);

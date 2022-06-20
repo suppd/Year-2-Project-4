@@ -34,8 +34,8 @@ public class RapidPickUp : MonoBehaviour
          PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.TurnOff();
         playerStats.uiInfo = "rapidfire";
-      //  TimerUI vestTimer = player.gameObject.GetComponentInChildren<TimerUI>();
-     //   vestTimer.DisableTimer();
+        TimerUI vestTimer = player.gameObject.GetComponentInChildren<TimerUI>();
+        vestTimer.DisableTimer();
         yield return new WaitForSeconds(duration);
         shooting.fireRate = 1f;
         player.GetComponent<PickUpAbility>().CanPickUp();

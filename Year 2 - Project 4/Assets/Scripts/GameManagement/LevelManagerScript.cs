@@ -30,7 +30,7 @@ public class LevelManagerScript : MonoBehaviour
     {
         if (!foundPlayers)
         {
-            //optimizied preformance a bit by invoking this function only once at the start of the scene (only time nessicary and then it gets updated by the players later
+            //optimizied performance a bit by invoking this function only once at the start of the scene (only time nessicary and then it gets updated by the players later
             Invoke("GetAmountOfPlayers", 0.5f);
             foundPlayers = true;
         }

@@ -45,7 +45,6 @@ public class RoundOverManager : MonoBehaviour
             }
             numberOfPlayers++;
         }
-        Save();
     }
     void Save()
     {

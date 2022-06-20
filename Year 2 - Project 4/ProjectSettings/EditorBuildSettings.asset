@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 9af2df6bb559b694fba064808709ed8d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LobbyTeams.unity
     guid: d442aab0d3a8e9d4987a4a45a58fde52
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelDesign2v2.unity
     guid: 2cab1d07b6593f540a78f7aaaeef9301
   - enabled: 1
@@ -29,10 +29,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/RoundOver2v2.unity
     guid: c9bd5236a19908d4b955ffa6a52ae4e4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Test Scenes/LevelDesign1 1.unity
     guid: 282b992fc6e964214be784830324fca1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TestArea.unity
     guid: 894ff6686b24a1c488f82efa443285c7
   m_configObjects: {}
