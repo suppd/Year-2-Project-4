@@ -2,20 +2,36 @@
 <Leaderboard xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <list>
     <HighScoreEntry>
-      <score>10</score>
-      <playerName>Lord Simona</playerName>
-    </HighScoreEntry>
-    <HighScoreEntry>
       <score>1</score>
-      <playerName />
+      <playerName>yo</playerName>
     </HighScoreEntry>
     <HighScoreEntry>
       <score>0</score>
-      <playerName />
+      <playerName>elo</playerName>
     </HighScoreEntry>
     <HighScoreEntry>
-      <score>1</score>
-      <playerName />
+      <score>2</score>
+      <playerName>yo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>elo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>3</score>
+      <playerName>yo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>elo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>4</score>
+      <playerName>yo</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>elo</playerName>
     </HighScoreEntry>
     <HighScoreEntry>
       <score>0</score>
@@ -30,11 +46,39 @@
       <playerName />
     </HighScoreEntry>
     <HighScoreEntry>
+      <score>3</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>4</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
       <score>1</score>
       <playerName />
     </HighScoreEntry>
     <HighScoreEntry>
       <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName>Placehol</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>Anh</playerName>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName />
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
       <playerName />
     </HighScoreEntry>
     <HighScoreEntry>
