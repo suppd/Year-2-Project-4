@@ -34050,7 +34050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3196212771164684956, guid: 8e1427605ef90e64aa78490421ff9b83, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e1427605ef90e64aa78490421ff9b83, type: 3}
@@ -44058,14 +44058,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[0]
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[1]
-      value: 50
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: percentages.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[5]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: percentages.Array.data[7]
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -56115,6 +56123,14 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1310715822}
+    - target: {fileID: 5236171652729074062, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
+      propertyPath: timeAwake
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236171652729074062, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
+      propertyPath: timeStart
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 6547078070923918625, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
       propertyPath: m_IsActive
       value: 0

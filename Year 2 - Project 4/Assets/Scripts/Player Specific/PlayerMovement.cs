@@ -24,16 +24,16 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 inputVector;
     public float freezeDuration;
 
+    public GameObject canvas;
     public ParticleSystem dashDust;
 
     private float slowAmount = 1f;
     private float dashCounter, dashCoolCounter;
     private float nSpeed = 5f;
     private float tSpeed;
-    private float horizontal;
+    public float horizontal;
     private float vertical;
-    private bool isfacingright = true;
-    private bool isfacingleft = false;
+    private bool isfacingLeft = true;
     private float dashDistance = 0.2f;
     private float dashDuration = 0.5f;
     private float cooldownDuration = 1.0f;
@@ -54,8 +54,20 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", rb.velocity.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
-        
     }
+    /*
+    private void FixedUpdate()
+    {
+        if(rb.velocity.x < 0 && !isfacingLeft)
+        {
+            Flip();
+        }
+        if(rb.velocity.x > 0 && isfacingLeft)
+        {
+            Flip();
+        }
+    }
+    */
 
     public void SetInputVector(Vector2 vector)
     {
@@ -117,7 +129,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (dashCoolCounter > 0)
-
         {
             dashCoolCounter -= Time.deltaTime;
         }
@@ -126,10 +137,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Flip()
     {
-        isfacingright = !isfacingright;
         Vector3 localscale = transform.localScale;
         localscale.x *= -1f;
         transform.localScale = localscale;
+        isfacingLeft = !isfacingLeft;
+       
+        
+        Vector3 canvasScale = canvas.transform.localScale;
+        canvasScale.x *= -1f;
+        canvas.transform.localScale = canvasScale;
+
+        //canvas.transform.localRotation *= Quaternion.Euler(0, -180, 0);
+        //Vector3 canvasPos = canvas.transform.position;
+        //canvasPos.x *= -1f;
+        canvas.transform.position = -canvas.transform.position;
+
+
     }
 
     public void Move(InputAction.CallbackContext context)
