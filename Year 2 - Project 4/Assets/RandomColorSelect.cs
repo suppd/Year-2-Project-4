@@ -20,34 +20,34 @@ public class RandomColorSelect : MonoBehaviour
     //    playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
     //    totalPlayerAmount = playerConfigs.Length - 1;
 
-    //    Debug.Log(totalPlayerAmount);
-    //    if (totalPlayerAmount == 0)
-    //    {
-    //        mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
-    //        eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
-    //        colorButtons[totalPlayerAmount].gameObject.SetActive(true);
-    //    }
-    //    else if (totalPlayerAmount == 1)
-    //    {
-    //        mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
-    //        eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
-    //        colorButtons[totalPlayerAmount].gameObject.SetActive(true);
-    //    }
-    //    else if (totalPlayerAmount == 2)
-    //    {
-    //        mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
-    //        eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
-    //        colorButtons[totalPlayerAmount].gameObject.SetActive(true);
-            
-    //    }
-    //    else if (totalPlayerAmount == 3)
-    //    {
-    //        mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]); ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
-    //        eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
-    //        colorButtons[totalPlayerAmount].gameObject.SetActive(true);
-            
-    //    }
-    //}
+        Debug.Log(totalPlayerAmount);
+        if (totalPlayerAmount == 0)
+        {
+            mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
+            eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
+            colorButtons[totalPlayerAmount].gameObject.SetActive(true);
+        }
+        else if (totalPlayerAmount == 1)
+        {
+            mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
+            eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
+            colorButtons[totalPlayerAmount].gameObject.SetActive(true);
+        }
+        else if (totalPlayerAmount == 2)
+        {
+            mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
+            eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
+            colorButtons[totalPlayerAmount].gameObject.SetActive(true);
+
+        }
+        else if (totalPlayerAmount == 3)
+        {
+            mainInputField.GetComponent<InputField>().navigation = ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]); ChangeNavigation(inputFieldNavigation, colorButtons[totalPlayerAmount]);
+            eventSystem.firstSelectedGameObject = colorButtons[totalPlayerAmount].gameObject;
+            colorButtons[totalPlayerAmount].gameObject.SetActive(true);
+
+        }
+    }
 
     //private Navigation ChangeNavigation(Navigation nav, Button button) // make method to avoid code repition 
     //{
