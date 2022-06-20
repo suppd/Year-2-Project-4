@@ -13,8 +13,8 @@ public class RandomColorSelect : MonoBehaviour
     private int totalPlayerAmount;
 
     private Navigation inputFieldNavigation; // make global variable to avoid code repition 
-    //private void Awake()
-    //{
+    private void Awake()
+    {
     //    inputFieldNavigation = mainInputField.GetComponent<InputField>().navigation;
 
     //    playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
@@ -49,12 +49,12 @@ public class RandomColorSelect : MonoBehaviour
         }
     }
 
-    //private Navigation ChangeNavigation(Navigation nav, Button button) // make method to avoid code repition 
-    //{
-    //    nav.selectOnUp = button;
-    //    nav.selectOnLeft = button;
-    //    nav.selectOnRight = button;
-    //    nav.selectOnDown = button;
-    //    return nav;
-    //}
+    private Navigation ChangeNavigation(Navigation nav, Button button) // make method to avoid code repition 
+    {
+        nav.selectOnUp = button;
+        nav.selectOnLeft = button;
+        nav.selectOnRight = button;
+        nav.selectOnDown = button;
+        return nav;
+    }
 }
