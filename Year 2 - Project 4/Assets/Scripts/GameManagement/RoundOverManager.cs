@@ -28,7 +28,7 @@ public class RoundOverManager : MonoBehaviour
                 AddScoreBoard();
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
                 Debug.Log("Round Over");              
-                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName,playerConfigs[i].spriteId);
                 if (playerConfigs[i].playerScore >= PlayerConfigurationManager.Instance.maxAmountOfRounds)
                 {
                     Debug.Log("Going Result Screen!");
@@ -37,21 +37,13 @@ public class RoundOverManager : MonoBehaviour
             }
             else if (!playerConfigs[i].isAlive)
             {
-                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName,playerConfigs[i].spriteId);
                 Debug.Log("Added Score for player " + playerConfigs[i].playerName);
                 AddScoreBoard();
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
             }
             numberOfPlayers++;
         }
-        Save();
-    }
-    void Save()
-    {
-        highScores = PlayerConfigurationManager.Instance.GetPlayerHighScores();
-        //previousHighScores = XMLManager.instance.LoadScores();
-
-        XMLManager.instance.SaveScores(highScores);
     }
     public void AddScoreBoard()
     {      

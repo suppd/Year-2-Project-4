@@ -60,6 +60,11 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[i].playerSprite = spriteToSet;
     }
 
+    public void SetPlayerSpriteId(int i, int spriteToSet)
+    {
+        playerConfigs[i].spriteId = spriteToSet;
+    }
+
     public void SetAnimator(int i, AnimatorOverrideController animOverride)
     {
         playerConfigs[i].animatorOverrideController = animOverride;
@@ -70,10 +75,11 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[i].isBlue = isBlue;
     }
 
-    public void SetHighScoreEntry(int i, int score, string name)
+    public void SetHighScoreEntry(int i, int score, string name, int playerIcon)
     {
         highScores[i].score = score;
         highScores[i].playerName = name;
+        highScores[i].playerIcon = playerIcon;
     }
     public void ReadyPlayer(int i)
     {
@@ -130,6 +136,7 @@ public class PlayerConfiguration
     public bool isAlive{ get; set; }
     public Sprite playerSprite { get; set; }
 
+    public int spriteId { get; set; }
     public AnimatorOverrideController animatorOverrideController { get; set; }
 
 }

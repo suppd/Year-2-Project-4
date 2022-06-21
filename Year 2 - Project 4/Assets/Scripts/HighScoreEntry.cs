@@ -7,4 +7,5 @@ public class HighScoreEntry
 {
     public int score;
     public string playerName;
+    public int playerIcon;
 }

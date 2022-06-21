@@ -24,7 +24,7 @@ public class LeaderBoardManager : MonoBehaviour
         {
             Debug.Log("CheckingScores");
             AddScoreBoard();
-            UpdateScoreBoard(bestScores[i].score, i, bestScores[i].playerName);
+            UpdateScoreBoard(bestScores[i].score, i, bestScores[i].playerName, bestScores[i].playerIcon);
         }
     }
 
@@ -35,10 +35,11 @@ public class LeaderBoardManager : MonoBehaviour
         textObjects.Add(board);
         numberOfBoards++;
     }
-    public void UpdateScoreBoard(int score, int boardInstance, string playerName)
+    public void UpdateScoreBoard(int score, int boardInstance, string playerName, int spriteId)
     {
         Debug.Log("Updated");
-        textObjects[boardInstance].GetComponent<ScoreBoard>().playerName = playerName;
-        textObjects[boardInstance].GetComponent<ScoreBoard>().playerScore = score;
+        textObjects[boardInstance].GetComponent<LeaderBoardPanel>().playerName = playerName;
+        textObjects[boardInstance].GetComponent<LeaderBoardPanel>().playerScore = score;
+        textObjects[boardInstance].GetComponent<LeaderBoardPanel>().spriteId = spriteId;
     }
 }
