@@ -32,6 +32,8 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     [SerializeField]
     private GameObject competitive;
 
+
+
     public void OnSelect(BaseEventData eventData)
     {
         FindObjectOfType<AudioManager>().Play("MenuHover");

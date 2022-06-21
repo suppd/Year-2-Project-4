@@ -24,7 +24,12 @@ public class PlayerSetupMenuController : MonoBehaviour
     private EventSystem eventSystem;
     [SerializeField]
     private GameObject mainInputField;
+
     public Button[] colorButtons;
+
+    public AnimatorOverrideController[] overRides;
+    public Sprite[] sprites;
+
 
     private int selectedButton = 0;
 
@@ -46,10 +51,21 @@ public class PlayerSetupMenuController : MonoBehaviour
         nav.selectOnUp = button;
         nav.selectOnLeft = button;
         nav.selectOnRight = button;
-        nav.selectOnDown = button;
+        nav.selectOnDown = readyButton;
         return nav;
     }
 
+    public int GetCurrentEnabledSprite()
+    {
+        return selectedButton;
+        //for (int i = 0; i < colorButtons.Length; i++)
+        //{
+        //    if (colorButtons[i].enabled)
+        //    {
+        //        return i;
+        //    }
+        //}  
+    }
     public void SetPlayerIndex(int p1)
     {
         playerIndex = p1;
@@ -118,6 +134,10 @@ public class PlayerSetupMenuController : MonoBehaviour
     }
     public void ReadyPlayer()
     {
+        SetSprite(sprites[GetCurrentEnabledSprite()]);
+        SetAnimator(overRides[GetCurrentEnabledSprite()]);
+        SetSpriteId(GetCurrentEnabledSprite());
+        Debug.Log(GetCurrentEnabledSprite());
         if (!inputEnabled) { return; }
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
         SetName();
