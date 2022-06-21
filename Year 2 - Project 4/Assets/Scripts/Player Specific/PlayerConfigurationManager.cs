@@ -11,6 +11,8 @@ public class PlayerConfigurationManager : MonoBehaviour
     private List<HighScoreEntry> highScores;
     [SerializeField]
     private int maxPlayers = 2;
+
+    public int maxAmountOfRounds = 2;
     public PlayerInputManager InputManager;
     public string sceneName = "LevelDesign1";
     //[SerializeField]
@@ -98,9 +100,14 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(maxAmountOfRounds);
         if (InputManager.playerCount >= maxPlayers)
         {
             InputManager.DisableJoining();
+        }
+        if (maxAmountOfRounds > 5)
+        {
+            maxAmountOfRounds = 5;
         }
     }
 }

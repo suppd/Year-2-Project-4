@@ -10,8 +10,7 @@ using System.Xml.Linq;
 public class RoundOverManager : MonoBehaviour
 {
     PlayerConfiguration[] playerConfigs;
-    public Canvas canvas;
-    public Text text;
+    public GameObject panel;
     public GameObject prefab;
     public string Levelname = "LevelDesign2v2";
 
@@ -27,12 +26,12 @@ public class RoundOverManager : MonoBehaviour
             if (playerConfigs[i].isAlive)
             {
                 AddScoreBoard();
-                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true, playerConfigs[i].playerName);
-                Debug.Log("Round Over");
-                text.text = " " + playerConfigs[i].playerName.ToString() + " Won the Round ! " + "the player's score is now " + playerConfigs[i].playerScore.ToString();
+                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
+                Debug.Log("Round Over");              
                 PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
-                if (playerConfigs[i].playerScore >= 5)
+                if (playerConfigs[i].playerScore >= PlayerConfigurationManager.Instance.maxAmountOfRounds)
                 {
+                    Debug.Log("Going Result Screen!");
                     ToResultScreen();
                 }
             }
@@ -41,10 +40,11 @@ public class RoundOverManager : MonoBehaviour
                 PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
                 Debug.Log("Added Score for player " + playerConfigs[i].playerName);
                 AddScoreBoard();
-                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false, playerConfigs[i].playerName);
+                UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
             }
             numberOfPlayers++;
         }
+        Save();
     }
     void Save()
     {
@@ -55,16 +55,17 @@ public class RoundOverManager : MonoBehaviour
     }
     public void AddScoreBoard()
     {      
-        var board = Instantiate(prefab,new Vector3(canvas.transform.position.x, canvas.transform.position.y - (75 * numberOfPlayers), canvas.transform.position.z), canvas.transform.rotation, canvas.transform);
+        var board = Instantiate(prefab,new Vector3(panel.transform.position.x, panel.transform.position.y - (115 * numberOfPlayers), panel.transform.position.z), panel.transform.rotation, panel.transform);
         scores.Add(board);
     }
-    public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName)
+    public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName, Sprite playerIcon)
     {
 
         scores[boardInstance].GetComponent<ScoreBoard>().playerName = playerName;
         scores[boardInstance].GetComponent<ScoreBoard>().playerScore = score;
         scores[boardInstance].GetComponent<ScoreBoard>().playerIndex = playerIndex;
         scores[boardInstance].GetComponent<ScoreBoard>().wasAlive = wasAlive;
+        scores[boardInstance].GetComponent<ScoreBoard>().playerIcon = playerIcon;
     }
     public void NextLevel()
     {
