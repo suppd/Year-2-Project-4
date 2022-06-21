@@ -47,10 +47,6 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnShoot(obj);
         }
-        else if (obj.action.name == controls.Player.Fire2.name)
-        {
-         //   OnShoot2(obj);
-        }
         else if(obj.action.name == controls.Player.Look.name)
         {
             OnAim(obj);
