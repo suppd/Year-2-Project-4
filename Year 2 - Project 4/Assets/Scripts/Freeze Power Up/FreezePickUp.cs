@@ -13,6 +13,7 @@ public class FreezePickUp : MonoBehaviour
         {
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
+                other.GetComponent<PickUpAbility>().mainPickUp = "freeze";
                 PickUp(other);
                 FindObjectOfType<AudioManager>().Play("PickUp");
             }

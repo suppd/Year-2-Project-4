@@ -14,6 +14,7 @@ public class BouncePickUp : MonoBehaviour
         {
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
+                other.GetComponent<PickUpAbility>().mainPickUp = "bounce";
                 PickUp(other);
                 FindObjectOfType<AudioManager>().Play("PickUp");
             }

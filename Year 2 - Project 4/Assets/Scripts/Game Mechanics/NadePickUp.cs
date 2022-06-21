@@ -13,6 +13,7 @@ public class NadePickUp : MonoBehaviour
         {
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
+                other.GetComponent<PickUpAbility>().mainPickUp = "grenade";
                 PickUp(other);
                 FindObjectOfType<AudioManager>().Play("PickUp");
             }  

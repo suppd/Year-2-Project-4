@@ -14,6 +14,7 @@ public class DashPickUp : MonoBehaviour
         {
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
+                other.GetComponent<PickUpAbility>().mainPickUp = "dash";
                 StartCoroutine(PickUp(other));
                 GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
                 FindObjectOfType<AudioManager>().Play("PickUp");
