@@ -81,7 +81,11 @@ public class PlayerSetupMenuController : MonoBehaviour
         menuPanel.SetActive(false);
         readyButton.Select();
     }
-
+    public void SetSpriteId(int id)
+    {
+        if (!inputEnabled) { return; }
+        PlayerConfigurationManager.Instance.SetPlayerSpriteId(playerIndex, id);
+    }
     public void SetTeam(bool isBlue)
     {
         PlayerConfigurationManager.Instance.SetTeam(playerIndex, isBlue);

@@ -10,6 +10,7 @@ public class ScoreBoard : MonoBehaviour
     public TMP_Text playerNameText;
     public Image[] fullChickens;
     public Image[] emptyChickens;
+
     public ScoreBoard(int _playerIndex, int _playerScore, bool _wasAlive, string _playerName, Sprite _playerSprite)
     {
         playerIndex = _playerIndex;
@@ -27,6 +28,7 @@ public class ScoreBoard : MonoBehaviour
     void Start()
     {
         playerNameText.text = playerName;
+  
         icon.sprite = playerIcon;
         for (int i = 0; i < PlayerConfigurationManager.Instance.maxAmountOfRounds; i++)
         {
@@ -36,5 +38,6 @@ public class ScoreBoard : MonoBehaviour
         {
             fullChickens[i].gameObject.SetActive(true);
         }
+        
     }
 }
