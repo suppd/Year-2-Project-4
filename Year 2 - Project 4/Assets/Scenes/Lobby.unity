@@ -998,6 +998,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1456571385}
     m_Modifications:
+    - target: {fileID: 3059009530889574028, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 475.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059009530889574028, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 7970047040788439672, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
       propertyPath: m_Name
       value: RoundsInput

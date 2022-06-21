@@ -12,7 +12,7 @@ public class PlayerConfigurationManager : MonoBehaviour
     [SerializeField]
     private int maxPlayers = 2;
 
-    public int maxAmountOfRounds = 2;
+    public int maxAmountOfRounds = 1;
     public PlayerInputManager InputManager;
     public string sceneName = "LevelDesign1";
     //[SerializeField]
