@@ -1217,9 +1217,69 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 147436576}
     m_Modifications:
+    - target: {fileID: 6983698970640934453, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_text
+      value: Leader Board
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970640934453, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970640934453, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970640934453, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970640934453, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970640934458, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970640934458, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 212
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153788, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 338.9557
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153788, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 58.1963
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153788, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -246.08449
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153788, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 153.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6983698970817153791, guid: 4325e99346af96248adc983e06470f71, type: 3}
       propertyPath: m_text
-      value: 'Top 5 Scores:'
+      value: Top 5 Rounds Won
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153791, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153791, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153791, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983698970817153791, guid: 4325e99346af96248adc983e06470f71, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 6983698970873213698, guid: 4325e99346af96248adc983e06470f71, type: 3}
       propertyPath: m_Pivot.x

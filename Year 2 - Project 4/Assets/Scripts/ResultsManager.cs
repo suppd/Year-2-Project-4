@@ -22,7 +22,7 @@ public class ResultsManager : MonoBehaviour
         {
             if (playerConfigs[i].isAlive)
             {
-                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName, playerConfigs[i].spriteId);
                 AddScoreBoard();
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
                 Debug.Log("Game Over");
@@ -30,19 +30,18 @@ public class ResultsManager : MonoBehaviour
             }
             else if (!playerConfigs[i].isAlive)
             {
-                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName);
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName, playerConfigs[i].spriteId);
                 Debug.Log("Added Score for player " + playerConfigs[i].playerIndex);
                 AddScoreBoard();
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
             }
             numberOfPlayers++;
         }
+        highScores = PlayerConfigurationManager.Instance.GetPlayerHighScores();
         Save();
     }
     void Save()
     {
-        highScores = PlayerConfigurationManager.Instance.GetPlayerHighScores();
-        Debug.Log(highScores.Count);
         XMLManager.instance.SaveScores(highScores);
     }
     public void AddScoreBoard()
@@ -59,12 +58,6 @@ public class ResultsManager : MonoBehaviour
         scores[boardInstance].GetComponent<ScoreBoard>().wasAlive = wasAlive;
         scores[boardInstance].GetComponent<ScoreBoard>().playerIcon = playerIcon;
     }
-
-    public void SaveScores()
-    {
-        //XMLManager.instance.SaveScores();
-    }
-
     public void ToResultScreen()
     {
         SceneManager.LoadScene("ResultScene");

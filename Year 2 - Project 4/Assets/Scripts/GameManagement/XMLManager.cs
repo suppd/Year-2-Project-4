@@ -6,7 +6,7 @@ using System.IO;
 public class XMLManager : MonoBehaviour
 {
     public static XMLManager instance { get; private set; }
-    private Leaderboard leaderboard;
+    private Leaderboard leaderboard = new Leaderboard();
     void Awake()
     {
         if (!Directory.Exists(Application.dataPath + "/HighScores/"))
@@ -43,12 +43,9 @@ public class XMLManager : MonoBehaviour
             Debug.Log("Updated List");
         }
         else
-        { 
+        {
             leaderboard.list = scoresToSave;
-            XmlSerializer serializer = new XmlSerializer(typeof(Leaderboard));
-            FileStream stream = new FileStream(Application.dataPath + "/HighScores/highscores.xml", FileMode.Create);
-            serializer.Serialize(stream, leaderboard);
-            stream.Close();
+            UpdateList();
             Debug.Log("Created List");
         }
     }
