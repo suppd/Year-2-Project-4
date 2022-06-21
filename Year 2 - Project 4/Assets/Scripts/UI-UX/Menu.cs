@@ -5,15 +5,24 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHandler
 {
     public string level;
+    [SerializeField]
+    private GameObject backButton;
 
     public void OnSelect(BaseEventData eventData)
     {
         FindObjectOfType<AudioManager>().Play("MenuHover");
 
-        //Debug.Log(this.ButtonGameObject.name + " was selected");
+        Debug.Log(eventData.selectedObject.name + " was selected");
+    }
+
+    public void OnCancel(BaseEventData eventData)
+    {
+        backButton = GameObject.FindGameObjectWithTag("BackButton");
+        Debug.Log("Cancel");
+        eventData.selectedObject = backButton;
     }
 
     public void OnDeselect(BaseEventData eventData)
