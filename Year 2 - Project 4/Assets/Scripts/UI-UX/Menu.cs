@@ -28,6 +28,8 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void LoadLevelOne()
     {
+        GameObject configManager = GameObject.FindGameObjectWithTag("GameController");
+        Destroy(configManager);
         SceneManager.LoadScene(level);
         FindObjectOfType<AudioManager>().Play("MenuClick");
     }
@@ -40,6 +42,8 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void Quit()
     {
+        GameObject configManager = GameObject.FindGameObjectWithTag("GameController");
+        Destroy(configManager);
         Debug.Log("Quit");
         Application.Quit();
         FindObjectOfType<AudioManager>().Play("MenuClick");

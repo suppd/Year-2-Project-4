@@ -32,12 +32,7 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     [SerializeField]
     private GameObject competitive;
 
-    [SerializeField]
-    private GameObject backButton;
-    [SerializeField]
-    private GameObject casualFFA;
-    [SerializeField]
-    private GameObject compFFA;
+
 
     public void OnSelect(BaseEventData eventData)
     {

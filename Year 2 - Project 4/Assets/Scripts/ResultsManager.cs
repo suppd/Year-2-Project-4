@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class ResultsManager : MonoBehaviour
 {
     PlayerConfiguration[] playerConfigs;
-    public Canvas canvas;
-    public Text text;
+    public GameObject canvas;
     public GameObject prefab;
     List<HighScoreEntry> highScores;
 
@@ -46,7 +45,7 @@ public class ResultsManager : MonoBehaviour
     }
     public void AddScoreBoard()
     {
-        var board = Instantiate(prefab, new Vector3(canvas.transform.position.x, canvas.transform.position.y - (75 * numberOfPlayers), canvas.transform.position.z), canvas.transform.rotation, canvas.transform);
+        var board = Instantiate(prefab, new Vector3(canvas.transform.position.x, canvas.transform.position.y - (120 * numberOfPlayers), canvas.transform.position.z), canvas.transform.rotation, canvas.transform);
         scores.Add(board);
     }
     public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName, Sprite playerIcon)
