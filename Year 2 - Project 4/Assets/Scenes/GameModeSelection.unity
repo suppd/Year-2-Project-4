@@ -153,6 +153,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1893197183}
   m_RootOrder: 0
@@ -179,10 +180,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 0}
+  casualFFA: {fileID: 0}
+  compFFA: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 0}
+  competitive: {fileID: 0}
 --- !u!114 &142888721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +361,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 722046063}
   - {fileID: 502577487}
@@ -381,6 +388,7 @@ GameObject:
   - component: {fileID: 502577489}
   - component: {fileID: 502577488}
   - component: {fileID: 502577491}
+  - component: {fileID: 502577492}
   m_Layer: 5
   m_Name: Casual
   m_TagString: Untagged
@@ -398,6 +406,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1981507967}
   - {fileID: 1890113333}
@@ -533,10 +542,44 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 1165619804}
+  casualFFA: {fileID: 1049557411}
+  compFFA: {fileID: 1716299460}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 502577486}
+  competitive: {fileID: 1893197182}
+--- !u!114 &502577492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502577486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 16
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 502577492}
+          m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventTrigger, UnityEngine.UI
+          m_MethodName: OnCancel
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &722046062
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +608,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147436576}
   m_RootOrder: 0
@@ -642,6 +686,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1795039866}
   m_RootOrder: 1
@@ -762,10 +807,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 1165619804}
+  casualFFA: {fileID: 0}
+  compFFA: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 502577486}
+  competitive: {fileID: 1893197182}
 --- !u!1 &1049557411
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +846,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1483945340}
   m_RootOrder: 0
@@ -820,9 +871,9 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 502577488}
-    m_SelectOnDown: {fileID: 1893197185}
-    m_SelectOnLeft: {fileID: 1165619806}
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 1049557413}
     m_SelectOnRight: {fileID: 1915398702}
   m_Transition: 2
   m_Colors:
@@ -916,10 +967,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 1165619804}
+  casualFFA: {fileID: 0}
+  compFFA: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 502577486}
+  competitive: {fileID: 1893197182}
 --- !u!1 &1165619804
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +1006,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147436576}
   m_RootOrder: 3
@@ -1070,10 +1127,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 0}
+  casualFFA: {fileID: 0}
+  compFFA: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 0}
+  competitive: {fileID: 0}
 --- !u!1 &1483945339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1162,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1049557412}
   - {fileID: 1915398701}
@@ -1141,6 +1204,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1795039866}
   m_RootOrder: 0
@@ -1165,9 +1229,9 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 502577488}
-    m_SelectOnDown: {fileID: 1165619806}
-    m_SelectOnLeft: {fileID: 1165619806}
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 1716299462}
     m_SelectOnRight: {fileID: 979242349}
   m_Transition: 2
   m_Colors:
@@ -1261,10 +1325,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 1165619804}
+  casualFFA: {fileID: 0}
+  compFFA: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 502577486}
+  competitive: {fileID: 1893197182}
 --- !u!1 &1795039865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1360,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1716299461}
   - {fileID: 979242348}
@@ -1312,6 +1382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1867528289}
   - component: {fileID: 1867528288}
+  - component: {fileID: 1867528290}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1391,10 +1462,31 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1867528290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867528287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1890113332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1515,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 502577487}
   m_RootOrder: 1
@@ -1559,6 +1652,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 142888719}
   - {fileID: 2111854846}
@@ -1588,10 +1682,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 1165619804}
+  casualFFA: {fileID: 1049557411}
+  compFFA: {fileID: 1716299460}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 502577486}
+  competitive: {fileID: 1893197182}
 --- !u!114 &1893197185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1728,6 +1827,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1483945340}
   m_RootOrder: 1
@@ -1848,10 +1948,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 1165619804}
+  casualFFA: {fileID: 0}
+  compFFA: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 502577486}
+  competitive: {fileID: 1893197182}
 --- !u!1 &1981507966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1987,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 502577487}
   m_RootOrder: 0
@@ -1908,10 +2014,15 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
   extendComp: {fileID: 142888718}
+  backButton: {fileID: 0}
+  casualFFA: {fileID: 0}
+  compFFA: {fileID: 0}
   CasualButtons: {fileID: 1483945339}
   CompButtons: {fileID: 1795039865}
   infoTextCasual: {fileID: 1890113332}
   infoTextComp: {fileID: 2111854845}
+  casual: {fileID: 0}
+  competitive: {fileID: 0}
 --- !u!114 &1981507969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,6 +2137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: b68f26f24f3cf7946b0e550666c3ced6, type: 3}
   m_PointAction: {fileID: -1654692200621890270, guid: b68f26f24f3cf7946b0e550666c3ced6, type: 3}
   m_MoveAction: {fileID: -8784545083839296357, guid: b68f26f24f3cf7946b0e550666c3ced6, type: 3}
@@ -2051,7 +2163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1165619804}
+  m_FirstSelected: {fileID: 502577486}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1996780176
@@ -2064,6 +2176,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2147,6 +2260,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2179,6 +2293,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1893197183}
   m_RootOrder: 1

@@ -12,6 +12,12 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     private GameObject extendCasual;
     [SerializeField]
     private GameObject extendComp;
+    [SerializeField]
+    private GameObject backButton;
+    [SerializeField]
+    private GameObject casualFFA;
+    [SerializeField]
+    private GameObject compFFA;
 
     [SerializeField]
     private GameObject CasualButtons;
@@ -21,6 +27,10 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     private GameObject infoTextCasual;
     [SerializeField]
     private GameObject infoTextComp;
+    [SerializeField]
+    private GameObject casual;
+    [SerializeField]
+    private GameObject competitive;
 
     [SerializeField]
     private GameObject backButton;
