@@ -13,6 +13,9 @@ TagManager:
   - Bomba
   - BulletWall
   - SpriteBox
+  - CompExtend
+  - CasualExtend
+  - BackButton
   layers:
   - Default
   - TransparentFX
