@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHandler
 {
     public string level;
     public GameObject ButtonGameObject;
@@ -11,6 +12,12 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     private GameObject extendCasual;
     [SerializeField]
     private GameObject extendComp;
+    [SerializeField]
+    private GameObject backButton;
+    [SerializeField]
+    private GameObject casualFFA;
+    [SerializeField]
+    private GameObject compFFA;
 
     [SerializeField]
     private GameObject CasualButtons;
@@ -20,6 +27,17 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     private GameObject infoTextCasual;
     [SerializeField]
     private GameObject infoTextComp;
+    [SerializeField]
+    private GameObject casual;
+    [SerializeField]
+    private GameObject competitive;
+
+    [SerializeField]
+    private GameObject backButton;
+    [SerializeField]
+    private GameObject casualFFA;
+    [SerializeField]
+    private GameObject compFFA;
 
     public void OnSelect(BaseEventData eventData)
     {
@@ -68,6 +86,12 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
         {
             extendComp.SetActive(false);
         }
+    }
+
+    public void OnCancel(BaseEventData eventData)
+    {
+        Debug.Log("Cancel");
+        eventData.selectedObject = backButton;
     }
 
     public void OnDeselect(BaseEventData eventData)

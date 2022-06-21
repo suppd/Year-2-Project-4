@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerMovement mover;
     private Shooting shooter;
     private Aiming aimer;
+    private GameModeSelection canceler;
 
     [SerializeField]
     private SpriteRenderer sprite;

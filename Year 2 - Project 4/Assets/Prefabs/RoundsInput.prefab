@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Enter Your Disired Amount Of Rounds
+  m_text: 'Enter Your Desired Amount Of Rounds
 
 '
   m_isRightToLeft: 0

@@ -2472,7 +2472,7 @@ GameObject:
   - component: {fileID: 9161971615976936393}
   - component: {fileID: 3466384369924658320}
   m_Layer: 7
-  m_Name: Text (TMP)
+  m_Name: PlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

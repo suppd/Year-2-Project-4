@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: Lobby
+  level: GameModeSelection
 --- !u!1 &648576333
 GameObject:
   m_ObjectHideFlags: 0
