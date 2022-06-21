@@ -7,20 +7,13 @@ using TMPro;
 public class ChangeRounds : MonoBehaviour
 {
     [SerializeField]
-    public TMP_InputField inputField;
+    public TMP_Text maxRoundText;
+    public string[] roundOptions;
 
+    private int selectedOption;
     public bool numberChanged;
     void Start()
     {
-    }
-
-    void Update()
-    {
-        if (numberChanged)
-        {
-            ChangeMaxRounds();
-            numberChanged = false;
-        }
     }
 
     public void SetNumberChanged()
@@ -28,9 +21,24 @@ public class ChangeRounds : MonoBehaviour
         numberChanged = true;
     }
 
-    void ChangeMaxRounds()
+    public void NextCharacter()
     {
-        PlayerConfigurationManager.Instance.maxAmountOfRounds =  int.Parse(inputField.text);
-        //Debug.Log(PlayerConfigurationManager.Instance.maxAmountOfRounds);
+        selectedOption = (selectedOption + 1) % roundOptions.Length;
+        maxRoundText.text = roundOptions[selectedOption];
+    }
+
+    public void PreviousCharacter()
+    {       
+        selectedOption--;
+        if (selectedOption < 0)
+        {
+            selectedOption += roundOptions.Length;
+        }
+        maxRoundText.text = roundOptions[selectedOption];
+    }
+    public void ChangeMaxRounds()
+    {
+        PlayerConfigurationManager.Instance.maxAmountOfRounds =  int.Parse(maxRoundText.text);
+        Debug.Log(PlayerConfigurationManager.Instance.maxAmountOfRounds);
     }
 }
