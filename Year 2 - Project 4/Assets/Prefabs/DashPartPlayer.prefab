@@ -116,7 +116,6 @@ MonoBehaviour:
   movements: {x: 0, y: 0}
   inputVector: {x: 0, y: 0}
   freezeDuration: 3
-  canvas: {fileID: 1543319240609437868}
   dashDust: {fileID: 6607651274191463914, guid: 296eff4f6f505ce419ef1e7aaeb79658, type: 3}
   horizontal: 0
 --- !u!58 &3383183338051999284
@@ -341,8 +340,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161273019067780492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.19000006, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 161273018238503367}
@@ -361,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6481376969060286750}
-  radius: 1
+  radius: 0.75
   anim: {fileID: 3195372699508575020}
 --- !u!212 &399547745294339568
 SpriteRenderer:
@@ -404,8 +403,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f0a7e0e730c42a7499b1d1dd90e6ff4b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

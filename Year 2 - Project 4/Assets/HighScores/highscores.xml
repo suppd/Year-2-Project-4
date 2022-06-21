@@ -11,5 +11,35 @@
       <playerName>Max</playerName>
       <playerIcon>0</playerIcon>
     </HighScoreEntry>
+    <HighScoreEntry>
+      <score>0</score>
+      <playerName>jude</playerName>
+      <playerIcon>2</playerIcon>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>3</score>
+      <playerName>mark</playerName>
+      <playerIcon>3</playerIcon>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>3</score>
+      <playerName>mitchell</playerName>
+      <playerIcon>0</playerIcon>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>1</score>
+      <playerName>fabio</playerName>
+      <playerIcon>2</playerIcon>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>5</score>
+      <playerName />
+      <playerIcon>0</playerIcon>
+    </HighScoreEntry>
+    <HighScoreEntry>
+      <score>2</score>
+      <playerName />
+      <playerIcon>0</playerIcon>
+    </HighScoreEntry>
   </list>
 </Leaderboard>
