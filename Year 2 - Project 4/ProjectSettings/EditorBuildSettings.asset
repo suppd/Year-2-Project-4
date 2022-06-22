@@ -42,6 +42,11 @@ EditorBuildSettings:
     path: Assets/Scenes/ResultScene.unity
     guid: 1e1a3d75578a8d34195d0c79699192f6
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Level2v2.unity
     guid: 095cf43beca470546b676eb946489067
+=======
+    path: Assets/Scenes/Farm Level.unity
+    guid: 6ca8bde1cce704487b0a16e60af0db1f
+>>>>>>> FarmLevel
   m_configObjects: {}
