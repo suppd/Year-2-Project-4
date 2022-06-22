@@ -25,6 +25,8 @@ public class PlayerSetupMenuController : MonoBehaviour
     [SerializeField]
     private GameObject mainInputField;
 
+    public bool isTeamGameMode = false;
+
     public Button[] colorButtons;
 
     public AnimatorOverrideController[] overRides;
@@ -58,13 +60,6 @@ public class PlayerSetupMenuController : MonoBehaviour
     public int GetCurrentEnabledSprite()
     {
         return selectedButton;
-        //for (int i = 0; i < colorButtons.Length; i++)
-        //{
-        //    if (colorButtons[i].enabled)
-        //    {
-        //        return i;
-        //    }
-        //}  
     }
     public void SetPlayerIndex(int p1)
     {
@@ -105,10 +100,6 @@ public class PlayerSetupMenuController : MonoBehaviour
     public void SetTeam(bool isBlue)
     {
         PlayerConfigurationManager.Instance.SetTeam(playerIndex, isBlue);
-        readyPanel.SetActive(true);
-        readyButton.interactable = true;
-        teamMenuPanel.SetActive(false);
-        readyButton.Select();
 
     }
     public void SetAnimator(AnimatorOverrideController animatorOverrideController)
@@ -134,6 +125,17 @@ public class PlayerSetupMenuController : MonoBehaviour
     }
     public void ReadyPlayer()
     {
+        if (isTeamGameMode)
+        {
+            if (GetCurrentEnabledSprite() == 0)
+            {
+                SetTeam(true);
+            }
+            else
+            {
+                SetTeam(false);
+            }
+        }
         SetSprite(sprites[GetCurrentEnabledSprite()]);
         SetAnimator(overRides[GetCurrentEnabledSprite()]);
         SetSpriteId(GetCurrentEnabledSprite());

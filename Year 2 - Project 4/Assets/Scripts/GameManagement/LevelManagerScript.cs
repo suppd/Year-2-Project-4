@@ -6,12 +6,19 @@ using UnityEngine.SceneManagement;
 public class LevelManagerScript : MonoBehaviour
 {
     private GameObject[] players;
+    //for teams
+    public bool teams = false;
+    public PlayerConfiguration[] playerConfigs;
 
     private int amountOfPlayers;
     private float timer = 3f;
 
     public string levelName;
     bool foundPlayers = false;
+    private void Awake()
+    {
+        playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
+    }
     public int GetAmountOfPlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
@@ -48,6 +55,21 @@ public class LevelManagerScript : MonoBehaviour
             if (timer <= 0)
             {
                 SceneManager.LoadScene(levelName);
+            }
+        }
+        else if (teams)
+        {
+           if (amountOfPlayers == 2)
+            {
+                for (int i = 0; i < amountOfPlayers; i++)
+                {
+                    if (playerConfigs[i].isBlue && playerConfigs[i].isAlive)
+                    {
+                        playerConfigs[i].playerScore += 1;
+                        Debug.Log("Team Survived in one piece");
+                        SceneManager.LoadScene(levelName);
+                    }
+                }
             }
         }
     }
