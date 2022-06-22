@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12974,6 +12974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594885a36d98a3946bea01bc1fd1c085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teams: 0
   levelName: RoundOver
 --- !u!1 &440478634
 GameObject:
@@ -46089,6 +46090,10 @@ PrefabInstance:
     - target: {fileID: 5142569541056223538, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: timers.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[0]

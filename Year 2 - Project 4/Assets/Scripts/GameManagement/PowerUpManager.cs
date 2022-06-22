@@ -10,8 +10,9 @@ public class PowerUpManager : MonoBehaviour
 
     public float timeBetweenPowerups;
 
+    public float[] timers;
     private Transform[] emptyPoints;
-
+    public float individualTimer = 2f;
     private bool waitingForSpawn = true;
     private bool setTimer;
 
@@ -21,6 +22,10 @@ public class PowerUpManager : MonoBehaviour
     private float amount;
     private void Start()
     {
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            timers[i] = individualTimer;
+        }
         amount = 1;
     }
     public void WaitForSpawn()
@@ -32,10 +37,16 @@ public class PowerUpManager : MonoBehaviour
             {
                 if (spawnPoints[random].transform.childCount == 0)
                 {
-                    SpawnRandomPowerUp(random, GetRandomSpawn());
-                    lastSpawnPoint = random;
-                    waitingForSpawn = false;
-                    setTimer = true;
+                    timers[random]--;
+                    if (timers[random] == 0)
+                    {
+                        Debug.Log("timer ran out!");
+                        timers[random] = individualTimer;
+                        SpawnRandomPowerUp(random, GetRandomSpawn());
+                        lastSpawnPoint = random;
+                        waitingForSpawn = false;
+                        setTimer = true;
+                    }
                 }
             }
         }
@@ -82,4 +93,12 @@ public class PowerUpManager : MonoBehaviour
             }
         }
     }
+}
+
+public class PowerUpSpawnPoint : MonoBehaviour
+{
+
+    public Transform spawnPoint;
+    public float timer;
+
 }
