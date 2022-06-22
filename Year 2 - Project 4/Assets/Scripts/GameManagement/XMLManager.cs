@@ -7,6 +7,7 @@ public class XMLManager : MonoBehaviour
 {
     public static XMLManager instance { get; private set; }
     private Leaderboard leaderboard = new Leaderboard();
+    private List<string> foundNames = new List<string>();
     void Awake()
     {
         if (!Directory.Exists(Application.dataPath + "/HighScores/"))
@@ -33,11 +34,22 @@ public class XMLManager : MonoBehaviour
             leaderboard.list = LoadScores();
             foreach (HighScoreEntry entry in scoresToSave)
             {
-                if (leaderboard.list.Contains(entry))
+                Debug.Log("going over entry" + entry.playerName);
+                for (int i = 0; i < leaderboard.list.Count; i++)
                 {
-                    Debug.Log(entry.playerName + entry.score);
+                    Debug.Log("Comparing " + entry.playerName + "to " + leaderboard.list[i].playerName);
+                    if (entry.playerName == leaderboard.list[i].playerName)
+                    {
+                        leaderboard.list[i].score += entry.score;
+                        foundNames.Add(entry.playerName);
+                    }
+                    else if (ReturnAmount(entry.playerName, leaderboard.list) == 0)
+                    {
+                        leaderboard.list.Add(entry);
+                    }
+                   
                 }
-                leaderboard.list.Add(entry);
+                
             }
             UpdateList();
             Debug.Log("Updated List");
@@ -50,6 +62,18 @@ public class XMLManager : MonoBehaviour
         }
     }
 
+    int ReturnAmount(string name, List<HighScoreEntry> nameList)
+    {
+        int amountName = 0;
+        for (int i = 0 ; i < nameList.Count ; i++)
+        {
+            if (name == nameList[i].playerName)
+            {
+                amountName++;
+            }
+        }
+        return amountName;
+    }
     public void UpdateList()
     {
         XmlSerializer serializer = new XmlSerializer(typeof(Leaderboard));

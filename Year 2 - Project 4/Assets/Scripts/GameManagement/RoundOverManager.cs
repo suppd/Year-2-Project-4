@@ -16,8 +16,6 @@ public class RoundOverManager : MonoBehaviour
 
     private int numberOfPlayers = 0;
     private List<GameObject> scores = new List<GameObject>();
-    List<HighScoreEntry> highScores;
-    List<HighScoreEntry> previousHighScores;
     void Awake()
     {
         playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();

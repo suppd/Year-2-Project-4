@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 832986002316090046}
   - component: {fileID: 832986002316090045}
   m_Layer: 0
-  m_Name: ==Player Configuration Manager==
+  m_Name: ==Player Configuration ManagerTeams==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
         m_Flags: 0
       - m_Name: 
         m_Id: 614940f1-9810-40f5-b20c-d492262b3951
-        m_Path: <Joystick>/stick
+        m_Path: <Keyboard>/p
         m_Interactions: 
         m_Processors: 
         m_Groups: 
