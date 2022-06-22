@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPlayers: 4
   maxAmountOfRounds: 4
-  InputManager: {fileID: 0}
-  sceneName: LevelDesign1
+  InputManager: {fileID: 832986002316090045}
+  sceneName: Level2v2
 --- !u!114 &832986002316090045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
         m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 1711937962720987168, guid: d8bddcfe0b5d3be4b86fef5bb8748851, type: 3}
+  m_PlayerPrefab: {fileID: 1711937962720987168, guid: 0a9c1e2decac9c64c99a3a16ab58df76, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1

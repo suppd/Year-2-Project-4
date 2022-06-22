@@ -63,11 +63,16 @@ public class LevelManagerScript : MonoBehaviour
             {
                 for (int i = 0; i < amountOfPlayers; i++)
                 {
-                    if (playerConfigs[i].isBlue && playerConfigs[i].isAlive)
+                    for (int j = 1; j < amountOfPlayers; j++)
                     {
-                        playerConfigs[i].playerScore += 1;
-                        Debug.Log("Team Survived in one piece");
-                        SceneManager.LoadScene(levelName);
+
+
+                        if (!playerConfigs[i].isBlue && playerConfigs[j].isBlue)
+                        {
+                            playerConfigs[i].playerScore += 1;
+                            Debug.Log("Team Survived in one piece");
+                            SceneManager.LoadScene(levelName);
+                        }
                     }
                 }
             }
