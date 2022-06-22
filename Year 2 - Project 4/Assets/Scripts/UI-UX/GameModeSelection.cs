@@ -32,8 +32,6 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
     [SerializeField]
     private GameObject competitive;
 
-
-
     public void OnSelect(BaseEventData eventData)
     {
         FindObjectOfType<AudioManager>().Play("MenuHover");
@@ -94,27 +92,9 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
         //Debug.Log(this.ButtonGameObject.name + " was deselected");
     }
 
-    public void Ready()
-    {
-        FindObjectOfType<AudioManager>().Play("ReadyClick");
-    }
-
     public void LoadLevelOne()
     {
         SceneManager.LoadScene(level);
-        FindObjectOfType<AudioManager>().Play("MenuClick");
-    }
-
-    public void Options()
-    {
-        Debug.Log("Options");
-        FindObjectOfType<AudioManager>().Play("MenuClick");
-    }
-
-    public void Quit()
-    {
-        Debug.Log("Quit");
-        Application.Quit();
         FindObjectOfType<AudioManager>().Play("MenuClick");
     }
 }

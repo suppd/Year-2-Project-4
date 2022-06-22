@@ -14,6 +14,16 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHand
     [SerializeField]
     private AudioMixer audioMixer;
 
+    void Awake()
+    {
+        backButton = GameObject.FindGameObjectWithTag("BackButton");
+    }
+
+    public void ClickSound()
+    {
+        FindObjectOfType<AudioManager>().Play("MenuClick");
+    }
+
     public void OnSelect(BaseEventData eventData)
     {
         FindObjectOfType<AudioManager>().Play("MenuHover");
