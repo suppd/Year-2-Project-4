@@ -1159,6 +1159,7 @@ MonoBehaviour:
   teamMenuPanel: {fileID: 0}
   eventSystem: {fileID: 9087898566417031406}
   mainInputField: {fileID: 3755640017639697975}
+  isTeamGameMode: 0
   colorButtons:
   - {fileID: 5898252234178183608}
   - {fileID: 5952745873246309854}
@@ -2033,7 +2034,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0291150dd017d6c47b4f2aa46af523c5, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
