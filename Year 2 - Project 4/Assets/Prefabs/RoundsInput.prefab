@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: GameModeSelection
   backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &2749963403450563089
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +238,7 @@ GameObject:
   - component: {fileID: 7032381628428317533}
   - component: {fileID: 1248731031657954433}
   - component: {fileID: 8650808793703921028}
+  - component: {fileID: 6046883116002366393}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -370,6 +372,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6046883116002366393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445528696299983777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  backButton: {fileID: 2606135547548450426}
+  audioMixer: {fileID: 0}
 --- !u!1 &3837216182019185421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1491,7 @@ GameObject:
   - component: {fileID: 8782857151840903951}
   - component: {fileID: 8969400855251214075}
   - component: {fileID: 4542377719801788685}
+  - component: {fileID: 5873898583809778489}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -1607,3 +1625,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5873898583809778489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155949326202706948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  backButton: {fileID: 2606135547548450426}
+  audioMixer: {fileID: 0}

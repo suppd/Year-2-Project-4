@@ -13,9 +13,11 @@ TagManager:
   - Bomba
   - BulletWall
   - SpriteBox
-  - CompExtend
-  - CasualExtend
   - BackButton
+  - CasualFFA
+  - CompFFA
+  - Competitive
+  - Casual
   layers:
   - Default
   - TransparentFX

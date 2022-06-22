@@ -411,7 +411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: Lobby
+  level: GameModeSelection
+  backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &648576333
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: LevelDesign1
+  backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!114 &648576336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +863,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: LevelDesign1
+  level: Options
+  backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!114 &1893197185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +913,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1893197184}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Options
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1893197184}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: LoadLevelOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

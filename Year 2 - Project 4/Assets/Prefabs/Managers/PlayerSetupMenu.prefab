@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 5621172913589893765}
   - component: {fileID: 8428516035596024002}
   - component: {fileID: 4677705263631192109}
+  - component: {fileID: 2688518202511745222}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -171,6 +172,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2688518202511745222}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2688518202511745222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143191358749812902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &3463653529056556021
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +291,7 @@ GameObject:
   - component: {fileID: 2673034611962646434}
   - component: {fileID: 1729650772651029750}
   - component: {fileID: 5807112455257305389}
+  - component: {fileID: 4236400664680702208}
   m_Layer: 5
   m_Name: Previous
   m_TagString: Untagged
@@ -384,6 +413,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4236400664680702208}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4236400664680702208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531113272063047053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &3755640017639697975
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +452,7 @@ GameObject:
   - component: {fileID: 8280105091313326473}
   - component: {fileID: 6150568997199448916}
   - component: {fileID: 4682528711112251530}
+  - component: {fileID: 5210138480842467566}
   m_Layer: 5
   m_Name: Input
   m_TagString: Untagged
@@ -529,6 +586,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5210138480842467566}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDidEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -543,6 +612,21 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_ShouldActivateOnSelect: 0
+--- !u!114 &5210138480842467566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755640017639697975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f700c1f158557469f36212ab00d505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &5952745872694645238
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 
   backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &5952745872998894386
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 
   backButton: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!1 &5952745873246309848
 GameObject:
   m_ObjectHideFlags: 0
