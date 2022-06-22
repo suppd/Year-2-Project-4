@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHandler
 {
     public string level;
     [SerializeField]
     private GameObject backButton;
+
+    [SerializeField]
+    private AudioMixer audioMixer;
 
     public void OnSelect(BaseEventData eventData)
     {
@@ -56,5 +59,10 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHand
         Debug.Log("Quit");
         Application.Quit();
         FindObjectOfType<AudioManager>().Play("MenuClick");
+    }
+
+    public void SetVolume(float sliderValue)
+    {
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(sliderValue) * 20);
     }
 }
