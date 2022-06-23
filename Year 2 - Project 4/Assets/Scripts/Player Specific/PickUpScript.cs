@@ -26,6 +26,7 @@ public class PickUpScript : MonoBehaviour
 
     IEnumerator PickUp(Collider2D player)
     {
+        player.GetComponent<PowerUpEffects>().SpeedTrailOn();
         PlayerMovement speed = player.GetComponent<PlayerMovement>();
         speed.bonusSpeed = bSpeed;
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
@@ -34,16 +35,15 @@ public class PickUpScript : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        Debug.Log(player.GetComponent<PickUpAbility>().mainPickUp);
         if (player.GetComponent<PickUpAbility>().speedCount > 1)
         {
-            player.GetComponent<PowerUpEffects>().SpeedTrailOn();
             player.GetComponent<PickUpAbility>().mainPickUp = "nothing";
             player.GetComponent<PickUpAbility>().CanPickUp();
             player.GetComponent<PickUpAbility>().speedCount--;
         }
         else
         {
+            player.GetComponent<PowerUpEffects>().SpeedTrailOff();
             player.GetComponent<PickUpAbility>().CanPickUp();
             player.GetComponent<PickUpAbility>().speedCount--;
             speed.bonusSpeed = 0;

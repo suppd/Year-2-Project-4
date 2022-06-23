@@ -28,6 +28,7 @@ public class DashPickUp : MonoBehaviour
 
     IEnumerator PickUp(Collider2D player)
     {
+        player.GetComponent<PowerUpEffects>().DashTrailOn();
         PlayerMovement stats = player.GetComponent<PlayerMovement>();
         stats.dashAllow = true;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -44,6 +45,7 @@ public class DashPickUp : MonoBehaviour
         }
         else
         {
+            player.GetComponent<PowerUpEffects>().DashTrailOff();
             player.GetComponent<PickUpAbility>().CanPickUp();
             player.GetComponent<PickUpAbility>().dashCount--;
             stats.dashAllow = false;

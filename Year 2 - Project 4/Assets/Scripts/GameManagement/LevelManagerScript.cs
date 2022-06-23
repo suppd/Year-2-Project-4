@@ -43,17 +43,17 @@ public class LevelManagerScript : MonoBehaviour
         {
             if (playerConfigs[i].isBlue && playerConfigs[i].isAlive)
             {
-                Debug.Log("Player " + playerConfigs[i].playerName + "is blue? " + playerConfigs[i].isBlue);
+               // Debug.Log("Player " + playerConfigs[i].playerName + "is blue? " + playerConfigs[i].isBlue);
                 bluePlayerCount++;
             }
             else if (!playerConfigs[i].isBlue && playerConfigs[i].isAlive)
             {
-                Debug.Log("Player " + playerConfigs[i].playerName + "is blue? " + playerConfigs[i].isBlue);
+                //Debug.Log("Player " + playerConfigs[i].playerName + "is blue? " + playerConfigs[i].isBlue);
                 redPlayerCount++;
             }
         }
-        Debug.Log(redPlayerCount);
-        Debug.Log(bluePlayerCount);
+        //Debug.Log(redPlayerCount);
+       // Debug.Log(bluePlayerCount);
     }
     //Created this method for changing the local private variable amountOfPlayers instead of having a public variable
     public void UpdateAmountOfPlayers(int minus)

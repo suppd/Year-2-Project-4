@@ -30,6 +30,7 @@ public class RapidPickUp : MonoBehaviour
 
     IEnumerator PickUp(Collider2D player)
     {
+        player.GetComponent<PowerUpEffects>().RapidEffectOn();
         Shooting shooting = player.GetComponent<Shooting>();
         shooting.fireRate = newFireRate;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -45,6 +46,7 @@ public class RapidPickUp : MonoBehaviour
         }
         else
         {
+            player.GetComponent<PowerUpEffects>().RapidEffectOff();
             player.GetComponent<PickUpAbility>().CanPickUp();
             player.GetComponent<PickUpAbility>().rapidCount--;
             shooting.fireRate = 1f;

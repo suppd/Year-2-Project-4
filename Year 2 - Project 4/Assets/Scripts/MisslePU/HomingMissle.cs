@@ -40,7 +40,7 @@ public class HomingMissle : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("MissleExplode");
             Explode();
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }

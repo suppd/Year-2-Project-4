@@ -35959,7 +35959,7 @@ PrefabInstance:
       objectReference: {fileID: 196908997}
     - target: {fileID: 6175107569130764616, guid: 8e1427605ef90e64aa78490421ff9b83, type: 3}
       propertyPath: timeAwake
-      value: 4.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6175107569130764616, guid: 8e1427605ef90e64aa78490421ff9b83, type: 3}
       propertyPath: timeStart
@@ -46989,11 +46989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[3]
-      value: 4
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[4]
-      value: 1000
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[5]
@@ -47005,7 +47005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[7]
-      value: 2
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
