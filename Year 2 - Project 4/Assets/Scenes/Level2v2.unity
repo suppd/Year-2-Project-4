@@ -5036,7 +5036,7 @@ SpriteRenderer:
   m_Size: {x: 48.64, y: 35.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &161482450
@@ -12948,7 +12948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teams: 1
-  levelName: RoundOver
+  levelName: RoundOverTeams
 --- !u!1 &440478634
 GameObject:
   m_ObjectHideFlags: 0
@@ -19199,7 +19199,7 @@ SpriteRenderer:
   m_Size: {x: 48.64, y: 35.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &652222558

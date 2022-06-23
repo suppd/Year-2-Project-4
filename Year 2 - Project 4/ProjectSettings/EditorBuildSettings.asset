@@ -24,9 +24,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Farm Level.unity
     guid: 6ca8bde1cce704487b0a16e60af0db1f
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/RoundOver.unity
     guid: 14b5fe8cdf6e66f4f9e63a9e7fe6bdfe
   - enabled: 1
     path: Assets/Scenes/ResultScene.unity
     guid: 1e1a3d75578a8d34195d0c79699192f6
+=======
+    path: Assets/Scenes/MainMenu.unity
+    guid: eba7822f55314a2409c1233ea024be96
+  - enabled: 1
+    path: Assets/Scenes/GameModeSelection.unity
+    guid: 728c145e48a9bf848bd7854cef7a9322
+  - enabled: 1
+    path: Assets/Scenes/Level2v2.unity
+    guid: 095cf43beca470546b676eb946489067
+  - enabled: 1
+    path: Assets/Scenes/RoundOverTeams.unity
+    guid: 5804296c45242d34bb0cad40f9bd1828
+>>>>>>> Oebe
   m_configObjects: {}

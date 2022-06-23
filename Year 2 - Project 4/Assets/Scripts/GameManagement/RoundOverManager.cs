@@ -45,7 +45,7 @@ public class RoundOverManager : MonoBehaviour
     }
     public void AddScoreBoard()
     {      
-        var board = Instantiate(prefab,new Vector3(panel.transform.position.x, panel.transform.position.y - (120 * numberOfPlayers), panel.transform.position.z), panel.transform.rotation, panel.transform);
+        var board = Instantiate(prefab,new Vector3(panel.transform.position.x, panel.transform.position.y - ((panel.transform.position.y/4 - 25f) * numberOfPlayers), panel.transform.position.z), panel.transform.rotation, panel.transform);
         scores.Add(board);
     }
     public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName, Sprite playerIcon)

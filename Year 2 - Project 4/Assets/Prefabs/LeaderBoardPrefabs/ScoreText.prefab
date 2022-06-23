@@ -382,8 +382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconsToChooseFrom:
-  - {fileID: 443972987895951465}
   - {fileID: 6533178258463623599}
+  - {fileID: 443972987895951465}
   - {fileID: 9038977757730211155}
   - {fileID: 1034347969479443040}
   icon: {fileID: 1584641777289861691}
