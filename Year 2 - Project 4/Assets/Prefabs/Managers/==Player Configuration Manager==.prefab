@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayers: 4
-  maxAmountOfRounds: 4
-  InputManager: {fileID: 0}
+  maxAmountOfRounds: 5
+  InputManager: {fileID: 832986002316090045}
   sceneName: LevelDesign1
 --- !u!114 &832986002316090045
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 2
-  m_MaxPlayerCount: -1
+  m_MaxPlayerCount: 4
   m_AllowJoining: 1
   m_JoinBehavior: 1
   m_PlayerJoinedEvent:

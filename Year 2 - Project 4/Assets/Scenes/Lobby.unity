@@ -802,17 +802,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 832986002316090044, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
   m_PrefabInstance: {fileID: 832986002153418064}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1492992186 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
-  m_PrefabInstance: {fileID: 832986002153418064}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492992185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1520696563 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5873898583809778489, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
@@ -960,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: sceneName
-      value: Farm Level
+      value: LevelDesign1
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: maxPlayers
@@ -974,10 +963,6 @@ PrefabInstance:
       propertyPath: playerPrefab
       value: 
       objectReference: {fileID: 1492992185}
-    - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
-      propertyPath: maxAmountOfRounds
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 832986002316090047, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_RootOrder
       value: 3
