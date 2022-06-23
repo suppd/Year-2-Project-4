@@ -18,6 +18,8 @@ TagManager:
   - CompFFA
   - Competitive
   - Casual
+  - Next
+  - Previous
   layers:
   - Default
   - TransparentFX
