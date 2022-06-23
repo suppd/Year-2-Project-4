@@ -46967,46 +46967,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: timers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: timeBetweenPowerups
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[0]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[3]
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[4]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[5]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[6]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[7]
-      value: 1000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
 --- !u!1 &1716922835
