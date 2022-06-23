@@ -22,7 +22,6 @@ public class HealthPickUp : MonoBehaviour
         GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.GetHealth(healthGain);
-        player.GetComponent<PickUpAbility>().CanPickUp();
         Destroy(gameObject);
     }
 }

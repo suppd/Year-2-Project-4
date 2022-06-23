@@ -8,16 +8,20 @@ public class RapidPickUp : MonoBehaviour
     public float duration = 3f;
     [SerializeField]
     private float newFireRate;
-
+    private string currentPickUp;
     public GameObject PUEffect;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            currentPickUp = other.GetComponent<PickUpAbility>().mainPickUp;
+            Exceptions(other);
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
-                StartCoroutine(PickUp(other));
+                other.GetComponent<PickUpAbility>().rapidCount++;
+                other.GetComponent<PickUpAbility>().mainPickUp = "rapid";
+                StartCoroutine(PickUp(other)); 
                 GameObject effect = Instantiate(PUEffect, transform.position, Quaternion.identity);
                 FindObjectOfType<AudioManager>().Play("PickUp");
             }
@@ -26,19 +30,63 @@ public class RapidPickUp : MonoBehaviour
 
     IEnumerator PickUp(Collider2D player)
     {
-        player.GetComponent<PickUpAbility>().CannotPickUp();
         Shooting shooting = player.GetComponent<Shooting>();
         shooting.fireRate = newFireRate;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
-         PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.TurnOff();
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.uiInfo = "rapidfire";
         yield return new WaitForSeconds(duration);
-        shooting.fireRate = 1f;
-        player.GetComponent<PickUpAbility>().CanPickUp();
-        TimerUI vestTimer = player.gameObject.GetComponentInChildren<TimerUI>();
-        vestTimer.DisableTimer();
+        if(player.GetComponent<PickUpAbility>().rapidCount > 1)
+        {
+            player.GetComponent<PickUpAbility>().mainPickUp = "nothing";
+            player.GetComponent<PickUpAbility>().CanPickUp();
+            player.GetComponent<PickUpAbility>().rapidCount--;
+        }
+        else
+        {
+            player.GetComponent<PickUpAbility>().CanPickUp();
+            player.GetComponent<PickUpAbility>().rapidCount--;
+            shooting.fireRate = 1f;
+            player.GetComponent<PickUpAbility>().mainPickUp = "nothing";
+        }
+
+
         Destroy(gameObject);
+    }
+
+    void Exceptions(Collider2D player)
+    {
+        switch (currentPickUp)
+        {
+            case "grenade":
+                //can
+                player.GetComponent<PickUpAbility>().CannotPickUp();
+                break;
+            case "bounce":
+                //can
+                player.GetComponent<PickUpAbility>().CannotPickUp();
+                break;
+            case "dash":
+                //can
+                player.GetComponent<PickUpAbility>().CanPickUp();
+                break;
+            case "rapid":
+                //can
+                player.GetComponent<PickUpAbility>().CanPickUp();
+                break;
+            case "vest":
+                //cannot
+                player.GetComponent<PickUpAbility>().CannotPickUp();
+                break;
+            case "freeze":
+                //can
+                player.GetComponent<PickUpAbility>().CannotPickUp();
+                break;
+            case "speed":
+                //can
+                player.GetComponent<PickUpAbility>().CanPickUp();
+                break;
+        }
     }
 }
