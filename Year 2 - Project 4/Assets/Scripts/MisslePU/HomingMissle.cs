@@ -38,7 +38,9 @@ public class HomingMissle : MonoBehaviour
     {
         if (other.CompareTag("Bomba"))
         {
+            FindObjectOfType<AudioManager>().Play("MissleExplode");
             Explode();
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

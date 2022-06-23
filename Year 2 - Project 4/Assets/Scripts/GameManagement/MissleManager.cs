@@ -10,6 +10,9 @@ public class MissleManager : MonoBehaviour
     public float timeStart;
     public Animator anim;
     public float timeAwake;
+    public GameObject alertText;
+    public Camera playerCam;
+    private bool soundOn;
 
     private void Update()
     {
@@ -18,6 +21,11 @@ public class MissleManager : MonoBehaviour
 
         if (timeStart < Time.deltaTime)
         {
+            if (!soundOn)
+            {
+                StartCoroutine(MissleLaunch());
+                
+            }
             anim.SetBool("Awake", true);
             SpawnMissle();
             missleOn = false;
@@ -28,9 +36,27 @@ public class MissleManager : MonoBehaviour
             anim.SetBool("Awake", false);
         }
     }
+
+
+    IEnumerator MissleLaunch()
+    {
+        FindObjectOfType<AudioManager>().Play("MissleAnnouncement");
+        soundOn = true;
+        GameObject screenText = Instantiate(alertText, playerCam.transform);
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<AudioManager>().Play("MissleLaunch");
+
+    }
+
     private void Start()
     {
         anim.SetBool("Awake", false);
+    }
+
+    private void Awake()
+    {
+        soundOn = false;
+
     }
 
     public void SpawnMissle()
