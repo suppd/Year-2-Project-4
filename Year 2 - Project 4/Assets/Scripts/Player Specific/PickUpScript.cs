@@ -37,6 +37,7 @@ public class PickUpScript : MonoBehaviour
         Debug.Log(player.GetComponent<PickUpAbility>().mainPickUp);
         if (player.GetComponent<PickUpAbility>().speedCount > 1)
         {
+            player.GetComponent<PowerUpEffects>().SpeedTrailOn();
             player.GetComponent<PickUpAbility>().mainPickUp = "nothing";
             player.GetComponent<PickUpAbility>().CanPickUp();
             player.GetComponent<PickUpAbility>().speedCount--;
