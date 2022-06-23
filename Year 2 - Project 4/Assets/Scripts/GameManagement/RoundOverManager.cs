@@ -14,6 +14,8 @@ public class RoundOverManager : MonoBehaviour
     public GameObject prefab;
     public string Levelname = "LevelDesign2v2";
 
+    public string[] sceneName;
+
     private int numberOfPlayers = 0;
     private List<GameObject> scores = new List<GameObject>();
     void Awake()
@@ -25,8 +27,8 @@ public class RoundOverManager : MonoBehaviour
             {
                 AddScoreBoard();
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, true, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
-                Debug.Log("Round Over");              
-                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName,playerConfigs[i].spriteId);
+                Debug.Log("Round Over");
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName, playerConfigs[i].spriteId);
                 if (playerConfigs[i].playerScore >= PlayerConfigurationManager.Instance.maxAmountOfRounds)
                 {
                     Debug.Log("Going Result Screen!");
@@ -35,7 +37,7 @@ public class RoundOverManager : MonoBehaviour
             }
             else if (!playerConfigs[i].isAlive)
             {
-                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName,playerConfigs[i].spriteId);
+                PlayerConfigurationManager.Instance.SetHighScoreEntry(i, playerConfigs[i].playerScore, playerConfigs[i].playerName, playerConfigs[i].spriteId);
                 Debug.Log("Added Score for player " + playerConfigs[i].playerName);
                 AddScoreBoard();
                 UpdateScoreBoard(playerConfigs[i].playerScore, i, playerConfigs[i].playerIndex, false, playerConfigs[i].playerName, playerConfigs[i].playerSprite);
@@ -48,6 +50,16 @@ public class RoundOverManager : MonoBehaviour
         var board = Instantiate(prefab,new Vector3(panel.transform.position.x, panel.transform.position.y - ((panel.transform.position.y/4 - 50f) * numberOfPlayers), panel.transform.position.z), panel.transform.rotation, panel.transform);
         scores.Add(board);
     }
+    public string LoadRandomLevel()
+    {
+        int random;
+        random = Random.Range(0, 2);
+        return sceneName[random];
+    }
+    private void Update()
+    {
+        Debug.Log(LoadRandomLevel());
+    }
     public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName, Sprite playerIcon)
     {
 
@@ -59,7 +71,7 @@ public class RoundOverManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(Levelname);
+        SceneManager.LoadScene(LoadRandomLevel());
     }
 
     public void ToResultScreen()
