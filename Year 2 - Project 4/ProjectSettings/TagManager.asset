@@ -18,6 +18,8 @@ TagManager:
   - CompFFA
   - Competitive
   - Casual
+  - GameCam
+  - GameAudio
   layers:
   - Default
   - TransparentFX
