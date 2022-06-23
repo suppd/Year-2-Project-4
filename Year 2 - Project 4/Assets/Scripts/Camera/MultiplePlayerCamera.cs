@@ -23,9 +23,17 @@ public class MultiplePlayerCamera : MonoBehaviour
     public Vector3 offset;
     public float smoothTime = .5f;
 
+    public float fourPlayerSize;
+    public float threePlayerSize;
+    public float twoPlayerSize;
+
     public float maxZoom = 40f;
     public float minZoom = 10f;
     public float zoomLimiter = 50f;
+
+    public bool fourPlayers = false;
+    public bool threePlayers = false;
+    public bool twoPlayers = false;
 
     public CinemachineVirtualCamera virtualCamera;
 
@@ -52,11 +60,40 @@ public class MultiplePlayerCamera : MonoBehaviour
         }
         Move();
         Zoom();
+        if (targets.Count == 4)
+        {
+            fourPlayers = true;
+            threePlayers = false;
+            twoPlayers = false;
+        }
+        else if (targets.Count == 3)
+        {
+            threePlayers = true;
+            twoPlayers = false;
+            fourPlayers = false;
+        }
+        else if (targets.Count == 2)
+        {
+            threePlayers = false;
+            fourPlayers = false;
+            twoPlayers = true;
+        }
     }
 
     void Zoom()
     {      
-        
+        if (fourPlayers)
+        {
+            virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, fourPlayerSize, Time.deltaTime);
+        }
+        else if (threePlayers)
+        {
+            virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, threePlayerSize, Time.deltaTime);
+        }
+        else if (twoPlayers)
+        {
+            virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, twoPlayerSize, Time.deltaTime);
+        }
         int newZoom = (int)Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
         //Debug.Log(newZoom);
         //virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, newZoom, Time.deltaTime);

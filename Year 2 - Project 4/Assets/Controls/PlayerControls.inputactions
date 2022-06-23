@@ -40,6 +40,33 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Dancing",
+                    "type": "Button",
+                    "id": "515ee582-422b-422e-92c0-b04094ad3882",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dancing1",
+                    "type": "Button",
+                    "id": "a88ebaee-b38d-41c4-ad79-e267ea36db65",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dancing2",
+                    "type": "Button",
+                    "id": "26f6de24-3796-4307-b298-9d3dfb2d2800",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -227,6 +254,39 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Fire1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da8d7a10-e015-40e4-9bef-1f27c2859a21",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dancing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1324d30f-1b30-4e07-b769-4a583cbd1144",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dancing1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "092d4690-3325-4451-a1b4-2a30fc944296",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dancing2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

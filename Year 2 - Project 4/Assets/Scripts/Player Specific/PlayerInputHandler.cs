@@ -55,8 +55,15 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnDash(obj);
         }
+        else if (obj.action.name == controls.Player.Dancing.name)
+        {
+            OnDance(obj);
+        }
     }
-
+    public void OnDance(CallbackContext context)
+    {
+        mover.DanceInput(context);
+    }
     public void OnMove(CallbackContext context)
     {
         if (mover != null)

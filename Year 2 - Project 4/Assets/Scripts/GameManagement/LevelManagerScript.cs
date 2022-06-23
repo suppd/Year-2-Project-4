@@ -86,7 +86,7 @@ public class LevelManagerScript : MonoBehaviour
         {
             if (amountOfPlayers == 1)
             {
-                VictoryDancePlay();
+                //VictoryDancePlay();
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {

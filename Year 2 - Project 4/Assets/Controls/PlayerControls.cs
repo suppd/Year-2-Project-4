@@ -62,6 +62,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dancing"",
+                    ""type"": ""Button"",
+                    ""id"": ""515ee582-422b-422e-92c0-b04094ad3882"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dancing1"",
+                    ""type"": ""Button"",
+                    ""id"": ""a88ebaee-b38d-41c4-ad79-e267ea36db65"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dancing2"",
+                    ""type"": ""Button"",
+                    ""id"": ""26f6de24-3796-4307-b298-9d3dfb2d2800"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -249,6 +276,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Fire1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da8d7a10-e015-40e4-9bef-1f27c2859a21"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dancing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1324d30f-1b30-4e07-b769-4a583cbd1144"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dancing1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""092d4690-3325-4451-a1b4-2a30fc944296"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dancing2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -851,6 +911,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Dashing = m_Player.FindAction("Dashing", throwIfNotFound: true);
         m_Player_Fire1 = m_Player.FindAction("Fire1", throwIfNotFound: true);
+        m_Player_Dancing = m_Player.FindAction("Dancing", throwIfNotFound: true);
+        m_Player_Dancing1 = m_Player.FindAction("Dancing1", throwIfNotFound: true);
+        m_Player_Dancing2 = m_Player.FindAction("Dancing2", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -926,6 +989,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Dashing;
     private readonly InputAction m_Player_Fire1;
+    private readonly InputAction m_Player_Dancing;
+    private readonly InputAction m_Player_Dancing1;
+    private readonly InputAction m_Player_Dancing2;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -934,6 +1000,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Dashing => m_Wrapper.m_Player_Dashing;
         public InputAction @Fire1 => m_Wrapper.m_Player_Fire1;
+        public InputAction @Dancing => m_Wrapper.m_Player_Dancing;
+        public InputAction @Dancing1 => m_Wrapper.m_Player_Dancing1;
+        public InputAction @Dancing2 => m_Wrapper.m_Player_Dancing2;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -955,6 +1024,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire1;
                 @Fire1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire1;
                 @Fire1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire1;
+                @Dancing.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing;
+                @Dancing.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing;
+                @Dancing.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing;
+                @Dancing1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing1;
+                @Dancing1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing1;
+                @Dancing1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing1;
+                @Dancing2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing2;
+                @Dancing2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing2;
+                @Dancing2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDancing2;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -971,6 +1049,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire1.started += instance.OnFire1;
                 @Fire1.performed += instance.OnFire1;
                 @Fire1.canceled += instance.OnFire1;
+                @Dancing.started += instance.OnDancing;
+                @Dancing.performed += instance.OnDancing;
+                @Dancing.canceled += instance.OnDancing;
+                @Dancing1.started += instance.OnDancing1;
+                @Dancing1.performed += instance.OnDancing1;
+                @Dancing1.canceled += instance.OnDancing1;
+                @Dancing2.started += instance.OnDancing2;
+                @Dancing2.performed += instance.OnDancing2;
+                @Dancing2.canceled += instance.OnDancing2;
             }
         }
     }
@@ -1131,6 +1218,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnDashing(InputAction.CallbackContext context);
         void OnFire1(InputAction.CallbackContext context);
+        void OnDancing(InputAction.CallbackContext context);
+        void OnDancing1(InputAction.CallbackContext context);
+        void OnDancing2(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

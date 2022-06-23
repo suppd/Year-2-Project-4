@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public float freezeDuration;
 
     public ParticleSystem dashDust;
+    public float danceTimer = 0;
+    private bool danceIsPlaying = false;
 
     private float slowAmount = 1f;
     private float dashCounter, dashCoolCounter;
@@ -53,12 +55,45 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", rb.velocity.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
+        if (danceIsPlaying)
+        {
+            danceTimer++;
+        }
+        ResetDance();
     }
  
 
     public void SetInputVector(Vector2 vector)
     {
         inputVector = vector;
+    }
+
+    public void DanceInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            PlayDance();
+        }
+    }
+    void PlayDance()
+    {        
+        if (!danceIsPlaying)
+        {
+            anim.SetBool("Dancing", true);
+            danceIsPlaying = true;
+        }
+    }
+    void ResetDance()
+    {
+        if (danceIsPlaying)
+        {
+            if (danceTimer >= 2f)
+            {
+                danceIsPlaying = false;
+                danceTimer = 0;
+                anim.SetBool("Dancing", false);
+            }
+        }
     }
     void Movement()
     {
