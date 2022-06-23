@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Options.unity
     guid: 12d6a2db156419d45970418bbfd3e780
   - enabled: 1
+    path: Assets/Scenes/Eggsplanation.unity
+    guid: 301e9a8b991b96242b5550691162251f
+  - enabled: 1
     path: Assets/Scenes/GameModeSelection.unity
     guid: 728c145e48a9bf848bd7854cef7a9322
   - enabled: 1
