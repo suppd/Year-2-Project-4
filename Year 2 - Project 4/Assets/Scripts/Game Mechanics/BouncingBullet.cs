@@ -51,6 +51,7 @@ public class BouncingBullet : MonoBehaviour
                 {
                     Destroy(gameObject);
                     Debug.Log("shot Teammate!");
+                    FindObjectOfType<AudioManager>().Play("Bounce");
                 }
                 else
                 {
