@@ -49,18 +49,47 @@ public class LevelManagerScript : MonoBehaviour
                 SceneManager.LoadScene(levelName);
             }
         }
-        else if (amountOfPlayers == 1)
+        if (!teams)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            if (amountOfPlayers == 1)
             {
-                SceneManager.LoadScene(levelName);
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    SceneManager.LoadScene(levelName);
+                }
             }
         }
         else if (teams)
         {
-           if (amountOfPlayers == 2)
-           {
+            if (amountOfPlayers == 1)
+            {
+                for (int i = 0; i < playerConfigs.Length; i++)
+                {
+                    if (playerConfigs[i].isAlive)
+                    {
+                        bool blueTeam = playerConfigs[i].isBlue;
+                        if (blueTeam)
+                        {
+                            if (playerConfigs[i].isBlue) 
+                            {
+                                playerConfigs[i].playerScore += 1;
+                                SceneManager.LoadScene(levelName);
+                            }                      
+                        }
+                        else
+                        {
+                            if (!playerConfigs[i].isBlue)
+                            {
+                                playerConfigs[i].playerScore += 1;
+                                SceneManager.LoadScene(levelName);
+                            }
+                        }
+                    }
+                }
+            }
+            if (amountOfPlayers == 2)
+            {
                 Debug.Log("2 players");
                 for (int i = 0; i < amountOfPlayers; i++)
                 {
@@ -68,7 +97,7 @@ public class LevelManagerScript : MonoBehaviour
                     {
                         if (playerConfigs[i].isBlue && playerConfigs[j].isBlue)
                         {
-                            
+
                             playerConfigs[i].playerScore += 1;
                             Debug.Log("Team Survived in one piece");
                             SceneManager.LoadScene(levelName);
