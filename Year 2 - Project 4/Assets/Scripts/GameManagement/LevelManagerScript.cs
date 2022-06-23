@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelManagerScript : MonoBehaviour
 {
     private GameObject[] players;
+    
     //for teams
     public bool teams = false;
     public PlayerConfiguration[] playerConfigs;
 
     private int amountOfPlayers;
-    private float timer = 3f;
+    public float timer = 10f;
     [SerializeField]
     private int redPlayerCount = 0;
     [SerializeField]
@@ -85,6 +86,7 @@ public class LevelManagerScript : MonoBehaviour
         {
             if (amountOfPlayers == 1)
             {
+                VictoryDancePlay();
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
@@ -131,6 +133,18 @@ public class LevelManagerScript : MonoBehaviour
                 }
             }
         }
+    }
+    
+    void VictoryDancePlay()
+    {
+        for (int i = 0; i < playerConfigs.Length; i++)
+        {
+            if (playerConfigs[i].isAlive)
+            {
+                players[i].GetComponent<PlayerStats>().VictoryDance(playerConfigs[i]);
+               
+            }
+        }    
     }
 
     void GiveBlueTeamPoints(int point)

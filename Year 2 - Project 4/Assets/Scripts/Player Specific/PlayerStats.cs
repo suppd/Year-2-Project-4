@@ -63,6 +63,7 @@ public class PlayerStats : MonoBehaviour
     {
         level = FindObjectOfType<LevelManagerScript>();
         cam = FindObjectOfType<Camera>();
+        
     }
 
     void Start()
@@ -89,6 +90,11 @@ public class PlayerStats : MonoBehaviour
                 HP = 100;
             }
             healthBar.SetHealth(HP);
+    }
+    public void VictoryDance(PlayerConfiguration playerConfig)
+    {
+        //playerConfig.playerInput.DeactivateInput();
+        anim.SetBool("Dancing", true);
     }
 
   
