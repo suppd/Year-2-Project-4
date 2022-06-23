@@ -14,7 +14,7 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     public int maxAmountOfRounds = 1;
     public PlayerInputManager InputManager;
-    public string sceneName = "LevelDesign1";
+    public string[] sceneName;
     //[SerializeField]
     //private GameObject playerPrefab;
     //[SerializeField]
@@ -89,8 +89,15 @@ public class PlayerConfigurationManager : MonoBehaviour
         if (playerConfigs.Count >= 2  && playerConfigs.All(p => p.isReady == true))
         {
             InputManager.DisableJoining();
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(LoadRandomLevel());
         }
+    }
+
+    public string LoadRandomLevel()
+    {
+        int random;
+        random = Random.Range(0, 3);
+        return sceneName[random];
     }
 
     public void HandlePlayerJoin(PlayerInput pInput)
