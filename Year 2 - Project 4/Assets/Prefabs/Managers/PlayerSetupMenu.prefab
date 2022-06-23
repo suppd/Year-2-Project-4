@@ -1162,19 +1162,19 @@ MonoBehaviour:
   isTeamGameMode: 0
   colorButtons:
   - {fileID: 5898252234178183608}
-  - {fileID: 5952745873246309854}
   - {fileID: 5952745873334709999}
+  - {fileID: 5952745873246309854}
   - {fileID: 5952745874358695742}
   overRides:
   - {fileID: 22100000, guid: 50d1ecbfd4a9d5847bc90af48b7e5618, type: 2}
-  - {fileID: 22100000, guid: f1ddb3cd27e3cca4b831d39b03920b07, type: 2}
   - {fileID: 22100000, guid: d8bc799cc05be4945a6add60772ff900, type: 2}
+  - {fileID: 22100000, guid: f1ddb3cd27e3cca4b831d39b03920b07, type: 2}
   - {fileID: 22100000, guid: e451ac840ffe49a43b120de87b0b07e1, type: 2}
   sprites:
-  - {fileID: 194844230542030338, guid: fcce12115413d684ead2174080d36ce7, type: 3}
-  - {fileID: -489491389291439883, guid: d5997b0854ed5c142bbc39ca1585762e, type: 3}
-  - {fileID: 1330851314964676954, guid: 2728eb6df48bdfb42a2928f680c5c745, type: 3}
-  - {fileID: 7814257444319510048, guid: 30b2600f96fdb9b4498109d8428efd85, type: 3}
+  - {fileID: 21300000, guid: 352f2ffb167fb4b42a0dd71a490c0991, type: 3}
+  - {fileID: 21300000, guid: 63e49a4b9e6d8a040abacf51da1e976e, type: 3}
+  - {fileID: 21300000, guid: ef254bf6a1937174497a13f260df96a2, type: 3}
+  - {fileID: 21300000, guid: b8d432fc6d23e7d479de5862db5f4028, type: 3}
 --- !u!114 &439047337214609330
 MonoBehaviour:
   m_ObjectHideFlags: 0
