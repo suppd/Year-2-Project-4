@@ -14,6 +14,9 @@ public class bombScript : MonoBehaviour
     PlayerStats stats;
 
 
+    public bool isTeams = false;
+    public bool isBlue;
+
     void explode()
     {
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position,fieldofImpact,LayerToHit);
@@ -36,10 +39,35 @@ public class bombScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
-            explode();
-            Destroy(gameObject);
-            FindObjectOfType<AudioManager>().Play("Eggsplotion");
+            if (!isTeams)
+            {
+                collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
+                explode();
+                Destroy(gameObject);
+                FindObjectOfType<AudioManager>().Play("Eggsplotion");
+            }
+            else if (isTeams)
+            {
+                if (collision.gameObject.GetComponent<PlayerStats>().isBlue && isBlue)
+                {
+                    Destroy(gameObject);
+                    FindObjectOfType<AudioManager>().Play("Eggsplotion");
+                    Debug.Log("shot Teammates");
+                }
+                else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && !isBlue)
+                {
+                    Destroy(gameObject);
+                    FindObjectOfType<AudioManager>().Play("Eggsplotion");
+                    Debug.Log("shot Teammates");
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);
+                    explode();
+                    Destroy(gameObject);
+                    FindObjectOfType<AudioManager>().Play("Eggsplotion");
+                }
+            }
         }
         else if(collision.gameObject.tag == "BulletWall" || collision.gameObject.tag == "Wall")
         {

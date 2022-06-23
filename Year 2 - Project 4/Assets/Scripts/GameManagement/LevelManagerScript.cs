@@ -12,12 +12,19 @@ public class LevelManagerScript : MonoBehaviour
 
     private int amountOfPlayers;
     private float timer = 3f;
+    [SerializeField]
+    private int redPlayerCount = 0;
+    [SerializeField]
+    private int bluePlayerCount = 0;
+    [SerializeField]
+    private bool scored = false;
 
     public string levelName;
     bool foundPlayers = false;
     private void Awake()
     {
         playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
+        CheckForRedAndBluePlayerAmount();
     }
     public int GetAmountOfPlayers()
     {
@@ -27,14 +34,39 @@ public class LevelManagerScript : MonoBehaviour
         return players.Length;
     }
 
+    public void CheckForRedAndBluePlayerAmount()
+    {
+        bluePlayerCount = 0;
+        redPlayerCount = 0;
+        for (int i = 0; i < playerConfigs.Length; i++)
+        {
+            if (playerConfigs[i].isBlue && playerConfigs[i].isAlive)
+            {
+                Debug.Log("Player " + playerConfigs[i].playerName + "is blue? " + playerConfigs[i].isBlue);
+                bluePlayerCount++;
+            }
+            else if (!playerConfigs[i].isBlue && playerConfigs[i].isAlive)
+            {
+                Debug.Log("Player " + playerConfigs[i].playerName + "is blue? " + playerConfigs[i].isBlue);
+                redPlayerCount++;
+            }
+        }
+        Debug.Log(redPlayerCount);
+        Debug.Log(bluePlayerCount);
+    }
     //Created this method for changing the local private variable amountOfPlayers instead of having a public variable
     public void UpdateAmountOfPlayers(int minus)
     {
         amountOfPlayers -= minus;
+        bluePlayerCount = 0;
+        redPlayerCount = 0;
+        CheckForRedAndBluePlayerAmount();
+      
     }
 
     private void Update()
     {
+        CheckForRedAndBluePlayerAmount();
         if (!foundPlayers)
         {
             //optimizied performance a bit by invoking this function only once at the start of the scene (only time nessicary and then it gets updated by the players later
@@ -49,33 +81,85 @@ public class LevelManagerScript : MonoBehaviour
                 SceneManager.LoadScene(levelName);
             }
         }
-        else if (amountOfPlayers == 1)
+        if (!teams)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            if (amountOfPlayers == 1)
             {
-                SceneManager.LoadScene(levelName);
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    SceneManager.LoadScene(levelName);
+                }
             }
         }
         else if (teams)
         {
-           if (amountOfPlayers == 2)
+            if (amountOfPlayers == 1)
             {
-                for (int i = 0; i < amountOfPlayers; i++)
+                timer -= Time.deltaTime;
+                if (timer <= 0)
                 {
-                    for (int j = 1; j < amountOfPlayers; j++)
+                    for (int i = 0; i < playerConfigs.Length; i++)
                     {
-
-
-                        if (!playerConfigs[i].isBlue && playerConfigs[j].isBlue)
+                        if (playerConfigs[i].isAlive && playerConfigs[i].isBlue)
                         {
-                            playerConfigs[i].playerScore += 1;
-                            Debug.Log("Team Survived in one piece");
-                            SceneManager.LoadScene(levelName);
+                            GiveBlueTeamPoints(1);
                         }
+                        else if (playerConfigs[i].isAlive && !playerConfigs[i].isBlue)
+                        {
+                            GiveRedTeamPoints(1);
+                        }
+                    }
+                    SceneManager.LoadScene(levelName);
+                }
+            }
+            else if (amountOfPlayers == 2)
+            {
+                if (timer <= 0)
+                {
+                    Debug.Log("2 players remaining");
+                    if (redPlayerCount == 2)
+                    {
+                        GiveRedTeamPoints(1);
+                        SceneManager.LoadScene(levelName);
+                    }
+                    else if (bluePlayerCount == 2)
+                    {
+                        GiveBlueTeamPoints(1);
+                        SceneManager.LoadScene(levelName);
                     }
                 }
             }
+        }
+    }
+
+    void GiveBlueTeamPoints(int point)
+    {
+        if (!scored)
+        {
+            for (int i = 0; i < playerConfigs.Length; i++)
+            {
+                if (playerConfigs[i].isBlue)
+                {
+                    playerConfigs[i].playerScore += point;
+                }
+            }
+            scored = true;
+        }
+    }
+
+    void GiveRedTeamPoints(int point)
+    {
+        if (!scored)
+        {
+            for (int i = 0; i < playerConfigs.Length; i++)
+            {
+                if (!playerConfigs[i].isBlue)
+                {
+                    playerConfigs[i].playerScore += point;
+                }
+            }
+            scored= true;
         }
     }
 }

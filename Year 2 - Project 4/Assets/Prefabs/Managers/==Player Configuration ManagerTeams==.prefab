@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 832986002316090045}
   m_Layer: 0
   m_Name: ==Player Configuration ManagerTeams==
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   maxPlayers: 4
   maxAmountOfRounds: 4
   InputManager: {fileID: 832986002316090045}
-  sceneName: Level2v2
+  sceneName: []
 --- !u!114 &832986002316090045
 MonoBehaviour:
   m_ObjectHideFlags: 0
