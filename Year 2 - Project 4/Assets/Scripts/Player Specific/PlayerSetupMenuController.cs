@@ -81,6 +81,7 @@ public class PlayerSetupMenuController : MonoBehaviour
     {
         if (!inputEnabled) { return; }
         string name = mainInputField.GetComponentInChildren<Text>().text;
+        titleText.SetText(name);
         PlayerConfigurationManager.Instance.SetPlayerName(playerIndex, name);
     }
     public void SetSprite(Sprite sprite)
@@ -142,7 +143,7 @@ public class PlayerSetupMenuController : MonoBehaviour
         Debug.Log(GetCurrentEnabledSprite());
         if (!inputEnabled) { return; }
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
-        SetName();
+        //SetName();
         readyButton.gameObject.SetActive(false);
     }
 }
