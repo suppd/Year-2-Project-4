@@ -46093,23 +46093,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[0]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[2]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: percentages.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: percentages.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: percentages.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: percentages.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[5]
-      value: 200
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
+      propertyPath: percentages.Array.data[6]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: percentages.Array.data[7]
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
@@ -58505,7 +58517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5236171652729074062, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
       propertyPath: timeStart
-      value: 5
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6547078070923918625, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
       propertyPath: m_IsActive
