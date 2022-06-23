@@ -59,10 +59,28 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnDance(obj);
         }
+
+        else if (obj.action.name == controls.Player.Dancing1.name)
+        {
+            OnDance1(obj);
+        }
+
+        else if (obj.action.name == controls.Player.Dancing2.name)
+        {
+            OnDance2(obj);
+        }
     }
     public void OnDance(CallbackContext context)
     {
         mover.DanceInput(context);
+    }
+    public void OnDance1(CallbackContext context)
+    {
+        mover.NaeNaeInput(context);
+    }
+    public void OnDance2(CallbackContext context)
+    {
+        mover.FlagDanceInput(context);
     }
     public void OnMove(CallbackContext context)
     {
@@ -74,11 +92,6 @@ public class PlayerInputHandler : MonoBehaviour
         if (shooter != null)
             shooter.Fire1(context);
     }
-   // public void OnShoot2(CallbackContext context)
-   // {
-   //     if (shooter != null)
-  //          shooter.Fire2(context);
- //   }
     public void OnAim(CallbackContext context)
     {
         if (aimer != null)
