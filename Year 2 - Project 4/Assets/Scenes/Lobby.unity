@@ -960,7 +960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: sceneName
-      value: Farm Level
+      value: LevelDesign1
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: maxPlayers
@@ -1092,6 +1092,10 @@ PrefabInstance:
       value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 3634887169319368524, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f869fb97c01c42f6a0afed10614a8b5, type: 2}
+    - target: {fileID: 3634887169319368524, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
       propertyPath: m_fontColor.b
       value: 0.47058824
       objectReference: {fileID: 0}
@@ -1103,6 +1107,10 @@ PrefabInstance:
       propertyPath: m_fontColor.r
       value: 0.9372549
       objectReference: {fileID: 0}
+    - target: {fileID: 3634887169319368524, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 189144115877930697, guid: 1f869fb97c01c42f6a0afed10614a8b5, type: 2}
     - target: {fileID: 3634887169319368524, guid: 675c1b5bf12297a458538b5632ca1ada, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4286080751

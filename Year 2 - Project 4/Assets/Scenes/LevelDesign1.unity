@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9469,7 +9469,7 @@ SpriteRenderer:
   m_SortingLayerID: 1494769739
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7b832debc2a949fb959c1a6027d0c3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae98a81da7f900f4cb34580d87bf3b3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9488,7 +9488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316977759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.87, y: -2.89, z: 0}
+  m_LocalPosition: {x: -1.9200001, y: 0.31999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12974,6 +12974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594885a36d98a3946bea01bc1fd1c085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teams: 0
   levelName: RoundOver
 --- !u!1 &440478634
 GameObject:
