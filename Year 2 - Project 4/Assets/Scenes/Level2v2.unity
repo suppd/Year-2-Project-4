@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1576,7 +1576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681460, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: orthographic size
-      value: 5.5
+      value: 6.85
       objectReference: {fileID: 0}
     - target: {fileID: 5313433588231681461, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: m_RootOrder
@@ -1705,6 +1705,14 @@ PrefabInstance:
     - target: {fileID: 5313433588244699650, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313433588244699651, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7777778
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313433588244699651, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b19d099318c98e43ba6fe5673b6a4b5, type: 3}
