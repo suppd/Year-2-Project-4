@@ -4,36 +4,21 @@
     <HighScoreEntry>
       <score>1</score>
       <playerName>MAX</playerName>
-      <playerIcon>0</playerIcon>
+      <playerIcon>10</playerIcon>
     </HighScoreEntry>
     <HighScoreEntry>
-      <score>2</score>
+      <score>9</score>
       <playerName>ED</playerName>
-      <playerIcon>1</playerIcon>
+      <playerIcon>2</playerIcon>
     </HighScoreEntry>
     <HighScoreEntry>
-      <score>8</score>
+      <score>12</score>
       <playerName>OEBE</playerName>
       <playerIcon>2</playerIcon>
     </HighScoreEntry>
     <HighScoreEntry>
-      <score>2</score>
-      <playerName />
-      <playerIcon>0</playerIcon>
-    </HighScoreEntry>
-    <HighScoreEntry>
-      <score>2</score>
-      <playerName>ed</playerName>
-      <playerIcon>0</playerIcon>
-    </HighScoreEntry>
-    <HighScoreEntry>
-      <score>0</score>
-      <playerName>mex</playerName>
-      <playerIcon>1</playerIcon>
-    </HighScoreEntry>
-    <HighScoreEntry>
-      <score>11</score>
-      <playerName>max</playerName>
+      <score>15</score>
+      <playerName>Simon</playerName>
       <playerIcon>1</playerIcon>
     </HighScoreEntry>
   </list>

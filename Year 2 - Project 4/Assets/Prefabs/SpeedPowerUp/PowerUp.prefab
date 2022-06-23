@@ -116,8 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 4
-  bSpeed: 15
-  currentPickUp: 
+  bSpeed: 5
 --- !u!95 &6742115904789697253
 Animator:
   serializedVersion: 4
