@@ -40,7 +40,7 @@ public class PowerUpManager : MonoBehaviour
                     timers[random]--;
                     if (timers[random] == 0)
                     {
-                        Debug.Log("timer ran out!");
+                        //Debug.Log("timer ran out!");
                         timers[random] = individualTimer;
                         SpawnRandomPowerUp(random, GetRandomSpawn());
                         lastSpawnPoint = random;

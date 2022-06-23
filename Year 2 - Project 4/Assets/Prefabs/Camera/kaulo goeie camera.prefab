@@ -228,9 +228,15 @@ MonoBehaviour:
   pixelsPerUnitScale: 1
   offset: {x: 0, y: 0, z: -4.5}
   smoothTime: 0.3
+  fourPlayerSize: 7
+  threePlayerSize: 6
+  twoPlayerSize: 5.5
   maxZoom: 66.6
   minZoom: 36.2
   zoomLimiter: 96.88
+  fourPlayers: 0
+  threePlayers: 0
+  twoPlayers: 0
   virtualCamera: {fileID: 5313433588244699651}
   lerp: 0
 --- !u!114 &5313433588231681464

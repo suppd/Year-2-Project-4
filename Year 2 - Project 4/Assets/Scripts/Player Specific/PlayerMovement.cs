@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     public float freezeDuration;
 
     public ParticleSystem dashDust;
+    public float danceTimer = 0;
+    private bool danceIsPlaying = false;
+    private int dancePlaying = 0;
 
     private float slowAmount = 1f;
     private float dashCounter, dashCoolCounter;
@@ -40,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        anim.SetBool("Dancing0", false);
         playercontrols = new PlayerControls();
         dashAllow = false;
         vestOn = false;
@@ -53,12 +57,69 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", rb.velocity.y);
         anim.SetFloat("Speed", movements.SqrMagnitude());
         CheckDash();
+        if (danceIsPlaying)
+        {
+            danceTimer += Time.deltaTime;
+            if (danceTimer >= 2f)
+            {
+                ResetDance(dancePlaying);
+            }
+        }
+
+        Debug.Log(danceIsPlaying);
+        //Debug.Log(anim.GetBool("Dancing0"));
     }
  
 
     public void SetInputVector(Vector2 vector)
     {
         inputVector = vector;
+    }
+
+    public void DanceInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (anim.GetBool("Dancing0") == false)
+            {
+                Debug.Log("the paul");
+                PlayDance(0);
+                dancePlaying = 0;
+            }
+        }
+    }
+    public void NaeNaeInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("the naenae");
+            PlayDance(1);
+            dancePlaying = 1;
+        }
+    }
+    public void FlagDanceInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("the flag");
+            PlayDance(2);
+            dancePlaying = 2;
+        }
+    }
+    void PlayDance(int i)
+    {        
+        if (!danceIsPlaying)
+        {
+            Debug.Log("playing dance" + i);
+            anim.SetBool("Dancing" + i, true);
+            danceIsPlaying = true;
+        }
+    }
+    void ResetDance(int i)
+    {
+        danceIsPlaying = false;
+        danceTimer = 0;
+        anim.SetBool("Dancing" + i, false);                 
     }
     void Movement()
     {
