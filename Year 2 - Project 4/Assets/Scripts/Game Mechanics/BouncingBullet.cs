@@ -19,6 +19,10 @@ public class BouncingBullet : MonoBehaviour
     private int bounceDamage = 25;
     public int addedDamage = 10;
 
+
+    public bool isTeams = false;
+    public bool isBlue;
+
     private void Awake()
     {
         rb.GetComponent<Rigidbody2D>();
@@ -33,15 +37,34 @@ public class BouncingBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
-            Destroy(killEffect, 1f);
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage);
-            FindObjectOfType<AudioManager>().Play("Bounce");
-            Destroy(gameObject);
+            if (!isTeams)
+            {
+                GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
+                Destroy(killEffect, 1f);
+                collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage);
+                FindObjectOfType<AudioManager>().Play("Bounce");
+                Destroy(gameObject);
+            }
+            else if (isTeams)
+            {
+                if (collision.gameObject.GetComponent<PlayerStats>().isBlue && isBlue)
+                {
+                    Destroy(gameObject);
+                    Debug.Log("shot Teammate!");
+                }
+                else
+                {
+                    GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);
+                    Destroy(killEffect, 1f);
+                    collision.gameObject.GetComponent<PlayerStats>().TakeDamage(bounceDamage);
+                    FindObjectOfType<AudioManager>().Play("Bounce");
+                    Destroy(gameObject);
+                }
+            }
 
-        }
-        if (collision.gameObject.tag == "BulletWall" || collision.gameObject.tag == "Wall")
-        {
+            }
+            if (collision.gameObject.tag == "BulletWall" || collision.gameObject.tag == "Wall")
+            {
             FindObjectOfType<AudioManager>().Play("Bounce");
             numBounce++;
             bounceDamage += addedDamage;

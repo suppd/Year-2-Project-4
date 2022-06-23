@@ -11,6 +11,8 @@ public class SmallVestBomb : MonoBehaviour
     public int damagePlayer = 100;
     public int damageEnemy = 10;
 
+    public bool isTeams = false;
+    public bool isBlue;
 
     private void Awake()
     {
@@ -23,17 +25,39 @@ public class SmallVestBomb : MonoBehaviour
 
         foreach (CircleCollider2D obj2 in player)
         {
-            Shooting shooting = obj2.GetComponent<Shooting>();
-            if (shooting.vestDeployed)
+            if (!isTeams) 
             {
-                obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
-                shooting.vestDeployed = false;
+                Shooting shooting = obj2.GetComponent<Shooting>();
+                if (shooting.vestDeployed)
+                {
+                    obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
+                    shooting.vestDeployed = false;
+                }
+                else
+                {
+                    obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);
+                }
             }
-            else
+            else if (isTeams)
             {
-                obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);
+                Shooting shooting = obj2.GetComponent<Shooting>();
+                if (shooting.vestDeployed)
+                {
+                    obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
+                    shooting.vestDeployed = false;
+                }
+                else
+                {
+                    if (obj2.GetComponent<PlayerStats>().isBlue && isBlue)
+                    {
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);
+                    }
+                }
             }
-
         }
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);

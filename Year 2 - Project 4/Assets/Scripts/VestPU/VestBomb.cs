@@ -10,6 +10,9 @@ public class VestBomb : MonoBehaviour
     public int damagePlayer = 10;
     public int damageEnemy = 100;
 
+    public bool isTeams = false;
+    public bool isBlue;
+
     private void Awake()
     {
          ExplodeBig();
@@ -22,15 +25,35 @@ public class VestBomb : MonoBehaviour
         foreach (CircleCollider2D obj2 in player)
         {         
             Shooting shooting = obj2.GetComponent<Shooting>();
-            if(shooting.vestDeployed)
+            if (!isTeams)
             {
-                obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
+                if (shooting.vestDeployed)
+                {
+                    obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
+                }
+                else
+                {
+                    obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);
+                }
             }
-            else
+            else if (isTeams)
             {
-                obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);
+                if (shooting.vestDeployed)
+                {
+                    obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
+                }
+                else
+                {
+                    if (obj2.gameObject.GetComponent<PlayerStats>().isBlue && isBlue)
+                    {
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);
+                    }
+                }
             }
-           
         }
         FindObjectOfType<AudioManager>().Play("VestBoom");
         GameObject effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);

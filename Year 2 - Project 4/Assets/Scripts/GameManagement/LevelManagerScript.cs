@@ -60,15 +60,15 @@ public class LevelManagerScript : MonoBehaviour
         else if (teams)
         {
            if (amountOfPlayers == 2)
-            {
+           {
+                Debug.Log("2 players");
                 for (int i = 0; i < amountOfPlayers; i++)
                 {
                     for (int j = 1; j < amountOfPlayers; j++)
                     {
-
-
-                        if (!playerConfigs[i].isBlue && playerConfigs[j].isBlue)
+                        if (playerConfigs[i].isBlue && playerConfigs[j].isBlue)
                         {
+                            
                             playerConfigs[i].playerScore += 1;
                             Debug.Log("Team Survived in one piece");
                             SceneManager.LoadScene(levelName);
