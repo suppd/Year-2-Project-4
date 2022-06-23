@@ -16,8 +16,9 @@ public class PickUpScript : MonoBehaviour
 
             if (other.GetComponent<PickUpAbility>().ablePickUp)
             {
-                other.GetComponent<PickUpAbility>().mainPickUp = "speed";
+                other.GetComponent<PickUpAbility>().speedCount++;
                 StartCoroutine(PickUp(other));
+                other.GetComponent<PickUpAbility>().mainPickUp = "speed";
                 FindObjectOfType<AudioManager>().Play("PickUp");
             }
         }
@@ -33,11 +34,23 @@ public class PickUpScript : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
-        speed.bonusSpeed = 0;
-        player.GetComponent<PickUpAbility>().mainPickUp = "nothing";
-        player.GetComponent<PickUpAbility>().CanPickUp();
-        TimerUI vestTimer = player.gameObject.GetComponentInChildren<TimerUI>();
-        vestTimer.DisableTimer();
+        Debug.Log(player.GetComponent<PickUpAbility>().mainPickUp);
+        if (player.GetComponent<PickUpAbility>().speedCount > 1)
+        {
+            player.GetComponent<PickUpAbility>().mainPickUp = "nothing";
+            player.GetComponent<PickUpAbility>().CanPickUp();
+            player.GetComponent<PickUpAbility>().speedCount--;
+        }
+        else
+        {
+            player.GetComponent<PickUpAbility>().CanPickUp();
+            player.GetComponent<PickUpAbility>().speedCount--;
+            speed.bonusSpeed = 0;
+            player.GetComponent<PickUpAbility>().mainPickUp = "nothing";
+        }
+
+
+
         Destroy(gameObject);
     }
 

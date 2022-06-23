@@ -135,18 +135,15 @@ public class PlayerStats : MonoBehaviour
                 uiInfo = "nothing";
                 break;
             case "speed":
-                speedPU.SetActive(true);
-                TimerVestSpeed.SetActive(true);
+                //speedPU.SetActive(true);
                 uiInfo = "nothing";
                 break;
             case "walldash":
-                walldashPU.SetActive(true);
-                TimerVestWallDash.SetActive(true);
+                //walldashPU.SetActive(true);
                 uiInfo = "nothing";
                 break;
             case "rapidfire":
-                rapidfirePU.SetActive(true);
-                TimerVestRapidFire.SetActive(true);
+                //rapidfirePU.SetActive(true);
                 uiInfo = "nothing";
                 break;
 

@@ -68,6 +68,7 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Shoot1");
                 shotType = "normal";
                 lastShot = Time.time;
+                GetComponent<PickUpAbility>().mainPickUp = "nothing";
                 GetComponent<PickUpAbility>().CanPickUp();
                 playerStats.TurnOff();
                 break;
@@ -83,6 +84,7 @@ public class Shooting : MonoBehaviour
                     TimerUI vestTimer = GetComponentInChildren<TimerUI>();
                     vestTimer.DisableTimer();
                     playerStats.TurnOff();
+                    GetComponent<PickUpAbility>().mainPickUp = "nothing";
                     GetComponent<PickUpAbility>().CanPickUp();
                     GetComponent<PlayerStats>().TurnOffCircle();
                     FindObjectOfType<AudioManager>().Stop("Vest");
@@ -94,6 +96,7 @@ public class Shooting : MonoBehaviour
                 shotType = "normal";
                 lastShot = Time.time;
                 //AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                GetComponent<PickUpAbility>().mainPickUp = "nothing";
                 GetComponent<PickUpAbility>().CanPickUp();
                 playerStats.TurnOff();
                 break;
@@ -102,6 +105,7 @@ public class Shooting : MonoBehaviour
                 anima.SetTrigger("Shoot1");
                 lastShot = Time.time;
                 shotType = "normal";
+                GetComponent<PickUpAbility>().mainPickUp = "nothing";
                 GetComponent<PickUpAbility>().CanPickUp();
                 playerStats.TurnOff();
                 break;

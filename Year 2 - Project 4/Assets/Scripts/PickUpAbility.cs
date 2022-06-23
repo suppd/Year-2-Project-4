@@ -6,42 +6,21 @@ public class PickUpAbility : MonoBehaviour
 {
     public bool ablePickUp;
     public string mainPickUp;
+    public int rapidCount;
+    public int dashCount;
+    public int speedCount;
 
     private void Awake()
     {
         mainPickUp = "nothing";
         ablePickUp = true;
+        rapidCount = 0;
+        dashCount = 0;
+        speedCount = 0;
     }
-
-    public void MainPickUp()
+    private void Update()
     {
-        switch (mainPickUp)
-        {
-            case "nothing":
-
-                break;
-            case "vest":
-
-                break;
-            case "grenade":
-
-                break;
-            case "bounce":
-
-                break;
-            case "dash":
-
-                break;
-            case "rapid":
-
-                break;
-            case "speed":
-
-                break;
-            case "freeze":
-
-                break;
-        }
+        Debug.Log(rapidCount);
     }
 
     public void CanPickUp()
