@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5890618387018719611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.35, y: 15.37, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: 0, y: 41.21, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,10 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: df0295e7481ee6f459072efb3c2d6c84, type: 3}
+  m_SortingLayerID: 1624179957
+  m_SortingLayer: 2
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 41e761200f468674e94eca715c367668, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,18 +122,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05929792, y: -0.83023375}
+  m_Offset: {x: 0.06443602, y: 0.015285373}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.392092, y: 3.4595323}
+  m_Size: {x: 1.2372304, y: 2.3871663}
   m_EdgeRadius: 0
 --- !u!96 &5890618387018719613
 TrailRenderer:
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2d0fc7a9398f1419cef7ac3d6295e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  rotateSpeed: 100
+  speed: 10
+  rotateSpeed: 200
   missleOn: 0
   HomingEggsplosion: {fileID: 4968505162748443373, guid: f3910b85fb00b4caf85454d4a40f504a, type: 3}
   targetGameObject: {fileID: 0}

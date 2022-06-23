@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.249712, y: 3.9123504, z: -855.254}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,18 +108,38 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MenuHover
     clip: {fileID: 8300000, guid: f7ae69809be492642bc64e6ac4e3b432, type: 3}
-    volume: 1
+    volume: 0.31
     pitch: 1
     source: {fileID: 0}
   - name: MenuClick
     clip: {fileID: 8300000, guid: 197742d6ace65104380844d5768e0ce2, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 0.09
+    pitch: 0.39
     source: {fileID: 0}
   - name: ReadyClick
     clip: {fileID: 8300000, guid: 3464d0e148bd3a34284ace8d7d7703b2, type: 3}
+    volume: 0.64
+    pitch: 1
+    source: {fileID: 0}
+  - name: MissleAnnouncement
+    clip: {fileID: 8300000, guid: 7ee60ed54b871ab4ba925f594f2063cc, type: 3}
+    volume: 0.715
+    pitch: 1
+    source: {fileID: 0}
+  - name: MissleLaunch
+    clip: {fileID: 8300000, guid: 2fbc4b924ca17374fba87f88d4778ea7, type: 3}
     volume: 1
     pitch: 1
+    source: {fileID: 0}
+  - name: MissleAlarm
+    clip: {fileID: 8300000, guid: b6e9b49086b4e0c4ca736c6871680d30, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: MissleExplode
+    clip: {fileID: 8300000, guid: e2c0d53f576903c42a5384828cba3221, type: 3}
+    volume: 0.665
+    pitch: 0.8
     source: {fileID: 0}
   mixerChannel: {fileID: 0}
 --- !u!82 &2105627778786715192
@@ -130,7 +151,7 @@ AudioSource:
   m_GameObject: {fileID: 519723244002497318}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 6273719580722482625, guid: 420ea33e405207341997084075498e5a, type: 2}
+  OutputAudioMixerGroup: {fileID: 7831957365028263592, guid: 420ea33e405207341997084075498e5a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

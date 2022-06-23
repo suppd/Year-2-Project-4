@@ -17,6 +17,7 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHand
     void Awake()
     {
         backButton = GameObject.FindGameObjectWithTag("BackButton");
+        FindObjectOfType<AudioManager>().Play("Song");
     }
 
     public void ClickSound()

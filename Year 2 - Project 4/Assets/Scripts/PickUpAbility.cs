@@ -18,10 +18,6 @@ public class PickUpAbility : MonoBehaviour
         dashCount = 0;
         speedCount = 0;
     }
-    private void Update()
-    {
-        Debug.Log(rapidCount);
-    }
 
     public void CanPickUp()
     {
