@@ -17,7 +17,6 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHand
     void Awake()
     {
         backButton = GameObject.FindGameObjectWithTag("BackButton");
-        FindObjectOfType<AudioManager>().Play("Song");
     }
 
     public void ClickSound()
@@ -54,13 +53,6 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHand
         GameObject configManager = GameObject.FindGameObjectWithTag("GameController");
         Destroy(configManager);
         SceneManager.LoadScene(level);
-        FindObjectOfType<AudioManager>().Play("MenuClick");
-    }
-
-    public void Options()
-    {
-        Debug.Log("Options");
-        FindObjectOfType<AudioManager>().Play("MenuClick");
     }
 
     public void Quit()
@@ -69,7 +61,6 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHand
         Destroy(configManager);
         Debug.Log("Quit");
         Application.Quit();
-        FindObjectOfType<AudioManager>().Play("MenuClick");
     }
 
     public void SetVolume(float sliderValue)
