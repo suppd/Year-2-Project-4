@@ -159,6 +159,7 @@ MonoBehaviour:
   EggSploded: {fileID: 8300000, guid: 7b50d5ed38c43c04da56bc0c27d808ae, type: 3}
   num: 100
   isBlue: 0
+  isTeams: 0
   scale: {x: 20, y: 20, z: 1}
   eggsplosivePU: {fileID: 3416611735055664402}
   bouncePU: {fileID: 755544535119633578}
@@ -314,6 +315,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ablePickUp: 0
+  mainPickUp: 
+  rapidCount: 0
+  dashCount: 0
+  speedCount: 0
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0

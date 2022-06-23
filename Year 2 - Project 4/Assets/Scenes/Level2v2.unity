@@ -12956,6 +12956,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teams: 1
+  redPlayerCount: 0
+  bluePlayerCount: 0
+  scored: 0
   levelName: RoundOverTeams
 --- !u!1 &440478634
 GameObject:

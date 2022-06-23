@@ -67,6 +67,7 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     public void SetAnimator(int i, AnimatorOverrideController animOverride)
     {
+        Debug.Log("player set " + i + animOverride.name);
         playerConfigs[i].animatorOverrideController = animOverride;
     }
 
