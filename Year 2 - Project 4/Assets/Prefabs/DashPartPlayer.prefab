@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2884702812988646656}
   - component: {fileID: 7338101077393097795}
   - component: {fileID: 3104446220764264861}
+  - component: {fileID: 1153298282077134937}
   m_Layer: 7
   m_Name: DashPartPlayer
   m_TagString: Player
@@ -320,6 +321,19 @@ MonoBehaviour:
   rapidCount: 0
   dashCount: 0
   speedCount: 0
+--- !u!114 &1153298282077134937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161273018238503366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d193f473048cebd4687f7481402a1e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedTrail: {fileID: 4546097943069312648}
 --- !u!1 &161273019067780492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5925111272739302050
 Transform:
   m_ObjectHideFlags: 0
