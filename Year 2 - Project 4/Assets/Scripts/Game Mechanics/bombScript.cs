@@ -54,6 +54,12 @@ public class bombScript : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("Eggsplotion");
                     Debug.Log("shot Teammates");
                 }
+                else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && !isBlue)
+                {
+                    Destroy(gameObject);
+                    FindObjectOfType<AudioManager>().Play("Eggsplotion");
+                    Debug.Log("shot Teammates");
+                }
                 else
                 {
                     collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100);

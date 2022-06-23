@@ -53,6 +53,12 @@ public class BouncingBullet : MonoBehaviour
                     Debug.Log("shot Teammate!");
                     FindObjectOfType<AudioManager>().Play("Bounce");
                 }
+                else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && !isBlue)
+                {
+                    Destroy(gameObject);
+                    Debug.Log("shot Teammate!");
+                    FindObjectOfType<AudioManager>().Play("Bounce");
+                }
                 else
                 {
                     GameObject killEffect = Instantiate(killPlayer, transform.position, Quaternion.identity);

@@ -20,7 +20,7 @@ public class PickUpAbility : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(rapidCount);
+        //Debug.Log(rapidCount);
     }
 
     public void CanPickUp()

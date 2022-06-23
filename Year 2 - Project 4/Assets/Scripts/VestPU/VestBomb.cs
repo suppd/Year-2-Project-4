@@ -48,6 +48,10 @@ public class VestBomb : MonoBehaviour
                     {
                         Destroy(gameObject);
                     }
+                    else if (!obj2.gameObject.GetComponent<PlayerStats>().isBlue && !isBlue)
+                    {
+                        Destroy(gameObject);
+                    }
                     else
                     {
                         obj2.gameObject.GetComponent<PlayerStats>().TakeDamage(damageEnemy);

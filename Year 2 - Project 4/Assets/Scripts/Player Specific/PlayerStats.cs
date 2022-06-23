@@ -30,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     public int num= 100;
 
     public bool isBlue = true;
+    public bool isTeams = false;
     Camera cam;
 
     LevelManagerScript level;
@@ -102,7 +103,7 @@ public class PlayerStats : MonoBehaviour
             Die();
             
         }
-        else if (level.GetAmountOfPlayers() == 1 && scored == false)
+        else if (level.GetAmountOfPlayers() == 1 && scored == false && !isTeams)
         {
             score+=1;
             playerConfig.playerScore = score;

@@ -72,6 +72,16 @@ public class Bullet : MonoBehaviour
                     PlayerTakeDmg(collision);
                     PlayParticleFX(killPlayer);
                 }
+                else if (!collision.gameObject.GetComponent<PlayerStats>().isBlue && !isBlue)
+                {
+                    Destroy(gameObject);
+                    Debug.Log("shot teammate");
+                }
+                else if (collision.gameObject.GetComponent<PlayerStats>().isBlue && !isBlue)
+                {
+                    PlayerTakeDmg(collision);
+                    PlayParticleFX(killPlayer);
+                }
             }
         }
 
