@@ -27,6 +27,6 @@ public class LeaderBoardPanel : MonoBehaviour
     void Start()
     {
         icon.sprite = iconsToChooseFrom[spriteId].sprite;
-        playerNameText.text = playerName + " Won "  + playerScore + " Rounds!";
+        playerNameText.text = playerName + " won "  + playerScore + " rounds!";
     }
 }

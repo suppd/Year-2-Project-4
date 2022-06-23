@@ -45,7 +45,7 @@ public class ResultsManager : MonoBehaviour
     }
     public void AddScoreBoard()
     {
-        var board = Instantiate(prefab, new Vector3(canvas.transform.position.x, canvas.transform.position.y - ((canvas.transform.position.y/4 -25f) * numberOfPlayers), canvas.transform.position.z), canvas.transform.rotation, canvas.transform);
+        var board = Instantiate(prefab, new Vector3(canvas.transform.position.x, canvas.transform.position.y - ((canvas.transform.position.y/4 -35) * numberOfPlayers), canvas.transform.position.z), canvas.transform.rotation, canvas.transform);
         scores.Add(board);
     }
     public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName, Sprite playerIcon)
