@@ -12956,7 +12956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teams: 1
-  timer: 10
+  timer: 5
   redPlayerCount: 0
   bluePlayerCount: 0
   scored: 0
@@ -46018,26 +46018,6 @@ PrefabInstance:
     - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
       propertyPath: timers.Array.size
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[0]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[5]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142569541056223539, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}
-      propertyPath: percentages.Array.data[7]
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d3bb771ce36724fa180892499c1fa7, type: 3}

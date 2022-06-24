@@ -66,15 +66,21 @@ MonoBehaviour:
   - {fileID: 5094800999405306422}
   - {fileID: 7837823002774740164}
   - {fileID: 969343127606943899}
-  - {fileID: 0}
   - {fileID: 8269666204888340453}
   - {fileID: 3939710994492704938}
+  - {fileID: 822944723746088974}
+  - {fileID: 5821143417524321247}
+  - {fileID: 2620914418567692473}
+  - {fileID: 0}
+  - {fileID: 4324130802230586227}
+  - {fileID: 4891860114016114103}
   missle: {fileID: 5890618387018719611, guid: 4ed95a34dafc84c18afb39e0fd2db36f, type: 3}
-  timeStart: 5
+  timeStart: 50
   anim: {fileID: 0}
-  timeAwake: 5
-  alertText: {fileID: 0}
+  timeAwake: 6
+  alertText: {fileID: 1107405898670315789, guid: ce93ca47a7986854fbdbc19485d33c7f, type: 3}
   playerCam: {fileID: 0}
+  timeBetween: 20
 --- !u!1001 &1029568235554214700
 PrefabInstance:
   m_ObjectHideFlags: 0

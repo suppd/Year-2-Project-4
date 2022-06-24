@@ -48,7 +48,9 @@ MonoBehaviour:
   maxPlayers: 4
   maxAmountOfRounds: 5
   InputManager: {fileID: 832986002316090045}
-  sceneName: LevelDesign1
+  sceneName:
+  - LevelDesign1
+  - Farm Level
 --- !u!114 &832986002316090045
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -225,12 +225,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4974200767993591222}
     - target: {fileID: 5236171652729074062, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
-      propertyPath: timeAwake
-      value: 7
+      propertyPath: playerCam
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5236171652729074062, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
-      propertyPath: timeStart
-      value: 10
+      propertyPath: targetPoints.Array.data[12]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6547078070923918625, guid: c9891bfbfad7b714ea1a6fac2e6df7e7, type: 3}
       propertyPath: m_IsActive
