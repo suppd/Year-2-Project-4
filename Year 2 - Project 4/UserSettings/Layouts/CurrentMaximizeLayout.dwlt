@@ -833,16 +833,10 @@ MonoBehaviour:
     y: 560
     width: 1467
     height: 387
-<<<<<<< HEAD
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_ActualView: {fileID: 12}
-=======
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
 <<<<<<< HEAD
   m_ActualView: {fileID: 11}
->>>>>>> EggSplosionText
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
@@ -963,11 +957,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-<<<<<<< HEAD
-      m_ClientGUIView: {fileID: 11}
-=======
       m_ClientGUIView: {fileID: 10}
->>>>>>> EggSplosionText
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1194,7 +1184,6 @@ MonoBehaviour:
   m_LastInspectedObjectInstanceID: -98800
 >>>>>>> DJPaulElstarkJunge
   m_LastVerticalScrollValue: 0
->>>>>>> EggSplosionText
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
