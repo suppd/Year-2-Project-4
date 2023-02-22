@@ -1,13 +1,5 @@
 {
   "dependencies": {
-    "com.nullkal.unisense": {
-      "version": "file:C:/Users/Oebe Rademaker/Google Drive/Saxion - CMGT/Year 2/Projects/Project Show Off/Github/DualsensePack2/Package",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.unity.inputsystem": "1.0.1"
-      }
-    },
     "com.unity.2d.animation": {
       "version": "7.0.5",
       "depth": 0,
