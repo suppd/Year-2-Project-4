@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -349,6 +349,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: generic_shelf_ver_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd6a97d6d835f04ab7118e7f0a8dc3d
+      internalID: -732577008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: generic_shelf_hor_mir_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83ae54a34c0e3a4cb577d17538484d3
+      internalID: 754965077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: generic_shelf_hor_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0488a4abd696cb04ba3f84bf1f679891
+      internalID: 2125022475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -360,6 +423,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      generic_shelf_ver_4: -732577008
       generic_shelf_hor_mir_2: 660598492
       generic_shelf_hor_0: -1887238254
       generic_shelf_ver_0: 1924071014
@@ -367,7 +431,9 @@ TextureImporter:
       generic_shelf_ver_2: -433502380
       generic_shelf_hor_1: -853746919
       generic_shelf_hor_mir_1: -316158301
+      generic_shelf_hor_mir_3: 754965077
       generic_shelf_hor_2: -1007545802
+      generic_shelf_hor_3: 2125022475
       generic_shelf_ver_1: 1222827112
       generic_shelf_hor_mir_0: 201365676
   spritePackingTag: 

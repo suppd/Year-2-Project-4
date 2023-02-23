@@ -469,6 +469,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: building_wall_5
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67296b8190ca4ae4384fa3068ebd72aa
+      internalID: 301870592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_wall_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731f8282c33b43849b1357745762acda
+      internalID: 1493022719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -488,6 +530,8 @@ TextureImporter:
       SupermarketWall_11: 2875232159515757019
       building_wall_3: 667103455973405045
       SupermarketWall_3: 2020924596
+      building_wall_5: 301870592
+      building_wall_6: 1493022719
       building_roof__hor_0: -414404838856849213
       building_roof_0: -878610576081345517
       building_roof__hor_1: -6762062567315633631
