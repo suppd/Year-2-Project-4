@@ -339,6 +339,7 @@ MonoBehaviour:
   Levelname: 
   sceneName:
   - Farm Level
+  - Supermarket_FFA
   - LevelDesign1
 --- !u!4 &526134818
 Transform:
