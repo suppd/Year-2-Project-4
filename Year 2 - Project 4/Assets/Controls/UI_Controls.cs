@@ -267,7 +267,7 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Cancel"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""15cef263-9014-4fd5-94d9-4e4a6234a6ef"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -287,6 +287,24 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
                     ""name"": ""Click"",
                     ""type"": ""PassThrough"",
                     ""id"": ""3c7022bf-7922-4f7c-a998-c437916075ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Leaderboard"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce7a96ad-b8d8-48a3-be91-16888ece4700"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Eggsplanation"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ddf6355-f05d-484e-b1f9-88fdd6ebf11c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -656,6 +674,28 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a2d7115-a224-4025-afbd-da58c6a9485a"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Leaderboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f3239bc-b3d8-4f80-b320-ec6e9e434069"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Eggsplanation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -736,6 +776,8 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
         m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
+        m_UI_Leaderboard = m_UI.FindAction("Leaderboard", throwIfNotFound: true);
+        m_UI_Eggsplanation = m_UI.FindAction("Eggsplanation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -857,6 +899,8 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Cancel;
     private readonly InputAction m_UI_Point;
     private readonly InputAction m_UI_Click;
+    private readonly InputAction m_UI_Leaderboard;
+    private readonly InputAction m_UI_Eggsplanation;
     public struct UIActions
     {
         private @UI_Controls m_Wrapper;
@@ -866,6 +910,8 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
         public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
         public InputAction @Point => m_Wrapper.m_UI_Point;
         public InputAction @Click => m_Wrapper.m_UI_Click;
+        public InputAction @Leaderboard => m_Wrapper.m_UI_Leaderboard;
+        public InputAction @Eggsplanation => m_Wrapper.m_UI_Eggsplanation;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -890,6 +936,12 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
                 @Click.started -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
                 @Click.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
                 @Click.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
+                @Leaderboard.started -= m_Wrapper.m_UIActionsCallbackInterface.OnLeaderboard;
+                @Leaderboard.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnLeaderboard;
+                @Leaderboard.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnLeaderboard;
+                @Eggsplanation.started -= m_Wrapper.m_UIActionsCallbackInterface.OnEggsplanation;
+                @Eggsplanation.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnEggsplanation;
+                @Eggsplanation.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnEggsplanation;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -909,6 +961,12 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
                 @Click.started += instance.OnClick;
                 @Click.performed += instance.OnClick;
                 @Click.canceled += instance.OnClick;
+                @Leaderboard.started += instance.OnLeaderboard;
+                @Leaderboard.performed += instance.OnLeaderboard;
+                @Leaderboard.canceled += instance.OnLeaderboard;
+                @Eggsplanation.started += instance.OnEggsplanation;
+                @Eggsplanation.performed += instance.OnEggsplanation;
+                @Eggsplanation.canceled += instance.OnEggsplanation;
             }
         }
     }
@@ -972,5 +1030,7 @@ public partial class @UI_Controls : IInputActionCollection2, IDisposable
         void OnCancel(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
+        void OnLeaderboard(InputAction.CallbackContext context);
+        void OnEggsplanation(InputAction.CallbackContext context);
     }
 }

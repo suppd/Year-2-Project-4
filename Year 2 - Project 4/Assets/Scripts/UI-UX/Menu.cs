@@ -4,20 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 
 public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHandler
 {
     public string level;
-    [SerializeField]
-    private GameObject backButton;
 
     [SerializeField]
     private AudioMixer audioMixer;
-
-    void Awake()
-    {
-        backButton = GameObject.FindGameObjectWithTag("BackButton");
-    }
 
     public void ClickSound()
     {
@@ -27,15 +21,13 @@ public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHand
     public void OnSelect(BaseEventData eventData)
     {
         FindObjectOfType<AudioManager>().Play("MenuHover");
-
-        Debug.Log(eventData.selectedObject.name + " was selected");
     }
 
     public void OnCancel(BaseEventData eventData)
     {
-        backButton = GameObject.FindGameObjectWithTag("BackButton");
-        Debug.Log("Cancel");
-        eventData.selectedObject = backButton;
+    //    backButton = GameObject.FindGameObjectWithTag("BackButton");
+    //    Debug.Log("Cancel");
+    //    eventData.selectedObject = backButton;
     }
 
     public void OnDeselect(BaseEventData eventData)
