@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: GameModeSelection
-  backButton: {fileID: 0}
+  confirmationButton: {fileID: 0}
   audioMixer: {fileID: 0}
 --- !u!1 &512538417
 GameObject:
@@ -634,7 +634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &512538418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -762,7 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: LevelDesign1
-  backButton: {fileID: 0}
+  confirmationButton: {fileID: 0}
   audioMixer: {fileID: 0}
 --- !u!114 &648576336
 MonoBehaviour:
@@ -1382,6 +1382,11 @@ MonoBehaviour:
   leaderOpen: {fileID: 474122762}
   leaderClose: {fileID: 512538417}
   eggsplanationButton: {fileID: 1739015769}
+  backButton: {fileID: 0}
+  controlsCanvas: {fileID: 0}
+  storyCanvas: {fileID: 0}
+  powerupCanvas: {fileID: 0}
+  eventsCanvas: {fileID: 0}
 --- !u!1 &1376144780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: Options
-  backButton: {fileID: 0}
+  confirmationButton: {fileID: 0}
   audioMixer: {fileID: 0}
 --- !u!114 &1893197185
 MonoBehaviour:

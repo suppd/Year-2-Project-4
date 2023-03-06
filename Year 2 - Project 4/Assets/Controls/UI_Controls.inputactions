@@ -287,6 +287,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AddRound",
+                    "type": "Button",
+                    "id": "5897c504-89ef-40ca-93cb-9ef334d7b620",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SubtractRound",
+                    "type": "Button",
+                    "id": "638cd3ae-6aff-4356-bc97-e011e0dfefff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -672,6 +690,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Eggsplanation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c1b22e6-fe9e-45c9-8f78-92bd57a1d119",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AddRound",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa5ae0d1-2ef3-4758-84d4-f2942ad686b5",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SubtractRound",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

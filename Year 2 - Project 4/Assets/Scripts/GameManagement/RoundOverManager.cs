@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using System.Xml;
 using System.Linq;
 using System.Xml.Linq;
@@ -12,9 +13,13 @@ public class RoundOverManager : MonoBehaviour
     PlayerConfiguration[] playerConfigs;
     public GameObject panel;
     public GameObject prefab;
+    public GameObject confirmationButton;
+    public GameObject continueButton;
     public string Levelname = "LevelDesign2v2";
 
     public string[] sceneName;
+
+    bool panelIsActive = false;
 
     private int numberOfPlayers = 0;
     private List<GameObject> scores = new List<GameObject>();
@@ -72,6 +77,21 @@ public class RoundOverManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(LoadRandomLevel());
+    }
+
+    public void QuitConfirmation()
+    {
+        if (panelIsActive)
+        {
+            continueButton.GetComponent<Button>().Select();
+            panelIsActive = false;
+        }
+        else
+        {
+            confirmationButton.GetComponent<Button>().Select();
+            panelIsActive = true;
+        }
+        
     }
 
     public void ToResultScreen()

@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler, ICancelHandler
 {
     public string level;
+    public GameObject confirmationButton;
 
     [SerializeField]
     private AudioMixer audioMixer;
