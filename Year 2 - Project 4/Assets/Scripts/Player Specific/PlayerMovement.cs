@@ -5,6 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+#pragma warning disable 0219
+#pragma warning disable 0414
+#pragma warning disable 0168
+
+    //Disable field assigned but never used warning
+
     [SerializeField] private TrailRenderer tr;
     PlayerControls playercontrols;
     public float speed = 5f; //controls velocity multiplier

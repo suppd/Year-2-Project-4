@@ -83,7 +83,6 @@ public class GameModeSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnCancel(BaseEventData eventData)
     {
-        Debug.Log("Cancel");
         eventData.selectedObject = backButton;
     }
 
