@@ -891,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
@@ -899,7 +899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Id
-      value: 28548bc4-f56f-424e-ac15-a14bd420d8c0
+      value: 08dc778e-a38b-4999-8aac-c25f08f21958
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
@@ -907,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090045, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/minus
+      value: <Keyboard>/anyKey
       objectReference: {fileID: 0}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: sceneName
@@ -917,6 +917,10 @@ PrefabInstance:
       propertyPath: playerPrefab
       value: 
       objectReference: {fileID: 1492992185}
+    - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
+      propertyPath: sceneName.Array.data[0]
+      value: CompLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 832986002316090046, guid: 2e1c0c05460761449a1bbcaa67a01958, type: 3}
       propertyPath: sceneName.Array.data[2]
       value: LevelDesign1

@@ -19,6 +19,12 @@ public class LevelManagerScript : MonoBehaviour
     private int bluePlayerCount = 0;
     [SerializeField]
     private bool scored = false;
+    [SerializeField]
+    public bool isCompetitive = false;
+    [SerializeField]
+    public bool isCasual = false;
+    [SerializeField]
+    private float casualLevelTime = 1200f;
 
     public string levelName;
     bool foundPlayers = false;
@@ -74,61 +80,72 @@ public class LevelManagerScript : MonoBehaviour
             Invoke("GetAmountOfPlayers", 0.5f);
             foundPlayers = true;
         }
-        if (amountOfPlayers == 0 || players == null)
+        if (isCasual)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            casualLevelTime -= Time.deltaTime;
+            if (casualLevelTime <= 0)
             {
                 SceneManager.LoadScene(levelName);
             }
         }
-        if (!teams)
+        if (isCompetitive)
         {
-            if (amountOfPlayers == 1)
+            if (amountOfPlayers == 0 || players == null) 
             {
-                //VictoryDancePlay();
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
                     SceneManager.LoadScene(levelName);
                 }
             }
-        }
-        else if (teams)
-        {
-            if (amountOfPlayers == 1)
-            {
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+            if (!teams) // if competitive free for all
+            {                            
+                if (amountOfPlayers == 1)
                 {
-                    for (int i = 0; i < playerConfigs.Length; i++)
+                    //VictoryDancePlay();
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
                     {
-                        if (playerConfigs[i].isAlive && playerConfigs[i].isBlue)
+                        SceneManager.LoadScene(levelName);
+                    }
+                }
+            }
+            else if (teams) // if competitive teams
+            {
+                if (amountOfPlayers == 1)
+                {
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
+                    {
+                        for (int i = 0; i < playerConfigs.Length; i++)
                         {
-                            GiveBlueTeamPoints(1);
+                            if (playerConfigs[i].isAlive && playerConfigs[i].isBlue)
+                            {
+                                GiveBlueTeamPoints(1);
+                            }
+                            else if (playerConfigs[i].isAlive && !playerConfigs[i].isBlue)
+                            {
+                                GiveRedTeamPoints(1);
+                            }
                         }
-                        else if (playerConfigs[i].isAlive && !playerConfigs[i].isBlue)
+                        SceneManager.LoadScene(levelName);
+                    }
+                }
+                else if (amountOfPlayers == 2)
+                {
+                    if (timer <= 0)
+                    {
+                        Debug.Log("2 players remaining");
+                        if (redPlayerCount == 2)
                         {
                             GiveRedTeamPoints(1);
+                            SceneManager.LoadScene(levelName);
                         }
-                    }
-                    SceneManager.LoadScene(levelName);
-                }
-            }
-            else if (amountOfPlayers == 2)
-            {
-                if (timer <= 0)
-                {
-                    Debug.Log("2 players remaining");
-                    if (redPlayerCount == 2)
-                    {
-                        GiveRedTeamPoints(1);
-                        SceneManager.LoadScene(levelName);
-                    }
-                    else if (bluePlayerCount == 2)
-                    {
-                        GiveBlueTeamPoints(1);
-                        SceneManager.LoadScene(levelName);
+                        else if (bluePlayerCount == 2)
+                        {
+                            GiveBlueTeamPoints(1);
+                            SceneManager.LoadScene(levelName);
+                        }
                     }
                 }
             }

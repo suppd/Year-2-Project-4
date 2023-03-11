@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/FarmLevel2v2.unity
     guid: bec0f8164e077cc4199b0fdd2f1d3c0b
   - enabled: 1
-    path: Assets/Scenes/LevelDesign1.unity
+    path: Assets/Scenes/CompLevel.unity
     guid: 86c844a76497b3d4cb99aab3e6d37bba
   - enabled: 1
     path: Assets/Scenes/Level2v2.unity

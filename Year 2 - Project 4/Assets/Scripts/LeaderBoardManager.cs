@@ -42,4 +42,14 @@ public class LeaderBoardManager : MonoBehaviour
         textObjects[boardInstance].GetComponent<LeaderBoardPanel>().playerScore = score;
         textObjects[boardInstance].GetComponent<LeaderBoardPanel>().spriteId = spriteId;
     }
+
+    public void clearLeaderBoardFile()
+    {
+        Debug.Log("cleared leaderboard");
+        textObjects.Clear();
+        highScores.Clear();
+        bestScores.Clear();
+        textObjects.Clear();
+        XMLManager.instance.ClearList();
+    }
 }

@@ -15,6 +15,12 @@ public class XMLManager : MonoBehaviour
             Debug.Log("created new directory");
             Directory.CreateDirectory(Application.persistentDataPath + "/HighScores/");
         }
+        UpdateList();
+        //if (!File.Exists(Application.persistentDataPath + "/HighScores/highscores.xml"))
+        //{
+        //    Debug.Log("created new file");
+        //    File.Create(Application.persistentDataPath + "/HighScores/highscores.xml");
+        //}
         if (instance != null)
         {
             Debug.Log("[Singleton] Trying to create another instance of singleton");
@@ -80,6 +86,11 @@ public class XMLManager : MonoBehaviour
         FileStream stream = new FileStream(Application.persistentDataPath + "/HighScores/highscores.xml", FileMode.Create);
         serializer.Serialize(stream, leaderboard);
         stream.Close();
+    }
+
+    public void ClearList()
+    {
+        UpdateList();
     }
 
     public List<HighScoreEntry> LoadScores()
