@@ -20,6 +20,20 @@ public class PowerUpManager : MonoBehaviour
 
     private float timer;
     private float amount;
+    private void Awake()
+    {
+        GameObject casualGameInfo = GameObject.FindGameObjectWithTag("CasualInfo");
+        if (casualGameInfo != null)
+        {
+            int i = 0;
+            foreach (bool b in casualGameInfo.GetComponent<CasualGameInfo>().disableList)
+            {
+                powerUps[i].gameObject.SetActive(b);
+                Debug.Log("power up " + i + "was set to " + b);
+                i++;
+            }
+        }
+    }
     private void Start()
     {
         for (int i = 0; i < spawnPoints.Length; i++)

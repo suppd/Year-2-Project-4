@@ -31,12 +31,14 @@ public class PlayerStats : MonoBehaviour
 
     public bool isBlue = true;
     public bool isTeams = false;
+    public bool isCasual = false;
     Camera cam;
 
     LevelManagerScript level;
     PlayerConfiguration playerConfig;
 
     public Vector3 scale;
+    public Vector3 spawnPos;
     private bool scored = false;
 
     //UI Icons PowerUps
@@ -178,8 +180,23 @@ public class PlayerStats : MonoBehaviour
         AudioSource.PlayClipAtPoint(EggSploded, transform.position);
         anim.SetBool("Death", true);
         playerConfig.isAlive = false;
-        cam.GetComponent<MultiplePlayerCamera>().targets.Remove(this.transform);
-        Destroy(player);
+        if (isCasual)
+        {
+            Respawn();
+        }
+        else
+        {
+            cam.GetComponent<MultiplePlayerCamera>().targets.Remove(this.transform);
+            Destroy(player);
+        }
+    }
+
+    public void Respawn()
+    {
+        HP = MaxHP;
+        playerConfig.isAlive = true;
+        player.transform.position = spawnPos;
+        GetHealth(HP);
     }
 
     public void KillPopUp()

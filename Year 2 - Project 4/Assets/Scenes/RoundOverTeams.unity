@@ -334,11 +334,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404fb79969a3a8c49b3ec0c94560449d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCasual: 0
   panel: {fileID: 2086213110}
   prefab: {fileID: 1006011200813512078, guid: 955d7b22151f0d247a1ce41f9a873ac1, type: 3}
-  Levelname: Level2v2
+  confirmationButton: {fileID: 0}
+  continueButton: {fileID: 0}
   sceneName:
-  - Level2v2
+  - Supermarket_Teams
   - FarmLevel2v2
 --- !u!4 &526134818
 Transform:
@@ -448,6 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -464,6 +467,7 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1616999396
 GameObject:
   m_ObjectHideFlags: 0

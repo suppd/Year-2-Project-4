@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: Lobby
+  level: LobbyCasual
   ButtonGameObject: {fileID: 1049557411}
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9802a0a1236dce44983fe1cbe789e744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: LobbyTeams
+  level: LobbyTeamsCasual
   ButtonGameObject: {fileID: 1915398700}
   selectedObject: {fileID: 0}
   extendCasual: {fileID: 1981507966}
@@ -2329,6 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -2345,6 +2346,7 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: b68f26f24f3cf7946b0e550666c3ced6, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!114 &1996780175
 MonoBehaviour:
   m_ObjectHideFlags: 0

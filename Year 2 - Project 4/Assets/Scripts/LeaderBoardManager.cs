@@ -17,6 +17,11 @@ public class LeaderBoardManager : MonoBehaviour
     private int numberOfBoards;
     private void Start()
     {
+        InitiateLeaderboard();
+    }
+
+    public void InitiateLeaderboard()
+    {
         highScores = XMLManager.instance.LoadScores();
         bestScores = highScores.OrderByDescending(s => s.score).Take(5).ToList();
 
@@ -41,5 +46,33 @@ public class LeaderBoardManager : MonoBehaviour
         textObjects[boardInstance].GetComponent<LeaderBoardPanel>().playerName = playerName;
         textObjects[boardInstance].GetComponent<LeaderBoardPanel>().playerScore = score;
         textObjects[boardInstance].GetComponent<LeaderBoardPanel>().spriteId = spriteId;
+    }
+
+    public void clearLeaderBoard()
+    {
+        foreach (var board in textObjects)
+        {
+            Destroy(board.gameObject);
+        }
+        highScores.Clear();
+        bestScores.Clear();
+        textObjects.Clear();
+        numberOfBoards = 0;     
+    }
+
+    public void updateLists()
+    {
+        highScores = XMLManager.instance.LoadScores();
+        bestScores = highScores.OrderByDescending(s => s.score).Take(5).ToList();
+    }
+
+    public void clearLeaderBoardAndSaveFile()
+    {
+        //    List<HighScoreEntry> list = new List<HighScoreEntry>();
+        //    clearLeaderBoard();
+
+        clearLeaderBoard();
+        XMLManager.instance.clearSaveFile();
+        InitiateLeaderboard();
     }
 }
