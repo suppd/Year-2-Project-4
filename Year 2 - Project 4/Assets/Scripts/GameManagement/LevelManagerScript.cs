@@ -75,7 +75,11 @@ public class LevelManagerScript : MonoBehaviour
 
     private void Update()
     {
-        casualTimerText.text = casualLevelTime.ToString();
+        if (casualTimerText!= null)
+        {
+            casualTimerText.text = casualLevelTime.ToString();
+
+        }
         CheckForRedAndBluePlayerAmount();
         if (!foundPlayers)
         {
