@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManagerScript : MonoBehaviour
 {
     private GameObject[] players;
-    
+
     //for teams
     public bool teams = false;
     public PlayerConfiguration[] playerConfigs;
+    public TextMeshProUGUI casualTimerText;
 
     private int amountOfPlayers;
     public float timer = 10f;
@@ -19,6 +21,12 @@ public class LevelManagerScript : MonoBehaviour
     private int bluePlayerCount = 0;
     [SerializeField]
     private bool scored = false;
+    [SerializeField]
+    public bool isCompetitive = false;
+    [SerializeField]
+    public bool isCasual = false;
+    [SerializeField]
+    private float casualLevelTime = 1200f;
 
     public string levelName;
     bool foundPlayers = false;
@@ -52,7 +60,7 @@ public class LevelManagerScript : MonoBehaviour
                 redPlayerCount++;
             }
         }
-       // Debug.Log(redPlayerCount);
+        // Debug.Log(redPlayerCount);
         //Debug.Log(bluePlayerCount);
     }
     //Created this method for changing the local private variable amountOfPlayers instead of having a public variable
@@ -62,11 +70,16 @@ public class LevelManagerScript : MonoBehaviour
         bluePlayerCount = 0;
         redPlayerCount = 0;
         CheckForRedAndBluePlayerAmount();
-      
+
     }
 
     private void Update()
     {
+        if (casualTimerText!= null)
+        {
+            casualTimerText.text = casualLevelTime.ToString();
+
+        }
         CheckForRedAndBluePlayerAmount();
         if (!foundPlayers)
         {
@@ -74,67 +87,78 @@ public class LevelManagerScript : MonoBehaviour
             Invoke("GetAmountOfPlayers", 0.5f);
             foundPlayers = true;
         }
-        if (amountOfPlayers == 0 || players == null)
+        if (isCasual)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            casualLevelTime -= Time.deltaTime;
+            if (casualLevelTime <= 0)
             {
                 SceneManager.LoadScene(levelName);
             }
         }
-        if (!teams)
+        if (isCompetitive)
         {
-            if (amountOfPlayers == 1)
+            if (amountOfPlayers == 0 || players == null)
             {
-                //VictoryDancePlay();
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
                     SceneManager.LoadScene(levelName);
                 }
             }
-        }
-        else if (teams)
-        {
-            if (amountOfPlayers == 1)
+            if (!teams) // if competitive free for all
             {
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+                if (amountOfPlayers == 1)
                 {
-                    for (int i = 0; i < playerConfigs.Length; i++)
+                    //VictoryDancePlay();
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
                     {
-                        if (playerConfigs[i].isAlive && playerConfigs[i].isBlue)
+                        SceneManager.LoadScene(levelName);
+                    }
+                }
+            }
+            else if (teams) // if competitive teams
+            {
+                if (amountOfPlayers == 1)
+                {
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
+                    {
+                        for (int i = 0; i < playerConfigs.Length; i++)
                         {
-                            GiveBlueTeamPoints(1);
+                            if (playerConfigs[i].isAlive && playerConfigs[i].isBlue)
+                            {
+                                GiveBlueTeamPoints(1);
+                            }
+                            else if (playerConfigs[i].isAlive && !playerConfigs[i].isBlue)
+                            {
+                                GiveRedTeamPoints(1);
+                            }
                         }
-                        else if (playerConfigs[i].isAlive && !playerConfigs[i].isBlue)
+                        SceneManager.LoadScene(levelName);
+                    }
+                }
+                else if (amountOfPlayers == 2)
+                {
+                    if (timer <= 0)
+                    {
+                        Debug.Log("2 players remaining");
+                        if (redPlayerCount == 2)
                         {
                             GiveRedTeamPoints(1);
+                            SceneManager.LoadScene(levelName);
                         }
-                    }
-                    SceneManager.LoadScene(levelName);
-                }
-            }
-            else if (amountOfPlayers == 2)
-            {
-                if (timer <= 0)
-                {
-                    Debug.Log("2 players remaining");
-                    if (redPlayerCount == 2)
-                    {
-                        GiveRedTeamPoints(1);
-                        SceneManager.LoadScene(levelName);
-                    }
-                    else if (bluePlayerCount == 2)
-                    {
-                        GiveBlueTeamPoints(1);
-                        SceneManager.LoadScene(levelName);
+                        else if (bluePlayerCount == 2)
+                        {
+                            GiveBlueTeamPoints(1);
+                            SceneManager.LoadScene(levelName);
+                        }
                     }
                 }
             }
         }
     }
-    
+
     void VictoryDancePlay()
     {
         for (int i = 0; i < playerConfigs.Length; i++)
@@ -142,9 +166,9 @@ public class LevelManagerScript : MonoBehaviour
             if (playerConfigs[i].isAlive)
             {
                 players[i].GetComponent<PlayerStats>().VictoryDance(playerConfigs[i]);
-               
+
             }
-        }    
+        }
     }
 
     void GiveBlueTeamPoints(int point)
@@ -173,7 +197,7 @@ public class LevelManagerScript : MonoBehaviour
                     playerConfigs[i].playerScore += point;
                 }
             }
-            scored= true;
+            scored = true;
         }
     }
 }

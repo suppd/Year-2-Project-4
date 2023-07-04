@@ -97,9 +97,15 @@ public class PlayerConfigurationManager : MonoBehaviour
     public string LoadRandomLevel()
     {
         int random;
-        random = Random.Range(0, 2);
-        return sceneName[random];
+        random = Random.Range(0, 1);
+        if (sceneName.Length == 1)
+        {
+            return sceneName[0];
+        }
+        return sceneName[random];       
     }
+
+
 
     public void HandlePlayerJoin(PlayerInput pInput)
     {

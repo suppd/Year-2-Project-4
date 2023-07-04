@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PowerUpManager : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public float[] percentages;
-    public GameObject[] powerUps;
+    public List<GameObject> powerUps;
 
     public float timeBetweenPowerups;
 
@@ -20,6 +21,29 @@ public class PowerUpManager : MonoBehaviour
 
     private float timer;
     private float amount;
+    private void Awake()
+    {
+        //powerUps = new List<GameObject>();
+        GameObject casualGameInfo = GameObject.FindGameObjectWithTag("CasualInfo");
+        if (casualGameInfo != null)
+        {
+            int i = 0; // iterations
+            int j = 0; // amount of falses
+            foreach (bool b in casualGameInfo.GetComponent<CasualGameInfo>().disableList)
+            {
+                if (b == false)
+                {
+                   
+                    powerUps.RemoveAt(i - j);
+                    Debug.Log("power up " + " was removed");
+                    j++;
+                }
+                //powerUps[i].gameObject.SetActive(b);
+               // Debug.Log("power up " + i + "was set to " + b);
+                i++;
+            }
+        }
+    }
     private void Start()
     {
         for (int i = 0; i < spawnPoints.Length; i++)
@@ -48,6 +72,21 @@ public class PowerUpManager : MonoBehaviour
                         setTimer = true;
                     }
                 }
+                else if (!spawnPoints[random].transform.GetChild(0).gameObject.activeInHierarchy)
+                {
+                    Destroy(spawnPoints[random].transform.GetChild(0).gameObject);
+
+                    timers[random]--;
+                    if (timers[random] == 0)
+                    {
+                        //Debug.Log("timer ran out!");
+                        timers[random] = individualTimer;
+                        SpawnRandomPowerUp(random, GetRandomSpawn());
+                        lastSpawnPoint = random;
+                        waitingForSpawn = false;
+                        setTimer = true;
+                    }
+                }
             }
         }
     }
@@ -60,12 +99,12 @@ public class PowerUpManager : MonoBehaviour
         float random = Random.Range(0, 1f);
         float numforAdding = 0;
         float total = 0;
-        for (int i = 0; i < percentages.Length; i++)
+        for (int i = 0; i < percentages.Count(); i++)
         {
             total += percentages[i];
         }
 
-        for (int i = 0; i < powerUps.Length; i++)
+        for (int i = 0; i < powerUps.Count(); i++)
         {
             if (percentages[i] / total + numforAdding >= random)
             {

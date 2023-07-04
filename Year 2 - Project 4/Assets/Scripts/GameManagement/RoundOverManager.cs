@@ -10,12 +10,12 @@ using System.Xml.Linq;
 
 public class RoundOverManager : MonoBehaviour
 {
+    public bool isCasual = false;
     PlayerConfiguration[] playerConfigs;
     public GameObject panel;
     public GameObject prefab;
     public GameObject confirmationButton;
     public GameObject continueButton;
-    public string Levelname = "LevelDesign2v2";
 
     public string[] sceneName;
 
@@ -58,12 +58,12 @@ public class RoundOverManager : MonoBehaviour
     public string LoadRandomLevel()
     {
         int random;
-        random = Random.Range(0, 3);
+        random = Random.Range(0, 1);
         return sceneName[random];
     }
     private void Update()
     {
-        Debug.Log(LoadRandomLevel());
+        //Debug.Log(LoadRandomLevel());
     }
     public void UpdateScoreBoard(int score, int boardInstance, int playerIndex, bool wasAlive, string playerName, Sprite playerIcon)
     {

@@ -23,6 +23,7 @@ public class InitializeLevel : MonoBehaviour
             //REMOVED code repetition on every if statement
             player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, gameObject.transform);
             player.GetComponent<PlayerInputHandler>().InitializePlayer(playerConfiguration[i]);
+            player.GetComponent<PlayerStats>().spawnPos = playerSpawns[i].position;
             player.GetComponent<PlayerStats>().AssignPlayerConfig(playerConfiguration[i]);
             if (!isTeams)
             {

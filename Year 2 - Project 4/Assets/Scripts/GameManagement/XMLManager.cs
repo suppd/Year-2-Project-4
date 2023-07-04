@@ -6,7 +6,7 @@ using System.IO;
 public class XMLManager : MonoBehaviour
 {
     public static XMLManager instance { get; private set; }
-    private Leaderboard leaderboard = new Leaderboard();
+    public Leaderboard leaderboard = new Leaderboard();
     private List<string> foundNames = new List<string>();
     void Awake()
     {
@@ -92,6 +92,21 @@ public class XMLManager : MonoBehaviour
             stream.Close();
         }
         return leaderboard.list;
+    }
+
+    public void clearSaveFile()
+    {
+        HighScoreEntry entry = new HighScoreEntry();
+        entry.playerName = "empty";
+        entry.playerIcon = 1;
+        entry.score = 0;
+        List<HighScoreEntry> list = new List<HighScoreEntry>(5);
+        for (int i = 0 ; i < list.Capacity ; i++)
+        {
+            list.Add(entry);
+        }
+        leaderboard.list = list;
+        UpdateList();
     }
 }
 [System.Serializable]
